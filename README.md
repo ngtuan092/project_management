@@ -1,4 +1,3 @@
-# Rails tutorial - Sample App
 
 # 1. Phiên bản cài đặt để chạy được dự án:
 - Ruby: 3.2.2
