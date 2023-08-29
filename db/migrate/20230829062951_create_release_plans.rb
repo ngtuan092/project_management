@@ -1,0 +1,13 @@
+class CreateReleasePlans < ActiveRecord::Migration[7.0]
+  def change
+    create_table :release_plans do |t|
+      t.references :project, null: false, foreign_key: true
+      t.text :description
+      t.boolean :is_released, null: false
+      t.datetime :release_date
+      t.datetime :delete_at
+
+      t.timestamps
+    end
+  end
+end
