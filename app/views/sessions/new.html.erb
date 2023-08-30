@@ -1,0 +1,41 @@
+<% provide :title, t(".login") %>
+<h1 class="fw-bold mb-0 text-center"><%= t ".login" %></h1>
+
+<div class="container w-50 d-flex justify-content-center">
+  <!-- Content here -->
+  <%= form_with url: login_path, scope: :session, class: "w-50" do |f| %>
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <%= f.label :email, class: "form-label", for: "session_email" %>
+      <%= f.email_field :email, class: "form-control" %>
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <%= f.label :password, t(".password"), for: "session_password", class: "form-label" %>
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-4">
+      <div class="col d-flex justify-content-center text-center">
+        <!-- Checkbox -->
+        <div class="form-check">
+          <%= f.label :remember_me, class: "form-check-label", for: "session_remember_me" do %>
+            <%= f.check_box :remember_me, class: "form-check-input", checked: true %>
+            <span><%= t ".remember_text" %></span>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="col">
+        <!-- Simple link -->
+        <%= link_to t(".forgot_password"), "#" %>
+      </div>
+    </div>
+      <!-- Submit button -->
+      <%= f.submit t(".login"), class: "btn btn-primary btn-block mb-4 w-100" %>
+    <p class="text-center"><%= t ".new_user?" %> <%= link_to t(".form_submit"), "#" %></p>
+
+<% end %>
+</div>
