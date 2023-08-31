@@ -1,0 +1,33 @@
+<% content_for :css_file do %>
+  <%= stylesheet_link_tag "projects" %>
+<% end %>
+<% content_for :javascript_file do %>
+  <%= javascript_include_tag "projects" %>
+<% end %>
+<div class="tabset">
+  <!-- Tab Project detail -->
+  <input type="radio" name="tabset" id="tab1" aria-controls="project-detail"
+         <%= !page_tab? ? "checked" : "" %>
+  >
+  <label for="tab1"><%= t ".Project_Detail" %></label>
+  <!-- Tab Project Member -->
+  <input type="radio" name="tabset" id="tab2" aria-controls="project-member"
+         <%= page_tab? ? "checked" : "" %>
+  >
+  <label for="tab2"><%= t ".Project_Member" %></label>
+  <!-- Tab Project health -->
+  <input type="radio" name="tabset" id="tab3" aria-controls="project-health">
+  <label for="tab3"><%= t ".Project_Health" %></label>
+
+  <div class="tab-panels">
+    <section id="project-detail" class="tab-panel">
+      <%= render "project_detail" %>
+    </section>
+    <section id="project-member" class="tab-panel">
+      <%= render "project_member" %>
+    </section>
+    <section id="project-health" class="tab-panel">
+      <%= render "project_health" %>
+    </section>
+  </div>
+</div>

@@ -91,6 +91,35 @@ en:
       maintaining: "Maintaining"
       news: "New"
       close: "Close"
+    project_not_found: "Project not found!"
+    show:
+      Project_Detail: "Project Detail"
+      Project_Member: "Project Member"
+      Project_Health: "Project Health"
+    project_detail:
+      project_name: "Project name"
+      project_description: "Project description"
+      project_status: "Project status"
+      project_group: "Project group"
+      project_start_date: "Project start date"
+      project_end_date: "Project end date"
+      project_language: "Project language"
+      project_repository: "Link repository"
+      project_redmine: "Link redmine"
+      project_folder: "Project folder"
+      project_customers: "Customer information"
+    project_member:
+      Project_Member: "Project Member"
+      Add_New: "Add New"
+      Member_name: "Member name"
+      Role: "Role"
+      Github_Account: "Github Account"
+      joined_at: "Joined at"
+      left_at: "Left at"
+      action: "Action"
+    project_health:
+      health_item_name: "Health item name"
+      status: "Status"
   users:
     update:
       flash_update_success: "Update successful"
@@ -140,3 +169,15 @@ en:
       note: "Note"
       remove: "Remove"
       submit: "Save"
+  status_1: "Not applicable yet"
+  status_2: "Already applied but not fully updated"
+  status_3: "Fully applied and updated"
+  environment_0: "Staging"
+  environment_１: "Production"
+  project_environments:
+    project_environment:
+      ip_address: "IP address"
+      domain: "Domain"
+      port: "Local Port"
+      web_server: "Web server"
+      note: "Note"
