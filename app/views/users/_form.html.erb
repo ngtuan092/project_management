@@ -1,0 +1,18 @@
+<%= form_for @user do |f| %>
+  <div class="form-outline mt-4 mb-4">
+    <%= f.label t(".name") %>
+    <%= f.text_field :name, class: "form-control #{invalid(@user, :name)}" %>
+    <p class="error"><%= show_errors(@user, :name) %></p>
+  </div>
+  <div class="form-outline mb-4">
+    <%= f.label t(".password") %>
+    <%= f.password_field :password, class: "form-control #{invalid(@user, :password)}" %>
+    <p class="error"><%= show_errors(@user, :password) %></p>
+  </div>
+  <div class="form-outline mb-4">
+    <%= f.label t(".password_confirmation") %>
+    <%= f.password_field :password_confirmation, class: "form-control #{invalid(@user, :password_confirmation)}" %>
+    <p class="error"><%= show_errors(@user, :password_confirmation) %></p>
+  </div>
+  <%= f.submit t(".submit"), class: "btn btn-primary btn-block mb-4 w-100" %>
+<% end %>

@@ -1772,9 +1772,7 @@
             </div>
           </div>
           <!-- End Dropdown -->
-          <a class="dropdown-item" href="javascript: void(0);"
-            >Profile &amp; account</a
-          >
+          <%= link_to t(".profile_account"), edit_user_path(current_user),  class: "dropdown-item"%>
           <a class="dropdown-item" href="javascript: void(0);">Settings</a>
           <hr class="dropdown-divider" />
           <%= link_to t(".Sign_out"), logout_path,

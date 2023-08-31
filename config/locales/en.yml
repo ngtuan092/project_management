@@ -14,6 +14,7 @@ en:
   layouts:
     header:
       Sign_out: "Sign out"
+      profile_account: "Profile & account"
   user_mailer:
     password_reset:
       subject: "Password reset"
@@ -69,3 +70,16 @@ en:
       detail: "Detail"
       date: "Date"
       date_invalid: "Date format invalid"
+  users:
+    update:
+      flash_update_success: "Update successful"
+      flash_update_danger: "Update failed"
+    edit:
+      submit: "Submit"
+      title: "User update"
+    form:
+      submit: "Submit"
+      name: "Name"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+  not_found_user: "not found user"

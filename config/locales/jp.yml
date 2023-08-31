@@ -14,6 +14,7 @@ jp:
   layouts:
     header:
       Sign_out: "サインアウト"
+      profile_account: "プロフィールとアカウント"
   user_mailer:
     password_reset:
       subject: "パスワードのリセット"
@@ -43,3 +44,16 @@ jp:
     error_messages:
       error_total: "フォームには次の内容が含まれます"
       error: "エラー"
+  users:
+    update:
+      flash_update_success: "更新に成功"
+      flash_update_danger: "アップデートに失敗しました"
+    edit:
+      submit: "提出します"
+      title: "ユーザーを更新する"
+    form:
+      submit: "送信"
+      name: "名前"
+      password: "パスワード"
+      password_confirmation: "パスワードの確認"
+  not_found_user: "ユーザーが見つかりません"
