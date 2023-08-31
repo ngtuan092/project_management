@@ -12,9 +12,13 @@ gem "sprockets-rails"
 # Use mysql as the database for Active Record
 gem "mysql2", "~> 0.5"
 
-gem "bcrypt", "3.1.13"
+gem "bcrypt", "3.1.18"
+
 gem "bootstrap-sass", "3.4.1"
+
 gem "config"
+
+gem "figaro", "~> 1.1", ">= 1.1.1"
 
 gem "sassc-rails", "2.1.2"
 
