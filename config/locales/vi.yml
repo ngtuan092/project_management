@@ -1,2 +1,16 @@
 vi:
   hello_world: "Xin chào cả thế giới!"
+  application:
+  flash_logged_in_user_danger: "Hãy đăng nhập trước đó"
+  sessions:
+    new:
+      login: "Đăng nhập"
+      password: "Mật khẩu"
+      form_submit: "Đăng ký ngay!"
+      new_user?: "Người dùng mới?"
+      remember_text: "Nhớ tôi trên máy tính này"
+      forgot_password: "(quên mật khẩu)"
+    invalid_login: "Kết hợp email/mật khẩu không chính xác"
+  layouts:
+    header:
+      Sign_out: "Đăng xuất"

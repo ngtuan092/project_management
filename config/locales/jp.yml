@@ -1,0 +1,16 @@
+jp:
+  hello_world: "こんにちは世界"
+  application:
+  flash_logged_in_user_danger: "ログインしてください。"
+  sessions:
+    new:
+      login: "ログイン"
+      password: "パスワード"
+      form_submit: "今すぐサインアップ！"
+      new_user?: "新しいユーザー？"
+      remember_text: "このコンピュータ上で私を覚えていてください"
+      forgot_password: "（パスワードをお忘れですか）"
+    invalid_login: "メールアドレスとパスワードの組み合わせが無効です"
+  layouts:
+    header:
+      Sign_out: "サインアウト"

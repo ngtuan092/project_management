@@ -1,206 +1,208 @@
-<nav
-  id="mainNavbar"
-  class="navbar navbar-vertical navbar-expand-lg scrollbar bg-dark navbar-dark"
->
-  <div class="container-fluid">
-    <!-- Brand -->
-    <%= link_to "Project Management", root_path, class: "navbar-brand
-    text-center" %>
-    <!-- Navbar toggler -->
-    <a
-      href="javascript: void(0);"
-      class="navbar-toggler"
-      data-bs-toggle="collapse"
-      data-bs-target="#sidenavCollapse"
-      aria-controls="sidenavCollapse"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </a>
-    <!-- Collapse -->
-    <div class="collapse navbar-collapse" id="sidenavCollapse">
-      <!-- Navigation -->
-      <ul class="navbar-nav mb-lg-7">
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link"
-            href="#dashboardsCollapse"
-            data-bs-toggle="collapse"
-            role="button"
-            aria-expanded="false"
-            aria-controls="dashboardsCollapse"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              class="nav-link-icon"
-              height="18"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
+<% if logged_in? %>
+  <nav
+    id="mainNavbar"
+    class="navbar navbar-vertical navbar-expand-lg scrollbar bg-dark navbar-dark"
+  >
+    <div class="container-fluid">
+      <!-- Brand -->
+      <%= link_to "Project Management", root_path, class: "navbar-brand
+      text-center" %>
+      <!-- Navbar toggler -->
+      <a
+        href="javascript: void(0);"
+        class="navbar-toggler"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidenavCollapse"
+        aria-controls="sidenavCollapse"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </a>
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="sidenavCollapse">
+        <!-- Navigation -->
+        <ul class="navbar-nav mb-lg-7">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link"
+              href="#dashboardsCollapse"
+              data-bs-toggle="collapse"
+              role="button"
+              aria-expanded="false"
+              aria-controls="dashboardsCollapse"
             >
-              <path
-                d="M3.753,13.944v8.25h6v-6a1.5,1.5,0,0,1,1.5-1.5h1.5a1.5,1.5,0,0,1,1.5,1.5v6h6v-8.25"
+              <svg
+                viewBox="0 0 24 24"
+                class="nav-link-icon"
+                height="18"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.753,13.944v8.25h6v-6a1.5,1.5,0,0,1,1.5-1.5h1.5a1.5,1.5,0,0,1,1.5,1.5v6h6v-8.25"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                ></path>
+                <path
+                  d="M.753,12.444,10.942,2.255a1.5,1.5,0,0,1,2.122,0L23.253,12.444"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                ></path>
+              </svg>
+              <span>Dashboards</span>
+            </a>
+            <div class="collapse" id="dashboardsCollapse">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a href="./index.html" class="nav-link">
+                    <span>Default</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./dashboard-ecommerce.html" class="nav-link">
+                    <span>E-commerce</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./dashboard-crm.html" class="nav-link">
+                    <span>CRM</span>
+                    <span class="badge text-bg-success rounded-pill ms-auto"
+                      >New</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link"
+              href="#authenticationCollapse"
+              data-bs-toggle="collapse"
+              role="button"
+              aria-expanded="true"
+              aria-controls="authenticationCollapse"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
                 fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-              ></path>
-              <path
-                d="M.753,12.444,10.942,2.255a1.5,1.5,0,0,1,2.122,0L23.253,12.444"
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-              ></path>
-            </svg>
-            <span>Dashboards</span>
-          </a>
-          <div class="collapse" id="dashboardsCollapse">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a href="./index.html" class="nav-link">
-                  <span>Default</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./dashboard-ecommerce.html" class="nav-link">
-                  <span>E-commerce</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./dashboard-crm.html" class="nav-link">
-                  <span>CRM</span>
-                  <span class="badge text-bg-success rounded-pill ms-auto"
-                    >New</span
+                viewBox="0 0 24 24"
+                class="nav-link-icon"
+                height="18"
+                width="18"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M18.75 9.75H5.25C4.42157 9.75 3.75 10.4216 3.75 11.25V21.75C3.75 22.5784 4.42157 23.25 5.25 23.25H18.75C19.5784 23.25 20.25 22.5784 20.25 21.75V11.25C20.25 10.4216 19.5784 9.75 18.75 9.75Z"
+                ></path>
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M6.75 9.75V6C6.75 4.60761 7.30312 3.27226 8.28769 2.28769C9.27226 1.30312 10.6076 0.75 12 0.75C13.3924 0.75 14.7277 1.30312 15.7123 2.28769C16.6969 3.27226 17.25 4.60761 17.25 6V9.75"
+                ></path>
+                <path
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  d="M12 16.5C11.7929 16.5 11.625 16.3321 11.625 16.125C11.625 15.9179 11.7929 15.75 12 15.75"
+                ></path>
+                <path
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  d="M12 16.5C12.2071 16.5 12.375 16.3321 12.375 16.125C12.375 15.9179 12.2071 15.75 12 15.75"
+                ></path>
+              </svg>
+              <span>Authentication</span>
+            </a>
+            <div class="collapse show" id="authenticationCollapse" style="">
+              <ul class="nav flex-column">
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link"
+                    href="#authenticationSignUpCollapse"
+                    data-bs-toggle="collapse"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="authenticationSignUpCollapse"
                   >
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link"
-            href="#authenticationCollapse"
-            data-bs-toggle="collapse"
-            role="button"
-            aria-expanded="true"
-            aria-controls="authenticationCollapse"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              class="nav-link-icon"
-              height="18"
-              width="18"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M18.75 9.75H5.25C4.42157 9.75 3.75 10.4216 3.75 11.25V21.75C3.75 22.5784 4.42157 23.25 5.25 23.25H18.75C19.5784 23.25 20.25 22.5784 20.25 21.75V11.25C20.25 10.4216 19.5784 9.75 18.75 9.75Z"
-              ></path>
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M6.75 9.75V6C6.75 4.60761 7.30312 3.27226 8.28769 2.28769C9.27226 1.30312 10.6076 0.75 12 0.75C13.3924 0.75 14.7277 1.30312 15.7123 2.28769C16.6969 3.27226 17.25 4.60761 17.25 6V9.75"
-              ></path>
-              <path
-                stroke="currentColor"
-                stroke-width="1.5"
-                d="M12 16.5C11.7929 16.5 11.625 16.3321 11.625 16.125C11.625 15.9179 11.7929 15.75 12 15.75"
-              ></path>
-              <path
-                stroke="currentColor"
-                stroke-width="1.5"
-                d="M12 16.5C12.2071 16.5 12.375 16.3321 12.375 16.125C12.375 15.9179 12.2071 15.75 12 15.75"
-              ></path>
-            </svg>
-            <span>Authentication</span>
-          </a>
-          <div class="collapse show" id="authenticationCollapse" style="">
-            <ul class="nav flex-column">
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link"
-                  href="#authenticationSignUpCollapse"
-                  data-bs-toggle="collapse"
-                  role="button"
-                  aria-expanded="false"
-                  aria-controls="authenticationSignUpCollapse"
-                >
-                  <span>Sign up</span>
-                </a>
-                <div class="collapse" id="authenticationSignUpCollapse">
-                  <ul class="nav flex-column">
-                    <li class="nav-item">
-                      <a href="./sign-up-cover.html" class="nav-link">
-                        <span>Cover</span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="./sign-up-illustration.html" class="nav-link">
-                        <span>Illustration</span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="./sign-up-basic.html" class="nav-link">
-                        <span>Basic</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link"
-                  href="#authenticationSignInCollapse"
-                  data-bs-toggle="collapse"
-                  role="button"
-                  aria-expanded="true"
-                  aria-controls="authenticationSignInCollapse"
-                >
-                  <span>Sign In</span>
-                </a>
-                <div
-                  class="collapse show"
-                  id="authenticationSignInCollapse"
-                  style=""
-                >
-                  <ul class="nav flex-column">
-                    <li class="nav-item">
-                      <a href="./sign-in-cover.html" class="nav-link">
-                        <span>Cover</span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="./sign-in-illustration.html" class="nav-link">
-                        <span>Illustration</span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="./sign-in-basic.html" class="nav-link">
-                        <span>Basic</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item w-100">
-          <hr />
-        </li>
-      </ul>
-      <!-- End of Navigation -->
+                    <span>Sign up</span>
+                  </a>
+                  <div class="collapse" id="authenticationSignUpCollapse">
+                    <ul class="nav flex-column">
+                      <li class="nav-item">
+                        <a href="./sign-up-cover.html" class="nav-link">
+                          <span>Cover</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="./sign-up-illustration.html" class="nav-link">
+                          <span>Illustration</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="./sign-up-basic.html" class="nav-link">
+                          <span>Basic</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link"
+                    href="#authenticationSignInCollapse"
+                    data-bs-toggle="collapse"
+                    role="button"
+                    aria-expanded="true"
+                    aria-controls="authenticationSignInCollapse"
+                  >
+                    <span>Sign In</span>
+                  </a>
+                  <div
+                    class="collapse show"
+                    id="authenticationSignInCollapse"
+                    style=""
+                  >
+                    <ul class="nav flex-column">
+                      <li class="nav-item">
+                        <a href="./sign-in-cover.html" class="nav-link">
+                          <span>Cover</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="./sign-in-illustration.html" class="nav-link">
+                          <span>Illustration</span>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="./sign-in-basic.html" class="nav-link">
+                          <span>Basic</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item w-100">
+            <hr />
+          </li>
+        </ul>
+        <!-- End of Navigation -->
+      </div>
+      <!-- End of Collapse -->
     </div>
-    <!-- End of Collapse -->
-  </div>
-</nav>
+  </nav>
+<% end %>
