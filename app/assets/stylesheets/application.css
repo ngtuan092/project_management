@@ -40934,3 +40934,8 @@ code.hljs {
   overflow: auto;
   white-space: pre-wrap
 }
+
+/* form */
+.error{
+  color: red;
+}
