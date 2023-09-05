@@ -1,0 +1,21 @@
+<div class="nested-fields">
+  <%= f.label :environment, t("project.form.project_enviroment"), class: "form-label" %>
+  <%= f.select :environment, environment_select, {:prompt => t("project.form.select_enviroment")}, class: "form-select #{invalid(f.object, :environment)}" %>
+  <p class="error"><%= show_errors(f.object, :environment) %></p>
+  <%= f.label :ip_address, t("project.form.ip_address") %>
+  <%= f.text_field :ip_address, class: "form-control #{invalid(f.object, :ip_address)}" %>
+  <p class="error"><%= show_errors(f.object, :ip_address) %></p>
+  <%= f.label :domain, t("project.form.domain")%>
+  <%= f.text_field :domain, class: "form-control #{invalid(f.object, :domain)}" %>
+  <p class="error"><%= show_errors(f.object, :domain) %></p>
+  <%= f.label :port, t("project.form.port") %>
+  <%= f.number_field :port, class: "form-control #{invalid(f.object, :port)}", only_integer: true %>
+  <p class="error"><%= show_errors(f.object, :port) %></p>
+  <%= f.label :web_server, t("project.form.web_server") %>
+  <%= f.text_field :web_server, class: "form-control #{invalid(f.object, :web_server)}" %>
+  <p class="error"><%= show_errors(f.object, :web_server) %></p>
+  <%= f.label :note, t("project.form.note") %>
+  <%= f.text_area :note, class: "form-control #{invalid(f.object, :note)}" %>
+  <p class="error"><%= show_errors(f.object, :note) %></p>
+  <%= link_to_remove_association t("project.form.remove"), f %>
+</div>

@@ -25,7 +25,7 @@ User.create!(
 50.times do |i|
   User.create!(
     name: Faker::Name.name,
-    email: "#{Faker::Name.first_name}@gmail.com",
+    email: "user#{i}@gmail.com",
     password: "aaaaaa",
     password_confirmation: "aaaaaa",
     avatar: "https://toplist.vn/images/800px/dao-phu-quoc-15999.jpg",

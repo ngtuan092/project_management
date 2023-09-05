@@ -1,0 +1,77 @@
+<%= form_with model: @project, url: projects_path do |f| %>
+  <div class="mb-3">
+    <%= f.label :name, t("project.form.name"), class: "form-label" %>
+    <%= f.text_field :name, class: "form-control #{invalid(@project, :name)}" %>
+    <p class="error"><%= show_errors(@project, :name) %></p>
+  </div>
+  <div class="mb-3">
+    <%= f.label :description, t("project.form.description"), class: "form-label" %>
+    <%= f.text_area :description, class: "form-control #{invalid(@project, :description)}" %>
+    <p class="error"><%= show_errors(@project, :description) %></p>
+  </div>
+  <div class="mb-3">
+    <%= f.label :status, t("project.form.status.status"), class: "form-label" %>
+    <%= f.select :status, status_select, {:prompt => t("project.form.select_status")}, class: "form-select #{invalid(@project, :status)}" %>
+    <p class="error"><%= show_errors(@project, :status) %></p>
+  </div>
+  <div class="mb-3">
+    <%= f.label :start_date, t("project.form.start_date"), class: "form-label" %>
+    <%= f.date_field :start_date, class: "form-control #{invalid(@project, :start_date_date)}" %>
+    <p class="error"><%= show_errors(@project, :start_date) %></p>
+  </div>
+  <div class="mb-3">
+    <%= f.label :end_date, t("project.form.end_date"), class: "form-label" %>
+    <%= f.date_field :end_date, class: "form-control #{invalid(@project, :end_date)}" %>
+    <p class="error"><%= show_errors(@project, :end_date) %></p>
+  </div>
+  <div class="mb-3">
+    <%= f.label :group_id, t("project.form.group"), class: "form-label" %>
+    <%= f.number_field :group_id, class: "form-control #{invalid(@project, :group_id)}", only_integer: true %>
+    <p class="error"><%= show_errors(@project, :group_id) %></p>
+  </div>
+  <div class="mb-3">
+    <%= f.label :language, t("project.form.language"), class: "form-label" %>
+    <%= f.text_field :language, class: "form-control #{invalid(@project, :language)}" %>
+    <p class="error"><%= show_errors(@project, :language) %></p>
+  </div>
+  <div class="mb-3">
+    <%= f.label :repository, t("project.form.link_repo"), class: "form-label" %>
+    <%= f.text_field :repository, class: "form-control #{invalid(@project, :repository)}" %>
+    <p class="error"><%= show_errors(@project, :repository) %></p>
+  </div>
+  <div class="mb-3">
+    <%= f.label :redmine, t("project.form.link_redmine"), class: "form-label" %>
+    <%= f.text_field :redmine, class: "form-control #{invalid(@project, :redmine)}" %>
+    <p class="error"><%= show_errors(@project, :redmine) %></p>
+  </div>
+  <div class="mb-3">
+    <%= f.label :project_folder, t("project.form.folder_project"), class: "form-label" %>
+    <%= f.text_field :project_folder, class: "form-control #{invalid(@project, :project_folder)}" %>
+    <p class="error"><%= show_errors(@project, :project_folder) %></p>
+  </div>
+  <div class="mb-3">
+    <%= f.label :customer_info, t("project.form.customer_info"), class: "form-label" %>
+    <%= f.text_field :customer_info, class: "form-control #{invalid(@project, :customer_info)}" %>
+    <p class="error"><%= show_errors(@project, :customer_info) %></p>
+  </div>
+  <div class="mb-3">
+    <h6><%= t("project.form.project_detail") %></h6>
+    <div class="my-2" data-controller="nested-rondo" data-associated-with="project_environments">
+      <div data-nested-rondo-target="fieldContain">
+        <%= f.fields_for :project_environments do |detail| %>
+          <%= render "project_environment_fields", f: detail %>
+        <% end %>
+      </div>
+      <div class="links">
+        <%= link_to_add_association f, :project_environments do %>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bi bi-plus-circle" width="1.5em" height="1.5em" data-association="project_environment" >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" data-association="project_environment" />
+          </svg>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  </div>
+<% end %>
