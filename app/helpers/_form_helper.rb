@@ -4,7 +4,7 @@ module FormHelper
 
     return if object.errors.messages[field_name].blank?
 
-    object.errors.messages[field_name].join(", ")
+    object.errors.messages[field_name].join(", ").capitalize
   end
 
   def invalid object, field_name
