@@ -14,6 +14,7 @@ class Project < ApplicationRecord
   ].freeze
 
   belongs_to :group
+  belongs_to :creator, class_name: User.name
 
   has_many :project_users, dependent: :destroy
   has_many :users, through: :project_users

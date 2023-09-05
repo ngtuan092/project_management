@@ -9,7 +9,9 @@ date:
   format: "%d/%m/%Y"
 pagy:
   number_items: 8
-
 project:
   max_length_200: 200
   max_length_1000: 1000
+manager: "manager"
+admin: "admin"
+role_name: "PSM"

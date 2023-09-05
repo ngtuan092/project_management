@@ -21,4 +21,16 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t "flash_logged_in_user_danger"
     redirect_to login_url, status: :see_other
   end
+
+  def correct_user
+    redirect_to(root_url, status: :see_other) unless current_user? @user
+  end
+
+  def find_project
+    @project = Project.find_by id: params[:id]
+    return if @project
+
+    flash[:warning] = t ".project_not_found"
+    redirect_to root_path
+  end
 end

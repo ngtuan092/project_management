@@ -118,6 +118,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_163315) do
 
   create_table "projects", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "group_id", null: false
+    t.bigint "creator_id", null: false
     t.string "name", null: false
     t.text "description"
     t.integer "status", null: false
@@ -131,6 +132,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_163315) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "customer_info"
+    t.index ["creator_id"], name: "index_projects_on_creator_id"
     t.index ["group_id"], name: "index_projects_on_group_id"
   end
 
@@ -210,6 +212,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_163315) do
   add_foreign_key "project_users", "roles", column: "project_role_id"
   add_foreign_key "project_users", "users"
   add_foreign_key "projects", "groups"
+  add_foreign_key "projects", "users", column: "creator_id"
   add_foreign_key "release_plans", "projects"
   add_foreign_key "reports", "projects"
   add_foreign_key "reports", "users"
