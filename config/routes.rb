@@ -4,8 +4,10 @@ Rails.application.routes.draw do
     get    "/login",   to: "sessions#new"
     post   "/login",   to: "sessions#create"
     delete "/logout",  to: "sessions#destroy"
+    resources :projects, only: %i(new create)
     resources :password_resets, only: %i(new create edit update)
     resources :resources
     resources :users, only: %i(edit update)
   end
+
 end

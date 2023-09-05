@@ -230,6 +230,8 @@ GEM
     reline (0.3.8)
       io-console (~> 0.5)
     rexml (3.2.6)
+    rondo_form (0.2.3)
+      railties (>= 6.0)
     rspec-core (3.12.2)
       rspec-support (~> 3.12.0)
     rspec-expectations (3.12.3)
@@ -336,6 +338,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.5)
   rails-i18n
+  rondo_form (~> 0.2.3)
   rspec-rails
   rubocop (~> 1.26)
   rubocop-checkstyle_formatter
