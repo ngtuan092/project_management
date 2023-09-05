@@ -70,6 +70,27 @@ vi:
       detail: "Chi tiết"
       date: "Ngày tháng"
       date_invalid: "Định dạng ngày không hợp lệ"
+  projects:
+    index:
+      name: "Dự án"
+      status: "Trạng thái"
+      group: "Nhóm giam gia"
+      action: "Hành động"
+      start_date: "Ngày bắt đầu"
+      end_date: "Ngày kết thúc"
+      description: "Mô tả"
+    search_form:
+      name: "Tên dự án"
+      group: "Nhóm"
+      status: "Trạng thái"
+      search: "Tìm kiếm"
+    project:
+      in_progress: "Đang thực hiện"
+      completed: "Đã hoàn thành"
+      pending: "Đang chờ"
+      maintaining: "Đang bảo trì"
+      news: "Mới"
+      close: "Đóng"
   users:
     update:
       flash_update_success: "Cập nhật thành công"

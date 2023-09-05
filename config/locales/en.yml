@@ -70,6 +70,27 @@ en:
       detail: "Detail"
       date: "Date"
       date_invalid: "Date format invalid"
+  projects:
+    index:
+      name: "Project"
+      status: "Status"
+      group: "Group"
+      action: "Actions"
+      start_date: "Start date"
+      end_date: "End date"
+      description: "Description"
+    search_form:
+      name: "Project name"
+      group: "Group"
+      status: "Status"
+      search: "Search"
+    project:
+      in_progress: "In progress"
+      completed: "Completed"
+      pending: "Pending"
+      maintaining: "Maintaining"
+      news: "New"
+      close: "Close"
   users:
     update:
       flash_update_success: "Update successful"
