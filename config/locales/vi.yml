@@ -14,6 +14,7 @@ vi:
   layouts:
     header:
       Sign_out: "Đăng xuất"
+      profile_account: "Hồ sơ & tài khoản"
   user_mailer:
     password_reset:
       subject: "Đặt lại mật khẩu"
@@ -69,3 +70,37 @@ vi:
       detail: "Chi tiết"
       date: "Ngày tháng"
       date_invalid: "Định dạng ngày không hợp lệ"
+  projects:
+    index:
+      name: "Dự án"
+      status: "Trạng thái"
+      group: "Nhóm giam gia"
+      action: "Hành động"
+      start_date: "Ngày bắt đầu"
+      end_date: "Ngày kết thúc"
+      description: "Mô tả"
+    search_form:
+      name: "Tên dự án"
+      group: "Nhóm"
+      status: "Trạng thái"
+      search: "Tìm kiếm"
+    project:
+      in_progress: "Đang thực hiện"
+      completed: "Đã hoàn thành"
+      pending: "Đang chờ"
+      maintaining: "Đang bảo trì"
+      news: "Mới"
+      close: "Đóng"
+  users:
+    update:
+      flash_update_success: "Cập nhật thành công"
+      flash_update_danger: "Cập nhật thất bại"
+    edit:
+      submit: "Cập nhật"
+      title: "Cập nhật người dùng"
+    form:
+      submit: "Gửi"
+      name: "Tên"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận lại mật khẩu"
+  not_found_user: "Không tìm thấy người dùng"
