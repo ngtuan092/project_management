@@ -9,4 +9,6 @@ class Project < ApplicationRecord
   has_many :project_features, dependent: :destroy
   has_many :project_health_items, dependent: :destroy
   has_many :health_items, through: :project_health_items
+
+  enum status: {new: 0, in_progress: 1, maintaining: 2, pending: 3, close: 4}
 end
