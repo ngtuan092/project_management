@@ -22,4 +22,37 @@ module ProjectsHelper
       [t("project.form.environment.#{environment}"), environment]
     end
   end
+
+  def status_name status
+    status_names = {1 => {message: I18n.t("status_1"),
+                          i_class: "bi bi-x-circle text-danger"},
+                    2 => {message: I18n.t("status_2"),
+                          i_class: "bi bi-dash-circle text-warning"},
+                    3 => {message: I18n.t("status_3"),
+                          i_class: "bi bi-check-circle text-success"}}
+    status_name = status_names[status]
+    out = Array.new
+    out << content_tag(:i, "", class: status_name[:i_class])
+    out << content_tag(:span, status_name[:message], class: "ms-1")
+    safe_join(out)
+  end
+
+  def environment_name environment
+    environment_names = {staging: {message: I18n.t("environment_0"),
+                                   type: "danger"},
+                         production: {message: I18n.t("environment_１"),
+                                      type: "info"}}
+    environment_name = environment_names[environment.to_sym]
+    content_tag(:p, environment_name[:message],
+                class: "f-n-hover btn btn-#{environment_name[:type]} btn-raised
+                        px-4 py-25 w-75 text-600")
+  end
+
+  def page_tab?
+    params[:page].present?
+  end
+
+  def project_member_stt counter
+    counter + 1
+  end
 end

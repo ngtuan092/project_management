@@ -1,0 +1,17 @@
+<div class="container mt-5 px-2">
+  <div class="table-responsive">
+    <table class="table table-responsive table-borderless">
+
+      <thead>
+        <tr class="bg-light">
+          <th scope="col" class="w-50"><%= t ".health_item_name" %></th>
+          <th scope="col" class="w-50"><%= t ".status" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @project.project_health_items %>
+      </tbody>
+    </table>
+
+  </div>
+</div>

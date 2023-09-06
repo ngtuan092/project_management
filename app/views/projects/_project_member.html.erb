@@ -1,0 +1,30 @@
+<%== pagy_bootstrap_nav @pagy if @pagy&.pages > 1 %>
+<div class="table-wrapper w-100">
+  <div class="table-title">
+    <div class="row">
+      <div class="col-sm-8"><h2><%= t ".Project_Member" %></h2></div>
+      <div class="col-sm-4">
+        <button type="button" class="btn btn-info add-new">
+          <i class="fa fa-plus"></i> <%= t ".Add_New" %>
+        </button>
+      </div>
+    </div>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th width="5%">STT</th>
+        <th><%= t ".Member_name" %></th>
+        <th><%= t ".Role" %></th>
+        <th><%= t ".Github_Account" %></th>
+        <th><%= t ".joined_at" %></th>
+        <th><%= t ".left_at" %></th>
+        <th class="w-auto"><%= t ".action" %></th>
+      </tr>
+    </thead>
+    <tbody id="project_members">
+      <%= render @project_members %>
+    </tbody>
+  </table>
+</div>
+<%== pagy_bootstrap_nav @pagy if @pagy&.pages > 1 %>

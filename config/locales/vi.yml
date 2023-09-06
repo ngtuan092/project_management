@@ -91,6 +91,35 @@ vi:
       maintaining: "Đang bảo trì"
       news: "Mới"
       close: "Đóng"
+    project_not_found: "Dự án không được tìm thấy!"
+    show:
+      Project_Detail: "Chi tiết dự án"
+      Project_Member: "Thành viên dự án"
+      Project_Health: "Sức khỏe dự án"
+    project_detail:
+      project_name: "Tên dự án"
+      project_description: "Mô tả dự án"
+      project_status: "Tình trạng của dự án"
+      project_group: "Nhóm dự án"
+      project_start_date: "Ngày bắt đầu dự án"
+      project_end_date: "Ngày kết thúc dự án"
+      project_language: "Ngôn ngữ dự án"
+      project_repository: "Liên kết repository"
+      project_redmine: "Liên kết redmine"
+      project_folder: "Thư mục dự án"
+      project_customers: "Thông tin khách hàng"
+    project_member:
+      Project_Member: "Thành viên dự án"
+      Add_New: "Thêm mới"
+      Member_name: "Tên thành viên"
+      Role: "Vai trò"
+      Github_Account: "Tài khoản Github"
+      joined_at: "Tham gia lúc"
+      left_at: "Rời lúc"
+      action: "Hành động"
+    project_health:
+      health_item_name: "Tên mục sức khỏe"
+      status: "Trạng thái"
   users:
     update:
       flash_update_success: "Cập nhật thành công"
@@ -140,3 +169,15 @@ vi:
       note: "Ghi chú"
       remove: "Xóa"
       submit: "Lưu"
+  status_1: "Chưa áp dụng"
+  status_2: "Đã áp dụng nhưng chưa cập nhật đầy đủ"
+  status_3: "Đã áp dụng và cập nhập đầy đủ"
+  environment_0: "Phát triển"
+  environment_１: "Sản phẩm"
+  project_environments:
+    project_environment:
+      ip_address: "Địa chỉ IP"
+      domain: "Tên miền"
+      port: "Cổng local"
+      web_server: "Máy chủ web"
+      note: "Ghi chú"

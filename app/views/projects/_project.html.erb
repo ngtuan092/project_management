@@ -10,9 +10,9 @@
   <td><%= format_date project.start_date %></td>
   <td><%= format_date project.end_date %></td>
   <td class="text-center">
-    <button type="button" class="btn btn-primary btn-sm">
+    <%= link_to project_path(project), class: "btn btn-primary btn-sm" do %>
       <i class="bi-eye-fill"></i>
-    </button>
+    <% end %>
     <button type="button" class="btn btn-success btn-sm">
       <i class="bi-pencil-square"></i>
     </button>
