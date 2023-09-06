@@ -18,7 +18,7 @@ module ProjectsHelper
   end
 
   def environment_select
-    ProjectEnvironment.environments.keys.map do |environment, _id|
+    ProjectEnvironment.environments.keys.map do |environment|
       [t("project.form.environment.#{environment}"), environment]
     end
   end

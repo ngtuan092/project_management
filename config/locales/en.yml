@@ -2,6 +2,8 @@ en:
   hello_world: "Hello world"
   application:
   flash_logged_in_user_danger: "Please log in."
+  flash_verify_admin_danger: "You are not authorized to access this page."
+  flash_verify_manager_danger: "You are not authorized to access this page."
   sessions:
     new:
       login: "Log in"
