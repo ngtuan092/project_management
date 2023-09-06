@@ -192,3 +192,17 @@ en:
       port: "Local Port"
       web_server: "Web server"
       note: "Note"
+  reports:
+    form:
+      day_month_year: "Day/Month/Year"
+      choose_project: "Choose project"
+      job_description: "Job description"
+      issue: "Issue"
+      resource_description: "Resource description"
+      save: "Save"
+    create:
+      create_success: "Create report successfully!"
+      create_fail: "Create failure report!"
+    new:
+      title: "Create report"
+    permission_error: "You do not have permission to create reports with this project!"

@@ -7,11 +7,14 @@ email:
   regex: !ruby/regexp '/\A[\w+-.]+@[a-z\d-]+(.[a-z\d-]+)*.[a-z]+\z/i'
 date:
   format: "%d/%m/%Y"
+  format_date_field: "%Y-%m-%d"
 pagy:
   number_items: 8
 project:
   max_length_200: 200
   max_length_1000: 1000
-manager: "manager"
-admin: "admin"
-role_name: "PSM"
+user_roles:
+  manager: "manager"
+  admin: "admin"
+project_roles:
+  PSM: "PSM"

@@ -95,7 +95,7 @@ users.each do |user|
 end
 projects = Project.all
 projects.each do |project|
-  10.times do |i|
+  50.times do |i|
     ProjectUser.create!(
       project_id: project.id,
       user_id: Faker::Number.between(from: 1, to: users.size),

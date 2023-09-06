@@ -1557,7 +1557,6 @@ a.fc-event,a.fc-event:hover {
 
 .fc-theme-standard .fc-list-day-cushion {
   background-color: hsla(0,0%,82%,.3);
-  background-color: var(--fc-neutral-bg-color,hsla(0,0%,82%,.3))
 }
 
 .fc-direction-ltr .fc-list-day-text,.fc-direction-rtl .fc-list-day-side-text {
@@ -6276,6 +6275,32 @@ textarea.form-control-lg {
   flex-wrap: wrap;
   position: relative;
   width: 100%
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-inline {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.form-row > .col {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+label {
+  margin-bottom: 0.5rem;
 }
 
 .input-group>.form-control,.input-group>.form-floating,.input-group>.form-select {
