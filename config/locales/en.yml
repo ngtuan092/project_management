@@ -206,6 +206,19 @@ en:
       create_fail: "Create failure report!"
     new:
       title: "Create report"
+    permission_error: "You do not have permission to create reports with this project!"
+    index:
+      stt: "STT"
+      project_name: "Project name"
+      day_report: "Day report"
+      issue: "Issue"
+      description: "Description"
+      action: "Action"
+    search_form:
+      date_report: "Day report:"
+      name: "Project name:"
+      status: "Status"
+      search: "Search"
   release_plans:
     release_plan_not_found: "Release plan not found"
     edit:

@@ -1,11 +1,11 @@
-<%= form_with url: projects_path, method: :get, class: "row g-4 pb-4" do |f| %>
+<%= form_with url: reports_path, method: :get, class: "row g-4 pb-4" do |f| %>
+  <div class="col-auto">
+    <%= f.label :date,  t(".date_report") %>
+    <%= f.date_field :date, value: params[:date] %>
+  </div>
   <div class="col-auto">
     <%= f.label :name,  t(".name") %>
     <%= f.text_field :name, value: params[:name] %>
-  </div>
-  <div class="col-auto">
-    <%= f.label :group, t(".group") %>
-    <%= f.select :group, list_group, {include_blank: true, selected: params[:group_id]} %>
   </div>
   <div class="col-auto">
     <%= f.label :status, t(".status") %>
@@ -13,7 +13,7 @@
   </div>
   <div class="col-auto">
     <%= f.submit t(".search"), class: "btn btn-primary" %>
-    <%= link_to projects_path, class: "btn btn-secondary" do %>
+    <%= link_to reports_path, class: "btn btn-secondary" do %>
       <i class="bi bi-arrow-counterclockwise"></i>
     <% end %>
   </div>

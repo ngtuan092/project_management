@@ -3,17 +3,16 @@
   <table class="table table-striped table-hover table-bordered padding-margin-0">
     <thead>
       <tr>
-        <th scope="col"><%= t ".group" %></th>
-        <th scope="col"><%= t ".name" %></th>
+        <th width="5%"><%= t ".stt" %></th>
+        <th scope="col"><%= t ".project_name" %></th>
+        <th scope="col"><%= t ".day_report" %></th>
+        <th scope="col"><%= t ".issue" %></th>
         <th scope="col"><%= t ".description" %></th>
-        <th scope="col"><%= t ".status" %></th>
-        <th scope="col"><%= t ".start_date" %></th>
-        <th scope="col"><%= t ".end_date" %></th>
         <th scope="col"><%= t ".action" %></th>
       </tr>
     </thead>
     <tbody>
-      <%= render @projects %>
+      <%= render @reports %>
     </tbody>
   </table>
   <%== pagy_info @pagy %>

@@ -206,6 +206,19 @@ jp:
       create_fail: "失敗レポートを生成します!"
     new:
       title: "レポートの作成"
+    permission_error: "このプロジェクトでレポートを生成する権限がありません。"
+    index:
+      stt: "番号順"
+      project_name: "プロジェクト名"
+      day_report: "当日のレポート"
+      issue: "問題"
+      description: "説明"
+      action: "アクション"
+    search_form:
+      date_report: "当日のレポート:"
+      name: "プロジェクト名:"
+      status: "状態:"
+      search: "検索"
   release_plans:
     release_plan_not_found: "リリース計画が見つかりません"
     edit:
