@@ -1,12 +1,13 @@
 vi:
   hello_world: "Xin chào cả thế giới!"
-  application:
+  errors:
+    permission_update_delete_project: "Bạn không có quyền thao tác với dự án này!"
+    project_not_found: "Không thể tìm thấy dự án."
   flash_logged_in_user_danger: "Hãy đăng nhập trước đó."
   flash_verify_admin_danger: "Bạn không có quyền truy cập trang này."
   flash_verify_manager_danger: "Bạn không có quyền truy cập trang này."
   flash_verify_psm_danger: "Bạn không có quyền truy cập trang này."
   flash_verify_creator_project_danger: "Bạn không có quyền truy cập trang này."
-  project_not_found: "Không thể tìm thấy dự án."
   sessions:
     new:
       login: "Đăng nhập"
@@ -96,7 +97,6 @@ vi:
       maintaining: "Đang bảo trì"
       new: "Mới"
       close: "Đóng"
-    project_not_found: "Dự án không được tìm thấy!"
     show:
       Project_Detail: "Chi tiết dự án"
       Project_Member: "Thành viên dự án"
@@ -113,6 +113,7 @@ vi:
       project_redmine: "Liên kết redmine"
       project_folder: "Thư mục dự án"
       project_customers: "Thông tin khách hàng"
+      dont_have_customer: "Dự án không có khách hàng nào!"
     project_member:
       Project_Member: "Thành viên dự án"
       Add_New: "Thêm mới"
@@ -196,7 +197,7 @@ vi:
     form:
       day_month_year: "Ngày/Tháng/Năm"
       choose_project: "Chọn dự án"
-      job_description: " Mô tả công việc"
+      job_description: "Mô tả công việc"
       issue: "Vấn đề"
       resource_description: "Mô tả nguồn lực"
       save: "Lưu lại"
@@ -205,4 +206,19 @@ vi:
       create_fail: "Tạo báo cáo thất bại!"
     new:
       title: "Tạo báo cáo"
-    permission_error: "Bạn không có quyền tạo báo cáo với dự án này!"
+  release_plans:
+    release_plan_not_found: "Không tìm thấy kế hoạch phát hành"
+    edit:
+      title: "Cập nhật kế hoạch phát hành"
+    form:
+      choose_project: "Chọn dự án"
+      choose_day: "Chọn Ngày"
+      scope_release_description: "Mô tả phạm vi phát hành"
+      status: "Trạng thái"
+      save: "Lưu lại"
+    is_released:
+      false: "Chuẩn bị phát hành"
+      true: "Đã phát hành"
+    update:
+      update_success: "Cập nhật kế hoạch phát hành thành công!"
+      update_danger: "Cập nhật kế hoạch phát hành thất bại!"

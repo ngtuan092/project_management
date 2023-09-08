@@ -30,7 +30,15 @@ class ApplicationController < ActionController::Base
     @project = Project.find_by id: params[:id]
     return if @project
 
-    flash[:warning] = t ".project_not_found"
+    flash[:warning] = t "errors.project_not_found"
     redirect_to root_path
+  end
+
+  def check_valid_project redirect_url, project_id
+    @project = Project.find_by id: project_id
+    return if @project && current_user.can_edit_delete_project?(@project)
+
+    flash[:danger] = t "errors.permission_update_delete_project"
+    redirect_to redirect_url, status: :see_other
   end
 end

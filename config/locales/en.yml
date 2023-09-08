@@ -1,12 +1,13 @@
 en:
   hello_world: "Hello world"
-  application:
+  errors:
+    permission_update_delete_project: "You do not have permission to manipulate this project!"
+    project_not_found: "Project not found."
   flash_logged_in_user_danger: "Please log in."
   flash_verify_admin_danger: "You are not authorized to access this page."
   flash_verify_manager_danger: "You are not authorized to access this page."
   flash_verify_psm_danger: "You are not authorized to access this page."
   flash_verify_creator_project_danger: "You are not authorized to access this page."
-  project_not_found: "Project not found."
   sessions:
     new:
       login: "Log in"
@@ -96,7 +97,6 @@ en:
       maintaining: "Maintaining"
       new: "New"
       close: "Close"
-    project_not_found: "Project not found!"
     show:
       Project_Detail: "Project Detail"
       Project_Member: "Project Member"
@@ -113,6 +113,7 @@ en:
       project_redmine: "Link redmine"
       project_folder: "Project folder"
       project_customers: "Customer information"
+      dont_have_customer: "The project has no customers!"
     project_member:
       Project_Member: "Project Member"
       Add_New: "Add New"
@@ -205,4 +206,19 @@ en:
       create_fail: "Create failure report!"
     new:
       title: "Create report"
-    permission_error: "You do not have permission to create reports with this project!"
+  release_plans:
+    release_plan_not_found: "Release plan not found"
+    edit:
+      title: "Update release plan"
+    form:
+      choose_project: "Choose project"
+      choose_day: "Choose day"
+      scope_release_description: "Scope release description"
+      status: "Status"
+      save: "Save"
+    is_released:
+      false: "Prepare for release"
+      true: "Released"
+    update:
+      update_success: "Update release plan success!"
+      update_danger: "Update release plan failure!"

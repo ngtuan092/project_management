@@ -1,6 +1,10 @@
 class ReportsController < ApplicationController
   before_action :logged_in_user, only: %i(create new)
-  before_action :check_valid_project, only: :create
+  before_action only: :create do
+    check_valid_project new_report_url,
+                        params.dig(:report, :project_id)
+  end
+
   def new
     @report = Report.new
     @projects = current_user.valid_projects_by_role
@@ -22,13 +26,5 @@ class ReportsController < ApplicationController
   private
   def report_params
     params.require(:report).permit Report::UPDATE_ATTRS
-  end
-
-  def check_valid_project
-    @project = Project.find_by id: params.dig(:report, :project_id)
-    return if @project && current_user.can_edit_delete_project?(@project)
-
-    flash[:danger] = t ".permission_error"
-    redirect_to new_report_url, status: :see_other
   end
 end

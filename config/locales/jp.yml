@@ -1,12 +1,13 @@
 jp:
   hello_world: "こんにちは世界"
-  application:
+  errors:
+    permission_update_delete_project: "このプロジェクトを操作する権限がありません。"
+    project_not_found: "プロジェクトが見つかりません。"
   flash_logged_in_user_danger: "ログインしてください。"
   flash_verify_admin_danger: "このページにアクセスする権限がありません。"
   flash_verify_manager_danger: "このページにアクセスする権限がありません。"
   flash_verify_psm_danger: "このページにアクセスする権限がありません。"
   flash_verify_creator_project_danger: "このページにアクセスする権限がありません。"
-  project_not_found: "プロジェクトが見つかりません。"
   sessions:
     new:
       login: "ログイン"
@@ -96,7 +97,6 @@ jp:
       maintaining: "メンテナンス"
       new: "新しい"
       close: "終了"
-    project_not_found: "プロジェクトが見つかりません!"
     show:
       Project_Detail: "プロジェクトの詳細"
       Project_Member: "プロジェクトメンバー"
@@ -113,6 +113,7 @@ jp:
       project_redmine: "Redmineのリンク"
       project_folder: "プロジェクトフォルダー"
       project_customers: "顧客情報"
+      dont_have_customer: "このプロジェクトには顧客がいません!"
     project_member:
       Project_Member: "プロジェクトメンバー"
       Add_New: "新規追加"
@@ -205,4 +206,19 @@ jp:
       create_fail: "失敗レポートを生成します!"
     new:
       title: "レポートの作成"
-    permission_error: "このプロジェクトでレポートを生成する権限がありません。"
+  release_plans:
+    release_plan_not_found: "リリース計画が見つかりません"
+    edit:
+      title: "リリース計画の更新"
+    form:
+      choose_project: "プロジェクトの選択"
+      choose_day: "日の選択"
+      scope_release_description: "範囲リリースの説明"
+      status: "状態"
+      save: "保存"
+    is_released:
+      false: "リリースの準備"
+      true: "リリース済み"
+    update:
+      update_success: "アップデートリリース計画成功！"
+      update_danger: "アップデートのリリース計画が失敗しました!"

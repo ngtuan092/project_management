@@ -50,23 +50,10 @@
                 </tr>
                 <tr style="height: 200px;">
                   <td>
-                    <label for="customer_select">
-                      <%= t ".project_customers" %>
-                    </label>
-                    <select class="form-select" id="customer_select">
-                      <% @project_customers.each_with_index do |customer, index| %>
-                        <option value="<%= index %>">
-                          <%= customer.name %>
-                        </option>
-                      <% end %>
-                    </select>
+                    <%= t ".project_customers" %>
                   </td>
                   <td id="customer_description" style="background-color: ghostwhite;">
-                    <% @project_customers.each_with_index do |customer, index| %>
-                      <p id="customer_description_<%= index %>" class="d-none">
-                        <%= customer.description %>
-                      </p>
-                    <% end %>
+                    <%= list_customer @project_customers %>
                   </td>
                 </tr>
               </tbody>
