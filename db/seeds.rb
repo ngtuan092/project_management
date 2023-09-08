@@ -95,10 +95,18 @@ users.each do |user|
 end
 projects = Project.all
 projects.each do |project|
-  50.times do |i|
+  # make sure user_id is unique in project
+  project_users = []
+  10.times do |i|
+    user_id = nil
+    loop do
+      user_id = Faker::Number.between(from: 1, to: users.size)
+      break unless project_users.include? user_id
+    end
+    project_users << user_id
     ProjectUser.create!(
       project_id: project.id,
-      user_id: Faker::Number.between(from: 1, to: users.size),
+      user_id: user_id,
       project_role_id: Faker::Number.between(from: 4, to: 13)
     )
   end

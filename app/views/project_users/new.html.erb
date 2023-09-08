@@ -1,0 +1,9 @@
+<%= turbo_frame_tag "modal" do %>
+  <div class="modal-member">
+    <h1 class="modal-header mb-3"><%= t(".title") %></h1>
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <%= render "form" %>
+  </div>
+<% end %>

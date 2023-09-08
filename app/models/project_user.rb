@@ -1,4 +1,6 @@
 class ProjectUser < ApplicationRecord
+  UPDATE_ATTRS = %i(project_id user_id project_role_id joined_at left_at note)
+                 .freeze
   belongs_to :user
   belongs_to :project
   belongs_to :project_role, class_name: Role.name
@@ -13,4 +15,19 @@ class ProjectUser < ApplicationRecord
     role_id = role&.id
     where(project_role_id: role_id).pluck(:project_id)
   }
+  validates :user_id, uniqueness: {
+    scope: :project_id,
+    message: I18n.t("project_user.unique_user_in_project")
+  }
+  validate :validate_dates
+
+  private
+
+  def validate_dates
+    return unless joined_at.present? && left_at.present?
+
+    return unless joined_at >= left_at
+
+    errors.add(:joined_at, I18n.t("project_user.validate_dates"))
+  end
 end

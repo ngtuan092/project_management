@@ -222,3 +222,20 @@ vi:
     update:
       update_success: "Cập nhật kế hoạch phát hành thành công!"
       update_danger: "Cập nhật kế hoạch phát hành thất bại!"
+  project_users:
+    form:
+      member: "Nhân viên"
+      role: "Vai trò"
+      joined_at: "Thời gian vào dự án"
+      left_at: "Thời gian rời dự án"
+      submit: "Thêm thành viên"
+      note: "Ghi chú"
+      close: "Đóng"
+    new:
+      title: "Thêm member vào dự án"
+    not_permission: "Bạn không có quyền thêm thành viên mới vào dự án này"
+  project_user:
+    create_success: "Thêm mới thành viên thành công!"
+    create_fail: "Thêm mới thành viên thất bại!"
+    unique_user_in_project: "Thành viên đã có trong project!"
+    validate_dates: "Ngày tham gia phải nhỏ hơn ngày rời!"

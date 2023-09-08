@@ -204,6 +204,9 @@ jp:
     create:
       create_success: "レポートが生成されました！"
       create_fail: "失敗レポートを生成します!"
+      role: "役割"
+      joined_at: "プロジェクトに参加した時間"
+      left_at: "プロジェクトを離れる時間"
     new:
       title: "レポートの作成"
   release_plans:
@@ -222,3 +225,20 @@ jp:
     update:
       update_success: "アップデートリリース計画成功！"
       update_danger: "アップデートのリリース計画が失敗しました!"
+  project_user:
+    create_success: "メンバーの追加が成功しました!"
+    create_fail: "新しいメンバーの追加に失敗しました!"
+    unique_user_in_project: "メンバーはすでにプロジェクトに参加しています!"
+    validate_dates: "入社日は退社日より前の日付にする必要があります!"
+  project_users:
+    form:
+      member: "職員"
+      submit: "メンバーを増やす"
+      note: "ノート"
+      close: "閉じる"
+      role: "役割"
+      joined_at: "プロジェクトに参加した時間"
+      left_at: "プロジェクトを離れる時間"
+    new:
+      title: "プロジェクトにメンバーを追加する"
+    not_permission: "このプロジェクトに新しいメンバーを追加する権限がありません"

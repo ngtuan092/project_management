@@ -12,7 +12,7 @@ namespace :import do
       project = Project.new(
         name: row_data["name"],
         group_id: group.id,
-        status: row_data["status"],
+        status: row_data["status"].to_i,
         language: row_data["language"],
         start_date: row_data["start_date"].to_date,
         end_date: row_data["end_date"].to_date,
