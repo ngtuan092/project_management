@@ -62,6 +62,7 @@ languages = ["ruby", "Javascript", "Python", "Java", "C#"]
 10.times do |i|
   Project.create!(
     group_id: Faker::Number.between(from: 1, to: 10),
+    creator_id: Faker::Number.between(from: 1, to: 3),
     name: "Project number #{i}",
     description: Faker::Lorem.sentence,
     status: Faker::Number.between(from: 0, to: 3),

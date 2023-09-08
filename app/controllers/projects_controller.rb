@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
-  before_action :logged_in_user, only: %i(create new index show)
-  before_action :find_project, only: :show
+  before_action :logged_in_user, only: %i(create new index show destroy)
+  before_action :find_project, only: %i(show destroy)
+  before_action :check_role, only: :destroy
 
   def index
     @projects = Project.filter_name(params[:name])
@@ -30,7 +31,23 @@ class ProjectsController < ApplicationController
                                    items: Settings.digits.length_30
   end
 
+  def destroy
+    if @project.reports.empty?
+      if @project.destroy
+        flash[:success] = t ".delete_success"
+        redirect_to projects_url
+      else
+        flash[:danger] = t ".fail_delete"
+        redirect_to root_path, status: :unprocessable_entity
+      end
+    else
+      flash[:danger] = t ".delete_fail"
+      redirect_to @project, status: :unprocessable_entity
+    end
+  end
+
   private
+
   def project_params
     params.require(:project).permit Project::PROJECT_PARAMS
   end
@@ -40,5 +57,12 @@ class ProjectsController < ApplicationController
     return if @project
 
     redirect_to :root, flash: {warning: t(".project_not_found")}
+  end
+
+  def check_role
+    return if current_user.can_edit_delete_project? @project
+
+    flash[:warning] = t ".cannot_delete"
+    redirect_to projects_url
   end
 end

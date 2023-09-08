@@ -29,8 +29,4 @@ class UsersController < ApplicationController
     flash[:warning] = t("not_found_user").capitalize
     redirect_to root_path
   end
-
-  def correct_user
-    redirect_to(root_url, status: :see_other) unless current_user? @user
-  end
 end

@@ -2,6 +2,11 @@ jp:
   hello_world: "こんにちは世界"
   application:
   flash_logged_in_user_danger: "ログインしてください。"
+  flash_verify_admin_danger: "このページにアクセスする権限がありません。"
+  flash_verify_manager_danger: "このページにアクセスする権限がありません。"
+  flash_verify_psm_danger: "このページにアクセスする権限がありません。"
+  flash_verify_creator_project_danger: "このページにアクセスする権限がありません。"
+  project_not_found: "プロジェクトが見つかりません。"
   sessions:
     new:
       login: "ログイン"
@@ -44,6 +49,88 @@ jp:
     error_messages:
       error_total: "フォームには次の内容が含まれます"
       error: "エラー"
+  pagy:
+    item_name:
+      one: "アイテム"
+      other: "アイテムら"
+    nav:
+      prev: "&lsaquo;"
+      next: "&rsaquo;"
+      gap: "&hellip;"
+    info:
+      no_items: "0の0"
+      single_page: "%{count} の %{count}"
+      multiple_pages: "%{from}-%{to} の %{count}"
+  resources:
+    index:
+      resources: "リソース"
+      select_date: "日付を選択してください"
+      search: "検索"
+      search_by_name: "名前で検索"
+      export_report: "レポートのエクスポート"
+      share: "共有"
+      order: "番号順"
+      project_name: "プロジェクト名"
+      man_month: "万/月"
+      detail: "詳細"
+      date: "日付"
+      date_invalid: "日付形式が無効です"
+  projects:
+    index:
+      name: "プロジェクト"
+      status: "状態"
+      group: "グループ"
+      action: "行動"
+      start_date: "開始日"
+      end_date: "終了日"
+      description: "説明"
+    search_form:
+      name: "プロジェクト名"
+      group: "グループ"
+      status: "状態"
+      search: "検索"
+    project:
+      in_progress: "進行中"
+      completed: "完了"
+      pending: "保留中"
+      maintaining: "メンテナンス"
+      new: "新しい"
+      close: "終了"
+    project_not_found: "プロジェクトが見つかりません!"
+    show:
+      Project_Detail: "プロジェクトの詳細"
+      Project_Member: "プロジェクトメンバー"
+      Project_Health: "プロジェクトの健全性"
+    project_detail:
+      project_name: "プロジェクト名"
+      project_description: "プロジェクトの説明"
+      project_status: "プロジェクトのステータス"
+      project_group: "プロジェクトグループ"
+      project_start_date: "プロジェクトの開始日"
+      project_end_date: "プロジェクトの終了日"
+      project_language: "プロジェクト言語"
+      project_repository: "リポジトリリンク"
+      project_redmine: "Redmineのリンク"
+      project_folder: "プロジェクトフォルダー"
+      project_customers: "顧客情報"
+    project_member:
+      Project_Member: "プロジェクトメンバー"
+      Add_New: "新規追加"
+      Member_name: "メンバー名"
+      Role: "役割"
+      Github_Account: "Githubアカウント"
+      joined_at: "参加時間"
+      left_at: "終了時間"
+      action: "アクション"
+    project_health:
+      health_item_name: "健康項目名"
+      status: "状態"
+    destroy:
+        delete_success: "プロジェクトは正常に破棄されました。"
+        delete_fail: "レポートを含むプロジェクトは削除できません。"
+        fail_delete: "このプロジェクトは削除されていません。"
+    cannot_delete: "このプロジェクトは削除できません。 マネージャーと管理者のみがプロジェクトを削除する権限を持っています。"
+    you_sure?: "あなたは確かに？"
   users:
     update:
       flash_update_success: "更新に成功"
@@ -93,41 +180,11 @@ jp:
       note: "注意"
       remove: "削除"
       submit: "保存"
-  projects:
-    project_not_found: "プロジェクトが見つかりません!"
-    show:
-      Project_Detail: "プロジェクトの詳細"
-      Project_Member: "プロジェクトメンバー"
-      Project_Health: "プロジェクトの健全性"
-    project_detail:
-      project_name: "プロジェクト名"
-      project_description: "プロジェクトの説明"
-      project_status: "プロジェクトのステータス"
-      project_group: "プロジェクトグループ"
-      project_start_date: "プロジェクトの開始日"
-      project_end_date: "プロジェクトの終了日"
-      project_language: "プロジェクト言語"
-      project_repository: "リポジトリリンク"
-      project_redmine: "Redmineのリンク"
-      project_folder: "プロジェクトフォルダー"
-      project_customers: "顧客情報"
-    project_member:
-      Project_Member: "プロジェクトメンバー"
-      Add_New: "新規追加"
-      Member_name: "メンバー名"
-      Role: "役割"
-      Github_Account: "Githubアカウント"
-      joined_at: "参加時間"
-      left_at: "終了時間"
-      action: "アクション"
-    project_health:
-      health_item_name: "健康項目名"
-      status: "状態"
   status_1: "適用されていない"
   status_2: "すでに適用されていますが、完全には更新されていません"
   status_3: "完全に適用および更新されました"
   environment_0: "開発間"
-  environment_１: "本番"
+  environment_1: "本番"
   project_environments:
     project_environment:
       ip_address: "IPアドレス"

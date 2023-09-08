@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :project_users, dependent: :destroy
   has_many :projects, through: :project_users
   has_many :reports, dependent: :destroy
+  has_many :created_projects, class_name: Project.name,
+            foreign_key: :creator_id, dependent: nil
 
   attr_accessor :remember_token, :reset_token
 
@@ -82,5 +84,28 @@ class User < ApplicationRecord
   # Returns true if a password reset has expired.
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
+  end
+
+  def admin?
+    roles.find_by(name: Settings.admin).present?
+  end
+
+  def manager?
+    roles.find_by(name: Settings.manager).present?
+  end
+
+  def creator_project? project
+    created_projects.exists?(id: project.id)
+  end
+
+  def role_psm? project
+    role = Role.find_by(name: Settings.role_name)
+    ProjectUser.find_by(project_role_id: role.id,
+                        project_id: project.id,
+                        user_id: id)
+  end
+
+  def can_edit_delete_project? project
+    admin? || manager? || creator_project?(project) || role_psm?(project)
   end
 end

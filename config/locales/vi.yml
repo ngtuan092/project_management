@@ -1,7 +1,12 @@
 vi:
   hello_world: "Xin chào cả thế giới!"
   application:
-  flash_logged_in_user_danger: "Hãy đăng nhập trước đó"
+  flash_logged_in_user_danger: "Hãy đăng nhập trước đó."
+  flash_verify_admin_danger: "Bạn không có quyền truy cập trang này."
+  flash_verify_manager_danger: "Bạn không có quyền truy cập trang này."
+  flash_verify_psm_danger: "Bạn không có quyền truy cập trang này."
+  flash_verify_creator_project_danger: "Bạn không có quyền truy cập trang này."
+  project_not_found: "Không thể tìm thấy dự án."
   sessions:
     new:
       login: "Đăng nhập"
@@ -89,7 +94,7 @@ vi:
       completed: "Đã hoàn thành"
       pending: "Đang chờ"
       maintaining: "Đang bảo trì"
-      news: "Mới"
+      new: "Mới"
       close: "Đóng"
     project_not_found: "Dự án không được tìm thấy!"
     show:
@@ -120,6 +125,12 @@ vi:
     project_health:
       health_item_name: "Tên mục sức khỏe"
       status: "Trạng thái"
+    destroy:
+        delete_success: "Dự án này đã được xóa thành công."
+        delete_fail: "Không thể xóa dự án này vì có chứa báo cáo."
+        fail_delete: "Dự án này chưa được xóa."
+    cannot_delete: "Bạn không thể xóa dự án này. Chỉ có người quản lý và quản trị viên mới có quyền xóa dự án."
+    you_sure?: "Bạn chắc chắn chứ?"
   users:
     update:
       flash_update_success: "Cập nhật thành công"
@@ -173,7 +184,7 @@ vi:
   status_2: "Đã áp dụng nhưng chưa cập nhật đầy đủ"
   status_3: "Đã áp dụng và cập nhập đầy đủ"
   environment_0: "Phát triển"
-  environment_１: "Sản phẩm"
+  environment_1: "Sản phẩm"
   project_environments:
     project_environment:
       ip_address: "Địa chỉ IP"
