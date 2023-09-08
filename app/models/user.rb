@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :projects, through: :project_users
   has_many :reports, dependent: :destroy
   has_many :created_projects, class_name: Project.name,
-            foreign_key: :creator_id, dependent: nil
+           foreign_key: :creator_id, dependent: nil
 
   attr_accessor :remember_token, :reset_token
 
@@ -87,11 +87,11 @@ class User < ApplicationRecord
   end
 
   def admin?
-    roles.find_by(name: Settings.admin).present?
+    roles.find_by(name: Settings.user_roles.admin).present?
   end
 
   def manager?
-    roles.find_by(name: Settings.manager).present?
+    roles.find_by(name: Settings.user_roles.manager).present?
   end
 
   def creator_project? project
@@ -99,7 +99,7 @@ class User < ApplicationRecord
   end
 
   def role_psm? project
-    role = Role.find_by(name: Settings.role_name)
+    role = Role.find_by(name: Settings.project_roles.PSM)
     ProjectUser.find_by(project_role_id: role.id,
                         project_id: project.id,
                         user_id: id)
@@ -107,5 +107,19 @@ class User < ApplicationRecord
 
   def can_edit_delete_project? project
     admin? || manager? || creator_project?(project) || role_psm?(project)
+  end
+
+  def user_role_project
+    project_id_have_role_plm =
+      project_users.id_have_user_roles Settings.project_roles.PSM
+    Project.where id: created_project_ids.concat(project_id_have_role_plm).uniq
+  end
+
+  def valid_projects_by_role
+    if admin? || manager?
+      Project.all
+    else
+      user_role_project
+    end
   end
 end

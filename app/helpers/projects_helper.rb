@@ -23,7 +23,7 @@ module ProjectsHelper
     end
   end
 
-  def status_name status
+  def project_health_status_name status
     status_names = {1 => {message: I18n.t("status_1"),
                           i_class: "bi bi-x-circle text-danger"},
                     2 => {message: I18n.t("status_2"),

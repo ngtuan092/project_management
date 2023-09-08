@@ -152,7 +152,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_163315) do
     t.bigint "project_id", null: false
     t.datetime "date", null: false
     t.text "description", null: false
-    t.float "effort_time", null: false
+    t.text "resource_description", null: false
     t.text "issue", null: false
     t.datetime "delete_at"
     t.datetime "created_at", null: false

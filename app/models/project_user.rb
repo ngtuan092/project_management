@@ -8,4 +8,9 @@ class ProjectUser < ApplicationRecord
   delegate :name, to: :project_role, prefix: true, allow_nil: true
 
   scope :by_earliest_joined, ->{order :joined_at}
+  scope :id_have_user_roles, lambda {|role_name|
+    role = Role.find_by name: role_name
+    role_id = role&.id
+    where(project_role_id: role_id).pluck(:project_id)
+  }
 end

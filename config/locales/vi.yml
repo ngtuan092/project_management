@@ -192,3 +192,17 @@ vi:
       port: "Cổng local"
       web_server: "Máy chủ web"
       note: "Ghi chú"
+  reports:
+    form:
+      day_month_year: "Ngày/Tháng/Năm"
+      choose_project: "Chọn dự án"
+      job_description: " Mô tả công việc"
+      issue: "Vấn đề"
+      resource_description: "Mô tả nguồn lực"
+      save: "Lưu lại"
+    create:
+      create_success: "Tạo báo cáo thành công!"
+      create_fail: "Tạo báo cáo thất bại!"
+    new:
+      title: "Tạo báo cáo"
+    permission_error: "Bạn không có quyền tạo báo cáo với dự án này!"

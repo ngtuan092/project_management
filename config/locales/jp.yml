@@ -192,3 +192,17 @@ jp:
       port: "ローカルポート"
       web_server: "ウェブサーバー"
       note: "ノート"
+  reports:
+    form:
+      day_month_year: "日・月・年"
+      choose_project: "プロジェクトの選択"
+      job_description: "仕事内容"
+      issue: "問題"
+      resource_description: "リソースの説明"
+      save: "保存"
+    create:
+      create_success: "レポートが生成されました！"
+      create_fail: "失敗レポートを生成します!"
+    new:
+      title: "レポートの作成"
+    permission_error: "このプロジェクトでレポートを生成する権限がありません。"
