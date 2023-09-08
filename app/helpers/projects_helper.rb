@@ -55,4 +55,14 @@ module ProjectsHelper
   def project_member_stt counter
     counter + 1
   end
+
+  def list_customer customers
+    return t "projects.project_detail.dont_have_customer" if customers.empty?
+
+    list_customer = []
+    customers.each do |ctm|
+      list_customer << content_tag(:p, ctm.name, class: "mb-2")
+    end
+    safe_join list_customer
+  end
 end

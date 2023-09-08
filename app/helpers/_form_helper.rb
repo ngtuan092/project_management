@@ -10,4 +10,9 @@ module FormHelper
   def invalid object, field_name
     "is-invalid" if object.errors.include?(field_name)
   end
+
+  def date_field_value date
+    date ||= Time.zone.now
+    date.strftime Settings.date.format_date_field
+  end
 end

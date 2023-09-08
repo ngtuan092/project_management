@@ -2,7 +2,7 @@
   <div class="form-row">
     <div class="form-group col-md-4">
       <label for="report_date"><%= t ".day_month_year" %></label>
-      <%= f.date_field :date, value: date_field_value(@report),
+      <%= f.date_field :date, value: date_field_value(@report.date),
                        class: "form-control #{invalid @report, :date}" %>
       <p class="error"><%= show_errors @report, :date %></p>
     </div>

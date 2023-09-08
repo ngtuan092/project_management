@@ -52,13 +52,6 @@ class ProjectsController < ApplicationController
     params.require(:project).permit Project::PROJECT_PARAMS
   end
 
-  def find_project
-    @project = Project.find_by id: params[:id]
-    return if @project
-
-    redirect_to :root, flash: {warning: t(".project_not_found")}
-  end
-
   def check_role
     return if current_user.can_edit_delete_project? @project
 
