@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:8.1.0
+    container_name: project_database
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./tmp/db:/var/lib/mysql
+    restart: always
+    environment:
+      - MYSQL_USER=${PROJECT_MANAGEMENT_DATABASE_USER}
+      - MYSQL_ROOT_PASSWORD=${PROJECT_MANAGEMENT_DATABASE_PASSWORD}
+      - MYSQL_DATABASE=${PROJECT_MANAGEMENT_DATABASE_NAME}
+  web:
+    build: .
+    container_name: project_web
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/project_management
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
