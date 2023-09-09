@@ -3,6 +3,7 @@ jp:
   errors:
     permission_update_delete_project: "このプロジェクトを操作する権限がありません。"
     project_not_found: "プロジェクトが見つかりません。"
+    report_not_found: "レポートが見つかりません。"
   flash_logged_in_user_danger: "ログインしてください。"
   flash_verify_admin_danger: "このページにアクセスする権限がありません。"
   flash_verify_manager_danger: "このページにアクセスする権限がありません。"
@@ -127,9 +128,9 @@ jp:
       health_item_name: "健康項目名"
       status: "状態"
     destroy:
-        delete_success: "プロジェクトは正常に破棄されました。"
-        delete_fail: "レポートを含むプロジェクトは削除できません。"
-        fail_delete: "このプロジェクトは削除されていません。"
+      delete_success: "プロジェクトは正常に破棄されました。"
+      delete_fail: "レポートを含むプロジェクトは削除できません。"
+      fail_delete: "このプロジェクトは削除されていません。"
     cannot_delete: "このプロジェクトは削除できません。 マネージャーと管理者のみがプロジェクトを削除する権限を持っています。"
     you_sure?: "あなたは確かに？"
   users:
@@ -222,6 +223,11 @@ jp:
       name: "プロジェクト名:"
       status: "状態:"
       search: "検索"
+    destroy:
+      delete_success: "レポートは正常に破棄されました。"
+      fail_delete: "このレポートは削除されていません。"
+    cannot_delete: "このレポートは削除できません。 マネージャーと管理者のみがレポートを削除する権限を持っています。"
+    you_sure?: "あなたは確かに？"
   release_plans:
     release_plan_not_found: "リリース計画が見つかりません"
     edit:
