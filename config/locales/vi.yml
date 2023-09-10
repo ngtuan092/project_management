@@ -131,7 +131,11 @@ vi:
         delete_fail: "Không thể xóa dự án này vì có chứa báo cáo."
         fail_delete: "Dự án này chưa được xóa."
     cannot_delete: "Bạn không thể xóa dự án này. Chỉ có người quản lý và quản trị viên mới có quyền xóa dự án."
+    cannot_edit: "Bạn không thể sửa dự án này. Chỉ có người quản lý và quản trị viên mới có quyền sửa dự án."
     you_sure?: "Bạn chắc chắn chứ?"
+    update:
+      update_success: "Cập nhật thông tin dự án thành công."
+      update_fail: "Cập nhật thông tin dự án thất bại."
   users:
     update:
       flash_update_success: "Cập nhật thành công"

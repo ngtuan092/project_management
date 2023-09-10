@@ -4,6 +4,7 @@ class Project < ApplicationRecord
     :end_date, :group_id, :language,
     :repository, :redmine,
     :project_folder, :customer_info,
+    :creator_id,
     {
       project_environments_attributes: [
         :environment, :domain, :port,
