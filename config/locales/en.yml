@@ -22,6 +22,8 @@ en:
     header:
       Sign_out: "Sign out"
       profile_account: "Profile & account"
+      list_projects: "Projects"
+      list_reports: "Reports"
   user_mailer:
     password_reset:
       subject: "Password reset"
@@ -209,6 +211,9 @@ en:
     create:
       create_success: "Create report successfully!"
       create_fail: "Create failure report!"
+      role: "Role"
+      joined_at: "Time joined project"
+      left_at: "Time left project"
     new:
       title: "Create report"
     permission_error: "You do not have permission to create reports with this project!"
@@ -229,6 +234,16 @@ en:
       fail_delete: "This report has not been deleted."
     cannot_delete: "You cannot delete this report. Only managers and administrators have the authority to delete report."
     you_sure?: "You sure?"
+    show:
+      close: "Close"
+    report_detail:
+      project_name: "Project name:"
+      creator: "Creator: "
+      email: "Email: "
+      date: "Date created:"
+      issue: "Issue:"
+      description: "Description:"
+      resource_description: "Resource description:"
   release_plans:
     release_plan_not_found: "Release plan not found"
     edit:

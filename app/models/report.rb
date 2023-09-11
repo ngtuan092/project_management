@@ -8,6 +8,7 @@ class Report < ApplicationRecord
   belongs_to :user
 
   delegate :name, to: :project, prefix: true
+  delegate :name, :email, to: :user, prefix: true
 
   validates :date, presence: true
   validates :project_id, presence: true
