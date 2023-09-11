@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="text-center mb-8"><%= t ".list_value" %></h1>
+  <div class="form-group justify-content-center">
+    <%= form_with url: project_month_project_features_path(@project), method: :get do |f| %>
+      <label class="form-label">
+        <%= t ".select_month_year" %>
+        <%= f.date_field :month_year, type: "month", value: month_field_value(params[:month_year]), class: "form-control" %>
+      </label>
+      <%= f.submit t(".search"), name: nil, class: "btn btn-primary btn-block w-30 ml-35" %>
+    <% end %>
+  </div>
+  <ul class="list-group">
+    <%= render @project_features %>
+  </ul>
+
+  <section class="mt-5">
+    <p><%= t ".time_total", hour_total: effort_hour_month_total(@project_features) %></p>
+    <p><%= t ".man_month_total", man_month: man_month_total(@project_features) %></p>
+  </section>
+</div>

@@ -262,3 +262,23 @@ en:
     create_fail: "Add new member failure!"
     unique_user_in_project: "Members are already in the project!"
     validate_dates: "Join date must be less than leave date!"
+  month_project_features:
+    index:
+      select_month_year: "Select month year"
+      search: "Search"
+      list_value: "List value"
+      man_month_total: "Total number of people/month saved: %{man_month} man/month"
+      time_total: "Total hours saved per month: %{hour_total} hour"
+  project_features:
+    project_feature:
+      feature_description: "Feature description"
+      waste_description: "Wasteful when not using the system"
+      effort_time: "Time saving"
+      repeat_time: "Number of repeated uses"
+      repeat_unit: "Units of repeated use"
+      day: "day"
+      week: "week"
+      month: "month"
+      quarter: "quarter"
+      half_a_year: "half a year"
+      year: "year"

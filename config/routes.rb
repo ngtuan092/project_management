@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     delete "/logout",  to: "sessions#destroy"
     resources :projects
     resources :projects, only: :show do
+      resources :month_project_features, only: :index
       member do
         resources :project_users, only: %i(new create)
       end
