@@ -34,6 +34,14 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
 
+  def find_report
+    @report = Report.find_by id: params[:id]
+    return if @report
+
+    flash[:warning] = t "errors.report_not_found"
+    redirect_to root_path
+  end
+
   def check_valid_project redirect_url, project_id
     @project = Project.find_by id: project_id
     return if @project && current_user.can_edit_delete_project?(@project)

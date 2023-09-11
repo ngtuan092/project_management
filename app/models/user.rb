@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :reports, dependent: :destroy
   has_many :created_projects, class_name: Project.name,
            foreign_key: :creator_id, dependent: nil
+  has_many :created_reports, class_name: Report.name, dependent: nil
 
   attr_accessor :remember_token, :reset_token
 
@@ -125,5 +126,13 @@ class User < ApplicationRecord
     else
       user_role_project
     end
+  end
+
+  def creator_report? report
+    created_reports.exists?(id: report.id)
+  end
+
+  def can_edit_delete_report? report
+    admin? || manager? || creator_report?(report) || role_psm?(report.project)
   end
 end

@@ -3,6 +3,7 @@ vi:
   errors:
     permission_update_delete_project: "Bạn không có quyền thao tác với dự án này!"
     project_not_found: "Không thể tìm thấy dự án."
+    report_not_found: "Không thể tìm thấy báo cáo."
   flash_logged_in_user_danger: "Hãy đăng nhập trước đó."
   flash_verify_admin_danger: "Bạn không có quyền truy cập trang này."
   flash_verify_manager_danger: "Bạn không có quyền truy cập trang này."
@@ -127,9 +128,9 @@ vi:
       health_item_name: "Tên mục sức khỏe"
       status: "Trạng thái"
     destroy:
-        delete_success: "Dự án này đã được xóa thành công."
-        delete_fail: "Không thể xóa dự án này vì có chứa báo cáo."
-        fail_delete: "Dự án này chưa được xóa."
+      delete_success: "Dự án này đã được xóa thành công."
+      delete_fail: "Không thể xóa dự án này vì có chứa báo cáo."
+      fail_delete: "Dự án này chưa được xóa."
     cannot_delete: "Bạn không thể xóa dự án này. Chỉ có người quản lý và quản trị viên mới có quyền xóa dự án."
     you_sure?: "Bạn chắc chắn chứ?"
   users:
@@ -219,6 +220,11 @@ vi:
       name: "Tên dự án:"
       status: "Trạng thái:"
       search: "Tìm kiếm"
+    destroy:
+      delete_success: "Báo cáo này đã được xóa thành công."
+      fail_delete: "Báo cáo này chưa được xóa."
+    cannot_delete: "Bạn không thể xóa báo cáo này. Chỉ có người quản lý và quản trị viên mới có quyền xóa báo cáo."
+    you_sure?: "Bạn chắc chắn chứ?"
   release_plans:
     release_plan_not_found: "Không tìm thấy kế hoạch phát hành"
     edit:

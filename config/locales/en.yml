@@ -3,6 +3,7 @@ en:
   errors:
     permission_update_delete_project: "You do not have permission to manipulate this project!"
     project_not_found: "Project not found."
+    report_not_found: "Report not found."
   flash_logged_in_user_danger: "Please log in."
   flash_verify_admin_danger: "You are not authorized to access this page."
   flash_verify_manager_danger: "You are not authorized to access this page."
@@ -127,9 +128,9 @@ en:
       health_item_name: "Health item name"
       status: "Status"
     destroy:
-        delete_success: "Project was successfully destroyed."
-        delete_fail: "Cannot delete project with reports."
-        fail_delete: "This project has not been deleted."
+      delete_success: "Project was successfully destroyed."
+      delete_fail: "Cannot delete project with reports."
+      fail_delete: "This project has not been deleted."
     cannot_delete: "You cannot delete this project. Only managers and administrators have the authority to delete projects."
     you_sure?: "You sure?"
   users:
@@ -219,6 +220,11 @@ en:
       name: "Project name:"
       status: "Status"
       search: "Search"
+    destroy:
+      delete_success: "Report was successfully destroyed."
+      fail_delete: "This report has not been deleted."
+    cannot_delete: "You cannot delete this report. Only managers and administrators have the authority to delete report."
+    you_sure?: "You sure?"
   release_plans:
     release_plan_not_found: "Release plan not found"
     edit:
