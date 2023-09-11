@@ -65,4 +65,8 @@ module ProjectsHelper
     end
     safe_join list_customer
   end
+
+  def can_edit project
+    current_user.can_edit_delete_project? project
+  end
 end

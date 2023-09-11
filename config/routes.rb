@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     get    "/login",   to: "sessions#new"
     post   "/login",   to: "sessions#create"
     delete "/logout",  to: "sessions#destroy"
-    resources :projects, only: %i(new create index destroy)
+    resources :projects
     resources :projects, only: :show do
       member do
         resources :project_users, only: %i(new create)

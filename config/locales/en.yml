@@ -132,7 +132,11 @@ en:
       delete_fail: "Cannot delete project with reports."
       fail_delete: "This project has not been deleted."
     cannot_delete: "You cannot delete this project. Only managers and administrators have the authority to delete projects."
+    cannot_edit: "You cannot edit this project. Only managers and administrators have the authority to edit projects."
     you_sure?: "You sure?"
+    update:
+      update_success: "Updated project information successfully."
+      update_fail: "Update failed project information."
   users:
     update:
       flash_update_success: "Update successful"

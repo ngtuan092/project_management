@@ -1,8 +1,7 @@
 class ProjectsController < ApplicationController
-  before_action :logged_in_user, only: %i(create new index show destroy)
-  before_action :find_project, only: %i(show destroy)
-  before_action :check_role, only: :destroy
-
+  before_action :logged_in_user
+  before_action :find_project, only: %i(show destroy edit update)
+  before_action :check_role, only: %i(destroy edit update)
   def index
     @projects = Project.filter_name(params[:name])
                        .filter_group(params[:group])
@@ -14,7 +13,7 @@ class ProjectsController < ApplicationController
     @project = Project.new project_params
     if @project.save
       flash[:success] = t "project.create_success"
-      redirect_to root_path
+      redirect_to projects_path
     else
       flash[:danger] = t "project.create_fail"
       render :new, status: :unprocessable_entity
@@ -35,7 +34,7 @@ class ProjectsController < ApplicationController
     if @project.reports.empty?
       if @project.destroy
         flash[:success] = t ".delete_success"
-        redirect_to projects_url
+        redirect_to projects_path
       else
         flash[:danger] = t ".fail_delete"
         redirect_to root_path, status: :unprocessable_entity
@@ -46,6 +45,18 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    if @project.update project_params
+      flash[:success] = t(".update_success")
+      redirect_to @project
+    else
+      flash[:danger] = t(".update_fail")
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def project_params
@@ -53,9 +64,16 @@ class ProjectsController < ApplicationController
   end
 
   def check_role
+    action_to_message = {
+      destroy: "cannot_delete",
+      edit: "cannot_edit",
+      update: "cannot_edit"
+    }
+    message_key = action_to_message[action_name.to_sym]
+
     return if current_user.can_edit_delete_project? @project
 
-    flash[:warning] = t ".cannot_delete"
-    redirect_to projects_url
+    flash[:warning] = t ".#{message_key}"
+    redirect_to projects_path
   end
 end
