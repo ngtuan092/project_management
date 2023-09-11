@@ -11,3 +11,6 @@ eagerLoadControllersFrom("controllers", application)
 // lazyLoadControllersFrom("controllers", application)
 import NestedRondoController from "./nested_rondo_controller"
 application.register("nested-rondo", NestedRondoController)
+
+import Select2Controller from "./select2_controller"
+application.register("select2", Select2Controller)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_04_163315) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_08_093832) do
   create_table "customers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -111,8 +111,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_163315) do
     t.bigint "project_role_id", null: false
     t.datetime "joined_at"
     t.datetime "left_at"
+    t.text "note"
     t.index ["project_id"], name: "index_project_users_on_project_id"
     t.index ["project_role_id"], name: "index_project_users_on_project_role_id"
+    t.index ["user_id", "project_id"], name: "index_project_users_on_user_id_and_project_id", unique: true
     t.index ["user_id"], name: "index_project_users_on_user_id"
   end
 
