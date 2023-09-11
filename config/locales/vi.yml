@@ -206,6 +206,19 @@ vi:
       create_fail: "Tạo báo cáo thất bại!"
     new:
       title: "Tạo báo cáo"
+    permission_error: "Bạn không có quyền tạo báo cáo với dự án này!"
+    index:
+      stt: "STT"
+      project_name: "Tên dự án"
+      day_report: "Ngày báo cáo"
+      issue: "Vấn đề"
+      description: "Mô tả"
+      action: "Hành động"
+    search_form:
+      date_report: "Ngày báo cáo:"
+      name: "Tên dự án:"
+      status: "Trạng thái:"
+      search: "Tìm kiếm"
   release_plans:
     release_plan_not_found: "Không tìm thấy kế hoạch phát hành"
     edit:

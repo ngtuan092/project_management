@@ -10,6 +10,7 @@ date:
   format_date_field: "%Y-%m-%d"
 pagy:
   number_items: 8
+  number_items_10: 10
 project:
   max_length_200: 200
   max_length_1000: 1000

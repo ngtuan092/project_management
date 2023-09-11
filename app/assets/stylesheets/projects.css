@@ -287,5 +287,11 @@ table.table .form-control.error {
 }
 
 .deleted-text{
-    text-decoration:line-through;;
+    text-decoration:line-through;
+}
+
+.text-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

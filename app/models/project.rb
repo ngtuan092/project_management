@@ -50,17 +50,10 @@ class Project < ApplicationRecord
   scope :filter_date, ->(date){filter_by_date(date) if date.present?}
   scope :filter_status, ->(status){where status: status if status.present?}
   scope :filter_group, ->(group){where group_id: group if group.present?}
-
   class << self
     def filter_by_date date_str
       date = valid_date date_str
-      date.present? ? where(start_date: date) : all
-    end
-
-    def valid_date date_str
-      Date.parse date_str
-    rescue ArgumentError
-      nil
+      date ? where(start_date: date) : all
     end
   end
 end
