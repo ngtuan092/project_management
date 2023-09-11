@@ -3,24 +3,24 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 ruby "3.2.2"
 
-gem "rails", "~> 7.0.5"
-gem "sprockets-rails"
-gem "mysql2", "~> 0.5"
 gem "bcrypt", "3.1.18"
+gem "bootsnap", require: false
 gem "bootstrap-sass", "3.4.1"
 gem "config"
+gem "dotenv-rails"
 gem "figaro", "~> 1.1", ">= 1.1.1"
-gem "sassc-rails", "2.1.2"
-gem "rails-i18n"
+gem "importmap-rails"
+gem "jbuilder"
+gem "mysql2", "~> 0.5"
 gem "pagy"
 gem "puma", "~> 5.0"
-gem "importmap-rails"
-gem "turbo-rails"
+gem "rails", "~> 7.0.5"
+gem "rails-i18n"
+gem "sassc-rails", "2.1.2"
+gem "sprockets-rails"
 gem "stimulus-rails"
-gem "jbuilder"
+gem "turbo-rails"
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)
-gem "bootsnap", require: false
-gem "dotenv-rails"
 
 group :development, :test do
   gem "debug", platforms: %i(mri mingw x64_mingw)

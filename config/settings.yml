@@ -19,3 +19,6 @@ user_roles:
   admin: "admin"
 project_roles:
   PSM: "PSM"
+number:
+  value_100: 100
+  value_0: 0
