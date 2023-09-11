@@ -111,6 +111,7 @@ vi:
       start_date: "Ngày bắt đầu"
       end_date: "Ngày kết thúc"
       description: "Mô tả"
+      new_project: "Dự án mới"
     search_form:
       name: "Tên dự án"
       group: "Nhóm"
@@ -142,6 +143,7 @@ vi:
       project_customers: "Thông tin khách hàng"
       dont_have_customer: "Dự án không có khách hàng nào!"
     project_member:
+      No: "STT"
       Project_Member: "Thành viên dự án"
       Add_New: "Thêm mới"
       Member_name: "Tên thành viên"
@@ -150,6 +152,9 @@ vi:
       joined_at: "Tham gia lúc"
       left_at: "Rời lúc"
       action: "Hành động"
+      delete_member_success: "Xóa thành viên thành công!"
+      delete_member_fail: "Xóa thành viên thất bại!"
+      cannot_delete_member: "Không thể xóa thành viên này!"
     project_health:
       health_item_name: "Tên mục sức khỏe"
       status: "Trạng thái"
@@ -199,6 +204,7 @@ vi:
       folder_project: "Thư mục dự án"
       customer_info: "Thông tin khách hàng"
       select_status: "-- Chọn trạng thái --"
+      select_customer_info: "-- Chọn thông tin khách hàng --"
       project_detail: "Chi tiết dự án"
       project_enviroment: "Môi trường dự án"
       enviroment:
@@ -315,7 +321,7 @@ vi:
       close: "Đóng"
     new:
       title: "Thêm member vào dự án"
-    not_permission: "Bạn không có quyền thêm thành viên mới vào dự án này"
+    not_permission: "Bạn không có quyền thêm hay xóa thành viên của dự án này"
   project_user:
     create_success: "Thêm mới thành viên thành công!"
     create_fail: "Thêm mới thành viên thất bại!"

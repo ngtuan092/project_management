@@ -11,6 +11,7 @@ Rails.application.routes.draw do
         resources :project_users, only: %i(new create)
       end
     end
+    resources :project_users, only: %i(destroy)
     resources :password_resets, only: %i(new create edit update)
     resources :resources
     resources :users, only: %i(edit update)

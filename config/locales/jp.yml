@@ -111,6 +111,7 @@ jp:
       start_date: "開始日"
       end_date: "終了日"
       description: "説明"
+      new_project: "新しいプロジェクト"
     search_form:
       name: "プロジェクト名"
       group: "グループ"
@@ -142,6 +143,7 @@ jp:
       project_customers: "顧客情報"
       dont_have_customer: "このプロジェクトには顧客がいません!"
     project_member:
+      No: "番号"
       Project_Member: "プロジェクトメンバー"
       Add_New: "新規追加"
       Member_name: "メンバー名"
@@ -150,6 +152,9 @@ jp:
       joined_at: "参加時間"
       left_at: "終了時間"
       action: "アクション"
+      delete_member_success: "メンバーの削除に成功しました！"
+      delete_member_fail: "メンバーの削除に失敗しました！"
+      cannot_delete_member: "メンバーを削除できません！"
     project_health:
       health_item_name: "健康項目名"
       status: "状態"
@@ -199,6 +204,7 @@ jp:
       folder_project: "フォルダプロジェクト"
       customer_info: "顧客情報"
       select_status: "-- ステータスを選択 --"
+      select_customer_info: "-- 顧客情報を選択 --"
       project_detail: "プロジェクトの詳細"
       project_enviroment: "プロジェクトの環境"
       environment:
@@ -312,12 +318,12 @@ jp:
   project_users:
     form:
       member: "職員"
-      submit: "メンバーを増やす"
-      note: "ノート"
-      close: "閉じる"
       role: "役割"
       joined_at: "プロジェクトに参加した時間"
       left_at: "プロジェクトを離れる時間"
+      submit: "メンバーを増やす"
+      note: "ノート"
+      close: "閉じる"
     new:
       title: "プロジェクトにメンバーを追加する"
     not_permission: "このプロジェクトに新しいメンバーを追加する権限がありません"

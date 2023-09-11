@@ -16,9 +16,17 @@ module ProjectsHelper
   end
 
   def environment_select
-    ProjectEnvironment.environments.keys.map do |environment, _id|
+    ProjectEnvironment.environments.keys.map do |environment|
       [t("project.form.environment.#{environment}"), environment]
     end
+  end
+
+  def customer_info_select
+    Customer.all.pluck :name, :id
+  end
+
+  def group_select
+    Group.all.pluck :name, :id
   end
 
   def project_health_status_name status
@@ -66,5 +74,9 @@ module ProjectsHelper
 
   def can_edit_delete_project project
     current_user.can_edit_delete_project? project
+  end
+
+  def can_edit_project_member? project
+    current_user.can_add_member? project
   end
 end
