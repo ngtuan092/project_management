@@ -30,4 +30,7 @@ class ProjectUser < ApplicationRecord
 
     errors.add(:joined_at, I18n.t("project_user.validate_dates"))
   end
+
+  accepts_nested_attributes_for :project_user_resources, allow_destroy: true,
+    reject_if: :all_blank
 end
