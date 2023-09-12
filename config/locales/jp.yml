@@ -265,3 +265,23 @@ jp:
     new:
       title: "プロジェクトにメンバーを追加する"
     not_permission: "このプロジェクトに新しいメンバーを追加する権限がありません"
+  month_project_features:
+    index:
+      select_month_year: "月年の選択"
+      search: "検索"
+      list_value: "リスト値"
+      man_month_total: "毎月節約できる人数の合計: %{man_month} 人・月"
+      time_total: "1 か月あたりに節約された合計時間数: %{hour_total} 時間"
+  project_features:
+    project_feature:
+      feature_description: "機能の説明"
+      waste_description: "システムを使わないと無駄になる"
+      effort_time: "時間の節約"
+      repeat_time: "繰り返し使用回数"
+      repeat_unit: "繰り返し使用単位"
+      day: "曜日"
+      week: "週"
+      month: "月"
+      quarter: "四半期"
+      half_a_year: "半年"
+      year: "年"

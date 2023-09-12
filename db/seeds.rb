@@ -147,3 +147,18 @@ end
     customer_id: Faker::Number.between(from: 1, to: 2)
   )
 end
+
+20.times do |i|
+  ProjectFeature.create!(
+    project_id: Faker::Number.between(from: 1, to: 2),
+    name: Faker::Name.name,
+    description: Faker::Lorem.sentence,
+    month: Faker::Number.between(from: 1, to: 2),
+    year: Faker::Number.between(from: 2023, to: 2024),
+    waste_description: Faker::Lorem.sentence,
+    effort_saved: Faker::Number.between(from: 1, to: 10),
+    repeat_time: Faker::Number.between(from: 1, to: 10),
+    repeat_unit: Faker::Number.between(from: 0, to: 5),
+    man_month: Faker::Number.between(from: 0, to: 5),
+  )
+end

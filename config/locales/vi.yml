@@ -262,3 +262,23 @@ vi:
     create_fail: "Thêm mới thành viên thất bại!"
     unique_user_in_project: "Thành viên đã có trong project!"
     validate_dates: "Ngày tham gia phải nhỏ hơn ngày rời!"
+  month_project_features:
+    index:
+      select_month_year: "Chọn tháng năm"
+      search: "Tìm kiếm"
+      list_value: "Danh sách giá trị"
+      man_month_total: "Tổng số người/tháng tiết kiệm: %{man_month} người/tháng"
+      time_total: "Tổng số giờ tiết kiệm trên tháng: %{hour_total} giờ"
+  project_features:
+    project_feature:
+      feature_description: "Mô tả tính năng"
+      waste_description: "Lãng phí khi không sử dụng hệ thống"
+      effort_time: "Thời gian tiết kiệm"
+      repeat_time: "Số lần sử dụng lặp lại"
+      repeat_unit: "Đơn vị sử dụng lặp lại"
+      day: "ngày"
+      week: "tuần"
+      month: "tháng"
+      quarter: "quý"
+      half_a_year: "nửa năm"
+      year: "năm"

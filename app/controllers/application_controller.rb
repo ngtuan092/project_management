@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
   end
 
   def find_project
-    @project = Project.find_by id: params[:id]
+    @project = Project.find_by id: params[:id] || params[:project_id]
     return if @project
 
     flash[:warning] = t "errors.project_not_found"
