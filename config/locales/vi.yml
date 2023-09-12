@@ -22,6 +22,8 @@ vi:
     header:
       Sign_out: "Đăng xuất"
       profile_account: "Hồ sơ & tài khoản"
+      list_projects: "Dự án"
+      list_reports: "Báo cáo"
   user_mailer:
     password_reset:
       subject: "Đặt lại mật khẩu"
@@ -209,6 +211,9 @@ vi:
     create:
       create_success: "Tạo báo cáo thành công!"
       create_fail: "Tạo báo cáo thất bại!"
+      role: "Vai trò"
+      joined_at: "Thời gian vào dự án"
+      left_at: "Thời gian rời dự án"
     new:
       title: "Tạo báo cáo"
     permission_error: "Bạn không có quyền tạo báo cáo với dự án này!"
@@ -229,6 +234,16 @@ vi:
       fail_delete: "Báo cáo này chưa được xóa."
     cannot_delete: "Bạn không thể xóa báo cáo này. Chỉ có người quản lý và quản trị viên mới có quyền xóa báo cáo."
     you_sure?: "Bạn chắc chắn chứ?"
+    show:
+      close: "Đóng"
+    report_detail:
+      project_name: "Tên dự án:"
+      creator: "Người tạo: "
+      email: "Email: "
+      date: "Ngày tạo:"
+      issue: "Vấn đề:"
+      description: "Mô tả:"
+      resource_description: "Mô tả tài nguyên:"
   release_plans:
     release_plan_not_found: "Không tìm thấy kế hoạch phát hành"
     edit:

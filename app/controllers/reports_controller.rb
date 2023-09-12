@@ -1,10 +1,10 @@
 class ReportsController < ApplicationController
-  before_action :logged_in_user, only: %i(create new index destroy)
+  before_action :logged_in_user, only: %i(create new index destroy show)
   before_action only: :create do
     check_valid_project new_report_url,
                         params.dig(:report, :project_id)
   end
-  before_action :find_report, only: :destroy
+  before_action :find_report, only: %i(show destroy)
   before_action :check_role, only: :destroy
 
   def index
@@ -29,6 +29,8 @@ class ReportsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def show; end
 
   def destroy
     if @report.destroy

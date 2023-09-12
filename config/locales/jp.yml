@@ -22,6 +22,8 @@ jp:
     header:
       Sign_out: "サインアウト"
       profile_account: "プロフィールとアカウント"
+      list_projects: "プロジェクト"
+      list_reports: "レポート"
   user_mailer:
     password_reset:
       subject: "パスワードのリセット"
@@ -232,6 +234,16 @@ jp:
       fail_delete: "このレポートは削除されていません。"
     cannot_delete: "このレポートは削除できません。 マネージャーと管理者のみがレポートを削除する権限を持っています。"
     you_sure?: "あなたは確かに？"
+    show:
+      close: "閉じる"
+    report_detail:
+      project_name: "プロジェクト名:"
+      creator: "クリエイター: "
+      email: "メール: "
+      date: "作成日:"
+      issue: "問題:"
+      description: "説明:"
+      resource_description: "リソースの説明:"
   release_plans:
     release_plan_not_found: "リリース計画が見つかりません"
     edit:
