@@ -1,4 +1,6 @@
 class Project < ApplicationRecord
+  attr_accessor :month_year, :project_id
+
   PROJECT_PARAMS = [
     :name, :description, :status, :start_date,
     :end_date, :group_id, :language,
@@ -11,6 +13,19 @@ class Project < ApplicationRecord
         :ip_address, :web_server,
         :note, :_destroy
       ]
+    }
+  ].freeze
+
+  PROJECT_FEATURE_PARAMS = [
+    :month_year, :project_id,
+    {
+      project_features_attributes:
+        [
+          :name, :description,
+          :waste_description,
+          :effort_saved, :repeat_time,
+          :repeat_unit, :_destroy
+        ]
     }
   ].freeze
 
@@ -33,10 +48,12 @@ class Project < ApplicationRecord
   enum status: {new: 0, in_progress: 1, maintaining: 2, pending: 3, close: 4},
        _prefix: true
   accepts_nested_attributes_for :project_environments, allow_destroy: true,
-    reject_if: :all_blank
+                                                       reject_if: :all_blank
+  accepts_nested_attributes_for :project_features, allow_destroy: true,
+                                                   reject_if: :all_blank
 
   validates :name, presence: true,
-    length: {maximum: Settings.project.max_length_200}
+                   length: {maximum: Settings.project.max_length_200}
   validates :description, length: {maximum: Settings.project.max_length_1000}
   validates :status, presence: true, inclusion: {in: statuses.keys}
   validates :group_id, presence: true
@@ -44,6 +61,8 @@ class Project < ApplicationRecord
   validates :repository, length: {maximum: Settings.project.max_length_200}
   validates :redmine, length: {maximum: Settings.project.max_length_200}
   validates :project_folder, length: {maximum: Settings.project.max_length_200}
+  validates :month_year, format: {with: Settings.month_year.regex,
+                                  message: I18n.t("message_valid_month_year")}
 
   scope :filter_name, lambda {|name|
     where("name LIKE ?", "%#{name}%") if name.present?
@@ -58,6 +77,19 @@ class Project < ApplicationRecord
       .joins(:project_features)
       .merge(ProjectFeature.filter_month(month))
       .merge(ProjectFeature.filter_year(year))
+  }
+  scope :created_by_user_or_psm, lambda {|current_user|
+    where(creator_id: current_user.id)
+      .or(
+        where(
+          id: ProjectUser
+            .where(
+              user_id: current_user.id,
+              project_role_id: Role.find_by(name: Settings.project_roles.PSM)
+            )
+            .select(:project_id)
+        )
+      )
   }
 
   def calculate_project_man_per_month date

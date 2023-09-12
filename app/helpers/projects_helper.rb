@@ -79,4 +79,12 @@ module ProjectsHelper
   def can_edit_project_member? project
     current_user.can_add_member? project
   end
+
+  def project_select
+    if current_user.admin? || current_user.manager?
+      return Project.pluck(:name, :id)
+    end
+
+    Project.created_by_user_or_psm(current_user).pluck(:name, :id)
+  end
 end
