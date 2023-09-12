@@ -1,49 +1,53 @@
-<li class="list-group-item px-3 border-2 rounded-3 mb-3 w-75">
-  <div class="card border-0">
-    <h5 class="card-header"><%= project_feature.name %></h5>
-    <div class="card-body">
-      <div class="form-row mb-3 justify-content-between">
-        <div class="form-col col-6">
-          <label class="form-label">
-            <%= t ".feature_description" %>
-            <textarea class="form-control" disabled><%= project_feature.description %></textarea>
-          </label>
+<%= turbo_frame_tag project_feature do %>
+  <li class="list-group-item px-3 border-2 rounded-3 mb-3 w-75">
+    <div class="card border-0">
+      <h5 class="card-header"><%= project_feature.name %></h5>
+      <div class="card-body">
+        <div class="form-row mb-3 justify-content-between">
+          <div class="form-col col-6">
+            <label class="form-label">
+              <%= t ".feature_description" %>
+              <textarea class="form-control" disabled><%= project_feature.description %></textarea>
+            </label>
+          </div>
+          <div class="form-col col-5">
+            <label class="form-label">
+              <%= t ".waste_description" %>
+              <textarea class="form-control" disabled><%= project_feature.waste_description %></textarea>
+            </label>
+          </div>
         </div>
-        <div class="form-col col-5">
-          <label class="form-label">
-            <%= t ".waste_description" %>
-            <textarea class="form-control" disabled><%= project_feature.waste_description %></textarea>
-          </label>
-        </div>
-      </div>
-      <div class="form-row mb-3 justify-content-between">
-        <div class="form-col col-3">
-          <label class="form-label">
-            <%= t ".effort_time" %>
-            <input type="number" class="form-control" value="<%= project_feature.effort_saved %>" disabled>
-          </label>
-        </div>
-        <div class="form-col col-3">
-          <label class="form-label">
-            <%= t ".repeat_time" %>
-            <input type="number" class="form-control" value="<%= project_feature.repeat_time %>" disabled>
-          </label>
-        </div>
-        <div class="form-col col-4">
-          <label class="form-label">
-            <%= t ".repeat_unit" %>
-            <input type="text" class="form-control" value="<%= t ".#{project_feature.repeat_unit}" %>" disabled>
-          </label>
+        <div class="form-row mb-3 justify-content-between">
+          <div class="form-col col-3">
+            <label class="form-label">
+              <%= t ".effort_time" %>
+              <input type="number" class="form-control" value="<%= project_feature.effort_saved %>" disabled>
+            </label>
+          </div>
+          <div class="form-col col-3">
+            <label class="form-label">
+              <%= t ".repeat_time" %>
+              <input type="number" class="form-control" value="<%= project_feature.repeat_time %>" disabled>
+            </label>
+          </div>
+          <div class="form-col col-4">
+            <label class="form-label">
+              <%= t ".repeat_unit" %>
+              <input type="text" class="form-control" value="<%= t ".#{project_feature.repeat_unit}" %>" disabled>
+            </label>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="position-absolute top-15px end-20px">
-    <%= link_to "#", class: "text-warning icon" do %>
-      <i class="bi bi-pencil-square"></i>
-    <% end %>
-    <%= link_to "#", class: "text-danger icon" do %>
-      <i class="bi bi-trash"></i>
-    <% end %>
-  </div>
-</li>
+    <div class="position-absolute top-15px end-20px">
+      <% if have_permission_project_feature? project_feature %>
+        <%= link_to edit_project_feature_path(project_feature), class: "text-warning icon" do %>
+          <i class="bi bi-pencil-square"></i>
+        <% end %>
+        <%= link_to "#", class: "text-danger icon" do %>
+          <i class="bi bi-trash"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </li>
+<% end %>

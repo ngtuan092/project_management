@@ -1,0 +1,12 @@
+<%= turbo_stream.update @project_feature, @project_feature %>
+
+<%= turbo_stream.update "summary" do %>
+  <p><%= t "month_project_features.index.time_total",
+           hour_total: effort_hour_month_total(@project_features) %></p>
+  <p><%= t "month_project_features.index.man_month_total",
+           man_month: man_month_total(@project_features) %></p>
+<% end %>
+
+<%= turbo_stream.update "flash_message" do %>
+  <%= render "shared/flash_message" %>
+<% end %>

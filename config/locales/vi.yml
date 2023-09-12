@@ -2,9 +2,11 @@ vi:
   hello_world: "Xin chào cả thế giới!"
   errors:
     permission_update_delete_project: "Bạn không có quyền thao tác với dự án này!"
+    permission_modify_project_feature: "Bạn không có quyền thao tác với tính năng dự án này!"
     project_not_found: "Không thể tìm thấy dự án."
     report_not_found: "Không thể tìm thấy báo cáo."
     release_plan_not_found: "Không tìm thấy kế hoạch phát hành."
+    project_feature_not_found: "Không thể tìm thấy tính năng dự án."
   flash_logged_in_user_danger: "Hãy đăng nhập trước đó."
   flash_verify_admin_danger: "Bạn không có quyền truy cập trang này."
   flash_verify_manager_danger: "Bạn không có quyền truy cập trang này."
@@ -330,3 +332,15 @@ vi:
       quarter: "quý"
       half_a_year: "nửa năm"
       year: "năm"
+      name_feature: "Tính năng tên"
+    edit:
+      edit_project_feature: "Chỉnh sửa giá trị dự án"
+    form:
+      save: "Lưu lại"
+      cancel: "Hủy"
+    update:
+      update_success: "Cập nhật tính năng dự án thành công!"
+  validates:
+    errors:
+      month: "Tháng không hợp lệ"
+      year: "Năm không hợp lệ"

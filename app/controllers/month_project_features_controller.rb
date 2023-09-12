@@ -6,5 +6,9 @@ class MonthProjectFeaturesController < ApplicationController
     month ||= Time.zone.now.month
     year ||= Time.zone.now.year
     @project_features = @project.project_features.where(month:, year:)
+    respond_to do |format|
+      format.html{render :index}
+      format.turbo_stream
+    end
   end
 end

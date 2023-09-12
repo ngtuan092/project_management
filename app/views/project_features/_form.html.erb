@@ -1,0 +1,68 @@
+<%= turbo_frame_tag @project_feature do %>
+  <li class="list-group-item px-3 border-2 rounded-3 mb-3 w-75">
+    <%= form_for @project_feature do |f| %>
+      <div class="form-group">
+        <label class="form-label">
+          <%= t "project_features.project_feature.name_feature" %>
+          <%= f.text_field :name,
+                          class: "form-control #{invalid @project_feature, :name}" %>
+          <p class="error"><%= show_errors @project_feature, :name %></p>
+        </label>
+      </div>
+      <div class="form-row mb-3 justify-content-between">
+        <div class="form-col col-6">
+          <label class="form-label">
+            <%= t "project_features.project_feature.feature_description" %>
+            <%= f.text_area :description,
+                            class: "form-control #{invalid @project_feature, :description}",
+                            rows: "3"  %>
+            <p class="error"><%= show_errors @project_feature, :description %></p>
+          </label>
+        </div>
+        <div class="form-col col-5">
+          <label class="form-label">
+            <%= t "project_features.project_feature.waste_description" %>
+            <%= f.text_area :waste_description,
+                            class: "form-control #{invalid @project_feature, :waste_description}",
+                            rows: "3"  %>
+            <p class="error"><%= show_errors @project_feature, :waste_description %></p>
+          </label>
+        </div>
+      </div>
+      <div class="form-row mb-3 justify-content-between">
+        <div class="form-col col-3">
+          <label class="form-label">
+            <%= t "project_features.project_feature.effort_time" %>
+            <%= f.number_field :effort_saved,
+                               class: "form-control #{invalid @project_feature, :effort_saved}",
+                               step: "0.01" %>
+            <p class="error"><%= show_errors @project_feature, :effort_saved %></p>
+          </label>
+        </div>
+        <div class="form-col col-3">
+          <label class="form-label">
+            <%= t "project_features.project_feature.repeat_time" %>
+            <%= f.number_field :repeat_time,
+                               class: "form-control #{invalid @project_feature, :repeat_time}",
+                               step: "0.01" %>
+            <p class="error"><%= show_errors @project_feature, :repeat_time %></p>
+          </label>
+        </div>
+        <div class="form-col">
+          <label class="form-label">
+            <%= t "project_features.project_feature.repeat_unit" %>
+            <%= f.select :repeat_unit, list_repeat_unit, {},
+                         {class: "form-control #{invalid @project_feature, :repeat_unit}"} %>
+            <p class="error"><%= show_errors @project_feature, :repeat_unit %></p>
+          </label>
+        </div>
+      </div>
+      <div class="d-flex justify-content-end">
+        <%= link_to t(".cancel"), "#",
+                    data: { turbo_frame: @project_feature },
+                    class: "btn btn-danger btn-block w-30" %>
+        <%= f.submit t(".save"), class: "btn btn-primary btn-block w-30 ml-35" %>
+      </div>
+    <% end %>
+  </li>
+<% end %>

@@ -2,9 +2,11 @@ en:
   hello_world: "Hello world"
   errors:
     permission_update_delete_project: "You do not have permission to manipulate this project!"
+    permission_modify_project_feature: "You do not have permission to manipulate this project feature!"
     project_not_found: "Project not found."
     report_not_found: "Report not found."
     release_plan_not_found: "Release plan not found."
+    project_feature_not_found: "Project value not found."
   flash_logged_in_user_danger: "Please log in."
   flash_verify_admin_danger: "You are not authorized to access this page."
   flash_verify_manager_danger: "You are not authorized to access this page."
@@ -330,3 +332,15 @@ en:
       quarter: "quarter"
       half_a_year: "half a year"
       year: "year"
+      name_feature: "Name feature"
+    edit:
+      edit_project_feature: "Edit project value"
+    form:
+      save: "Save"
+      cancel: "Cancel"
+    update:
+      update_success: "Update project feature success!"
+  validates:
+    errors:
+      month: "Invalid month"
+      year: "Invalid year"

@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     resources :users, only: %i(edit update)
     resources :reports, only: %i(new create index destroy show)
     resources :release_plans, only: %i(edit update index new)
+    resources :project_features, only: %i(edit update)
   end
 end
