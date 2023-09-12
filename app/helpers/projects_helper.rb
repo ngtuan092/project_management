@@ -1,6 +1,4 @@
 module ProjectsHelper
-  include FormHelper
-
   def list_group
     Group.pluck :name, :id
   end
@@ -66,7 +64,7 @@ module ProjectsHelper
     safe_join list_customer
   end
 
-  def can_edit project
+  def can_edit_delete_project project
     current_user.can_edit_delete_project? project
   end
 end

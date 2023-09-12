@@ -4,6 +4,7 @@ en:
     permission_update_delete_project: "You do not have permission to manipulate this project!"
     project_not_found: "Project not found."
     report_not_found: "Report not found."
+    release_plan_not_found: "Release plan not found."
   flash_logged_in_user_danger: "Please log in."
   flash_verify_admin_danger: "You are not authorized to access this page."
   flash_verify_manager_danger: "You are not authorized to access this page."
@@ -22,8 +23,11 @@ en:
     header:
       Sign_out: "Sign out"
       profile_account: "Profile & account"
+    sidebar:
       list_projects: "Projects"
       list_reports: "Reports"
+      list_resources: "Resources"
+      list_release_plans: "Release Plans"
   user_mailer:
     password_reset:
       subject: "Password reset"
@@ -79,6 +83,7 @@ en:
       detail: "Detail"
       date: "Date"
       date_invalid: "Date format invalid"
+      new_resource: "New resource"
     new:
       select_project: "Select project"
       date: "Select date"
@@ -107,6 +112,7 @@ en:
       group: "Group"
       status: "Status"
       search: "Search"
+      new_project: "New project"
     project:
       in_progress: "In progress"
       completed: "Completed"
@@ -243,6 +249,7 @@ en:
       name: "Project name:"
       status: "Status"
       search: "Search"
+      new_report: "New report"
     destroy:
       delete_success: "Report was successfully destroyed."
       fail_delete: "This report has not been deleted."
@@ -259,7 +266,6 @@ en:
       description: "Description:"
       resource_description: "Resource description:"
   release_plans:
-    release_plan_not_found: "Release plan not found"
     edit:
       title: "Update release plan"
     form:
@@ -274,6 +280,19 @@ en:
     update:
       update_success: "Update release plan success!"
       update_danger: "Update release plan failure!"
+    index:
+      stt: "STT"
+      project_name: "Project name"
+      day_release_plan: "Release plan date"
+      description: "Description"
+      status: "Status"
+      action: "Action"
+    search_form:
+      search: "Search"
+      release_date: "Release plan date"
+      name: "Project Name"
+      status: "Status"
+      new_release_plan: "New release plan"
   project_users:
     form:
       member: "Staff"

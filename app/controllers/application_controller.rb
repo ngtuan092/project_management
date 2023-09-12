@@ -49,4 +49,12 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t "errors.permission_update_delete_project"
     redirect_to redirect_url, status: :see_other
   end
+
+  def find_release_plan
+    @release_plan = ReleasePlan.find_by id: params[:id]
+    return if @release_plan
+
+    flash[:warning] = t "errors.release_plan_not_found"
+    redirect_to :root, status: :see_other
+  end
 end

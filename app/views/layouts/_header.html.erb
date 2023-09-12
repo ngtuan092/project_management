@@ -1773,8 +1773,6 @@
           </div>
           <!-- End Dropdown -->
           <%= link_to t(".profile_account"), edit_user_path(current_user),  class: "dropdown-item"%>
-          <%= link_to t(".list_projects"), projects_path,  class: "dropdown-item"%>
-          <%= link_to t(".list_reports"), reports_path,  class: "dropdown-item"%>
           <hr class="dropdown-divider" />
           <%= link_to t(".Sign_out"), logout_path,
                       data: {"turbo-method": :delete},

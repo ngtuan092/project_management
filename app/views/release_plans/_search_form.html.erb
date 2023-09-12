@@ -1,6 +1,6 @@
-<%= form_with url: reports_path, method: :get, class: "row g-4 pb-4" do |f| %>
+<%= form_with url: release_plans_path, method: :get, class: "row g-4 pb-4" do |f| %>
   <div class="col-auto">
-    <%= f.label :date,  t(".date_report") %>
+    <%= f.label :date,  t(".release_date") %>
     <%= f.date_field :date, value: params[:date] %>
   </div>
   <div class="col-auto">
@@ -9,15 +9,15 @@
   </div>
   <div class="col-auto">
     <%= f.label :status, t(".status") %>
-    <%= f.select :status, list_statuses, {include_blank: true, selected: params[:status]} %>
+    <%= f.select :status, list_status, {include_blank: true, selected: params[:status]} %>
   </div>
   <div class="col-auto">
     <%= f.submit t(".search"), name: nil, class: "btn btn-primary me-2" %>
-    <%= link_to reports_path, class: "btn btn-secondary" do %>
+    <%= link_to release_plans_path, class: "btn btn-secondary" do %>
       <i class="bi bi-arrow-counterclockwise"></i>
     <% end %>
   </div>
   <div class="col-auto ms-auto">
-    <%= link_to t(".new_report"), new_report_path, class: "btn btn-primary" %>
+    <%= link_to t(".new_release_plan"), new_release_plan_path, class: "btn btn-primary" %>
   </div>
 <% end %>

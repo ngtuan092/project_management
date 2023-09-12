@@ -10,15 +10,16 @@
         <i class="bi-eye-fill"></i>
       </button>
     <% end %>
-
-    <button type="button" class="btn btn-success btn-sm">
-      <i class="bi-pencil-square"></i>
-    </button>
-
-    <%= link_to report, data: { "turbo-method": :delete, turbo_confirm: t("reports.you_sure?") }  do %>
-      <button type="button" class="btn btn-danger btn-sm">
-        <i class="bi-trash-fill"></i>
+    <% if can_edit_delete_report report %>
+      <button type="button" class="btn btn-success btn-sm">
+        <i class="bi-pencil-square"></i>
       </button>
+
+      <%= link_to report, data: { "turbo-method": :delete, turbo_confirm: t("reports.you_sure?") }  do %>
+        <button type="button" class="btn btn-danger btn-sm">
+          <i class="bi-trash-fill"></i>
+        </button>
+      <% end %>
     <% end %>
   </td>
 </tr>

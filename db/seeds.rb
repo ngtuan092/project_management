@@ -135,6 +135,7 @@ release_status = ["released", "preparing"]
 10.times do |i|
   ReleasePlan.create!(
     project_id: Faker::Number.between(from: 1, to: 5),
+    creator_id: Faker::Number.between(from: 1, to:3),
     description: Faker::Lorem.sentence,
     is_released: release_status[Faker::Number.between(from: 0, to: 1)],
     release_date: Faker::Date.between(from: 6.months.ago, to: 2.months.ago)

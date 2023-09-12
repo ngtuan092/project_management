@@ -1,9 +1,20 @@
 class ReleasePlansController < ApplicationController
-  before_action :logged_in_user, :find_release_plan, only: %i(edit update)
+  before_action :logged_in_user, only: %i(edit update index new)
+  before_action :find_release_plan, only: %i(edit update)
   before_action only: :update do
     check_valid_project edit_release_plan_url,
                         params.dig(:release_plan, :project_id)
   end
+
+  def index
+    @release_plans = ReleasePlan.filter_date(params[:date])
+                                .filter_name(params[:name])
+                                .filter_status(params[:status])
+    @pagy, @release_plans = pagy @release_plans,
+                                 items: Settings.pagy.number_items_10
+  end
+
+  def new; end
 
   def edit
     @projects = current_user.valid_projects_by_role
@@ -23,12 +34,5 @@ class ReleasePlansController < ApplicationController
   private
   def release_plan_params
     params.require(:release_plan).permit ReleasePlan::UPDATE_ATTRS
-  end
-
-  def find_release_plan
-    @release_plan = ReleasePlan.find_by id: params[:id]
-    return if @release_plan
-
-    redirect_to :root, flash: {warning: t(".release_plan_not_found")}
   end
 end

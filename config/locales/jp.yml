@@ -4,6 +4,7 @@ jp:
     permission_update_delete_project: "このプロジェクトを操作する権限がありません。"
     project_not_found: "プロジェクトが見つかりません。"
     report_not_found: "レポートが見つかりません。"
+    release_plan_not_found: "リリース計画が見つかりません。"
   flash_logged_in_user_danger: "ログインしてください。"
   flash_verify_admin_danger: "このページにアクセスする権限がありません。"
   flash_verify_manager_danger: "このページにアクセスする権限がありません。"
@@ -22,8 +23,11 @@ jp:
     header:
       Sign_out: "サインアウト"
       profile_account: "プロフィールとアカウント"
+    sidebar:
       list_projects: "プロジェクト"
       list_reports: "レポート"
+      list_resources: "リソース"
+      list_release_plans: "リリース計画"
   user_mailer:
     password_reset:
       subject: "パスワードのリセット"
@@ -79,6 +83,7 @@ jp:
       detail: "詳細"
       date: "日付"
       date_invalid: "日付形式が無効です"
+      new_resource: "新しいリソース"
     new:
       select_project: "プロジェクトを選択"
       date: "日付を選択してください"
@@ -107,6 +112,7 @@ jp:
       group: "グループ"
       status: "状態"
       search: "検索"
+      new_project: "新しいプロジェクト"
     project:
       in_progress: "進行中"
       completed: "完了"
@@ -243,6 +249,7 @@ jp:
       name: "プロジェクト名:"
       status: "状態:"
       search: "検索"
+      new_report: "新しいレポート"
     destroy:
       delete_success: "レポートは正常に破棄されました。"
       fail_delete: "このレポートは削除されていません。"
@@ -259,7 +266,6 @@ jp:
       description: "説明:"
       resource_description: "リソースの説明:"
   release_plans:
-    release_plan_not_found: "リリース計画が見つかりません"
     edit:
       title: "リリース計画の更新"
     form:
@@ -274,6 +280,19 @@ jp:
     update:
       update_success: "アップデートリリース計画成功！"
       update_danger: "アップデートのリリース計画が失敗しました!"
+    index:
+      stt: "番号順"
+      project_name: "プロジェクト名"
+      day_release_plan: "発売予定日"
+      description: "説明"
+      status: "状態"
+      action: "アクション"
+    search_form:
+      search: "検索"
+      release_date: "発売予定日"
+      name: "プロジェクト名"
+      status: "状態"
+      new_release_plan: "新作リリース予定"
   project_user:
     create_success: "メンバーの追加が成功しました!"
     create_fail: "新しいメンバーの追加に失敗しました!"
