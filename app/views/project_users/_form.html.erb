@@ -1,11 +1,11 @@
 <div class="container w-50 d-flex justify-content-center">
-  <%= form_with model: @project_user, url: project_users_path do |f| %>
+  <%= form_with model: @project_user, url: url do |f| %>
     <%= f.hidden_field :project_id, value: @project.id %>
     <div class="mb-3">
       <%= f.label :user_id, t(".member"), class: "form-label" %>
       <div data-controller="select2">
         <%= f.select :user_id, list_users, { include_blank: true,
-                                             selected: params[:user_id] },
+                                             selected: params[:user_id] || @project_user&.user_id}, disabled: local_assigns[:field_disabled],
                      class: "select2 form-control-modal #{invalid(f.object, :user)}" %>
       </div>
       <p class="error"><%= show_errors(f.object, :user) %></p>
@@ -13,7 +13,7 @@
     <div class="mb-3">
       <%= f.label :project_role_id, t(".role"), class: "form-label" %>
       <%= f.select :project_role_id, list_roles, { include_blank: true,
-                                                   selected: params[:project_role_id] },
+                                                   selected: params[:project_role_id] || @project_user&.project_role_id },
                    class: "form-control-modal #{invalid(f.object, :project_role)}" %>
       <p class="error"><%= show_errors(f.object, :project_role) %></p>
     </div>
@@ -33,7 +33,7 @@
       <p class="error"><%= show_errors(f.object, :note) %></p>
     </div>
 
-    <%= f.submit t(".submit"), class: "btn btn-primary" %>
+    <%= f.submit yield(:submit), class: "btn btn-primary" %>
     <%= link_to t(".close"), "#", class: "btn btn-danger", data: {
       controller: "modals",
       action: "modals#close"

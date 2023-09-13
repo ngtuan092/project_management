@@ -7,7 +7,7 @@
   <td><%= format_date project_user.left_at %></td>
   <td>
     <% if can_edit_project_member? project_user %>
-      <%= link_to "#", class: "edit", title: "Edit", "data-toggle" => "tooltip" do %>
+      <%= link_to edit_project_user_path(project_user), class: "edit", title: "Edit", "data-toggle" => "tooltip", data: { turbo_frame: "modal" } do %>
         <i class="bi bi-pencil-square"></i>
       <% end %>
       <%= link_to project_user_path(project_user), class: "delete", title: "Delete", "data-toggle" => "tooltip", data: { turbo_method: :delete, turbo_confirm: t("projects.you_sure?") }  do %>

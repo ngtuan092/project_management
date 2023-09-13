@@ -322,13 +322,18 @@ en:
       role: "Role"
       joined_at: "Time on project"
       left_at: "Time to leave the project"
-      submit: "Add member"
       note: "Note"
       close: "Close"
     new:
       title: "Add member to project"
+      submit: "Add member"
+    edit:
+      title: "Edit member"
+      submit: "Update member"
     not_permission: "You do not have permission to add or delete member to this project"
   project_user:
+    update_success: "Update member success!"
+    update_fail: "Update member failure!"
     create_success: "Add member successfully!"
     create_fail: "Add new member failure!"
     unique_user_in_project: "Members are already in the project!"

@@ -317,6 +317,8 @@ jp:
     cannot_delete: "このリリース計画は削除できません。 マネージャーと管理者のみがリリース計画を削除する権限を持っています。"
     you_sure?: "あなたは確かに？"
   project_user:
+    update_success: "プロジェクトメンバーの更新は成功しました!"
+    update_fail: "プロジェクトメンバーの更新に失敗しました!"
     create_success: "メンバーの追加が成功しました!"
     create_fail: "新しいメンバーの追加に失敗しました!"
     unique_user_in_project: "メンバーはすでにプロジェクトに参加しています!"
@@ -327,11 +329,14 @@ jp:
       role: "役割"
       joined_at: "プロジェクトに参加した時間"
       left_at: "プロジェクトを離れる時間"
-      submit: "メンバーを増やす"
       note: "ノート"
       close: "閉じる"
     new:
       title: "プロジェクトにメンバーを追加する"
+      submit: "メンバーを増やす"
+    edit:
+      title: "プロジェクトメンバーの更新"
+      submit: "更新"
     not_permission: "このプロジェクトに新しいメンバーを追加する権限がありません"
   month_project_features:
     index:

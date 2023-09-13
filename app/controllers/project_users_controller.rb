@@ -1,8 +1,9 @@
 class ProjectUsersController < ApplicationController
   before_action :logged_in_user, :find_project,
                 only: %i(new create)
-  before_action :logged_in_user, :find_project_user, only: %i(destroy)
-  before_action :check_permission, only: %i(new create destroy)
+  before_action :logged_in_user, :find_project_user,
+                only: %i(destroy edit update)
+  before_action :check_permission, only: %i(new create destroy edit update)
   def new
     @project_user = ProjectUser.new
   end
@@ -25,6 +26,18 @@ class ProjectUsersController < ApplicationController
       destroy_project_user
     end
     redirect_to project_path @project
+  end
+
+  def edit; end
+
+  def update
+    if @project_user.update project_user_params
+      flash[:success] = t "project_user.update_success"
+      redirect_to project_path @project
+    else
+      flash.now[:danger] = t "project_user.update_fail"
+      render root_path, status: :unprocessable_entity
+    end
   end
 
   private
