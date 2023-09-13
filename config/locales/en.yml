@@ -279,8 +279,8 @@ en:
       status: "Status"
       save: "Save"
     is_released:
-      false: "Prepare for release"
-      true: "Released"
+      preparing: "Prepare for release"
+      released: "Released"
     update:
       update_success: "Update release plan success!"
       update_danger: "Update release plan failure!"
@@ -349,6 +349,8 @@ en:
       cancel: "Cancel"
     update:
       update_success: "Update project feature success!"
+    delete_success: "Delete project feature success!"
+    fail_delete: "Delete project feature fail!"
   validates:
     errors:
       month: "Invalid month"

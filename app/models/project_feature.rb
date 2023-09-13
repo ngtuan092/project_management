@@ -27,6 +27,9 @@ class ProjectFeature < ApplicationRecord
 
   before_validation :add_man_month_before_save
 
+  scope :filter_month, ->(month){where(month:) if month}
+  scope :filter_year, ->(year){where(year:) if year}
+
   def effort_hour_month_save
     total_hour = effort_saved * repeat_time
     case repeat_unit.to_sym
