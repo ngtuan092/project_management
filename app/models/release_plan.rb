@@ -8,6 +8,7 @@ class ReleasePlan < ApplicationRecord
   belongs_to :creator, class_name: User.name
 
   delegate :name, to: :project, prefix: true
+  delegate :name, :email, to: :creator, prefix: true
 
   enum is_released: {released: true,
                      preparing: false},

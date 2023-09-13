@@ -79,13 +79,15 @@ en:
       search_by_name: "Search by name"
       export_report: "Export report"
       share: "Share"
-      order: "Number order"
+      date_invalid: "Date format invalid"
+      new_resource: "New resource"
+    table:
+      order: "STT"
       project_name: "Project name"
       man_month: "man/Month"
       detail: "Detail"
       date: "Date"
-      date_invalid: "Date format invalid"
-      new_resource: "New resource"
+      action: "Action"
     new:
       select_project: "Select project"
       date: "Select date"
@@ -247,8 +249,8 @@ en:
       description: "Description"
       action: "Action"
     search_form:
-      date_report: "Day report:"
-      name: "Project name:"
+      date_report: "Day report"
+      name: "Project name"
       status: "Status"
       search: "Search"
       new_report: "New report"
@@ -295,6 +297,13 @@ en:
       name: "Project Name"
       status: "Status"
       new_release_plan: "New release plan"
+    release_plan_detail:
+      project_name: "Project name:"
+      creator: "Creator:"
+      email: "Email:"
+      date: "Date created:"
+      description: "Description:"
+      status: "Status:"
   project_users:
     form:
       member: "Staff"

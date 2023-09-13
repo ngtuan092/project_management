@@ -5,20 +5,16 @@
   <td class="text-nowrap text-overflow"><%= report.issue %></td>
   <td class="text-nowrap text-overflow"><%= report.description %></td>
   <td class="text-center">
-    <%= link_to report, data: {turbo_frame: "modal"} do %>
-      <button type="button" class="btn btn-primary btn-sm">
-        <i class="bi-eye-fill"></i>
-      </button>
+    <%= link_to report, class: "btn btn-primary btn-sm", data: {turbo_frame: "modal"} do %>
+      <i class="bi-eye-fill"></i>
     <% end %>
     <% if can_edit_delete_report report %>
       <button type="button" class="btn btn-success btn-sm">
         <i class="bi-pencil-square"></i>
       </button>
 
-      <%= link_to report, data: { "turbo-method": :delete, turbo_confirm: t("reports.you_sure?") }  do %>
-        <button type="button" class="btn btn-danger btn-sm">
-          <i class="bi-trash-fill"></i>
-        </button>
+      <%= link_to report, class: "btn btn-danger btn-sm", data: { "turbo-method": :delete, turbo_confirm: t("reports.you_sure?") }  do %>
+        <i class="bi-trash-fill"></i>
       <% end %>
     <% end %>
   </td>
