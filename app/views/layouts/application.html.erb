@@ -23,8 +23,8 @@
     <main>
       <%= render "layouts/header" %>
       <div class="container-fluid">
-        <% flash.each do |message_type, message| %>
-          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <%= turbo_frame_tag "flash_message" do %>
+          <%= render "shared/flash_message" %>
         <% end %>
         <%= turbo_frame_tag "modal" %>
         <%= yield %>

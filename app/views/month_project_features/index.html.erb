@@ -14,7 +14,9 @@
   </ul>
 
   <section class="mt-5">
-    <p><%= t ".time_total", hour_total: effort_hour_month_total(@project_features) %></p>
-    <p><%= t ".man_month_total", man_month: man_month_total(@project_features) %></p>
+    <%= turbo_frame_tag "summary" do %>
+      <p><%= t ".time_total", hour_total: effort_hour_month_total(@project_features) %></p>
+      <p><%= t ".man_month_total", man_month: man_month_total(@project_features) %></p>
+    <% end %>
   </section>
 </div>

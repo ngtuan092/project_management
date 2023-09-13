@@ -1,8 +1,11 @@
 digits:
+  length_1: 1
   length_6: 6
   length_30: 30
   length_50: 50
   length_255: 255
+  length_200: 200
+  length_1000: 1000
 email:
   regex: !ruby/regexp '/\A[\w+-.]+@[a-z\d-]+(.[a-z\d-]+)*.[a-z]+\z/i'
 date:

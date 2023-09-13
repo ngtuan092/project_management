@@ -146,4 +146,8 @@ class User < ApplicationRecord
     admin? || manager? || creator_release_plan?(release_plan) ||
       role_psm?(release_plan.project)
   end
+
+  def can_modify_project_feature? project_feature
+    admin? || manager? || role_psm?(project_feature.project)
+  end
 end

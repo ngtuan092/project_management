@@ -2,9 +2,11 @@ jp:
   hello_world: "こんにちは世界"
   errors:
     permission_update_delete_project: "このプロジェクトを操作する権限がありません。"
+    permission_modify_project_feature: "このプロジェクト機能を操作する権限がありません。"
     project_not_found: "プロジェクトが見つかりません。"
     report_not_found: "レポートが見つかりません。"
     release_plan_not_found: "リリース計画が見つかりません。"
+    project_feature_not_found: "プロジェクト値が見つかりません。"
   flash_logged_in_user_danger: "ログインしてください。"
   flash_verify_admin_danger: "このページにアクセスする権限がありません。"
   flash_verify_manager_danger: "このページにアクセスする権限がありません。"
@@ -330,3 +332,15 @@ jp:
       quarter: "四半期"
       half_a_year: "半年"
       year: "年"
+      name_feature: "名前の特徴"
+    edit:
+      edit_project_feature: "プロジェクト値の編集"
+    form:
+      save: "保存"
+      cancel: "キャンセル"
+    update:
+      update_success: "プロジェクト機能の更新は成功しました!"
+  validates:
+    errors:
+      month: "無効な月です"
+      year: "年が無効です"
