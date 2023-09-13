@@ -44,7 +44,9 @@
         <%= link_to edit_project_feature_path(project_feature), class: "text-warning icon" do %>
           <i class="bi bi-pencil-square"></i>
         <% end %>
-        <%= link_to "#", class: "text-danger icon" do %>
+        <%= link_to project_feature_path(project_feature),
+                    data: {turbo_method: :delete, turbo_confirm: t("projects.you_sure?")},
+                    class: "text-danger icon" do %>
           <i class="bi bi-trash"></i>
         <% end %>
       <% end %>

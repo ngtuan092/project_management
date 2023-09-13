@@ -1,17 +1,26 @@
 class ProjectFeaturesController < ApplicationController
-  before_action :logged_in_user, :find_project_feature, only: %i(edit update)
-  before_action :check_role, only: :update
+  before_action :logged_in_user, :find_project_feature,
+                only: %i(edit update destroy)
+  before_action :check_role, :filtered_project_features,
+                only: %i(update destroy)
   def edit; end
 
   def update
     if @project_feature.update project_feature_params
-      @project_features = @project_feature.project.project_features
-                                          .where(month: @project_feature.month,
-                                                 year: @project_feature.year)
       flash.now[:success] = t ".update_success"
       respond_to(&:turbo_stream)
     else
       render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    if @project_feature.destroy
+      flash.now[:success] = t ".delete_success"
+      respond_to(&:turbo_stream)
+    else
+      flash[:danger] = t ".fail_delete"
+      redirect_back fallback_location: root_path
     end
   end
 
@@ -36,5 +45,13 @@ class ProjectFeaturesController < ApplicationController
     month_year = [@project_feature.year, @project_feature.month].join("-")
     redirect_to project_month_project_features_url(@project_feature.project,
                                                    month_year:)
+  end
+
+  def filtered_project_features
+    month = @project_feature.month
+    year = @project_feature.year
+    @project_features = @project_feature.project.project_features
+                                        .filter_month(month)
+                                        .filter_year(year)
   end
 end

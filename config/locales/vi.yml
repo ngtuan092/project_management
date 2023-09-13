@@ -279,8 +279,8 @@ vi:
       status: "Trạng thái"
       save: "Lưu lại"
     is_released:
-      false: "Chuẩn bị phát hành"
-      true: "Đã phát hành"
+      preparing: "Chuẩn bị phát hành"
+      released: "Đã phát hành"
     update:
       update_success: "Cập nhật kế hoạch phát hành thành công!"
       update_danger: "Cập nhật kế hoạch phát hành thất bại!"
@@ -349,6 +349,8 @@ vi:
       cancel: "Hủy"
     update:
       update_success: "Cập nhật tính năng dự án thành công!"
+    delete_success: "Xóa tính năng dự án thành công!"
+    fail_delete: "Xóa tính năng dự án không thành công!"
   validates:
     errors:
       month: "Tháng không hợp lệ"

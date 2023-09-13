@@ -279,8 +279,8 @@ jp:
       status: "状態"
       save: "保存"
     is_released:
-      false: "リリースの準備"
-      true: "リリース済み"
+      preparing: "リリースの準備"
+      released: "リリース済み"
     update:
       update_success: "アップデートリリース計画成功！"
       update_danger: "アップデートのリリース計画が失敗しました!"
@@ -349,6 +349,8 @@ jp:
       cancel: "キャンセル"
     update:
       update_success: "プロジェクト機能の更新は成功しました!"
+    delete_success: "プロジェクト機能の削除が成功しました!"
+    fail_delete: "プロジェクト機能の削除に失敗しました!"
   validates:
     errors:
       month: "無効な月です"
