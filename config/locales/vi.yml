@@ -4,6 +4,7 @@ vi:
     permission_update_delete_project: "Bạn không có quyền thao tác với dự án này!"
     project_not_found: "Không thể tìm thấy dự án."
     report_not_found: "Không thể tìm thấy báo cáo."
+    release_plan_not_found: "Không tìm thấy kế hoạch phát hành."
   flash_logged_in_user_danger: "Hãy đăng nhập trước đó."
   flash_verify_admin_danger: "Bạn không có quyền truy cập trang này."
   flash_verify_manager_danger: "Bạn không có quyền truy cập trang này."
@@ -22,8 +23,11 @@ vi:
     header:
       Sign_out: "Đăng xuất"
       profile_account: "Hồ sơ & tài khoản"
+    sidebar:
       list_projects: "Dự án"
       list_reports: "Báo cáo"
+      list_resources: "Tài nguyên"
+      list_release_plans: "Kế hoạch phát hành"
   user_mailer:
     password_reset:
       subject: "Đặt lại mật khẩu"
@@ -79,6 +83,7 @@ vi:
       detail: "Chi tiết"
       date: "Ngày tháng"
       date_invalid: "Định dạng ngày không hợp lệ"
+      new_resource: "Thêm tài nguyên"
     new:
       select_project: "Chọn dự án"
       date: "Chọn ngày"
@@ -107,6 +112,7 @@ vi:
       group: "Nhóm"
       status: "Trạng thái"
       search: "Tìm kiếm"
+      new_project: "Thêm dự án"
     project:
       in_progress: "Đang thực hiện"
       completed: "Đã hoàn thành"
@@ -243,6 +249,7 @@ vi:
       name: "Tên dự án:"
       status: "Trạng thái:"
       search: "Tìm kiếm"
+      new_report: "Thêm báo cáo"
     destroy:
       delete_success: "Báo cáo này đã được xóa thành công."
       fail_delete: "Báo cáo này chưa được xóa."
@@ -259,7 +266,6 @@ vi:
       description: "Mô tả:"
       resource_description: "Mô tả tài nguyên:"
   release_plans:
-    release_plan_not_found: "Không tìm thấy kế hoạch phát hành"
     edit:
       title: "Cập nhật kế hoạch phát hành"
     form:
@@ -274,6 +280,19 @@ vi:
     update:
       update_success: "Cập nhật kế hoạch phát hành thành công!"
       update_danger: "Cập nhật kế hoạch phát hành thất bại!"
+    index:
+      stt: "STT"
+      project_name: "Tên dự án"
+      day_release_plan: "Ngày kế hoạch phát hành"
+      description: "Mô tả"
+      status: "Trạng thái"
+      action: "Hành động"
+    search_form:
+      search: "Tìm kiếm"
+      release_date: "Ngày phát hành"
+      name: "Tên dự án"
+      status: "Trạng thái"
+      new_release_plan: "Thêm kế hoạch phát hành"
   project_users:
     form:
       member: "Nhân viên"

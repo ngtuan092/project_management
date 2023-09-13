@@ -12,9 +12,12 @@
     <%= f.select :status, list_statuses, {include_blank: true, selected: params[:status]} %>
   </div>
   <div class="col-auto">
-    <%= f.submit t(".search"), class: "btn btn-primary" %>
+    <%= f.submit t(".search"), name: nil, class: "btn btn-primary me-2" %>
     <%= link_to projects_path, class: "btn btn-secondary" do %>
       <i class="bi bi-arrow-counterclockwise"></i>
     <% end %>
+  </div>
+  <div class="col-auto ms-auto">
+    <%= link_to t(".new_project"), new_project_path, class: "btn btn-primary" %>
   </div>
 <% end %>

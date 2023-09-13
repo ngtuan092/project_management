@@ -15,6 +15,6 @@ Rails.application.routes.draw do
     resources :resources
     resources :users, only: %i(edit update)
     resources :reports, only: %i(new create index destroy show)
-    resources :release_plans, only: %i(edit update)
+    resources :release_plans, only: %i(edit update index new)
   end
 end

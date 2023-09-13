@@ -1,5 +1,4 @@
 module ResourcesHelper
-  include FormHelper
   include SessionsHelper
 
   def list_members project_id

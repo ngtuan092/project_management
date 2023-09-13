@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :created_projects, class_name: Project.name,
            foreign_key: :creator_id, dependent: nil
   has_many :created_reports, class_name: Report.name, dependent: nil
+  has_many :created_release_plans, class_name: ReleasePlan.name,
+           foreign_key: :creator_id, dependent: nil
 
   attr_accessor :remember_token, :reset_token
 
@@ -134,5 +136,14 @@ class User < ApplicationRecord
 
   def can_edit_delete_report? report
     admin? || manager? || creator_report?(report) || role_psm?(report.project)
+  end
+
+  def creator_release_plan? release_plan
+    created_release_plans.exists?(id: release_plan.id)
+  end
+
+  def can_edit_delete_release_plan? release_plan
+    admin? || manager? || creator_release_plan?(release_plan) ||
+      role_psm?(release_plan.project)
   end
 end
