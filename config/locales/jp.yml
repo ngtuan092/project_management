@@ -23,7 +23,7 @@ jp:
     invalid_login: "メールアドレスとパスワードの組み合わせが無効です"
   layouts:
     header:
-      Sign_out: "サインアウト"
+      sign_out: "サインアウト"
       profile_account: "プロフィールとアカウント"
     sidebar:
       list_projects: "プロジェクト"
@@ -310,6 +310,11 @@ jp:
       date: "発売予定日:"
       description: "説明:"
       status: "状態:"
+    destroy:
+      delete_success: "リリース計画は正常に破棄されました。"
+      fail_delete: "このリリース計画は削除されていません。"
+    cannot_delete: "このリリース計画は削除できません。 マネージャーと管理者のみがリリース計画を削除する権限を持っています。"
+    you_sure?: "あなたは確かに？"
   project_user:
     create_success: "メンバーの追加が成功しました!"
     create_fail: "新しいメンバーの追加に失敗しました!"

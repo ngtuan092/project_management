@@ -13,7 +13,7 @@
         <i class="bi-pencil-square"></i>
       </button>
 
-      <%= link_to report, class: "btn btn-danger btn-sm", data: { "turbo-method": :delete, turbo_confirm: t("reports.you_sure?") }  do %>
+      <%= link_to report, class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: t("reports.you_sure?") }  do %>
         <i class="bi-trash-fill"></i>
       <% end %>
     <% end %>
