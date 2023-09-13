@@ -4,7 +4,7 @@ class ReportsController < ApplicationController
     check_valid_project new_report_url,
                         params.dig(:report, :project_id)
   end
-  before_action :find_report, only: %i(show destroy)
+  before_action :find_report, only: %i(show destroy edit update)
   before_action :check_role, only: :destroy
 
   def index
@@ -39,6 +39,22 @@ class ReportsController < ApplicationController
     else
       flash[:danger] = t ".fail_delete"
       redirect_to root_path, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    @projects = current_user.valid_projects_by_role
+  end
+
+  def update
+    if @report.update report_params
+      flash.now[:success] = t ".update_success"
+      respond_to do |format|
+        format.html{redirect_to reports_path}
+        format.turbo_stream
+      end
+    else
+      flash.now[:danger] = t ".update_fail"
     end
   end
 

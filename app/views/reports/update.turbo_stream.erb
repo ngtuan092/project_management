@@ -1,0 +1,9 @@
+<%= turbo_stream.update "modal", "" %>
+<%= turbo_stream.update "flash_message" do %>
+  <%= render "shared/flash_message" %>
+<% end %>
+
+<%= turbo_stream.update "report-#{@report.id}-project-name", @report.project_name %>
+<%= turbo_stream.update "report-#{@report.id}-date", format_date(@report.date) %>
+<%= turbo_stream.update "report-#{@report.id}-issue", @report.issue %>
+<%= turbo_stream.update "report-#{@report.id}-description", @report.description %>

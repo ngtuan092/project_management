@@ -247,6 +247,11 @@ en:
       left_at: "Time left project"
     new:
       title: "Create report"
+    edit:
+      title: "Update report"
+      close: "Close"
+    update_success: "Update report success!"
+    update_fail: "Update report failure!"
     permission_error: "You do not have permission to create reports with this project!"
     index:
       stt: "STT"

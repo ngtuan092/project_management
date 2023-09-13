@@ -247,6 +247,11 @@ vi:
       left_at: "Thời gian rời dự án"
     new:
       title: "Tạo báo cáo"
+    edit:
+      title: "Cập nhật báo cáo"
+      close: "Đóng"
+    update_success: "Cập nhật báo cáo thành công!"
+    update_fail: "Cập nhật báo cáo thất bại!"
     permission_error: "Bạn không có quyền tạo báo cáo với dự án này!"
     index:
       stt: "STT"
