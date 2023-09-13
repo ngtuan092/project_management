@@ -36237,7 +36237,6 @@ main {
   .navbar-vertical.navbar-expand-lg>[class*=container] {
       align-items: stretch;
       flex-direction: column;
-      /* min-height: 100%; */
       padding-left: 0;
       padding-right: 0
   }

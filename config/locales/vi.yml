@@ -78,14 +78,16 @@ vi:
       search: "Tìm kiếm"
       search_by_name: "Tìm kiếm theo tên"
       export_report: "Xuất báo cáo"
-      share: "Chía sẻ"
+      share: "Chia sẻ"
+      date_invalid: "Định dạng ngày không hợp lệ"
+      new_resource: "Thêm tài nguyên"
+    table:
       order: "STT"
       project_name: "Tên dự án"
       man_month: "Số man/Month"
       detail: "Chi tiết"
       date: "Ngày tháng"
-      date_invalid: "Định dạng ngày không hợp lệ"
-      new_resource: "Thêm tài nguyên"
+      action: "Hành động"
     new:
       select_project: "Chọn dự án"
       date: "Chọn ngày"
@@ -247,9 +249,9 @@ vi:
       description: "Mô tả"
       action: "Hành động"
     search_form:
-      date_report: "Ngày báo cáo:"
-      name: "Tên dự án:"
-      status: "Trạng thái:"
+      date_report: "Ngày báo cáo"
+      name: "Tên dự án"
+      status: "Trạng thái"
       search: "Tìm kiếm"
       new_report: "Thêm báo cáo"
     destroy:
@@ -295,6 +297,13 @@ vi:
       name: "Tên dự án"
       status: "Trạng thái"
       new_release_plan: "Thêm kế hoạch phát hành"
+    release_plan_detail:
+      project_name: "Tên dự án:"
+      creator: "Người tạo:"
+      email: "Email:"
+      date: "Ngày tạo:"
+      description: "Mô tả:"
+      status: "Trạng thái:"
   project_users:
     form:
       member: "Nhân viên"

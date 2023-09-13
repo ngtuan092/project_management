@@ -5,13 +5,13 @@
   <td class="text-nowrap text-overflow"><%= release_plan.description %></td>
   <td class="text-nowrap text-overflow"><%= release_plan.is_released %></td>
   <td class="text-center">
-    <button type="button" class="btn btn-primary btn-sm">
+    <%= link_to release_plan, class: "btn btn-primary btn-sm", data: {turbo_frame: "modal"} do %>
       <i class="bi-eye-fill"></i>
-    </button>
+    <% end %>
     <% if can_edit_delete_release_plan release_plan %>
-      <button type="button" class="btn btn-success btn-sm">
+      <%= link_to edit_release_plan_path(release_plan), class: "btn btn-success btn-sm" do %>
         <i class="bi-pencil-square"></i>
-      </button>
+      <% end %>
 
       <button type="button" class="btn btn-danger btn-sm">
         <i class="bi-trash-fill"></i>
