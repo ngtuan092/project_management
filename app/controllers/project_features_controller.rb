@@ -92,26 +92,35 @@ class ProjectFeaturesController < ApplicationController
   def project_feature_params_create
     project_feature_params = params.require(:project)
                                    .permit Project::PROJECT_FEATURE_PARAMS
-    date = Date.parse("#{project_feature_params['month_year']}-01")
-    month = date.month
-    year = date.year
-    project_feature_params["project_features_attributes"]
-      &.values
-      &.each do |feature_params|
-      feature_params.merge!(month:, year:)
+    month_year = project_feature_params["month_year"]
+    if Settings.month_year.regex.match? month_year
+      date = Time.zone.parse("#{project_feature_params['month_year']}-01")
+      month = date.month
+      year = date.year
+      project_feature_params["project_features_attributes"]
+        &.values
+        &.each do |feature_params|
+        feature_params.merge!(month:, year:)
+      end
     end
     project_feature_params
   end
 
+  def redirect_if_no_features
+    flash[:danger] = t ".provide_at_least_1_feature"
+    redirect_to new_project_feature_path
+  end
+
   def find_project
-    @project = Project.new project_feature_params_create
     project_id = project_feature_params_create["project_id"]
-    @project_update = Project.find_by id: project_id
-    if @project_update
-      @project = @project_update
-      @project.assign_attributes(
-        project_feature_params_create.except("project_id")
-      )
+    @project = Project.find_by(id: project_id)
+    if @project
+      before_project_feature = @project.project_features.size
+      @project.assign_attributes(project_feature_params_create
+                                   .except("project_id"))
+      after_project_feature = @project.project_features.size
+      # need at least 1 feature
+      redirect_if_no_features if before_project_feature == after_project_feature
     else
       flash.now[:danger] = t ".can_not_find_project"
       render :new, status: :unprocessable_entity

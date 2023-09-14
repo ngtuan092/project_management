@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
     @projects = Project.filter_name(params[:name])
                        .filter_group(params[:group])
                        .filter_status(params[:status])
-    @pagy, @projects = pagy @projects, items: Settings.pagy.number_items
+    @pagy, @projects = pagy @projects, items: Settings.pagy.number_items_10
   end
 
   def create
@@ -29,7 +29,7 @@ class ProjectsController < ApplicationController
   def show
     @project_customers = @project.customers
     @pagy, @project_members = pagy @project.project_users.by_earliest_joined,
-                                   items: Settings.digits.length_30
+                                   items: Settings.pagy.number_items_10
   end
 
   def destroy

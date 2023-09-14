@@ -1,26 +1,31 @@
-<div class="container">
-  <div class="form-group justify-content-center">
-    <%= form_with url: project_features_path, method: :get do |f| %>
+<%= form_with url: project_features_path, method: :get do |f| %>
+  <div class="row mb-4">
+    <div class="col-auto">
       <label class="form-label"><%= t ".select_month_year" %></label>
-      <div class="row mb-3">
-        <div class="col-lg-2">
-          <%= f.date_field :month_year, type: "month", value: month_field_value(params[:month_year]), class: "form-control" %>
-        </div>
-        <div class="col-auto">
-          <%= f.submit t(".search"), name: nil, class: "btn btn-primary btn-block w-30 ml-35" %>
-        </div>
-        <div class="col-auto ms-auto">
-          <%= link_to t(".new_project_features"), new_project_feature_path, class: "btn btn-primary" %>
-        </div>
-      </div>
-    <% end %>
+      <%= f.date_field :month_year, type: "month", value: month_field_value(params[:month_year]), class: "form-control" %>
+    </div>
+    <div class="col-auto">
+      <label class="form-label invisible">invisible label</label>
+      <%= f.submit t(".search"), name: nil, class: "btn btn-primary btn-block form-control" %>
+    </div>
+    <div class="col-auto">
+      <label class="form-label invisible">invisible label</label>
+      <%= link_to project_features_path, class: "btn btn-secondary form-control" do %>
+        <i class="bi bi-arrow-counterclockwise"></i>
+      <% end %>
+    </div>
+    <div class="col-auto ms-auto">
+      <label class="form-label invisible">invisible label</label>
+      <%= link_to t(".new_project_features"), new_project_feature_path, class: "btn btn-primary form-control" %>
+    </div>
   </div>
-</div>
+<% end %>
+
 <div class="table-responsive">
-  <table class="table table-striped table-hover table-bordered">
+  <table class="table table-striped align-middle table-hover table-bordered padding-margin-0">
     <thead>
       <tr>
-        <th scope="col" width="10%"><%= t ".stt" %></th>
+        <th scope="col" width="5%"><%= t ".stt" %></th>
         <th scope="col"><%= t ".name" %></th>
         <th scope="col"><%= t ".man_month" %></th>
         <th scope="col" width="10%"><%= t ".action" %></th>
@@ -32,6 +37,13 @@
                  as: "item" %>
     </tbody>
   </table>
-  <%== pagy_info @pagy %>
-  <%== pagy_bootstrap_nav @pagy %>
+  <div class="card-footer">
+    <div class="d-flex justify-content-between align-items-center">
+      <!-- Pagination -->
+      <% if @pagy&.pages > 1 %>
+        <%== pagy_info @pagy %>
+        <%== pagy_bootstrap_nav @pagy %>
+      <% end %>
+    </div>
+  </div>
 </div>

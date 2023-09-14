@@ -82,6 +82,8 @@ vi:
       share: "Chia sẻ"
       date_invalid: "Định dạng ngày không hợp lệ"
       new_resource: "Thêm tài nguyên"
+      date_resource: "Ngày tạo"
+      name: "Tên dự án"
     table:
       order: "STT"
       project_name: "Tên dự án"
@@ -402,6 +404,7 @@ vi:
       select_project: "--Chọn dự án--"
       project_features: "Tính năng của dự án"
       effort_saved_total: "Tổng số giờ tiết kiệm trên tháng"
+    provide_at_least_1_feature: "Tạo tính năng thất bại do chưa nhập tính năng cần tạo."
     project_feature_fields:
       every_day: "mỗi ngày"
       every_week: "mỗi tuần"

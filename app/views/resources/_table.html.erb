@@ -1,30 +1,17 @@
 <div class="table-responsive">
-  <table class="table table-bordered align-middle table-edge table-hover table-nowrap mb-0">
-    <thead class="thead-light">
+  <table class="table table-striped align-middle table-hover table-bordered padding-margin-0">
+    <thead>
       <tr>
-        <th class="text-dark" width="5%">
-          <%= t(".order")%>
-        </th>
-        <th class="text-dark">
-          <%= t(".project_name")%>
-        </th>
-        <th class="text-dark">
-          <%= t(".man_month")%>
-        </th>
-        <th class="text-dark">
-          <%= t(".detail")%>
-        </th>
-        <th class="text-dark">
-          <%= t(".date")%>
-        </th>
-        <th class="text-dark">
-          <%= t(".action")%>
-        </th>
+        <th width="5%"><%= t(".order")%></th>
+        <th scope="col"><%= t(".project_name")%></th>
+        <th scope="col"><%= t(".man_month")%></th>
+        <th scope="col"><%= t(".detail")%></th>
+        <th scope="col"><%= t(".date")%></th>
+        <th scope="col"><%= t(".action")%></th>
       </tr>
     </thead>
-
     <tbody class="list">
-      <%= render partial: 'project', collection: @projects%>
+      <%= render partial: "project", collection: @projects%>
     </tbody>
   </table>
 </div>

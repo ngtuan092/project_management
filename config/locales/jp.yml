@@ -82,6 +82,8 @@ jp:
       share: "共有"
       date_invalid: "日付形式が無効です"
       new_resource: "新しいリソース"
+      date_resource: "当日のリソース"
+      name: "プロジェクト名"
     table:
       order: "番号順"
       project_name: "プロジェクト名"
@@ -402,6 +404,7 @@ jp:
       select_project: "--プロジェクトの選択--"
       project_features: "プロジェクトの特徴"
       effort_saved_total: "1 か月あたりに節約された合計時間数"
+    provide_at_least_1_feature: "作成するフィーチャーがインポートされていないため、フィーチャーの作成に失敗しました"
     project_feature_fields:
       every_day: "毎日"
       every_week: "毎週"

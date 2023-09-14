@@ -5,7 +5,7 @@ class ResourcesController < ApplicationController
   def index
     @projects = Project.filter_name(params[:name])
                        .filter_date(params[:date])
-    @pagy, @projects = pagy @projects, items: Settings.pagy.number_items
+    @pagy, @projects = pagy @projects, items: Settings.pagy.number_items_10
   end
 
   def new
