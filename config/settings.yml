@@ -1,5 +1,6 @@
 digits:
   length_1: 1
+  length_2: 2
   length_6: 6
   length_30: 30
   length_50: 50

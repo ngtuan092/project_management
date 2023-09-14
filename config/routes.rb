@@ -17,6 +17,6 @@ Rails.application.routes.draw do
     resources :users, only: %i(edit update)
     resources :reports, only: %i(new create index destroy show)
     resources :release_plans, except: :create
-    resources :project_features, only: %i(edit update destroy)
+    resources :project_features
   end
 end

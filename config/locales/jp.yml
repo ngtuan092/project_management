@@ -30,6 +30,7 @@ jp:
       list_reports: "レポート"
       list_resources: "リソース"
       list_release_plans: "リリース計画"
+      list_values: "リスト値"
   user_mailer:
     password_reset:
       subject: "パスワードのリセット"
@@ -362,6 +363,13 @@ jp:
       update_success: "プロジェクト機能の更新は成功しました!"
     delete_success: "プロジェクト機能の削除が成功しました!"
     fail_delete: "プロジェクト機能の削除に失敗しました!"
+    index:
+      man_month: "Man / Month"
+      select_month_year: "月年の選択"
+      search: "検索"
+      stt: "番号順"
+      name: "プロジェクト名"
+      action: "詳細"
   validates:
     errors:
       month: "無効な月です"

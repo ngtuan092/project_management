@@ -53,6 +53,23 @@ class Project < ApplicationRecord
                       }
   scope :filter_status, ->(status){where status: status if status.present?}
   scope :filter_group, ->(group){where group_id: group if group.present?}
+  scope :filter_features, lambda {|month, year|
+    includes(:project_features)
+      .joins(:project_features)
+      .merge(ProjectFeature.filter_month(month))
+      .merge(ProjectFeature.filter_year(year))
+  }
+
+  def calculate_project_man_per_month date
+    year, month = date&.split("-")
+    year ||= Time.zone.now.year
+    month ||= Time.zone.now.month
+    project_features = self.project_features
+                           .filter_month(month)
+                           .filter_year(year)
+    man_month = project_features.reduce(0){|a, e| a + e.calculator_man_month}
+    man_month.round Settings.digits.length_2
+  end
 
   def sum_man_month
     project_user_resources.sum(:man_month)

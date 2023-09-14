@@ -30,6 +30,7 @@ vi:
       list_reports: "Báo cáo"
       list_resources: "Tài nguyên"
       list_release_plans: "Kế hoạch phát hành"
+      list_values: "Danh sách values"
   user_mailer:
     password_reset:
       subject: "Đặt lại mật khẩu"
@@ -362,6 +363,13 @@ vi:
       update_success: "Cập nhật tính năng dự án thành công!"
     delete_success: "Xóa tính năng dự án thành công!"
     fail_delete: "Xóa tính năng dự án không thành công!"
+    index:
+      man_month: "Số man / month"
+      select_month_year: "Chọn tháng năm"
+      search: "Tìm kiếm"
+      stt: "STT"
+      name: "Tên dự án"
+      action: "Chi tiết"
   validates:
     errors:
       month: "Tháng không hợp lệ"

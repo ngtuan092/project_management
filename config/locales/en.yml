@@ -30,6 +30,7 @@ en:
       list_reports: "Reports"
       list_resources: "Resources"
       list_release_plans: "Release Plans"
+      list_values: "List values"
   user_mailer:
     password_reset:
       subject: "Password reset"
@@ -362,6 +363,13 @@ en:
       update_success: "Update project feature success!"
     delete_success: "Delete project feature success!"
     fail_delete: "Delete project feature fail!"
+    index:
+      man_month: "Man / Month"
+      select_month_year: "Select month year"
+      search: "Search"
+      stt: "STT"
+      name: "Project's name"
+      action: "Detail"
   validates:
     errors:
       month: "Invalid month"

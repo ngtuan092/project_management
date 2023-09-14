@@ -3,6 +3,22 @@ class ProjectFeaturesController < ApplicationController
                 only: %i(edit update destroy)
   before_action :check_role, :filtered_project_features,
                 only: %i(update destroy)
+
+  def index
+    year, month = params[:month_year]&.split("-")
+    month ||= Time.zone.now.month
+    year ||= Time.zone.now.year
+    @projects = Project.filter_features(month, year)
+    @pagy, @projects = pagy @projects, items: Settings.pagy.number_items_10
+  end
+
+  def show
+    year, month = params[:date]&.split("-")
+    @project = Project.find(params[:id])
+    @project_features = @project.project_features.filter_month(month)
+                                .filter_year(year)
+  end
+
   def edit; end
 
   def update

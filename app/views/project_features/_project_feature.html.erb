@@ -37,6 +37,11 @@
             </label>
           </div>
         </div>
+        <div class="form-row">
+          <p class="badge text-bg-success mx-2"><%= t("project_features.index.man_month") %></p>
+          <p><%= project_feature.calculator_man_month.round(Settings.digits.length_2) %></p>
+
+        </div>
       </div>
     </div>
     <div class="position-absolute top-15px end-20px">

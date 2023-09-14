@@ -1,0 +1,11 @@
+<tr>
+  <th scope="row" class="w-auto"><%= project_feature_stt item_counter  %></th>
+  <td><%= item.name %></td>
+  <td><%= item.calculate_project_man_per_month(params[:month_year]) %></td>
+
+  <td class="text-center">
+    <%= link_to project_feature_path(item, date: params[:month_year]), class: "btn btn-primary btn-sm" do %>
+      <i class="bi-eye-fill"></i>
+    <% end %>
+  </td>
+</tr>
