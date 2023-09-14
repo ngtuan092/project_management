@@ -31,6 +31,8 @@ class ProjectFeature < ApplicationRecord
   scope :filter_year, ->(year){where(year:) if year}
 
   def effort_hour_month_save
+    return unless effort_saved && repeat_time
+
     total_hour = effort_saved * repeat_time
     case repeat_unit.to_sym
     when :day then total_hour * 22
@@ -43,7 +45,9 @@ class ProjectFeature < ApplicationRecord
   end
 
   def calculator_man_month
-    effort_hour_month_save / (22 * 8)
+    return unless effort_hour_month_save
+
+    (effort_hour_month_save / (22 * 8)).round(2)
   end
 
   private

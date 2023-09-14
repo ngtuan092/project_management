@@ -27,3 +27,5 @@ project_roles:
 number:
   value_100: 100
   value_0: 0
+month_year:
+  regex: !ruby/regexp "/\\A\\d{4}-\\d{2}\\z/"

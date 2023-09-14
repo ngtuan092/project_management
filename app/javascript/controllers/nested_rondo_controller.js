@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import { addFieldProjectFeature } from "./project_features_controller";
 
 export default class extends Controller {
   static targets = ["template", "fieldContain"]
@@ -9,6 +10,7 @@ export default class extends Controller {
     let assoc = e.target.dataset.association;
     let newField = this.buildNewAssociation(assoc);
     this.fieldContainTarget.insertAdjacentHTML("beforeend", newField);
+    if(e.target.dataset.association === "project_feature") addFieldProjectFeature();
   }
 
   removeField(e) {

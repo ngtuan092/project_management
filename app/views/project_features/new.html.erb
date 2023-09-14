@@ -1,0 +1,36 @@
+<%= form_for @project, url: project_features_path do |f| %>
+  <div class="mb-3">
+    <%= f.label :month_year, t(".month"), class: "form-label" %>
+    <%= f.text_field :month_year, placeholder: "YYYY-MM", class: "form-control #{invalid(f.object, :month_year)}" %>
+    <p class="error"><%= show_errors(f.object, :month_year) %></p>
+  </div>
+  <div class="mb-3">
+    <%= f.label :project_id, t(".project_name"), class: "form-label" %>
+    <%= f.select :project_id, project_select, {:prompt => t(".select_project")}, class: "form-select #{invalid(f.object, :project_id)}" %>
+    <p class="error"><%= show_errors(f.object, :project_id) %></p>
+  </div>
+  <div class="mb-3">
+    <h6><%= t(".project_features") %></h6>
+    <div>
+      <div><%= t(".effort_saved_total")%>: <span id="effort_saved-total" >0</span> </div>
+      <div><%= t(".man_month_total")%>: <span id = "man_month-total">0</span> <%= t(".man_month")%> </div>
+    </div>
+    <div class="my-2" data-controller="nested-rondo" data-associated-with="project_features">
+      <div data-nested-rondo-target="fieldContain">
+        <%= f.fields_for :project_features do |detail| %>
+          <%= render "project_feature_fields", f: detail %>
+        <% end %>
+      </div>
+      <div class="links">
+        <%= link_to_add_association f, :project_features do %>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bi bi-plus-circle" width="1.5em" height="1.5em" data-association="project_feature" >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" data-association="project_feature" />
+          </svg>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <%= f.submit t(".submit"), class: "btn btn-primary" %>
+  </div>
+<% end %>

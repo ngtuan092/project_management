@@ -1,8 +1,9 @@
 class ProjectFeaturesController < ApplicationController
-  before_action :logged_in_user, :find_project_feature,
-                only: %i(edit update destroy)
+  before_action :logged_in_user, only: %i(new create edit update)
+  before_action :find_project_feature, only: %i(edit update destroy)
   before_action :check_role, :filtered_project_features,
                 only: %i(update destroy)
+  before_action :find_project, only: :create
 
   def index
     year, month = params[:month_year]&.split("-")
@@ -40,6 +41,23 @@ class ProjectFeaturesController < ApplicationController
     end
   end
 
+  def new
+    @project = Project.new
+    @project_feature = ProjectFeature.new
+  end
+
+  def create
+    if @project.save
+      flash[:success] = t ".create_success"
+      redirect_to project_features_path
+    else
+      @project = Project.new project_feature_params_create
+      @project.valid?
+      flash[:danger] = t ".create_fail"
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   private
   def project_feature_params
     params.require(:project_feature)
@@ -69,5 +87,34 @@ class ProjectFeaturesController < ApplicationController
     @project_features = @project_feature.project.project_features
                                         .filter_month(month)
                                         .filter_year(year)
+  end
+
+  def project_feature_params_create
+    project_feature_params = params.require(:project)
+                                   .permit Project::PROJECT_FEATURE_PARAMS
+    date = Date.parse("#{project_feature_params['month_year']}-01")
+    month = date.month
+    year = date.year
+    project_feature_params["project_features_attributes"]
+      &.values
+      &.each do |feature_params|
+      feature_params.merge!(month:, year:)
+    end
+    project_feature_params
+  end
+
+  def find_project
+    @project = Project.new project_feature_params_create
+    project_id = project_feature_params_create["project_id"]
+    @project_update = Project.find_by id: project_id
+    if @project_update
+      @project = @project_update
+      @project.assign_attributes(
+        project_feature_params_create.except("project_id")
+      )
+    else
+      flash.now[:danger] = t ".can_not_find_project"
+      render :new, status: :unprocessable_entity
+    end
   end
 end

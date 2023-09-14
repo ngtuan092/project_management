@@ -1,23 +1,30 @@
 <div class="container">
   <div class="form-group justify-content-center">
     <%= form_with url: project_features_path, method: :get do |f| %>
-      <label class="form-label">
-        <%= t ".select_month_year" %>
-        <%= f.date_field :month_year, type: "month", value: month_field_value(params[:month_year]), class: "form-control" %>
-      </label>
-      <%= f.submit t(".search"), name: nil, class: "btn btn-primary btn-block w-30 ml-35" %>
+      <label class="form-label"><%= t ".select_month_year" %></label>
+      <div class="row mb-3">
+        <div class="col-lg-2">
+          <%= f.date_field :month_year, type: "month", value: month_field_value(params[:month_year]), class: "form-control" %>
+        </div>
+        <div class="col-auto">
+          <%= f.submit t(".search"), name: nil, class: "btn btn-primary btn-block w-30 ml-35" %>
+        </div>
+        <div class="col-auto ms-auto">
+          <%= link_to t(".new_project_features"), new_project_feature_path, class: "btn btn-primary" %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
 <div class="table-responsive">
   <table class="table table-striped table-hover table-bordered">
     <thead>
-    <tr>
-      <th scope="col" width="10%"><%= t ".stt" %></th>
-      <th scope="col"><%= t ".name" %></th>
-      <th scope="col"><%= t ".man_month" %></th>
-      <th scope="col" width="10%"><%= t ".action" %></th>
-    </tr>
+      <tr>
+        <th scope="col" width="10%"><%= t ".stt" %></th>
+        <th scope="col"><%= t ".name" %></th>
+        <th scope="col"><%= t ".man_month" %></th>
+        <th scope="col" width="10%"><%= t ".action" %></th>
+      </tr>
     </thead>
     <tbody>
       <%= render partial: "project_features/monthly_project_feature",
