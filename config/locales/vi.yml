@@ -277,6 +277,15 @@ vi:
       description: "Mô tả:"
       resource_description: "Mô tả tài nguyên:"
   release_plans:
+    can_not_find_project: "Không thể tìm thấy dự án"
+    create_success: "Tạo thành công"
+    fail_create: "Tạo thất bại"
+    new:
+      project_name: "Tên dự án"
+      date: "Ngày"
+      description: "Mô tả"
+      status: "Trạng thái"
+      submit: "Lưu"
     edit:
       title: "Cập nhật kế hoạch phát hành"
     form:

@@ -277,6 +277,15 @@ jp:
       description: "説明:"
       resource_description: "リソースの説明:"
   release_plans:
+    can_not_find_project: "プロジェクトが見つかりません"
+    create_success: "成功を生み出す"
+    fail_create: "作成失敗"
+    new:
+      project_name: "プロジェクト名"
+      date: "日"
+      description: "説明"
+      status: "状態"
+      submit: "提出する"
     edit:
       title: "リリース計画の更新"
     form:

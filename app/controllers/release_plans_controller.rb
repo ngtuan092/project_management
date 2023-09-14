@@ -14,7 +14,21 @@ class ReleasePlansController < ApplicationController
                                  items: Settings.pagy.number_items_10
   end
 
-  def new; end
+  def new
+    @release_plan = ReleasePlan.new
+  end
+
+  def create
+    @release_plan = ReleasePlan.new release_plan_params
+                               .merge(creator_id: current_user.id)
+    if @release_plan.save
+      flash[:success] = t ".create_success"
+      redirect_to release_plans_path
+    else
+      flash[:danger] = t ".fail_create"
+      render :new, status: :unprocessable_entity
+    end
+  end
 
   def show; end
 
