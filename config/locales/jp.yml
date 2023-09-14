@@ -443,3 +443,13 @@ jp:
     new:
       checklist: "チェックリスト"
     validate_filled: "完全に入力してください"
+  value_resources:
+    index:
+      value: "価値"
+      resource: "リソース"
+      diff: "差分"
+      total_year: "年間合計"
+      total_value_year: "%{month} か月の合計値"
+      total_resource_year: "%{month} か月分の総リソース"
+      total_diff_year: "%{month} か月間の合計差分"
+      total: "合計"

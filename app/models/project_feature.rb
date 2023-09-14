@@ -29,6 +29,15 @@ class ProjectFeature < ApplicationRecord
 
   scope :filter_month, ->(month){where(month:) if month}
   scope :filter_year, ->(year){where(year:) if year}
+  scope :total_man_month_year, lambda {|month, year|
+    filter_month(month).filter_year(year).sum(:man_month)
+                       .round(Settings.digits.length_2)
+  }
+
+  scope :total_man_month_projects, lambda {|project_ids, month, year|
+    where(project_id: project_ids).total_man_month_year(month, year)
+                                  .round(Settings.digits.length_2)
+  }
 
   def effort_hour_month_save
     return unless effort_saved && repeat_time
@@ -47,7 +56,8 @@ class ProjectFeature < ApplicationRecord
   def calculator_man_month
     return unless effort_hour_month_save
 
-    (effort_hour_month_save / (22 * 8)).round(2)
+    (effort_hour_month_save / (22 * 8))
+      .round(Settings.digits.length_2)
   end
 
   private

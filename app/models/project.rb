@@ -76,7 +76,13 @@ class Project < ApplicationRecord
                         where("start_date LIKE ?", "#{date}%") if date.present?
                       }
   scope :filter_status, ->(status){where status: status if status.present?}
-  scope :filter_group, ->(group){where group_id: group if group.present?}
+  scope :filter_group, lambda {|group_id|
+    group = Group.find_by id: group_id
+    return if group.nil?
+
+    valid_group_ids = group.nested_sub_group_ids << group_id
+    where group_id: valid_group_ids
+  }
   scope :filter_features, lambda {|month, year|
     includes(:project_features)
       .joins(:project_features)

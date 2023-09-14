@@ -19,5 +19,6 @@ Rails.application.routes.draw do
     resources :release_plans
     resources :project_features
     resources :health, only: %i(new create)
+    resources :value_resources, only: :index
   end
 end
