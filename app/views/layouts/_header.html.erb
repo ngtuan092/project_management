@@ -1774,8 +1774,8 @@
           <!-- End Dropdown -->
           <%= link_to t(".profile_account"), edit_user_path(current_user),  class: "dropdown-item"%>
           <hr class="dropdown-divider" />
-          <%= link_to t(".Sign_out"), logout_path,
-                      data: {"turbo-method": :delete},
+          <%= link_to t(".sign_out"), logout_path,
+                      data: {turbo_method: :delete},
                       class: "dropdown-item" %>
         </div>
       </div>

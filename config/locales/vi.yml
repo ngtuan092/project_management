@@ -23,7 +23,7 @@ vi:
     invalid_login: "Kết hợp email/mật khẩu không chính xác"
   layouts:
     header:
-      Sign_out: "Đăng xuất"
+      sign_out: "Đăng xuất"
       profile_account: "Hồ sơ & tài khoản"
     sidebar:
       list_projects: "Dự án"
@@ -310,6 +310,11 @@ vi:
       date: "Ngày tạo:"
       description: "Mô tả:"
       status: "Trạng thái:"
+    destroy:
+      delete_success: "Kế hoạch phát hành này đã được xóa thành công."
+      fail_delete: "Kế hoạch phát hành này chưa được xóa."
+    cannot_delete: "Bạn không thể kế hoạch phát hành này. Chỉ có người quản lý và quản trị viên mới có quyền xóa kế hoạch phát hành."
+    you_sure?: "Bạn chắc chắn chứ?"
   project_users:
     form:
       member: "Nhân viên"

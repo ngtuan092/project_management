@@ -12,10 +12,9 @@
       <%= link_to edit_release_plan_path(release_plan), class: "btn btn-success btn-sm" do %>
         <i class="bi-pencil-square"></i>
       <% end %>
-
-      <button type="button" class="btn btn-danger btn-sm">
+      <%= link_to release_plan, class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: t("release_plans.you_sure?") }  do %>
         <i class="bi-trash-fill"></i>
-      </button>
+      <% end %>
     <% end %>
   </td>
 </tr>

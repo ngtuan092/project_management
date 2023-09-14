@@ -23,7 +23,7 @@ en:
     invalid_login: "Invalid email/password combination"
   layouts:
     header:
-      Sign_out: "Sign out"
+      sign_out: "Sign out"
       profile_account: "Profile & account"
     sidebar:
       list_projects: "Projects"
@@ -310,6 +310,11 @@ en:
       date: "Date created:"
       description: "Description:"
       status: "Status:"
+    destroy:
+      delete_success: "Release plan was successfully destroyed."
+      fail_delete: "This release plan has not been deleted."
+    cannot_delete: "You cannot delete this release plan. Only managers and administrators have the authority to delete release plan."
+    you_sure?: "You sure?"
   project_users:
     form:
       member: "Staff"
