@@ -8,4 +8,8 @@ module ProjectFeaturesHelper
   def have_permission_project_feature? project_feature
     current_user.can_modify_project_feature? project_feature
   end
+
+  def project_feature_stt counter
+    counter + 1
+  end
 end

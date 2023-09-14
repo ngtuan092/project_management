@@ -1,7 +1,7 @@
 class ProjectFeature < ApplicationRecord
   PROJECT_FEATURE_PARAMS = [
     :name, :description, :month,
-    :year, :waste_description,
+    :year, :date, :waste_description,
     :effort_saved, :repeat_time,
     :repeat_unit
   ].freeze
@@ -42,11 +42,11 @@ class ProjectFeature < ApplicationRecord
     else 0 end
   end
 
-  private
   def calculator_man_month
     effort_hour_month_save / (22 * 8)
   end
 
+  private
   def add_man_month_before_save
     self.man_month = calculator_man_month
   end
