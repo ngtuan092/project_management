@@ -3,7 +3,7 @@ class Project < ApplicationRecord
     :name, :description, :status, :start_date,
     :end_date, :group_id, :language,
     :repository, :redmine,
-    :project_folder, :customer_info,
+    :project_folder, :customers,
     :creator_id,
     {
       project_environments_attributes: [
@@ -44,7 +44,6 @@ class Project < ApplicationRecord
   validates :repository, length: {maximum: Settings.project.max_length_200}
   validates :redmine, length: {maximum: Settings.project.max_length_200}
   validates :project_folder, length: {maximum: Settings.project.max_length_200}
-  validates :customer_info, length: {maximum: Settings.project.max_length_1000}
 
   scope :filter_name, lambda {|name|
     where("name LIKE ?", "%#{name}%") if name.present?

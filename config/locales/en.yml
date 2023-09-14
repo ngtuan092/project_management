@@ -111,6 +111,7 @@ en:
       start_date: "Start date"
       end_date: "End date"
       description: "Description"
+      new_project: "New project"
     search_form:
       name: "Project name"
       group: "Group"
@@ -142,6 +143,7 @@ en:
       project_customers: "Customer information"
       dont_have_customer: "The project has no customers!"
     project_member:
+      No: "No"
       Project_Member: "Project Member"
       Add_New: "Add New"
       Member_name: "Member name"
@@ -150,6 +152,9 @@ en:
       joined_at: "Joined at"
       left_at: "Left at"
       action: "Action"
+      delete_member_success: "Delete member success!"
+      delete_member_fail: "Delete member fail!"
+      cannot_delete_member: "Cannot delete member!"
     project_health:
       health_item_name: "Health item name"
       status: "Status"
@@ -201,6 +206,7 @@ en:
       select_status: "-- Select status --"
       project_detail: "Project's detail"
       project_enviroment: "Project's enviroment"
+      select_customer_info: "-- Select customer info --"
       enviroment:
         production: "Production"
         staging: "Staging"
@@ -315,7 +321,7 @@ en:
       close: "Close"
     new:
       title: "Add member to project"
-    not_permission: "You do not have permission to add new member to this project"
+    not_permission: "You do not have permission to add or delete member to this project"
   project_user:
     create_success: "Add member successfully!"
     create_fail: "Add new member failure!"

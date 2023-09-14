@@ -10,7 +10,9 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new project_params
+    @project = Project.new project_params.merge(
+      customers: Customer.by_id(project_params[:customers])
+    )
     if @project.save
       flash[:success] = t "project.create_success"
       redirect_to projects_path

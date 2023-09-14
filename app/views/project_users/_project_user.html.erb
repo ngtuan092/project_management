@@ -6,14 +6,13 @@
   <td><%= format_date project_user.joined_at %></td>
   <td><%= format_date project_user.left_at %></td>
   <td>
-    <%= link_to "#", class: "show", title: "Show", "data-toggle" => "tooltip" do %>
-      <i class="bi bi-eye"></i>
-    <% end %>
-    <%= link_to "#", class: "edit", title: "Edit", "data-toggle" => "tooltip" do %>
-      <i class="bi bi-pencil-square"></i>
-    <% end %>
-    <%= link_to "#", class: "delete", title: "Delete", "data-toggle" => "tooltip" do %>
-      <i class="bi bi-trash"></i>
+    <% if can_edit_project_member? project_user %>
+      <%= link_to "#", class: "edit", title: "Edit", "data-toggle" => "tooltip" do %>
+        <i class="bi bi-pencil-square"></i>
+      <% end %>
+      <%= link_to project_user_path(project_user), class: "delete", title: "Delete", "data-toggle" => "tooltip", data: { turbo_method: :delete, turbo_confirm: t("projects.you_sure?") }  do %>
+        <i class="bi bi-trash"></i>
+      <% end %>
     <% end %>
   </td>
 </tr>
