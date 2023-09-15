@@ -1,0 +1,23 @@
+<%= form_for @release_plan do |f| %>
+  <div class="form-outline mt-4 mb-4">
+    <%= f.label t(".project_name") %>
+    <%= f.select :project_id, project_select, {}, class: "form-control #{invalid(@release_plan, :project_id)}" %>
+    <p class="error"><%= show_errors(@release_plan, :project_id) %></p>
+  </div>
+  <div class="form-outline mb-4">
+    <%= f.label t(".date") %>
+    <%= f.date_field :release_date, class: "form-control #{invalid(@release_plan, :release_date)}" %>
+    <p class="error"><%= show_errors(@release_plan, :release_date) %></p>
+  </div>
+  <div class="form-outline mb-4">
+    <%= f.label t(".description") %>
+    <%= f.text_field :description, class: "form-control #{invalid(@release_plan, :description)}" %>
+    <p class="error"><%= show_errors(@release_plan, :description) %></p>
+  </div>
+  <div class="form-outline mb-4">
+    <%= f.label t(".status") %>
+    <%= f.select :is_released, list_status, {}, class: "form-select #{invalid(@release_plan, :is_released)}" %>
+    <p class="error"><%= show_errors(@release_plan, :is_released) %></p>
+  </div>
+  <%= f.submit t(".submit"), class: "btn btn-primary btn-block mb-4 w-100" %>
+<% end %>

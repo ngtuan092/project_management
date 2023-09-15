@@ -277,6 +277,15 @@ en:
       description: "Description:"
       resource_description: "Resource description:"
   release_plans:
+    can_not_find_project: "Can not find project"
+    create_success: "Create success"
+    fail_create: "Create fail"
+    new:
+      project_name: "Project name"
+      date: "Date"
+      description: "Description"
+      status: "Status"
+      submit: "Submit"
     edit:
       title: "Update release plan"
     form:
