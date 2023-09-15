@@ -7,6 +7,6 @@
     <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
-    <%= render "form", url: project_users_path(@project) %>
+    <%= render "form", url: project_user_path(@project_user), field_disabled: true %>
   </div>
 <% end %>

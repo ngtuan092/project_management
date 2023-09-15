@@ -331,13 +331,18 @@ vi:
       role: "Vai trò"
       joined_at: "Thời gian vào dự án"
       left_at: "Thời gian rời dự án"
-      submit: "Thêm thành viên"
       note: "Ghi chú"
       close: "Đóng"
     new:
       title: "Thêm member vào dự án"
+      submit: "Thêm thành viên"
+    edit:
+      title: "Chỉnh sửa member dự án"
+      submit: "Cập nhật thành viên"
     not_permission: "Bạn không có quyền thêm hay xóa thành viên của dự án này"
   project_user:
+    update_success: "Cập nhật thành viên thành công!"
+    update_fail: "Cập nhật thành viên thất bại!"
     create_success: "Thêm mới thành viên thành công!"
     create_fail: "Thêm mới thành viên thất bại!"
     unique_user_in_project: "Thành viên đã có trong project!"
