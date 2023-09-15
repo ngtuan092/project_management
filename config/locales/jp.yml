@@ -247,6 +247,11 @@ jp:
       left_at: "プロジェクトを離れる時間"
     new:
       title: "レポートの作成"
+    edit:
+      title: "レポートの更新"
+      close: "閉じる"
+    update_success: "レポートの更新に成功しました！"
+    update_fail: "レポートの更新に失敗しました！"
     permission_error: "このプロジェクトでレポートを生成する権限がありません。"
     index:
       stt: "番号順"

@@ -1,18 +1,17 @@
 <tr>
   <td><%= report_stt report_counter %></td>
-  <td><%= report.project_name %></td>
-  <td><%= format_date report.date %></td>
-  <td class="text-nowrap text-overflow"><%= report.issue %></td>
-  <td class="text-nowrap text-overflow"><%= report.description %></td>
+  <td id="report-<%= report.id %>-project-name"><%= report.project_name %></td>
+  <td id="report-<%= report.id %>-date"><%= format_date report.date %></td>
+  <td id="report-<%= report.id %>-issue" class="text-nowrap text-overflow"><%= report.issue %></td>
+  <td id="report-<%= report.id %>-description" class="text-nowrap text-overflow"><%= report.description %></td>
   <td class="text-center">
     <%= link_to report, class: "btn btn-primary btn-sm", data: {turbo_frame: "modal"} do %>
       <i class="bi-eye-fill"></i>
     <% end %>
     <% if can_edit_delete_report report %>
-      <button type="button" class="btn btn-success btn-sm">
+      <%= link_to edit_report_path(report), class: "btn btn-success btn-sm", data: {turbo_frame: "modal"} do %>
         <i class="bi-pencil-square"></i>
-      </button>
-
+      <% end %>
       <%= link_to report, class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: t("reports.you_sure?") }  do %>
         <i class="bi-trash-fill"></i>
       <% end %>

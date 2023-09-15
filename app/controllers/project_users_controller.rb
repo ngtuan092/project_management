@@ -1,7 +1,8 @@
 class ProjectUsersController < ApplicationController
-  before_action :logged_in_user, :find_project,
+  before_action :logged_in_user
+  before_action :find_project,
                 only: %i(new create)
-  before_action :logged_in_user, :find_project_user,
+  before_action :find_project_user,
                 only: %i(destroy edit update)
   before_action :check_permission, only: %i(new create destroy edit update)
   def new

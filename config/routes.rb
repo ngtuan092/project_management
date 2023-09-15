@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :password_resets, only: %i(new create edit update)
     resources :resources
     resources :users, only: %i(edit update)
-    resources :reports, only: %i(new create index destroy show)
+    resources :reports
     resources :release_plans
     resources :project_features
   end
