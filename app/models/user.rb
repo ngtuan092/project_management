@@ -150,4 +150,8 @@ class User < ApplicationRecord
   def can_modify_project_feature? project_feature
     admin? || manager? || role_psm?(project_feature.project)
   end
+
+  def can_add_health? project
+    admin? || manager? || role_psm?(project)
+  end
 end
