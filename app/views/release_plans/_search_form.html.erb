@@ -1,7 +1,11 @@
 <%= form_with url: release_plans_path, method: :get, class: "row g-4 pb-4" do |f| %>
   <div class="col-auto">
-    <%= f.label :date,  t(".release_date"), class: "form-label" %>
-    <%= f.date_field :date, value: params[:date], class: "form-control" %>
+    <%= f.label :date_from,  t(".release_date_from"), class: "form-label" %>
+    <%= f.date_field :date_from, value: params[:date_from], class: "form-control" %>
+  </div>
+  <div class="col-auto">
+    <%= f.label :date_to,  t(".release_date_to"), class: "form-label" %>
+    <%= f.date_field :date_to, value: params[:date_to], class: "form-control" %>
   </div>
   <div class="col-auto">
     <%= f.label :name,  t(".name"), class: "form-label" %>

@@ -316,7 +316,8 @@ en:
       action: "Action"
     search_form:
       search: "Search"
-      release_date: "Release plan date"
+      release_date_from: "From date"
+      release_date_to: "To date"
       name: "Project Name"
       status: "Status"
       new_release_plan: "New release plan"

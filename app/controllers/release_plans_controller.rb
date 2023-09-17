@@ -7,9 +7,10 @@ class ReleasePlansController < ApplicationController
   end
 
   def index
-    @release_plans = ReleasePlan.filter_date(params[:date])
-                                .filter_name(params[:name])
+    @release_plans = ReleasePlan.filter_name(params[:name])
                                 .filter_status(params[:status])
+                                .in_date_range(params[:date_from],
+                                               params[:date_to])
     @pagy, @release_plans = pagy @release_plans,
                                  items: Settings.pagy.number_items_10
   end

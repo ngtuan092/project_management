@@ -19,16 +19,21 @@ class ReleasePlan < ApplicationRecord
             length: {maximum: Settings.project.max_length_200}
   validates :is_released, presence: true
 
-  scope :filter_date, ->(date){filter_by_date(date) if date.present?}
+  scope :in_date_range, lambda {|date_from, date_to|
+    if date_from.present? && date_to.present? && valid_date(date_from) &&
+       valid_date(date_to)
+      where(release_date: date_from..date_to)
+    elsif date_from.present? && valid_date(date_from)
+      where("release_date >= ?", date_from)
+    elsif date_to.present? && valid_date(date_to)
+      where("release_date <= ?", date_to)
+    else
+      all
+    end
+  }
   scope :filter_status, ->(status){where is_released: status if status.present?}
   scope :filter_name, lambda {|name|
     ids = Project.filter_name(name).pluck :id
     where(project_id: ids)
   }
-  class << self
-    def filter_by_date date_str
-      date = valid_date date_str
-      date ? where(release_date: date) : all
-    end
-  end
 end
