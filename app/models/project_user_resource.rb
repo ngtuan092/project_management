@@ -3,4 +3,8 @@ class ProjectUserResource < ApplicationRecord
 
   validates :percentage, :month, :year, :man_month,
             presence: true
+
+  def user_name
+    project_user.user.name
+  end
 end
