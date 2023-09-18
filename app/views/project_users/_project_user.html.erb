@@ -5,13 +5,13 @@
   <td><%= project_user.user_git_account %></td>
   <td><%= format_date project_user.joined_at %></td>
   <td><%= format_date project_user.left_at %></td>
-  <td>
+  <td class="text-center">
     <% if can_edit_project_member? project_user %>
-      <%= link_to edit_project_user_path(project_user), class: "edit", title: "Edit", "data-toggle" => "tooltip", data: { turbo_frame: "modal" } do %>
-        <i class="bi bi-pencil-square"></i>
+      <%= link_to edit_project_user_path(project_user), class: "edit btn btn-success btn-sm", title: "Edit", "data-toggle" => "tooltip", data: { turbo_frame: "modal" } do %>
+        <i class="bi bi-pencil-square text-white"></i>
       <% end %>
-      <%= link_to project_user_path(project_user), class: "delete", title: "Delete", "data-toggle" => "tooltip", data: { turbo_method: :delete, turbo_confirm: t("projects.you_sure?") }  do %>
-        <i class="bi bi-trash"></i>
+      <%= link_to project_user_path(project_user), class: "delete btn btn-danger btn-sm", title: "Delete", "data-toggle" => "tooltip", data: { turbo_method: :delete, turbo_confirm: t("projects.you_sure?") }  do %>
+        <i class="bi bi-trash text-white"></i>
       <% end %>
     <% end %>
   </td>

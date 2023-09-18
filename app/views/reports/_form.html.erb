@@ -1,16 +1,16 @@
 <%= form_for @report, remote: local_assigns[:remote] do |f| %>
-  <div class="form-row">
-    <div class="form-group col-md-4">
+  <div class="d-flex justify-content-between">
+    <div class="form-group col-md-5">
       <label for="report_date" class="form-label"><%= t ".day_month_year" %></label>
       <%= f.date_field :date, value: date_field_value(@report.date),
                        class: "form-control #{invalid @report, :date}" %>
       <p class="error"><%= show_errors @report, :date %></p>
     </div>
 
-    <div class="form-group col-md-4 ml-35">
+    <div class="form-group col-md-5">
       <label for="report_project_id" class="form-label"><%= t ".choose_project" %></label>
       <%= f.collection_select :project_id, @projects, :id, :name, {},
-                              {class: "form-control #{invalid @report, :project_id}"} %>
+                              {class: "form-select #{invalid @report, :project_id}"} %>
       <p class="error"><%= show_errors @report, :project_id %></p>
     </div>
   </div>
@@ -40,6 +40,6 @@
   </div>
 
   <div class="d-flex justify-content-center">
-    <%= f.submit t(".save"), class: "btn btn-primary btn-block w-30 form-control" %>
+    <%= f.submit t(".save"), class: "btn btn-primary btn-block w-30 mt-3 form-control" %>
   </div>
 <% end %>

@@ -1,35 +1,35 @@
 <div class="nested-fields">
   <div class="mb-3">
     <%= f.label :name, t(".name"), class: "form-label" %>
-    <%= f.text_field :name, class: "form-control #{invalid(f.object, :name)}" %>
+    <%= f.text_field :name, class: "form-control #{invalid(f.object, :name)}", required: true %>
     <p class="error"><%= show_errors(f.object, :name) %></p>
   </div>
   <div class="row">
     <div class="mb-3 col">
       <%= f.label :description, t(".description"), class: "form-label" %>
-      <%= f.text_field :description, class: "form-control #{invalid(f.object, :description)}" %>
+      <%= f.text_field :description, class: "form-control #{invalid(f.object, :description)}", required: true %>
       <p class="error"><%= show_errors(f.object, :description) %></p>
     </div>
     <div class="mb-3 col">
       <%= f.label :waste_description, t(".waste_description"), class: "form-label" %>
-      <%= f.text_field :waste_description, class: "form-control #{invalid(f.object, :waste_description)}" %>
+      <%= f.text_field :waste_description, class: "form-control #{invalid(f.object, :waste_description)}", required: true %>
       <p class="error"><%= show_errors(f.object, :waste_description) %></p>
     </div>
   </div>
   <div class="row">
     <div class="mb-3 col">
       <%= f.label :effort_saved, t(".effort_saved"), class: "form-label" %>
-      <%= f.number_field :effort_saved, class: "form-control effort_saved-input #{invalid(f.object, :effort_saved)}", step: "0.01" %>
+      <%= f.number_field :effort_saved, class: "form-control effort_saved-input #{invalid(f.object, :effort_saved)}", step: "0.01", required: true %>
       <p class="error"><%= show_errors(f.object, :effort_saved) %></p>
     </div>
     <div class="mb-3 col">
       <%= f.label :repeat_time, t(".repeat_time"), class: "form-label" %>
-      <%= f.number_field :repeat_time, class: "form-control repeat_time-input #{invalid(f.object, :repeat_time)}", step: "0.01" %>
+      <%= f.number_field :repeat_time, class: "form-control repeat_time-input #{invalid(f.object, :repeat_time)}", step: "0.01", required: true %>
       <p class="error"><%= show_errors(f.object, :repeat_time) %></p>
     </div>
     <div class="mb-3 col">
       <%= f.label :repeat_unit, t(".repeat_unit"), class: "form-label" %>
-      <%= f.select :repeat_unit, list_repeat_unit, {:prompt => t(".select_option")}, class: "form-select repeat_unit-select #{invalid(f.object, :repeat_unit)}" %>
+      <%= f.select :repeat_unit, list_repeat_unit, {:prompt => t(".select_option")}, class: "form-select repeat_unit-select #{invalid(f.object, :repeat_unit)}", required: true %>
       <p class="error"><%= show_errors(f.object, :repeat_unit) %></p>
     </div>
   </div>

@@ -32,8 +32,8 @@ jp:
       list_reports: "レポート"
       list_resources: "リソース"
       list_release_plans: "リリース計画"
-      list_values: "リスト値"
-      statistic: "統計的"
+      list_values: "値"
+      list_value_resources: "プロジェクトの価値/リソースの統計"
   user_mailer:
     password_reset:
       subject: "パスワードのリセット"
@@ -121,6 +121,7 @@ jp:
       select_project: "プロジェクトを選択"
       select_month_year: "月を選択"
       select: "選択する"
+      new_resource: "リソースの作成"
   projects:
     index:
       name: "プロジェクト"
@@ -131,8 +132,8 @@ jp:
       end_date: "終了日"
       description: "説明"
       new_project: "新しいプロジェクト"
-      stt: "No."
-      project_index: "プロジェクトの一覧表示"
+      stt: "番号順"
+      project_index: "プロジェクト一覧"
     search_form:
       name: "プロジェクト名"
       group: "グループ"
@@ -164,7 +165,7 @@ jp:
       project_customers: "顧客情報"
       dont_have_customer: "このプロジェクトには顧客がいません!"
     project_member:
-      No: "番号"
+      stt: "番号順"
       Project_Member: "プロジェクトメンバー"
       Add_New: "新規追加"
       Member_name: "メンバー名"
@@ -206,6 +207,7 @@ jp:
   not_found_user: "ユーザーが見つかりません"
   project:
     new_project: "新しいプロジェクト"
+    created_project: "プロジェクトの作成"
     create_success: "プロジェクトの作成に成功しました！"
     create_fail: "プロジェクトの作成に失敗しました！"
     form:
@@ -309,6 +311,7 @@ jp:
     create_success: "成功を生み出す"
     fail_create: "作成失敗"
     new:
+      created_release_plan: "リリース計画の作成"
       project_name: "プロジェクト名"
       date: "日"
       description: "説明"
@@ -420,6 +423,7 @@ jp:
     create_fail: "作成失敗"
     can_not_find_project: "プロジェクトが見つかりません"
     new:
+      new_value: "プロジェクト機能の作成"
       man_month_total: "延べ人数/月"
       man_month: "人/月"
       submit: "保存"

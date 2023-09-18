@@ -1,14 +1,19 @@
 <%= form_with url: new_resource_path, method: :get do |f| %>
-  <div class="mb-3">
-    <%= f.label :month_year, t(".select_month_year"), class: "form-label" %>
-    <%= f.date_field :month_year, type: "month", value: month_field_value(params[:month_year]), class: "form-control" %>
-  </div>
-  <div class="mb-3">
-    <%= f.label :project_id, t(".select_project"), class: "form-label" %>
-    <%= f.select :project_id, project_select, { prompt: t(".select_project"), selected: params["project_id"] }, class: "form-select", id: "select_project", required: true %>
-  </div>
-  <div class="mb-3">
-    <%= f.submit t(".select"), name: nil, class: "btn btn-primary btn-block w-30 ml-35" %>
+  <h1 class="d-flex fw-bold justify-content-center mb-8"><%= t(".new_resource")%></h1>
+  <div class="mb-4 row d-flex justify-content-center">
+    <div class="col-4 me-10">
+      <%= f.label :month_year, t(".select_month_year"), class: "form-label" %>
+      <%= f.date_field :month_year, type: "month", value: month_field_value(params[:month_year]), class: "form-control" %>
+    </div>
+
+    <div class="col-4">
+      <%= f.label :project_id, t(".select_project"), class: "form-label" %>
+      <%= f.select :project_id, project_select, { prompt: t(".select_project"), selected: params["project_id"] }, class: "form-select", id: "select_project", required: true %>
+    </div>
+
+    <div class="mt-3 d-flex justify-content-center">
+      <%= f.submit t(".select"), name: nil, class: "btn btn-primary btn-block w-30 ml-35" %>
+    </div>
   </div>
 <% end %>
 
