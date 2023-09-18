@@ -3,7 +3,11 @@
   <td><%= release_plan.project_name %></td>
   <td><%= format_date release_plan.release_date %></td>
   <td class="text-nowrap text-overflow"><%= release_plan.description %></td>
-  <td class="text-nowrap text-overflow"><%= release_plan.is_released %></td>
+  <td class="text-center">
+    <span class="badge rounded-pill text-bg-<%= release_plan.is_released %>">
+      <%= t "release_plans.is_released.#{release_plan.is_released}" %>
+    </span>
+  </td>
   <td class="text-center">
     <%= link_to release_plan, class: "btn btn-primary btn-sm", data: {turbo_frame: "modal"} do %>
       <i class="bi-eye-fill"></i>

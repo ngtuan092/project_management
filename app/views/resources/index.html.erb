@@ -22,15 +22,15 @@
           </div>
         </div>
       </div>
-
       <%= render("resources/table") %>
-
-      <div class="card-footer">
-        <div class="d-flex justify-content-between align-items-center">
-          <!-- Pagination -->
+    </div>
+    <div class="card-footer">
+      <div class="d-flex justify-content-between align-items-center">
+        <!-- Pagination -->
+        <% if @pagy&.pages > 1 %>
           <%== pagy_info @pagy %>
           <%== pagy_bootstrap_nav @pagy %>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>

@@ -5561,7 +5561,7 @@ progress {
 }
 
 .form-label {
-  font-size: .75rem;
+  font-size: 1rem;
   font-weight: 700;
   margin-bottom: .3125rem
 }
@@ -8847,7 +8847,7 @@ label {
   background-color: var(--bs-pagination-active-bg);
   border-color: var(--bs-pagination-active-border-color);
   color: var(--bs-pagination-active-color);
-  z-index: 3
+  z-index: -1 !important
 }
 
 .disabled>.page-link,.page-link.disabled {
@@ -35203,7 +35203,7 @@ a,button {
 }
 
 .form-check-label {
-  font-size: .75rem;
+  font-size: 1rem;
   font-weight: 600
 }
 

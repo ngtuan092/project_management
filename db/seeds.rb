@@ -112,6 +112,17 @@ projects.each do |project|
   end
 end
 
+10.times do |i|
+  Report.create!(
+      project_id: Faker::Number.between(from: 1, to: projects.size),
+      user_id: Faker::Number.between(from: 1, to: users.size),
+      description: Faker::Lorem.sentence,
+      resource_description: Faker::Lorem.sentence,
+      issue: Faker::Lorem.sentence,
+      date: Faker::Date.between(from: 6.months.ago, to: 2.months.ago)
+  )
+end
+
 health_item_arr = ["Member info document", "Guideline for new member document", "Apply GKC", "Apply CI",
                    "Apply CD", "Apply Basic authen", "Requirement document", "API design document",
                    "Database design document", "Device management document", "Release checklist", "Final inspection checklist"]

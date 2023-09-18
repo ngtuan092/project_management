@@ -61,8 +61,6 @@ class Project < ApplicationRecord
   validates :repository, length: {maximum: Settings.project.max_length_200}
   validates :redmine, length: {maximum: Settings.project.max_length_200}
   validates :project_folder, length: {maximum: Settings.project.max_length_200}
-  validates :month_year, format: {with: Settings.month_year.regex,
-                                  message: I18n.t("message_valid_month_year")}
 
   scope :filter_name, lambda {|name|
     where("name LIKE ?", "%#{name}%") if name.present?

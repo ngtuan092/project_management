@@ -14,11 +14,21 @@
 }
 
 .text-bg-pending {
-  background-color: yellow;
+  background-color: #FFD700;
   color: white;
 }
 
 .text-bg-close {
   background-color: red;
+  color: white;
+}
+
+.text-bg-released {
+  background-color: green;
+  color: white;
+}
+
+.text-bg-preparing {
+  background-color: orange;
   color: white;
 }

@@ -82,6 +82,8 @@ en:
       share: "Share"
       date_invalid: "Date format invalid"
       new_resource: "New resource"
+      date_resource: "Date created"
+      name: "Project name"
     table:
       order: "STT"
       project_name: "Project name"
@@ -402,6 +404,7 @@ en:
       project_name: "Project name"
       select_project: "--Select project--"
       project_features: "Project's features"
+    provide_at_least_1_feature: "Creating a feature failed because the feature to be created was not imported."
     project_feature_fields:
       every_day: "Every day"
       every_week: "Every week"

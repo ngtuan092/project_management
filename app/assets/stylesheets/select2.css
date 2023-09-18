@@ -78,7 +78,7 @@
 
 .select2-dropdown {
   background-color: white;
-  border: 1px solid #aaa;
+  border: 1px solid var(--bs-gray-300);
   border-radius: 4px;
   box-sizing: border-box;
   display: block;
@@ -176,7 +176,7 @@
 
 .select2-container--default .select2-selection--single {
   background-color: #fff;
-  border: 1px solid #aaa;
+  border: 1px solid var(--bs-gray-300);
   border-radius: 4px
 }
 
@@ -244,7 +244,7 @@
 
 .select2-container--default .select2-selection--multiple {
   background-color: white;
-  border: 1px solid #aaa;
+  border: 1px solid var(--bs-gray-300);
   border-radius: 4px;
   cursor: text;
   padding-bottom: 5px;
@@ -269,7 +269,7 @@
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
   background-color: #e4e4e4;
-  border: 1px solid #aaa;
+  border: 1px solid var(--bs-gray-300);
   border-radius: 4px;
   box-sizing: border-box;
   display: inline-block;

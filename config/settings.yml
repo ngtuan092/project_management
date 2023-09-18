@@ -2,7 +2,6 @@ digits:
   length_1: 1
   length_2: 2
   length_6: 6
-  length_30: 30
   length_50: 50
   length_255: 255
   length_200: 200
@@ -14,7 +13,6 @@ date:
   format_date_field: "%Y-%m-%d"
   format_month_field: "%Y-%m"
 pagy:
-  number_items: 8
   number_items_10: 10
 project:
   max_length_200: 200
@@ -28,4 +26,4 @@ number:
   value_100: 100
   value_0: 0
 month_year:
-  regex: !ruby/regexp "/\\A\\d{4}-\\d{2}\\z/"
+  regex: !ruby/regexp '/\A\d{4}-(0[1-9]|1[0-2])\z/'
