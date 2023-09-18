@@ -316,7 +316,8 @@ vi:
       action: "Hành động"
     search_form:
       search: "Tìm kiếm"
-      release_date: "Ngày phát hành"
+      release_date_from: "Từ ngày"
+      release_date_to: "Đến ngày"
       name: "Tên dự án"
       status: "Trạng thái"
       new_release_plan: "Thêm kế hoạch phát hành"

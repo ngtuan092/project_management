@@ -316,7 +316,8 @@ jp:
       action: "アクション"
     search_form:
       search: "検索"
-      release_date: "発売予定日"
+      release_date_from: "以来"
+      release_date_to: "現在まで"
       name: "プロジェクト名"
       status: "状態"
       new_release_plan: "新作リリース予定"
