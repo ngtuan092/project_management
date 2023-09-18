@@ -1,5 +1,7 @@
 jp:
   hello_world: "こんにちは世界"
+  application:
+    project_management: "プロジェクト管理"
   errors:
     permission_update_delete_project: "このプロジェクトを操作する権限がありません。"
     permission_modify_project_feature: "このプロジェクト機能を操作する権限がありません。"
@@ -84,6 +86,7 @@ jp:
       new_resource: "新しいリソース"
       date_resource: "当日のリソース"
       name: "プロジェクト名"
+      resource_index: "リソースリスト"
     table:
       order: "番号順"
       project_name: "プロジェクト名"
@@ -121,6 +124,7 @@ jp:
       description: "説明"
       new_project: "新しいプロジェクト"
       stt: "No."
+      project_index: "プロジェクトの一覧表示"
     search_form:
       name: "プロジェクト名"
       group: "グループ"
@@ -177,6 +181,8 @@ jp:
     update:
       update_success: "プロジェクト情報が正常に更新されました。"
       update_fail: "失敗したプロジェクトの情報を更新します。"
+    edit:
+      edit_project: "プロジェクトの編集"
   users:
     update:
       flash_update_success: "更新に成功"
@@ -268,6 +274,7 @@ jp:
       issue: "問題"
       description: "説明"
       action: "アクション"
+      report_index: "レポート一覧"
     search_form:
       date_report: "当日のレポート"
       name: "プロジェクト名"
@@ -320,6 +327,7 @@ jp:
       description: "説明"
       status: "状態"
       action: "アクション"
+      release_plan_index: "リリース予定一覧"
     search_form:
       search: "検索"
       release_date_from: "以来"
@@ -368,6 +376,7 @@ jp:
       list_value: "リスト値"
       man_month_total: "毎月節約できる人数の合計: %{man_month} 人・月"
       time_total: "1 か月あたりに節約された合計時間数: %{hour_total} 時間"
+      project_feature_index: "機能リスト"
   project_features:
     project_feature:
       feature_description: "機能の説明"
@@ -453,3 +462,4 @@ jp:
       total_resource_year: "%{month} か月分の総リソース"
       total_diff_year: "%{month} か月間の合計差分"
       total: "合計"
+      value_resources_index: "統計値/リソース"

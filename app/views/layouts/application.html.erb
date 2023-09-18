@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project Management</title>
+    <title><%= full_title yield(:title) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -22,7 +22,7 @@
     <%= render "layouts/sidebar" %>
     <main>
       <%= render "layouts/header" %>
-      <div class="container-fluid">
+      <div class="container-fluid min-h-650px min-h-lg-650px">
         <%= turbo_frame_tag "flash_message" do %>
           <%= render "shared/flash_message" %>
         <% end %>

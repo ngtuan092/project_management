@@ -1,5 +1,5 @@
 <tr>
-  <td><%= project_feature_stt item_counter  %></td>
+  <td><%= sequence_number item_counter, @pagy&.offset  %></td>
   <td><%= item.name %></td>
   <td><%= item.calculate_project_man_per_month(params[:month_year]) %></td>
 
