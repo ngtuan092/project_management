@@ -83,4 +83,9 @@ module ProjectsHelper
 
     Project.created_by_user_or_psm(current_user).pluck(:name, :id)
   end
+
+  def list_project_user project_id
+    Project.user_names_by_project_id(project_id)
+           .map{|user| [user.name, user.id]}
+  end
 end

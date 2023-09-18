@@ -75,6 +75,10 @@ en:
       single_page: "%{count} of %{count}"
       multiple_pages: "%{from}-%{to} of %{count}"
   resources:
+    can_not_find_project: "Can not find project"
+    update_success: "Resource updated successfully."
+    update_fail: "Failed to update resource."
+    not_change: "You haven't made any changes yet"
     index:
       resources: "Resources"
       select_date: "Select date"
@@ -87,6 +91,7 @@ en:
       date_resource: "Date created"
       name: "Project name"
       resource_index: "Resource list"
+      update_resource: "Update resource"
     table:
       order: "STT"
       project_name: "Project name"
@@ -94,15 +99,13 @@ en:
       detail: "Detail"
       date: "Date"
       action: "Action"
-    new:
+    form_resources:
       select_project: "Select project"
       date: "Select date"
       save: "Save"
     create:
       required_date: "Please select a date"
       required_project: "Please select a project"
-      create_success: "Resource created successfully."
-      create_fail: "Failed to create resource."
       at_least_1: "At least create 1 resource"
     project_user_resource_fields:
       remove: "Delete"
@@ -113,6 +116,10 @@ en:
       updated_fail: "Update resources failed"
     resources_form:
       edit: "Edit: "
+    new:
+      select_project: "Select project"
+      select_month_year: "Select month"
+      select: "Select"
   projects:
     index:
       name: "Project"

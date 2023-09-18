@@ -1,7 +1,9 @@
 <div class="nested-fields">
+  <%= f.hidden_field :month, value: @month %>
+  <%= f.hidden_field :year, value: @year %>
   <div class="mb-3 row">
     <div class="col-5">
-      <%= f.collection_select(:project_user_id, list_members(params[:project_id]), :last, :first , { prompt: t(".select_member") }, { class: "form-select", required: true }) %>
+      <%= f.select :project_user_id, list_project_user(@project.id) , { prompt: t(".select_member") }, class: "form-select", required: true  %>
     </div>
     <div class="col-4">
       <%= f.number_field :percentage , class: "form-control", placeholder: t(".effort"),max: Settings.number.value_100, min: Settings.number.value_0, required: true %>

@@ -75,6 +75,10 @@ vi:
       single_page: "%{count} trong tổng số %{count}"
       multiple_pages: "%{from}-%{to} trong tổng số %{count}"
   resources:
+    can_not_find_project: "Không thể tìm thấy dự án"
+    update_success: "Cập nhật tài nguyên thành công."
+    update_fail: "Cập nhật tài nguyên không thành công."
+    not_change: "Bạn chưa có thay đổi gì"
     index:
       resources: "Tài nguyên"
       select_date: "Chọn ngày"
@@ -87,6 +91,7 @@ vi:
       date_resource: "Ngày tạo"
       name: "Tên dự án"
       resource_index: "Danh sách tài nguyên"
+      update_resource: "Cập nhật tài nguyên"
     table:
       order: "STT"
       project_name: "Tên dự án"
@@ -94,15 +99,13 @@ vi:
       detail: "Chi tiết"
       date: "Ngày tháng"
       action: "Hành động"
-    new:
+    form_resources:
       select_project: "Chọn dự án"
       date: "Chọn ngày"
       save: "Lưu"
     create:
       required_date: "Hãy chọn ngày"
       required_project: "Hãy chọn dự án"
-      create_success: "Tạo tài nguyên thành công."
-      create_fail: "Tạo tài nguyên không thành công."
       at_least_1: "Ít nhất tạo 1 tài nguyên"
     project_user_resource_fields:
       remove: "Xóa"
@@ -113,6 +116,10 @@ vi:
       updated_fail: "Cập nhật tài nguyên thất bại"
     resources_form:
       edit: "Cập nhật: "
+    new:
+      select_project: "Chọn dự án"
+      select_month_year: "Chọn tháng"
+      select: "chọn"
   projects:
     index:
       name: "Dự án"
