@@ -51,7 +51,7 @@ project_role_arr.each do |role|
   )
 end
 
-10.times do |i|
+12.times do |i|
   Group.create!(
     name: "Group number #{i}",
     description: Faker::Lorem.sentence,
@@ -60,7 +60,7 @@ end
 end
 
 languages = ["ruby", "Javascript", "Python", "Java", "C#"]
-10.times do |i|
+12.times do |i|
   Project.create!(
     group_id: Faker::Number.between(from: 1, to: 10),
     creator_id: Faker::Number.between(from: 1, to: 3),
@@ -113,7 +113,7 @@ projects.each do |project|
   end
 end
 
-10.times do |i|
+12.times do |i|
   Report.create!(
       project_id: Faker::Number.between(from: 1, to: projects.size),
       user_id: Faker::Number.between(from: 1, to: users.size),
@@ -144,7 +144,7 @@ customer_arr.each do |customer|
 end
 
 release_status = ["released", "preparing"]
-10.times do |i|
+12.times do |i|
   ReleasePlan.create!(
     project_id: Faker::Number.between(from: 1, to: 5),
     creator_id: Faker::Number.between(from: 1, to:3),

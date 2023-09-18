@@ -1,5 +1,7 @@
 en:
   hello_world: "Hello world"
+  application:
+    project_management: "Project Management"
   errors:
     permission_update_delete_project: "You do not have permission to manipulate this project!"
     permission_modify_project_feature: "You do not have permission to manipulate this project feature!"
@@ -84,6 +86,7 @@ en:
       new_resource: "New resource"
       date_resource: "Date created"
       name: "Project name"
+      resource_index: "Resource list"
     table:
       order: "STT"
       project_name: "Project name"
@@ -121,6 +124,7 @@ en:
       description: "Description"
       new_project: "New project"
       stt: "No."
+      project_index: "List projects"
     search_form:
       name: "Project name"
       group: "Group"
@@ -177,6 +181,8 @@ en:
     update:
       update_success: "Updated project information successfully."
       update_fail: "Update failed project information."
+    edit:
+      edit_project: "Edit project"
   users:
     update:
       flash_update_success: "Update successful"
@@ -268,6 +274,7 @@ en:
       issue: "Issue"
       description: "Description"
       action: "Action"
+      report_index: "Report list"
     search_form:
       date_report: "Day report"
       name: "Project name"
@@ -320,6 +327,7 @@ en:
       description: "Description"
       status: "Status"
       action: "Action"
+      release_plan_index: "Release plan list"
     search_form:
       search: "Search"
       release_date_from: "From date"
@@ -368,6 +376,7 @@ en:
       list_value: "List value"
       man_month_total: "Total number of people/month saved: %{man_month} man/month"
       time_total: "Total hours saved per month: %{hour_total} hour"
+      project_feature_index: "Project feature list"
   project_features:
     project_feature:
       feature_description: "Feature description"
@@ -453,3 +462,4 @@ en:
       total_resource_year: "Total resource of %{month} months"
       total_diff_year: "Total diff of %{month} months"
       total: "Total"
+      value_resources_index: "Statistics values/resources"

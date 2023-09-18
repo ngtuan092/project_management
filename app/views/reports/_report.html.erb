@@ -1,5 +1,5 @@
 <tr>
-  <td><%= report_stt report_counter %></td>
+  <td><%= sequence_number report_counter, @pagy.offset %></td>
   <td id="report-<%= report.id %>-project-name"><%= report.project_name %></td>
   <td id="report-<%= report.id %>-date"><%= format_date report.date %></td>
   <td id="report-<%= report.id %>-issue" class="text-nowrap text-overflow"><%= report.issue %></td>

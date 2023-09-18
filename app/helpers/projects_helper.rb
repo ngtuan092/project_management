@@ -9,10 +9,6 @@ module ProjectsHelper
     end
   end
 
-  def project_stt counter
-    counter + 1
-  end
-
   def status_select
     Project.statuses.keys.map do |status|
       [t("project.form.status.#{status}"), status]
@@ -60,10 +56,6 @@ module ProjectsHelper
 
   def page_tab?
     params[:page].present?
-  end
-
-  def project_member_stt counter
-    counter + 1
   end
 
   def list_customer customers

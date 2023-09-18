@@ -1,5 +1,7 @@
 vi:
   hello_world: "Xin chào cả thế giới!"
+  application:
+    project_management: "Quản lý dự án"
   errors:
     permission_update_delete_project: "Bạn không có quyền thao tác với dự án này!"
     permission_modify_project_feature: "Bạn không có quyền thao tác với tính năng dự án này!"
@@ -84,6 +86,7 @@ vi:
       new_resource: "Thêm tài nguyên"
       date_resource: "Ngày tạo"
       name: "Tên dự án"
+      resource_index: "Danh sách tài nguyên"
     table:
       order: "STT"
       project_name: "Tên dự án"
@@ -121,6 +124,7 @@ vi:
       description: "Mô tả"
       new_project: "Dự án mới"
       stt: "STT"
+      project_index: "Danh sách dự án"
     search_form:
       name: "Tên dự án"
       group: "Nhóm"
@@ -177,6 +181,8 @@ vi:
     update:
       update_success: "Cập nhật thông tin dự án thành công."
       update_fail: "Cập nhật thông tin dự án thất bại."
+    edit:
+      edit_project: "Chỉnh sửa dự án"
   users:
     update:
       flash_update_success: "Cập nhật thành công"
@@ -268,6 +274,7 @@ vi:
       issue: "Vấn đề"
       description: "Mô tả"
       action: "Hành động"
+      report_index: "Danh sách báo cáo"
     search_form:
       date_report: "Ngày báo cáo"
       name: "Tên dự án"
@@ -320,6 +327,7 @@ vi:
       description: "Mô tả"
       status: "Trạng thái"
       action: "Hành động"
+      release_plan_index: "Danh sách kế hoạch phát hành"
     search_form:
       search: "Tìm kiếm"
       release_date_from: "Từ ngày"
@@ -368,6 +376,7 @@ vi:
       list_value: "Danh sách giá trị"
       man_month_total: "Tổng số người/tháng tiết kiệm: %{man_month} người/tháng"
       time_total: "Tổng số giờ tiết kiệm trên tháng: %{hour_total} giờ"
+      project_feature_index: "Danh sách tính năng"
   project_features:
     project_feature:
       feature_description: "Mô tả tính năng"
@@ -453,3 +462,4 @@ vi:
       total_resource_year: "Tổng tài nguyên %{month} tháng"
       total_diff_year: "Tổng chênh lệch %{month} tháng"
       total: "Tổng"
+      value_resources_index: "Thống kê giá trị/tài nguyên"
