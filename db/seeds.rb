@@ -54,7 +54,8 @@ end
 10.times do |i|
   Group.create!(
     name: "Group number #{i}",
-    description: Faker::Lorem.sentence
+    description: Faker::Lorem.sentence,
+    parent_id: i == 0 ? nil : Faker::Number.between(from: 1, to: i)
   )
 end
 
@@ -173,4 +174,14 @@ end
     repeat_unit: Faker::Number.between(from: 0, to: 5),
     man_month: Faker::Number.between(from: 0, to: 5),
   )
+end
+
+20.times do |i|
+  ProjectUserResource.create!(
+    project_user_id: Faker::Number.between(from: 1, to: 5),
+    percentage: Faker::Number.between(from: 1, to: 100),
+    month: Faker::Number.between(from: 1, to: 2),
+    year: Faker::Number.between(from: 2023, to: 2024),
+    man_month: Faker::Number.between(from: 0, to: 5),
+    )
 end

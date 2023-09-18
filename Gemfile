@@ -16,6 +16,7 @@ gem "pagy"
 gem "puma", "~> 5.0"
 gem "rails", "~> 7.0.5"
 gem "rails-i18n"
+gem "rails-patterns"
 gem "sassc-rails", "2.1.2"
 gem "sprockets-rails"
 gem "stimulus-rails"
@@ -23,6 +24,7 @@ gem "turbo-rails"
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)
 
 group :development, :test do
+  gem "bullet"
   gem "debug", platforms: %i(mri mingw x64_mingw)
   gem "faker"
   gem "rspec-rails"

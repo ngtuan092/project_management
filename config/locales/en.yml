@@ -427,11 +427,11 @@ en:
       repeat_time: "Repeat time"
       repeat_unit: "Repeat unit"
       select_option: "--Select option--"
+  message_valid_month_year: "Must be in the format 'YYYY-MM'"
   validates:
     errors:
       month: "Invalid month"
       year: "Invalid year"
-  message_valid_month_year: "Must be in the format 'YYYY-MM'"
   health:
     create:
       create_fail: "Create project health failed"
@@ -443,3 +443,13 @@ en:
     new:
       checklist: "Checklist"
     validate_filled: "Please fill in completely"
+  value_resources:
+    index:
+      value: "Value"
+      resource: "Resource"
+      diff: "Diff"
+      total_year: "Total for the year"
+      total_value_year: "Total value of %{month} months"
+      total_resource_year: "Total resource of %{month} months"
+      total_diff_year: "Total diff of %{month} months"
+      total: "Total"

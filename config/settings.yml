@@ -2,6 +2,8 @@ digits:
   length_1: 1
   length_2: 2
   length_6: 6
+  length_12: 12
+  length_30: 30
   length_50: 50
   length_255: 255
   length_200: 200
@@ -14,6 +16,7 @@ date:
   format_month_field: "%Y-%m"
 pagy:
   number_items_10: 10
+  number_itemss_20: 20
 project:
   max_length_200: 200
   max_length_1000: 1000
