@@ -105,6 +105,11 @@ vi:
       remove: "Xóa"
       select_member: "Chọn thành viên"
       effort: "Phần trăm làm việc (0 - 100)"
+    update:
+      update_success: "Cập nhật tài nguyên thành công"
+      updated_fail: "Cập nhật tài nguyên thất bại"
+    resources_form:
+      edit: "Cập nhật: "
   projects:
     index:
       name: "Dự án"

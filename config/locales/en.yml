@@ -105,6 +105,11 @@ en:
       remove: "Delete"
       select_member: "Select member"
       effort: "Percent work (0 - 100)"
+    update:
+      update_success: "Update resources success"
+      updated_fail: "Update resources failed"
+    resources_form:
+      edit: "Edit: "
   projects:
     index:
       name: "Project"

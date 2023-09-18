@@ -1,6 +1,7 @@
 class ResourcesController < ApplicationController
   before_action :validate_create_form, only: :create
   before_action :logged_in_user
+  before_action :find_project, only: %i(edit update)
 
   def index
     @projects = Project.filter_name(params[:name])
@@ -24,6 +25,24 @@ class ResourcesController < ApplicationController
     flash[:success] = t(".create_success")
   rescue ActiveRecord::RecordInvalid
     flash[:error] = t(".create_fail")
+  ensure
+    redirect_to resources_path
+  end
+
+  def edit
+    return if params[:date].blank?
+
+    date = Date.parse params[:date]
+    month = date.month
+    year = date.year
+    @list_resources = @project.project_user_resources.where(month:, year:)
+  end
+
+  def update
+    update_resources
+    flash[:success] = t(".update_success")
+  rescue ActiveRecord::RecordInvalid
+    flash[:error] = t(".updated_fail")
   ensure
     redirect_to resources_path
   end
@@ -62,6 +81,18 @@ class ResourcesController < ApplicationController
         )
 
         new_resource.save!
+      end
+    end
+  end
+
+  def update_resources
+    resource_params = params.require(:project).permit(resources: [:id,
+:percentage])
+    ActiveRecord::Base.transaction do
+      resource_params[:resources].each do |id, resource_data|
+        resource = ProjectUserResource.find(id)
+        resource.update!(percentage: resource_data[:percentage],
+                         man_month: resource_data[:percentage].to_f / 100)
       end
     end
   end

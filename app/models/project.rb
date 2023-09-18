@@ -29,6 +29,13 @@ class Project < ApplicationRecord
     }
   ].freeze
 
+  PROJECT_RESOURCE_PARAMS = [
+    {resources: [
+      :id,
+      :percentage
+    ]}
+  ].freeze
+
   belongs_to :group
   belongs_to :creator, class_name: User.name
 

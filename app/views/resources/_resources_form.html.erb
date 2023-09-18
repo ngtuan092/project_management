@@ -1,0 +1,33 @@
+<% content_for :javascript_file do %>
+  <%= javascript_include_tag "select_date" %>
+<% end %>
+
+<%= form_with model: @project, url: resource_path, method: :put  do |f|%>
+  <div class="mb-3">
+    <h3><%= t ".edit" %><%= @project.name %></h3>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col-3">
+      <h4><%= t(".date")%></h4>
+    </div>
+    <div class="col-9">
+      <%= f.date_field :joined_at, class: "form-select col-md-6", id: "select_date" , value: params[:date] ,required: true %>
+    </div>
+  </div>
+
+  <% @list_resources.try(:each) do |item| %>
+    <div class="mb-3 row">
+      <div class="col-5">
+        <%= item.user_name %>
+      </div>
+      <div class="col-4">
+        <%= f.number_field "resources[#{item.id}][percentage]" , class: "form-control", placeholder: t("resources.project_user_resource_fields.effort"), max: Settings.number.value_100, min: Settings.number.value_0, required: true, :value => item.percentage %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="col-12">
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -105,6 +105,11 @@ jp:
       remove: "削除"
       select_member: "メンバーを選択"
       effort: "作業パーセント (0 ～ 100)"
+    update:
+      update_success: "リソースの更新が成功しました"
+      updated_fail: "リソースの更新に失敗しました"
+    resources_form:
+      edit: "アップデート: "
   projects:
     index:
       name: "プロジェクト"
