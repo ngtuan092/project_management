@@ -12,12 +12,10 @@ class ProjectUsersController < ApplicationController
   def create
     @project_user = ProjectUser.new project_user_params
     if @project_user.save
-      @project_members = @project.project_users.by_earliest_joined
+      @pagy, @project_users = pagy @project.project_users.by_earliest_joined,
+                                   items: Settings.pagy.number_items_10
       flash[:success] = t "project_user.create_success"
-      respond_to do |format|
-        format.html{redirect_to @project}
-        format.turbo_stream
-      end
+      respond
     else
       flash.now[:danger] = t "project_user.create_fail"
       render :new, status: :unprocessable_entity
@@ -46,6 +44,14 @@ class ProjectUsersController < ApplicationController
   end
 
   private
+
+  def respond
+    respond_to do |format|
+      format.html{redirect_to @project}
+      format.turbo_stream
+    end
+  end
+
   def project_user_params
     params.require(:project_user).permit ProjectUser::UPDATE_ATTRS
   end

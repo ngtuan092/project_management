@@ -5,6 +5,10 @@ module ApplicationHelper
     date&.strftime Settings.date.format
   end
 
+  def current_locale
+    I18n.locale.to_s
+  end
+
   def full_title page_title
     base_title = t "application.project_management"
     page_title.empty? ? base_title : [page_title, base_title].join(" | ")

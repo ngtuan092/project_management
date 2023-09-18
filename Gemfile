@@ -6,6 +6,8 @@ ruby "3.2.2"
 gem "bcrypt", "3.1.18"
 gem "bootsnap", require: false
 gem "bootstrap-sass", "3.4.1"
+gem "caxlsx"
+gem "caxlsx_rails"
 gem "config"
 gem "dotenv-rails"
 gem "figaro", "~> 1.1", ">= 1.1.1"

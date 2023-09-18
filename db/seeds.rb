@@ -98,7 +98,7 @@ projects = Project.all
 projects.each do |project|
   # make sure user_id is unique in project
   project_users = []
-  10.times do |i|
+  11.times do |i|
     user_id = nil
     loop do
       user_id = Faker::Number.between(from: 1, to: users.size)
