@@ -3,12 +3,12 @@
   <div class="col-8 mx-auto">
     <div class="mb-2 row d-flex justify-content-between">
       <div class="col-6">
-        <%= f.label :month_year, t(".month"), class: "form-label" %>
+        <%= f.label :month_year, t(".month"), class: "form-label required" %>
         <%= f.date_field :month_year, type: "month", class: "form-control #{invalid(f.object, :month_year)}", required: true %>
         <p class="error"><%= show_errors(f.object, :month_year) %></p>
       </div>
       <div class="col-6">
-        <%= f.label :project_id, t(".project_name"), class: "form-label" %>
+        <%= f.label :project_id, t(".project_name"), class: "form-label required" %>
         <%= f.select :project_id, project_select, {:prompt => t(".select_project")}, class: "form-select #{invalid(f.object, :project_id)}", required: true %>
         <p class="error"><%= show_errors(f.object, :project_id) %></p>
       </div>

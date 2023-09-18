@@ -5,42 +5,41 @@
       <div class="card-body">
         <div class="form-row mb-3 justify-content-between">
           <div class="form-col col-6">
-            <label class="form-label">
+            <label class="form-label required">
               <%= t ".feature_description" %>
-              <textarea class="form-control" disabled><%= project_feature.description %></textarea>
             </label>
+            <textarea class="form-control" disabled><%= project_feature.description %></textarea>
           </div>
           <div class="form-col col-5">
-            <label class="form-label">
+            <label class="form-label required">
               <%= t ".waste_description" %>
-              <textarea class="form-control" disabled><%= project_feature.waste_description %></textarea>
             </label>
+            <textarea class="form-control" disabled><%= project_feature.waste_description %></textarea>
           </div>
         </div>
         <div class="form-row mb-3 justify-content-between">
           <div class="form-col col-3">
-            <label class="form-label">
+            <label class="form-label required">
               <%= t ".effort_time" %>
-              <input type="number" class="form-control" value="<%= project_feature.effort_saved %>" disabled>
             </label>
+            <input type="number" class="form-control" value="<%= project_feature.effort_saved %>" disabled>
           </div>
           <div class="form-col col-3">
-            <label class="form-label">
+            <label class="form-label required">
               <%= t ".repeat_time" %>
-              <input type="number" class="form-control" value="<%= project_feature.repeat_time %>" disabled>
             </label>
+            <input type="number" class="form-control" value="<%= project_feature.repeat_time %>" disabled>
           </div>
           <div class="form-col col-4">
-            <label class="form-label">
+            <label class="form-label required">
               <%= t ".repeat_unit" %>
-              <input type="text" class="form-control" value="<%= t ".#{project_feature.repeat_unit}" %>" disabled>
             </label>
+            <input type="text" class="form-control" value="<%= t ".#{project_feature.repeat_unit}" %>" disabled>
           </div>
         </div>
         <div class="form-row">
           <p class="badge text-bg-success mx-2"><%= t("project_features.index.man_month") %></p>
           <p><%= project_feature.calculator_man_month.round(Settings.digits.length_2) %></p>
-
         </div>
       </div>
     </div>

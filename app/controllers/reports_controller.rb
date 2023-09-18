@@ -49,12 +49,12 @@ class ReportsController < ApplicationController
   def update
     if @report.update report_params
       flash.now[:success] = t ".update_success"
-      respond_to do |format|
-        format.html{redirect_to reports_path}
-        format.turbo_stream
-      end
     else
       flash.now[:danger] = t ".update_fail"
+    end
+    respond_to do |format|
+      format.html{redirect_to reports_path}
+      format.turbo_stream
     end
   end
 
