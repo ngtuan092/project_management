@@ -3,6 +3,6 @@
   <%= render "shared/flash_message" %>
 <% end %>
 
-<%= turbo_stream.append "project_members" do %>
-  <%= render @project_user %>
-<%end %>
+<%= turbo_stream.update "project_members" do %>
+  <%= render @project_members %>
+<% end %>

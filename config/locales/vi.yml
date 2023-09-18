@@ -115,6 +115,7 @@ vi:
       end_date: "Ngày kết thúc"
       description: "Mô tả"
       new_project: "Dự án mới"
+      stt: "STT"
     search_form:
       name: "Tên dự án"
       group: "Nhóm"

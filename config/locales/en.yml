@@ -115,6 +115,7 @@ en:
       end_date: "End date"
       description: "Description"
       new_project: "New project"
+      stt: "No."
     search_form:
       name: "Project name"
       group: "Group"

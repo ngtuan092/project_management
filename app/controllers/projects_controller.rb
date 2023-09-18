@@ -50,7 +50,9 @@ class ProjectsController < ApplicationController
   def edit; end
 
   def update
-    if @project.update project_params
+    if @project.update project_params.merge(
+      customers: Customer.by_id(project_params[:customers])
+    )
       flash[:success] = t(".update_success")
       redirect_to @project
     else

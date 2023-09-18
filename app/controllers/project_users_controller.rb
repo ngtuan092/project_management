@@ -12,6 +12,7 @@ class ProjectUsersController < ApplicationController
   def create
     @project_user = ProjectUser.new project_user_params
     if @project_user.save
+      @project_members = @project.project_users.by_earliest_joined
       flash[:success] = t "project_user.create_success"
       respond_to do |format|
         format.html{redirect_to @project}

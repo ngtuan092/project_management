@@ -115,6 +115,7 @@ jp:
       end_date: "終了日"
       description: "説明"
       new_project: "新しいプロジェクト"
+      stt: "No."
     search_form:
       name: "プロジェクト名"
       group: "グループ"
