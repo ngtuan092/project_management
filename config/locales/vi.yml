@@ -426,3 +426,14 @@ vi:
     errors:
       month: "Tháng không hợp lệ"
       year: "Năm không hợp lệ"
+  health:
+    create:
+      create_fail: "Tạo sức khỏe dự án không thành công"
+      create_success: "Tạo sức khỏe cho dự án thành công"
+    status:
+      not_apply: "Không áp dụng"
+      apply_no_full_update: "Đã áp dụng nhưng chưa cập nhật đầy đủ"
+      apply_and_full_update: "Đã áp dụng và cập nhật đầy đủ"
+    new:
+      checklist: "Danh sách checklist"
+    validate_filled: "Hãy điền đầy đủ thông tin"
