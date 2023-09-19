@@ -4,7 +4,7 @@ class ValueResourcesController < ApplicationController
                        .filter_group(params[:group_id])
                        .filter_status(params[:status])
     @pagy, @project_pagys = pagy @projects,
-                                 items: Settings.pagy.number_items_20
+                                 items: Settings.pagy.number_items_10
     @year = params[:year] || Date.current.year
     respond
   end

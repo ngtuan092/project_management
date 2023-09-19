@@ -44,9 +44,9 @@ module ProjectsHelper
   end
 
   def environment_name environment
-    environment_names = {staging: {message: I18n.t("environment_0"),
+    environment_names = {staging: {message: I18n.t("staging"),
                                    type: "danger"},
-                         production: {message: I18n.t("environment_１"),
+                         production: {message: I18n.t("production"),
                                       type: "info"}}
     environment_name = environment_names[environment.to_sym]
     content_tag(:p, environment_name[:message],

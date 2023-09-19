@@ -249,8 +249,8 @@ jp:
   status_1: "適用されていない"
   status_2: "すでに適用されていますが、完全には更新されていません"
   status_3: "完全に適用および更新されました"
-  environment_0: "開発間"
-  environment_1: "本番"
+  staging: "開発間"
+  production: "本番"
   project_environments:
     project_environment:
       ip_address: "IPアドレス"
@@ -491,3 +491,9 @@ jp:
       name: "Tên mục"
       search: "Search"
       new_project: "Thêm mục mới"
+  dashboard:
+    index:
+      home: "ホーム"
+      statistical_chart: "統計グラフ"
+      total_number_projects: "プロジェクトの総数:"
+      project_quantity: "プロジェクト数量"
