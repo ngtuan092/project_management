@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_11_153723) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_20_082838) do
   create_table "customers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -102,6 +102,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_153723) do
     t.integer "month", null: false
     t.integer "year", null: false
     t.float "man_month", null: false
+    t.index ["project_user_id", "month", "year"], name: "idx_pur_on_pu_month_year", unique: true
     t.index ["project_user_id"], name: "index_project_user_resources_on_project_user_id"
   end
 

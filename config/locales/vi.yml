@@ -1,4 +1,6 @@
 vi:
+  duplicate_users: "trùng nhau"
+  error_percentage_limit: "Tổng percentage vượt quá 100% cho 1 user trong tháng"
   hello_world: "Xin chào cả thế giới!"
   breadcrumbs:
     new: "Tạo mới"
@@ -123,6 +125,7 @@ vi:
       select_project: "Chọn dự án"
       date: "Chọn ngày"
       save: "Lưu"
+      add_member: "Thêm thành viên"
     create:
       required_date: "Hãy chọn ngày"
       required_project: "Hãy chọn dự án"
@@ -141,6 +144,14 @@ vi:
       select_month_year: "Chọn tháng"
       select: "Chọn"
       new_resource: "TẠO TÀI NGUYÊN"
+    show:
+      title: "Danh sách tài nguyên"
+      month: "Tháng"
+      year: "Năm"
+      name: "Tên"
+      percentage: "Tỷ lệ phần trăm"
+      man_month: "Man month"
+      stt: "STT"
   projects:
     index:
       name: "Dự án"
