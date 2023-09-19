@@ -2,8 +2,11 @@ class ResourcesController < ApplicationController
   before_action :logged_in_user
 
   def index
+    year, month = params[:date]&.split("-")
+    month ||= Time.zone.now.month
+    year ||= Time.zone.now.year
     @projects = Project.filter_name(params[:name])
-                       .filter_date(params[:date])
+                       .filter_month_and_year(month, year)
     @pagy, @projects = pagy @projects, items: Settings.pagy.number_items_10
   end
 

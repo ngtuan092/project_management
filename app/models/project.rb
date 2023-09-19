@@ -84,9 +84,12 @@ class Project < ApplicationRecord
   scope :filter_name, lambda {|name|
     where("name LIKE ?", "%#{name}%") if name.present?
   }
-  scope :filter_date, lambda {|date|
-                        where("start_date LIKE ?", "#{date}%") if date.present?
-                      }
+  scope :filter_month_and_year, lambda {|month, year|
+    if month && year
+      where("EXTRACT(MONTH FROM start_date) = ? \
+      AND EXTRACT(YEAR FROM start_date) = ?", month, year)
+    end
+  }
   scope :filter_status, ->(status){where status: status if status.present?}
   scope :filter_group, lambda {|group_id|
     group = Group.find_by id: group_id
