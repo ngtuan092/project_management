@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   include Pagy::Backend
   include FormHelper
   include ProjectsHelper
+  include MonthProjectFeaturesHelper
   before_action :set_locale
 
   private

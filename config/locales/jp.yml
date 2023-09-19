@@ -75,6 +75,10 @@ jp:
       single_page: "%{count} の %{count}"
       multiple_pages: "%{from}-%{to} の %{count}"
   resources:
+    can_not_find_project: "プロジェクトが見つかりませんでした"
+    update_success: "リソースの更新が成功しました。"
+    update_fail: "リソースの更新に失敗しました。"
+    not_change: "まだ変更を加えていません"
     index:
       resources: "リソース"
       select_date: "日付を選択してください"
@@ -87,6 +91,7 @@ jp:
       date_resource: "当日のリソース"
       name: "プロジェクト名"
       resource_index: "リソースリスト"
+      update_resource: "リソースを更新する"
     table:
       order: "番号順"
       project_name: "プロジェクト名"
@@ -94,15 +99,13 @@ jp:
       detail: "詳細"
       date: "日付"
       action: "行動"
-    new:
+    form_resources:
       select_project: "プロジェクトを選択"
       date: "日付を選択してください"
       save: "保存"
     create:
       required_date: "日付を選択してください"
       required_project: "プロジェクトを選択してください"
-      create_success: "リソースが正常に作成されました。"
-      create_fail: "リソースの作成に失敗しました。"
       at_least_1: "少なくとも 1 つのリソースを作成します"
     project_user_resource_fields:
       remove: "削除"
@@ -113,6 +116,10 @@ jp:
       updated_fail: "リソースの更新に失敗しました"
     resources_form:
       edit: "アップデート: "
+    new:
+      select_project: "プロジェクトを選択"
+      select_month_year: "月を選択"
+      select: "選択する"
   projects:
     index:
       name: "プロジェクト"

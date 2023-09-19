@@ -9,6 +9,9 @@ class ProjectUser < ApplicationRecord
   delegate :name, :git_account, to: :user, prefix: true, allow_nil: true
   delegate :name, to: :project_role, prefix: true, allow_nil: true
 
+  accepts_nested_attributes_for :project_user_resources, allow_destroy: true,
+                                                   reject_if: :all_blank
+
   scope :by_earliest_joined, ->{order :joined_at}
   scope :id_have_user_roles, lambda {|role_name|
     role = Role.find_by name: role_name
@@ -30,7 +33,4 @@ class ProjectUser < ApplicationRecord
 
     errors.add(:joined_at, I18n.t("project_user.validate_dates"))
   end
-
-  accepts_nested_attributes_for :project_user_resources, allow_destroy: true,
-    reject_if: :all_blank
 end

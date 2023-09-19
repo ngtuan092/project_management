@@ -30,3 +30,6 @@ number:
   value_0: 0
 month_year:
   regex: !ruby/regexp '/\A\d{4}-(0[1-9]|1[0-2])\z/'
+check_destroy:
+  destroy_true: "1"
+  destroy_false: "false"

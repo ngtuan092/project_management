@@ -29,11 +29,19 @@ class Project < ApplicationRecord
     }
   ].freeze
 
-  PROJECT_RESOURCE_PARAMS = [
-    {resources: [
-      :id,
-      :percentage
-    ]}
+  PROJECT_USER_RESOURCES_PARAMS = [
+    :id,
+    {
+      project_user_resources_attributes:
+        [
+          :project_user_id,
+          :percentage,
+          :_destroy,
+          :month,
+          :year,
+          :id
+        ]
+    }
   ].freeze
 
   belongs_to :group
@@ -57,6 +65,10 @@ class Project < ApplicationRecord
   accepts_nested_attributes_for :project_environments, allow_destroy: true,
                                                        reject_if: :all_blank
   accepts_nested_attributes_for :project_features, allow_destroy: true,
+                                                   reject_if: :all_blank
+  accepts_nested_attributes_for :project_users, allow_destroy: true,
+                                                   reject_if: :all_blank
+  accepts_nested_attributes_for :project_user_resources, allow_destroy: true,
                                                    reject_if: :all_blank
 
   validates :name, presence: true,
@@ -101,6 +113,11 @@ class Project < ApplicationRecord
             .select(:project_id)
         )
       )
+  }
+  scope :user_names_by_project_id, lambda {|project_id|
+    joins(project_users: :user)
+      .where(id: project_id)
+      .select("users.name", "project_users.id")
   }
 
   def calculate_project_man_per_month date

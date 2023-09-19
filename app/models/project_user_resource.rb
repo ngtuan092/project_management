@@ -1,6 +1,13 @@
 class ProjectUserResource < ApplicationRecord
   belongs_to :project_user
 
+  after_rollback do
+    flash[:danger] = t "resources.update_fail"
+    render :new, status: :unprocessable_entity
+  end
+
+  before_validation :add_man_month_before_save
+
   validates :percentage, :month, :year, :man_month,
             presence: true
 
@@ -21,5 +28,11 @@ class ProjectUserResource < ApplicationRecord
 
   def user_name
     project_user.user.name
+  end
+
+  private
+
+  def add_man_month_before_save
+    self.man_month = percentage / 100.0
   end
 end
