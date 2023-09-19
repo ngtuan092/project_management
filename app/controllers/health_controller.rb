@@ -12,7 +12,7 @@ class HealthController < ApplicationController
   rescue ActiveRecord::RecordInvalid
     flash[:error] = t(".create_fail")
   ensure
-    redirect_to resources_path
+    redirect_to project_path(params[:project_id])
   end
 
   private

@@ -18,6 +18,37 @@
 
         <li class="nav-item offset-1 mb-2">
           <div class="d-flex align-items-center">
+            <i class="bi bi-balloon-heart text-white me-1"></i>
+            <a
+              class="nav-link"
+              href="#healthCollapse"
+              data-bs-toggle="collapse"
+              role="button"
+              aria-expanded="false"
+            >
+              <span class=""><%= t(".list_health") %></span>
+            </a>
+          </div>
+        </li>
+
+        <li class="nav-item offset-2 mb-2 show collapse" id="healthCollapse">
+          <div class="d-flex align-items-center">
+            <i class="bi bi-pencil text-white me-1"></i>
+            <%= link_to t(".list_new_health"), new_health_path, class: "nav-link" %>
+          </div>
+        </li>
+
+        <% if current_user.can_modify_health_item? %>
+          <li class="nav-item offset-2 mb-2 show collapse" id="healthCollapse">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-bookmark-heart text-white me-1"></i>
+              <%= link_to t(".list_health_items"), health_items_path, class: "nav-link" %>
+            </div>
+          </li>
+        <% end %>
+
+        <li class="nav-item offset-1 mb-2">
+          <div class="d-flex align-items-center">
             <i class="bi bi-file-text text-white me-1"></i>
             <%= link_to t(".list_reports"), reports_path, class: "nav-link" %>
           </div>
