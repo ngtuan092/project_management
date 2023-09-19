@@ -2,22 +2,22 @@
   <h1 class="d-flex fw-bold justify-content-center mb-8"><%= t(".created_release_plan")%></h1>
   <div class ="col-6 mx-auto">
     <div class="form-outline mt-4 mb-4">
-    <%= f.label t(".project_name"), class: "form-label" %>
+    <%= f.label t(".project_name"), class: "form-label required" %>
     <%= f.select :project_id, project_select, {}, class: "form-control #{invalid(@release_plan, :project_id)}" %>
     <p class="error"><%= show_errors(@release_plan, :project_id) %></p>
     </div>
     <div class="form-outline mb-4">
-      <%= f.label t(".date"), class: "form-label" %>
+      <%= f.label t(".date"), class: "form-label required" %>
       <%= f.date_field :release_date, class: "form-control #{invalid(@release_plan, :release_date)}" %>
       <p class="error"><%= show_errors(@release_plan, :release_date) %></p>
     </div>
     <div class="form-outline mb-4">
-      <%= f.label t(".description"), class: "form-label" %>
+      <%= f.label t(".description"), class: "form-label required" %>
       <%= f.text_field :description, class: "form-control #{invalid(@release_plan, :description)}" %>
       <p class="error"><%= show_errors(@release_plan, :description) %></p>
     </div>
     <div class="form-outline mb-4">
-      <%= f.label t(".status"), class: "form-label" %>
+      <%= f.label t(".status"), class: "form-label required" %>
       <%= f.select :is_released, list_status, {}, class: "form-select #{invalid(@release_plan, :is_released)}" %>
       <p class="error"><%= show_errors(@release_plan, :is_released) %></p>
     </div>

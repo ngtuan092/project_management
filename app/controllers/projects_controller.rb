@@ -6,6 +6,7 @@ class ProjectsController < ApplicationController
     @projects = Project.filter_name(params[:name])
                        .filter_group(params[:group])
                        .filter_status(params[:status])
+                       .includes(:group)
     @pagy, @projects = pagy @projects, items: Settings.pagy.number_items_10
   end
 

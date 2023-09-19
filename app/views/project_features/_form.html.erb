@@ -2,59 +2,59 @@
   <li class="list-group-item px-3 border-2 rounded-3 mb-3 w-75">
     <%= form_for @project_feature do |f| %>
       <div class="form-group">
-        <label class="form-label">
+        <label class="form-label required">
           <%= t "project_features.project_feature.name_feature" %>
-          <%= f.text_field :name,
-                          class: "form-control #{invalid @project_feature, :name}" %>
-          <p class="error"><%= show_errors @project_feature, :name %></p>
         </label>
+        <%= f.text_field :name,
+                          class: "form-control #{invalid @project_feature, :name}" %>
+        <p class="error"><%= show_errors @project_feature, :name %></p>
       </div>
       <div class="form-row mb-3 justify-content-between">
         <div class="form-col col-6">
-          <label class="form-label">
+          <label class="form-label required">
             <%= t "project_features.project_feature.feature_description" %>
-            <%= f.text_area :description,
+          </label>
+          <%= f.text_area :description,
                             class: "form-control #{invalid @project_feature, :description}",
                             rows: "3"  %>
-            <p class="error"><%= show_errors @project_feature, :description %></p>
-          </label>
+          <p class="error"><%= show_errors @project_feature, :description %></p>
         </div>
         <div class="form-col col-5">
-          <label class="form-label">
+          <label class="form-label required">
             <%= t "project_features.project_feature.waste_description" %>
-            <%= f.text_area :waste_description,
+          </label>
+          <%= f.text_area :waste_description,
                             class: "form-control #{invalid @project_feature, :waste_description}",
                             rows: "3"  %>
-            <p class="error"><%= show_errors @project_feature, :waste_description %></p>
-          </label>
+          <p class="error"><%= show_errors @project_feature, :waste_description %></p>
         </div>
       </div>
       <div class="form-row mb-3 justify-content-between">
         <div class="form-col col-3">
-          <label class="form-label">
+          <label class="form-label required">
             <%= t "project_features.project_feature.effort_time" %>
-            <%= f.number_field :effort_saved,
+          </label>
+          <%= f.number_field :effort_saved,
                                class: "form-control #{invalid @project_feature, :effort_saved}",
                                step: "0.01" %>
-            <p class="error"><%= show_errors @project_feature, :effort_saved %></p>
-          </label>
+          <p class="error"><%= show_errors @project_feature, :effort_saved %></p>
         </div>
         <div class="form-col col-3">
-          <label class="form-label">
+          <label class="form-label required">
             <%= t "project_features.project_feature.repeat_time" %>
-            <%= f.number_field :repeat_time,
+          </label>
+          <%= f.number_field :repeat_time,
                                class: "form-control #{invalid @project_feature, :repeat_time}",
                                step: "0.01" %>
-            <p class="error"><%= show_errors @project_feature, :repeat_time %></p>
-          </label>
+          <p class="error"><%= show_errors @project_feature, :repeat_time %></p>
         </div>
         <div class="form-col">
-          <label class="form-label">
+          <label class="form-label required">
             <%= t "project_features.project_feature.repeat_unit" %>
-            <%= f.select :repeat_unit, list_repeat_unit, {},
-                         {class: "form-control #{invalid @project_feature, :repeat_unit}"} %>
-            <p class="error"><%= show_errors @project_feature, :repeat_unit %></p>
           </label>
+          <%= f.select :repeat_unit, list_repeat_unit, {},
+                         {class: "form-control #{invalid @project_feature, :repeat_unit}"} %>
+          <p class="error"><%= show_errors @project_feature, :repeat_unit %></p>
         </div>
       </div>
       <div class="d-flex justify-content-end">
