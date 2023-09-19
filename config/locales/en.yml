@@ -183,6 +183,8 @@ en:
     project_health:
       health_item_name: "Health item name"
       status: "Status"
+      update_health: "Update project health"
+      not_have_health: "No information"
     destroy:
       delete_success: "Project was successfully destroyed."
       delete_fail: "Cannot delete project with reports."
@@ -463,6 +465,7 @@ en:
       checklist: "Checklist"
       health_index: "Fill in project health"
     validate_filled: "Please fill in completely"
+    not_permission: "You do not have permission to edit health to this project"
   value_resources:
     index:
       value: "Value"

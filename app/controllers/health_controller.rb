@@ -1,6 +1,6 @@
 class HealthController < ApplicationController
-  before_action :logged_in_user
-  before_action :validate_form, :check_permission, only: %i(create)
+  before_action :logged_in_user, :check_permission
+  before_action :validate_form, only: %i(create)
 
   def new
     @health_items = HealthItem.enable_items
@@ -32,7 +32,10 @@ class HealthController < ApplicationController
     project = Project.find_by id: params[:project_id]
     return if project.blank?
 
-    current_user.can_add_health? project
+    return if project && current_user.can_edit_delete_project?(project)
+
+    flash[:warning] = t ".not_permission"
+    redirect_to project_path project
   end
 
   def validate_form

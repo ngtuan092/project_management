@@ -8,7 +8,7 @@
           <h3><%= t("resources.new.select_project")%></h3>
         </div>
         <div class="col-6">
-          <%= f.select :project_id, options_for_select(project_options_for_select(current_user.valid_projects_by_role)), { prompt: t("resources.new.select_project") }, class: "form-select", id: "select_project", required: true %>
+          <%= f.select :project_id, options_for_select(project_options_for_select(current_user.valid_projects_by_role), params[:project_id]), { prompt: t("resources.new.select_project") }, class: "form-select", id: "select_project" , required: true %>
         </div>
       </div>
 

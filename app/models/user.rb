@@ -150,8 +150,4 @@ class User < ApplicationRecord
   def can_modify_health_item?
     admin? || manager?
   end
-
-  def can_add_health? project
-    admin? || manager? || role_psm?(project)
-  end
 end

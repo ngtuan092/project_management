@@ -183,6 +183,8 @@ jp:
     project_health:
       health_item_name: "健康項目名"
       status: "状態"
+      update_health: "プロジェクトの健全性を更新する"
+      not_have_health: "情報なし"
     destroy:
       delete_success: "プロジェクトは正常に破棄されました。"
       delete_fail: "レポートを含むプロジェクトは削除できません。"
@@ -463,6 +465,7 @@ jp:
       checklist: "チェックリスト"
       health_index: "健全性を入力sする"
     validate_filled: "完全に入力してください"
+    not_permission: "このプロジェクトのヘルスを編集する権限がありません"
   value_resources:
     index:
       value: "価値"
