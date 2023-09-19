@@ -32,8 +32,8 @@ en:
       list_reports: "Reports"
       list_resources: "Resources"
       list_release_plans: "Release Plans"
-      list_values: "List values"
-      statistic: "Statistic"
+      list_values: "Values"
+      list_value_resources: "Statistics on project value/resources"
   user_mailer:
     password_reset:
       subject: "Password reset"
@@ -91,10 +91,10 @@ en:
       new_resource: "New resource"
       date_resource: "Date created"
       name: "Project name"
-      resource_index: "Resource list"
+      resource_index: "Resources List"
       update_resource: "Update resource"
     table:
-      order: "STT"
+      order: "No."
       project_name: "Project name"
       man_month: "man/Month"
       detail: "Detail"
@@ -121,6 +121,7 @@ en:
       select_project: "Select project"
       select_month_year: "Select month"
       select: "Select"
+      new_resource: "CREATE RESOURCE"
   projects:
     index:
       name: "Project"
@@ -132,7 +133,7 @@ en:
       description: "Description"
       new_project: "New project"
       stt: "No."
-      project_index: "List projects"
+      project_index: "Projects List"
     search_form:
       name: "Project name"
       group: "Group"
@@ -164,7 +165,7 @@ en:
       project_customers: "Customer information"
       dont_have_customer: "The project has no customers!"
     project_member:
-      No: "No"
+      stt: "No."
       Project_Member: "Project Member"
       Add_New: "Add New"
       Member_name: "Member name"
@@ -190,7 +191,7 @@ en:
       update_success: "Updated project information successfully."
       update_fail: "Update failed project information."
     edit:
-      edit_project: "Edit project"
+      edit_project: "EDIT PROJECT"
   users:
     update:
       flash_update_success: "Update successful"
@@ -206,6 +207,7 @@ en:
   not_found_user: "not found user"
   project:
     new_project: "New project"
+    created_project: "CREATE PROJECT"
     create_success: "Create project success!"
     create_fail: "Create project fail!"
     form:
@@ -268,21 +270,21 @@ en:
       joined_at: "Time joined project"
       left_at: "Time left project"
     new:
-      title: "Create report"
+      title: "CREATE REPORT"
     edit:
-      title: "Update report"
+      title: "UPDATE REPORT"
       close: "Close"
     update_success: "Update report success!"
     update_fail: "Update report failure!"
     permission_error: "You do not have permission to create reports with this project!"
     index:
-      stt: "STT"
+      stt: "No."
       project_name: "Project name"
       day_report: "Day report"
       issue: "Issue"
       description: "Description"
       action: "Action"
-      report_index: "Report list"
+      report_index: "Reports List"
     search_form:
       date_report: "Day report"
       name: "Project name"
@@ -309,6 +311,7 @@ en:
     create_success: "Create success"
     fail_create: "Create fail"
     new:
+      created_release_plan: "CREATE RELEASE PLAN"
       project_name: "Project name"
       date: "Date"
       description: "Description"
@@ -329,13 +332,13 @@ en:
       update_success: "Update release plan success!"
       update_danger: "Update release plan failure!"
     index:
-      stt: "STT"
+      stt: "No."
       project_name: "Project name"
       day_release_plan: "Release plan date"
       description: "Description"
       status: "Status"
       action: "Action"
-      release_plan_index: "Release plan list"
+      release_plan_index: "Release Plans List"
     search_form:
       search: "Search"
       release_date_from: "From date"
@@ -384,7 +387,7 @@ en:
       list_value: "List value"
       man_month_total: "Total number of people/month saved: %{man_month} man/month"
       time_total: "Total hours saved per month: %{hour_total} hour"
-      project_feature_index: "Project feature list"
+      project_feature_index: "Project Feature List"
   project_features:
     project_feature:
       feature_description: "Feature description"
@@ -392,12 +395,12 @@ en:
       effort_time: "Time saving"
       repeat_time: "Number of repeated uses"
       repeat_unit: "Units of repeated use"
-      day: "day"
-      week: "week"
-      month: "month"
-      quarter: "quarter"
-      half_a_year: "half a year"
-      year: "year"
+      day: "Day"
+      week: "Week"
+      month: "Month"
+      quarter: "Quarter"
+      half_a_year: "Half a year"
+      year: "Year"
       name_feature: "Name feature"
     edit:
       edit_project_feature: "Edit project value"
@@ -412,7 +415,7 @@ en:
       man_month: "Man / Month"
       select_month_year: "Select month year"
       search: "Search"
-      stt: "STT"
+      stt: "No."
       name: "Project's name"
       action: "Detail"
       new_project_features: "New features"
@@ -420,6 +423,7 @@ en:
     create_fail: "Create fail"
     can_not_find_project: "Can not find project"
     new:
+      new_value: "CREATE PROJECT FEATURE"
       effort_saved_total: "Total hours saved per month"
       man_month_total: "Total man/month"
       man_month: "man/month"

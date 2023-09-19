@@ -1,5 +1,6 @@
 <%= form_with model: @project do |f| %>
   <%= f.hidden_field :creator_id, value: @current_user.id %>
+  <h1 class="d-flex fw-bold justify-content-center mb-8"><%= t("projects.edit.edit_project")%></h1>
   <div class = "col-md-6 mx-auto">
     <div class="mb-3">
       <%= f.label :name, t("project.form.name"), class: "form-label" %>
@@ -57,7 +58,7 @@
       <p class="error"><%= show_errors(@project, :customers) %></p>
     </div>
     <div class="mb-3">
-      <h6><%= t("project.form.project_detail") %></h6>
+      <label class="form-label mb-2"><%= t("project.form.project_detail") %></div>
       <div class="my-2" data-controller="nested-rondo" data-associated-with="project_environments">
         <div data-nested-rondo-target="fieldContain">
           <%= f.fields_for :project_environments do |detail| %>
@@ -73,8 +74,8 @@
         </div>
       </div>
     </div>
-    <div class="col-12">
-      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <div class="col-6 mx-auto">
+      <%= f.submit yield(:button_text), class: "btn btn-primary form-control mt-3" %>
     </div>
   </div>
 <% end %>

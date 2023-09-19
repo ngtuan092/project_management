@@ -7,7 +7,7 @@
           <%= render "project_user_resource_fields", f: detail %>
         <% end %>
       </div>
-      <div class="links">
+      <div class="links ms-10">
         <%= link_to_add_association f, :project_user_resources do %>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bi bi-plus-circle" width="1.5em" height="1.5em" data-association="project_user_resources" >
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" data-association="project_user_resources" />
@@ -15,6 +15,7 @@
         <% end %>
       </div>
     </div>
+  <div class= "col-9 mx-auto">
+    <%= f.submit t(".save"), class: "btn btn-primary w-100" %>
   </div>
-  <%= f.submit t(".save"), class: "btn btn-primary" %>
 <% end %>

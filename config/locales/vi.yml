@@ -32,8 +32,8 @@ vi:
       list_reports: "Báo cáo"
       list_resources: "Tài nguyên"
       list_release_plans: "Kế hoạch phát hành"
-      list_values: "Danh sách values"
-      statistic: "Thống kê"
+      list_values: "Tính năng"
+      list_value_resources: "Thống kê giá trị/tài nguyên dự án"
   user_mailer:
     password_reset:
       subject: "Đặt lại mật khẩu"
@@ -120,7 +120,8 @@ vi:
     new:
       select_project: "Chọn dự án"
       select_month_year: "Chọn tháng"
-      select: "chọn"
+      select: "Chọn"
+      new_resource: "TẠO TÀI NGUYÊN"
   projects:
     index:
       name: "Dự án"
@@ -164,7 +165,7 @@ vi:
       project_customers: "Thông tin khách hàng"
       dont_have_customer: "Dự án không có khách hàng nào!"
     project_member:
-      No: "STT"
+      stt: "STT"
       Project_Member: "Thành viên dự án"
       Add_New: "Thêm mới"
       Member_name: "Tên thành viên"
@@ -190,7 +191,7 @@ vi:
       update_success: "Cập nhật thông tin dự án thành công."
       update_fail: "Cập nhật thông tin dự án thất bại."
     edit:
-      edit_project: "Chỉnh sửa dự án"
+      edit_project: "CHỈNH SỬA DỰ ÁN"
   users:
     update:
       flash_update_success: "Cập nhật thành công"
@@ -206,6 +207,7 @@ vi:
   not_found_user: "Không tìm thấy người dùng"
   project:
     new_project: "Dự án mới"
+    created_project: "TẠO DỰ ÁN"
     create_success: "Tạo dự án thành công"
     create_fail: "Tạo dự án thất bại"
     form:
@@ -268,9 +270,9 @@ vi:
       joined_at: "Thời gian vào dự án"
       left_at: "Thời gian rời dự án"
     new:
-      title: "Tạo báo cáo"
+      title: "TẠO BÁO CÁO"
     edit:
-      title: "Cập nhật báo cáo"
+      title: "CẬP NHẬT BÁO CÁO"
       close: "Đóng"
     update_success: "Cập nhật báo cáo thành công!"
     update_fail: "Cập nhật báo cáo thất bại!"
@@ -309,6 +311,7 @@ vi:
     create_success: "Tạo thành công"
     fail_create: "Tạo thất bại"
     new:
+      created_release_plan: "TẠO KẾ HOẠCH PHÁT HÀNH"
       project_name: "Tên dự án"
       date: "Ngày"
       description: "Mô tả"
@@ -392,12 +395,12 @@ vi:
       effort_time: "Thời gian tiết kiệm"
       repeat_time: "Số lần sử dụng lặp lại"
       repeat_unit: "Đơn vị sử dụng lặp lại"
-      day: "ngày"
-      week: "tuần"
-      month: "tháng"
-      quarter: "quý"
-      half_a_year: "nửa năm"
-      year: "năm"
+      day: "Ngày"
+      week: "Tuần"
+      month: "Tháng"
+      quarter: "Quý"
+      half_a_year: "Nửa năm"
+      year: "Năm"
       name_feature: "Tính năng tên"
     edit:
       edit_project_feature: "Chỉnh sửa giá trị dự án"
@@ -420,6 +423,7 @@ vi:
     create_fail: "Create fail"
     can_not_find_project: "Can not find project"
     new:
+      new_value: "TẠO TÍNH NĂNG DỰ ÁN"
       man_month_total: "Tổng số người/tháng"
       man_month: "người/tháng"
       submit: "Lưu"
