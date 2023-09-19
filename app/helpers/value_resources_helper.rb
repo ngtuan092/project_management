@@ -30,4 +30,41 @@ module ValueResourcesHelper
 
     Settings.digits.length_12
   end
+
+  def value_resources_project_xlsx project, year
+    hash_month = ProjectMonthAnalyzer.call(project, year).result
+    hash_month.values.map(&:values).flatten
+  end
+
+  def value_resources_total_xlsx projects, year
+    hash_month = ProjectsMonthSummaryAnalyzer.call(projects, year).result
+    values_array = hash_month.values.map(&:values).flatten
+    values_array.unshift I18n.t("value_resources.index.total")
+  end
+
+  def header_row_xlsx year
+    header = []
+    header << I18n.t("projects.index.name")
+    month_number_displayed(year).times do
+      header << I18n.t("value_resources.index.value")
+      header << I18n.t("value_resources.index.resource")
+      header << I18n.t("value_resources.index.diff")
+    end
+    header << I18n.t("value_resources.index.total_value_year",
+                     month: month_number_displayed(year))
+    header << I18n.t("value_resources.index.total_resource_year",
+                     month: month_number_displayed(year))
+    header << I18n.t("value_resources.index.total_diff_year",
+                     month: month_number_displayed(year))
+  end
+
+  def header_month_xlsx year
+    header = [""]
+    month_number_displayed(year).times do |i|
+      header << "#{I18n.t('project_features.project_feature.month')} #{i + 1}"
+      header << nil
+      header << nil
+    end
+    header << I18n.t("value_resources.index.total_year")
+  end
 end

@@ -33,6 +33,7 @@ vi:
       list_resources: "Tài nguyên"
       list_release_plans: "Kế hoạch phát hành"
       list_values: "Danh sách values"
+      statistic: "Thống kê"
   user_mailer:
     password_reset:
       subject: "Đặt lại mật khẩu"
@@ -470,3 +471,4 @@ vi:
       total_diff_year: "Tổng chênh lệch %{month} tháng"
       total: "Tổng"
       value_resources_index: "Thống kê giá trị/tài nguyên"
+      export: "Xuất thống kê"

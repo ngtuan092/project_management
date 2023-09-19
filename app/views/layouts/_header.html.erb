@@ -13,13 +13,8 @@
         data-bs-offset="0,0"
       >
         <span class="avatar avatar-circle avatar-xxs">
-          <img
-            class="avatar-img"
-            src="https://d33wubrfki0l68.cloudfront.net/8ab0a140561aa1ea23abaa0101bd41b9b1d0cb12/e951b/assets/images/flags/1x1/us.svg"
-            alt="..."
-            width="18"
-            height="18"
-          />
+          <% img = "icons/#{current_locale}.png" %>
+          <%= image_tag(img, alt: "lang", class: "avatar-img") %>
         </span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end">
@@ -29,7 +24,7 @@
         <li>
           <span class="dropdown-item">
             <span class="avatar avatar-circle avatar-xxs">
-              <%= image_tag "https://d33wubrfki0l68.cloudfront.net/8ab0a140561aa1ea23abaa0101bd41b9b1d0cb12/e951b/assets/images/flags/1x1/us.svg", class: "avatar-img", alt: "...", width: 18, height: 18 %>
+              <%= image_tag("icons/en.png", alt: "lang", class: "avatar-img") %>
             </span>
             <%= link_to "English", {locale: "en"}, {class: "text-truncate ms-2"} %>
           </span>
@@ -37,7 +32,7 @@
         <li>
           <span class="dropdown-item">
             <span class="avatar avatar-circle avatar-xxs">
-              <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/255px-Flag_of_Vietnam.svg.png", class: "avatar-img", alt: "...", width: 18, height: 18 %>
+              <%= image_tag("icons/vi.png", alt: "lang", class: "avatar-img") %>
             </span>
             <%= link_to "Tiếng Việt", {locale: "vi"}, {class: "text-truncate ms-2"} %>
           </span>
@@ -45,7 +40,7 @@
         <li>
           <span class="dropdown-item">
             <span class="avatar avatar-circle avatar-xxs">
-              <%= image_tag "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/1200px-Flag_of_Japan.svg.png", class: "avatar-img", alt: "...", width: 18, height: 18 %>
+              <%= image_tag("icons/jp.png", alt: "lang", class: "avatar-img") %>
             </span>
             <%= link_to "日本語", {locale: "jp"}, {class: "text-truncate ms-2"} %>
           </span>

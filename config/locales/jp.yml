@@ -33,6 +33,7 @@ jp:
       list_resources: "リソース"
       list_release_plans: "リリース計画"
       list_values: "リスト値"
+      statistic: "統計的"
   user_mailer:
     password_reset:
       subject: "パスワードのリセット"
@@ -470,3 +471,4 @@ jp:
       total_diff_year: "%{month} か月間の合計差分"
       total: "合計"
       value_resources_index: "統計値/リソース"
+      export: "統計のエクスポート"

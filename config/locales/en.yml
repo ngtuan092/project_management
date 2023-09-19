@@ -33,6 +33,7 @@ en:
       list_resources: "Resources"
       list_release_plans: "Release Plans"
       list_values: "List values"
+      statistic: "Statistic"
   user_mailer:
     password_reset:
       subject: "Password reset"
@@ -470,3 +471,4 @@ en:
       total_diff_year: "Total diff of %{month} months"
       total: "Total"
       value_resources_index: "Statistics values/resources"
+      export: "Export statistics"

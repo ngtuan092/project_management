@@ -16,7 +16,7 @@ date:
   format_month_field: "%Y-%m"
 pagy:
   number_items_10: 10
-  number_itemss_20: 20
+  number_items_20: 20
 project:
   max_length_200: 200
   max_length_1000: 1000
