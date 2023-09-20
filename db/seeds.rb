@@ -185,3 +185,12 @@ end
     man_month: Faker::Number.between(from: 0, to: 5),
     )
 end
+
+20.times do |i|
+  ProjectHealthItem.create!(
+    project_id: Faker::Number.between(from: 1, to: 5),
+    health_item_id: Faker::Number.between(from: 1, to: 10),
+    note: Faker::Lorem.sentence,
+    status: Faker::Number.between(from: 0, to: 2),
+    )
+end

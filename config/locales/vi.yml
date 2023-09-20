@@ -246,11 +246,6 @@ vi:
       note: "Ghi chú"
       remove: "Xóa"
       submit: "Lưu"
-  status_1: "Chưa áp dụng"
-  status_2: "Đã áp dụng nhưng chưa cập nhật đầy đủ"
-  status_3: "Đã áp dụng và cập nhập đầy đủ"
-  staging: "Phát triển"
-  production: "Sản phẩm"
   project_environments:
     project_environment:
       ip_address: "Địa chỉ IP"

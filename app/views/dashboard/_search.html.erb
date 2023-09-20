@@ -12,7 +12,7 @@
     <%= f.select :status, list_statuses, {include_blank: true, selected: params[:status]}, {class: "form-select"} %>
   </div>
 
-  <div class="col-1">
+  <div class="col-1 min-w-125px">
     <%= f.label :year, t("project_features.project_feature.year"), class: "form-label" %>
     <%= f.number_field :year, value: year_field_value(params[:year]), class: "form-control" %>
   </div>

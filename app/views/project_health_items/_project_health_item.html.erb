@@ -1,4 +1,4 @@
 <tr>
   <td><%= project_health_item.health_item.item %></td>
-  <td><%= t("health.status.#{project_health_item.status}") %></td>
+  <td><%= project_health_status_name project_health_item.status %></td>
 </tr>

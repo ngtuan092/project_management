@@ -4,6 +4,10 @@
   <div class="form-group justify-content-center">
     <%= form_with url: project_month_project_features_path(@project), method: :get do |f| %>
       <label class="form-label">
+        <%= t "project_features.index.name" %>
+        <input value="<%= @project.name %>" class="form-control" disabled/>
+      </label>
+      <label class="form-label ml-35">
         <%= t ".select_month_year" %>
         <%= f.date_field :month_year, type: "month", value: month_field_value(params[:month_year]), class: "form-control" %>
       </label>

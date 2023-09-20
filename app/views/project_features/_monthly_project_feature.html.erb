@@ -4,7 +4,8 @@
   <td><%= item.calculate_project_man_per_month(params[:month_year]) %></td>
 
   <td class="text-center">
-    <%= link_to project_feature_path(item, date: params[:month_year]), class: "btn btn-primary btn-sm" do %>
+    <%= link_to project_month_project_features_path(item, month_year: params[:month_year]),
+                class: "btn btn-primary btn-sm" do %>
       <i class="bi-eye-fill"></i>
     <% end %>
   </td>

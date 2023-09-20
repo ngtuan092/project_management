@@ -246,11 +246,6 @@ en:
       note: "Note"
       remove: "Remove"
       submit: "Save"
-  status_1: "Not applicable yet"
-  status_2: "Already applied but not fully updated"
-  status_3: "Fully applied and updated"
-  staging: "Staging"
-  production: "Production"
   project_environments:
     project_environment:
       ip_address: "IP address"

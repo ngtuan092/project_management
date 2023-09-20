@@ -73,7 +73,7 @@ class ProjectFeaturesController < ApplicationController
   end
 
   def check_role
-    return if current_user.can_modify_project_feature? @project_feature
+    return if current_user.can_edit_delete_project? @project_feature.project
 
     flash[:warning] = t "errors.permission_modify_project_feature"
     month_year = [@project_feature.year, @project_feature.month].join("-")
