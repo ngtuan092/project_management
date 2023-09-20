@@ -8,6 +8,7 @@ gem "bootsnap", require: false
 gem "bootstrap-sass", "3.4.1"
 gem "caxlsx"
 gem "caxlsx_rails"
+gem "chartkick"
 gem "config"
 gem "dotenv-rails"
 gem "figaro", "~> 1.1", ">= 1.1.1"

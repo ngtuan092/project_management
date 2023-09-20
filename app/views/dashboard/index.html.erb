@@ -1,1 +1,75 @@
-<h1><%= t "hello_world" %></h1>
+<% provide :title, t(".home") %>
+<div class="container">
+  <h1 class="text-center mb-8"><%= t ".home" %></h1>
+  <%= render "dashboard/search" %>
+  <!-- Content Row -->
+  <div class="row">
+    <!-- Content Column -->
+    <div class="col-lg-8 mb-4">
+      <!-- Chart -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary"><%= t ".statistical_chart" %></h6>
+        </div>
+        <div class="card-body">
+          <%= line_chart value_resources_total_chart(@projects, year_field_value(params[:year])),
+                         xtitle: t("project_features.new.month"),
+                         ytitle: t("resources.table.man_month") %>
+        </div>
+      </div>
+
+      <!-- Project count total -->
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">
+            <%= t ".total_number_projects" %> <%= @projects.count %>
+          </h6>
+        </div>
+        <div class="card-body">
+          <% project_statistics_by_status(@projects).each do |ele| %>
+            <h4 class="small font-weight-bold" style="color: #858796;">
+              <%= t "projects.project.#{ele[:key]}" %>
+              <span>
+                (<%= t ".project_quantity" %>: <%= ele[:count] %>)
+              </span>
+              <span class="float-right">
+                <%= ele[:percentage] %>%
+              </span>
+            </h4>
+            <div class="progress mb-4">
+              <div class="progress-bar text-bg-<%= ele[:key] %>" role="progressbar" style="width: <%= ele[:percentage] %>%"
+                   aria-valuenow="<%= ele[:percentage] %>" aria-valuemin="0" aria-valuemax="100">
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 mb-4">
+      <!-- Content Row -->
+      <% value_resources_total(@projects, year_field_value(params[:year])).each do |key, value| %>
+        <!-- Project value resource diff total -->
+        <div class="col-xl-12 col-md-12 mb-4">
+          <div class="card border-left-<%= dashboard_card_color key, value %> shadow h-100 py-2">
+            <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                  <div class="text-xs font-weight-bold text-<%= dashboard_card_color key, value %> text-uppercase mb-1">
+                    <%= t "value_resources.index.#{key}" %> (<%= t "value_resources.index.total_year" %>)
+                  </div>
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">
+                    <%= value %> <%= t "project_features.new.man_month" %>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

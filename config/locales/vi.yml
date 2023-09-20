@@ -249,8 +249,8 @@ vi:
   status_1: "Chưa áp dụng"
   status_2: "Đã áp dụng nhưng chưa cập nhật đầy đủ"
   status_3: "Đã áp dụng và cập nhập đầy đủ"
-  environment_0: "Phát triển"
-  environment_1: "Sản phẩm"
+  staging: "Phát triển"
+  production: "Sản phẩm"
   project_environments:
     project_environment:
       ip_address: "Địa chỉ IP"
@@ -491,3 +491,9 @@ vi:
       name: "Tên mục"
       search: "Tìm kiếm"
       new_project: "Thêm mục mới"
+  dashboard:
+    index:
+      home: "Trang chủ"
+      statistical_chart: "Biểu đồ thống kê"
+      total_number_projects: "Tổng số dự án:"
+      project_quantity: "số lượng dự án"

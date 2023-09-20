@@ -249,8 +249,8 @@ en:
   status_1: "Not applicable yet"
   status_2: "Already applied but not fully updated"
   status_3: "Fully applied and updated"
-  environment_0: "Staging"
-  environment_1: "Production"
+  staging: "Staging"
+  production: "Production"
   project_environments:
     project_environment:
       ip_address: "IP address"
@@ -491,3 +491,9 @@ en:
       name: "Search by item"
       search: "Search"
       new_project: "New item"
+  dashboard:
+    index:
+      home: "Home"
+      statistical_chart: "Statistical chart"
+      total_number_projects: "Total number of projects:"
+      project_quantity: "project quantity"

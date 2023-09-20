@@ -10,19 +10,6 @@
   <% end %>
 </div>
 <div style="overflow-x: scroll">
-  <div class="card-header border-0 card-header-space-between">
-    <h2 class="card-header-title h4 text-uppercase"></h2>
-    <div class="dropdown ms-4">
-      <a href="javascript: void(0);" class="dropdown-toggle no-arrow text-secondary" role="button"
-         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="bi bi-three-dots-vertical"></i>
-      </a>
-      <div class="dropdown-menu">
-        <%= link_to t(".export"), value_resources_path(format: :xlsx, name: params[:name], group_id: params[:group_id],
-                                                       status: params[:status]), class: "p-2" %>
-      </div>
-    </div>
-  </div>
   <table class="table table-striped table-hover table-bordered table-responsive">
     <thead>
       <tr>
@@ -51,14 +38,13 @@
       </tr>
     </thead>
     <tbody>
-      <% @project_pagys.each do |project| %>
-        <%= render partial: "value_resources/value_resource", locals: { project: project} %>
-      <% end %>
       <tr>
         <td><%= t ".total" %></td>
         <%= value_resources_total_html @projects, year_field_value(params[:year]) %>
       </tr>
+      <% @project_pagys.each do |project| %>
+        <%= render partial: "value_resources/value_resource", locals: { project: project} %>
+      <% end %>
     </tbody>
   </table>
-
 </div>
