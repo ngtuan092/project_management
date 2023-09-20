@@ -1,0 +1,25 @@
+<% provide :title, t(".health_items_index") %>
+<%= render "search_form" %>
+<div class="table-responsive">
+  <table class="table table-striped align-middle table-hover table-bordered padding-margin-0">
+    <thead>
+    <tr>
+      <th scope="col" width="5%"><%= t ".stt" %></th>
+      <th scope="col"><%= t ".item" %></th>
+      <th scope="col"><%= t ".description" %></th>
+      <th scope="col"><%= t ".action" %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <%= render @health_items %>
+    </tbody>
+  </table>
+  <div class="card-footer">
+    <div class="d-flex justify-content-between align-items-center">
+      <% if @pagy&.pages > 1 %>
+        <%== pagy_info @pagy %>
+        <%== pagy_bootstrap_nav @pagy %>
+      <% end %>
+    </div>
+  </div>
+</div>

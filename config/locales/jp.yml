@@ -34,6 +34,9 @@ jp:
       list_release_plans: "リリース計画"
       list_values: "値"
       list_value_resources: "プロジェクトの価値/リソースの統計"
+      list_new_health: "チェックリストに記入する"
+      list_health_items: "チェックリスト"
+      list_health: "プロジェクトの健全性"
   user_mailer:
     password_reset:
       subject: "パスワードのリセット"
@@ -463,6 +466,7 @@ jp:
       apply_and_full_update: "適用されて、完全に更新されました"
     new:
       checklist: "チェックリスト"
+      health_index: "健全性を入力sする"
     validate_filled: "完全に入力してください"
   value_resources:
     index:
@@ -476,3 +480,14 @@ jp:
       total: "合計"
       value_resources_index: "統計値/リソース"
       export: "統計のエクスポート"
+  health_items:
+    index:
+      health_items_index: "チェックリスト"
+      stt: "STT"
+      item: "項目"
+      description: "Description"
+      action: "Action"
+    search_form:
+      name: "Tên mục"
+      search: "Search"
+      new_project: "Thêm mục mới"

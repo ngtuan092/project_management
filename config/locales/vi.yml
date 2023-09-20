@@ -34,6 +34,9 @@ vi:
       list_release_plans: "Kế hoạch phát hành"
       list_values: "Tính năng"
       list_value_resources: "Thống kê giá trị/tài nguyên dự án"
+      list_new_health: "Điền checklist"
+      list_health_items: "Checklist"
+      list_health: "Sức khoẻ dự án"
   user_mailer:
     password_reset:
       subject: "Đặt lại mật khẩu"
@@ -463,6 +466,7 @@ vi:
       apply_and_full_update: "Đã áp dụng và cập nhật đầy đủ"
     new:
       checklist: "Danh sách checklist"
+      health_index: "Điền sức khoẻ dự án"
     validate_filled: "Hãy điền đầy đủ thông tin"
   value_resources:
     index:
@@ -476,3 +480,14 @@ vi:
       total: "Tổng"
       value_resources_index: "Thống kê giá trị/tài nguyên"
       export: "Xuất thống kê"
+  health_items:
+    index:
+      health_items_index: "Danh sách checklist"
+      stt: "STT"
+      item: "Mục"
+      description: "Description"
+      action: "Action"
+    search_form:
+      name: "Tên mục"
+      search: "Tìm kiếm"
+      new_project: "Thêm mục mới"

@@ -1,6 +1,5 @@
 <%= form_with model: @project do |f| %>
   <%= f.hidden_field :creator_id, value: @current_user.id %>
-  <h1 class="d-flex fw-bold justify-content-center mb-8"><%= t("projects.edit.edit_project")%></h1>
   <div class = "col-md-6 mx-auto">
     <div class="mb-3">
       <%= f.label :name, t("project.form.name"), class: "form-label required" %>

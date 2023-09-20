@@ -34,6 +34,9 @@ en:
       list_release_plans: "Release Plans"
       list_values: "Values"
       list_value_resources: "Statistics on project value/resources"
+      list_new_health: "Fill out checklist"
+      list_health_items: "Checklist"
+      list_health: "Project health"
   user_mailer:
     password_reset:
       subject: "Password reset"
@@ -463,6 +466,7 @@ en:
       apply_and_full_update: "Applied and fully updated"
     new:
       checklist: "Checklist"
+      health_index: "Fill in project health"
     validate_filled: "Please fill in completely"
   value_resources:
     index:
@@ -476,3 +480,14 @@ en:
       total: "Total"
       value_resources_index: "Statistics values/resources"
       export: "Export statistics"
+  health_items:
+    index:
+      health_items_index: "Checklist"
+      stt: "No."
+      item: "Item"
+      description: "Description"
+      action: "Action"
+    search_form:
+      name: "Search by item"
+      search: "Search"
+      new_project: "New item"
