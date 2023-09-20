@@ -12,6 +12,7 @@ class ReportsController < ApplicationController
   def index
     @reports = Report.filter_date(params[:date])
                      .filter_name_status(params[:name], params[:status])
+                     .by_recently_created
     @pagy, @reports = pagy @reports, items: Settings.pagy.number_items_10
   end
 
@@ -46,7 +47,7 @@ class ReportsController < ApplicationController
   end
 
   def edit
-    @projects = current_user.valid_projects_by_role
+    @projects = current_user.valid_projects_by_role.by_recently_created
   end
 
   def update

@@ -12,7 +12,7 @@ class ProjectUsersController < ApplicationController
   def create
     @project_user = ProjectUser.new project_user_params
     if @project_user.save
-      @pagy, @project_users = pagy @project.project_users.by_earliest_joined,
+      @pagy, @project_users = pagy @project.project_users.by_recently_joined,
                                    items: Settings.pagy.number_items_10
       flash[:success] = t "project_user.create_success"
       respond

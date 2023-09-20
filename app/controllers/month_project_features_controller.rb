@@ -9,7 +9,7 @@ class MonthProjectFeaturesController < ApplicationController
     month ||= Date.current.month
     year ||= Date.current.year
     @project_features = @project.project_features.filter_month(month)
-                                .filter_year(year)
+                                .filter_year(year).by_recently_created
     respond_to do |format|
       format.html{render :index}
       format.turbo_stream

@@ -5,6 +5,7 @@ class ValueResourcesController < ApplicationController
     @projects = Project.filter_name(params[:name])
                        .filter_group(params[:group_id])
                        .filter_status(params[:status])
+                       .by_recently_created
     @pagy, @project_pagys = pagy @projects,
                                  items: Settings.pagy.number_items_10
     @year = params[:year] || Date.current.year
