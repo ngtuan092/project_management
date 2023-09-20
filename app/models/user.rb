@@ -147,10 +147,6 @@ class User < ApplicationRecord
       role_psm?(release_plan.project)
   end
 
-  def can_modify_project_feature? project_feature
-    admin? || manager? || role_psm?(project_feature.project)
-  end
-
   def can_modify_health_item?
     admin? || manager?
   end

@@ -4,8 +4,4 @@ module ProjectFeaturesHelper
       [t("project_features.project_feature.#{key}"), key]
     end
   end
-
-  def have_permission_project_feature? project_feature
-    current_user.can_modify_project_feature? project_feature
-  end
 end

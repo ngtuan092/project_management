@@ -44,7 +44,7 @@
       </div>
     </div>
     <div class="position-absolute top-15px end-20px">
-      <% if have_permission_project_feature? project_feature %>
+      <% if can_edit_delete_project project_feature.project %>
         <%= link_to edit_project_feature_path(project_feature), class: "text-warning icon" do %>
           <i class="bi bi-pencil-square"></i>
         <% end %>

@@ -246,11 +246,6 @@ jp:
       note: "注意"
       remove: "削除"
       submit: "保存"
-  status_1: "適用されていない"
-  status_2: "すでに適用されていますが、完全には更新されていません"
-  status_3: "完全に適用および更新されました"
-  staging: "開発間"
-  production: "本番"
   project_environments:
     project_environment:
       ip_address: "IPアドレス"
