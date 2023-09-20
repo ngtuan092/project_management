@@ -104,6 +104,12 @@ class Project < ApplicationRecord
       .merge(ProjectFeature.filter_month(month))
       .merge(ProjectFeature.filter_year(year))
   }
+  scope :filter_resources, lambda {|month, year|
+    includes(:project_user_resources)
+      .joins(:project_user_resources)
+      .merge(ProjectUserResource.filter_month(month))
+      .merge(ProjectUserResource.filter_year(year))
+  }
   scope :created_by_user_or_psm, lambda {|current_user|
     where(creator_id: current_user.id)
       .or(

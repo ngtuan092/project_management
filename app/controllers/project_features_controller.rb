@@ -43,7 +43,7 @@ class ProjectFeaturesController < ApplicationController
 
   def new
     @project = Project.new
-    @project_feature = ProjectFeature.new
+    @project.project_features.build
   end
 
   def create

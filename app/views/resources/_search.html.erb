@@ -2,7 +2,7 @@
   <div class="row mb-3">
     <div class="col-auto">
       <%= f.label :date,  t("resources.index.date_resource"), class: "form-label" %>
-      <%= f.month_field :date, value: params[:date], class: "form-control"%>
+      <%= f.date_field :month_year, type: "month", value: month_field_value(params[:month_year]), class: "form-control" %>
     </div>
 
     <div class="col-auto">
