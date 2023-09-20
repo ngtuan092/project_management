@@ -1,4 +1,6 @@
 class ValueResourcesController < ApplicationController
+  add_breadcrumb I18n.t("breadcrumbs.statistical"), :value_resources_path
+
   def index
     @projects = Project.filter_name(params[:name])
                        .filter_group(params[:group_id])

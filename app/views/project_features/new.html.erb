@@ -4,7 +4,7 @@
     <div class="mb-2 row d-flex justify-content-between">
       <div class="col-6">
         <%= f.label :month_year, t(".month"), class: "form-label required" %>
-        <%= f.date_field :month_year, type: "month", class: "form-control #{invalid(f.object, :month_year)}", required: true %>
+        <%= f.date_field :month_year, type: "month", value: month_field_value(params[:month_year]), class: "form-control #{invalid(f.object, :month_year)}", required: true %>
         <p class="error"><%= show_errors(f.object, :month_year) %></p>
       </div>
       <div class="col-6">
@@ -35,7 +35,7 @@
       </div>
     </div>
   <div>
-  <div class="row mx-auto">
+  <div class="col-6 mx-auto">
     <%= f.submit t(".submit"), class: "btn btn-primary form-control mt-3" %>
   </div>
 <% end %>

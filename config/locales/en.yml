@@ -1,5 +1,17 @@
 en:
   hello_world: "Hello world"
+  breadcrumbs:
+    new: "New"
+    edit: "Edit"
+    homepage: "Homepage"
+    projects: "Projects"
+    reports: "Reports"
+    release_plans: "Release plans"
+    project_features: "Project features"
+    resources: "Resources"
+    statistical: "Statistical"
+    project_month: "Values List"
+    checklist: "Checklist"
   application:
     project_management: "Project Management"
   errors:
@@ -27,6 +39,10 @@ en:
     header:
       sign_out: "Sign out"
       profile_account: "Profile & account"
+      select_language: "Select language"
+      english: "English"
+      vietnamese: "Vietnamese"
+      japanese: "Japanese"
     sidebar:
       list_projects: "Projects"
       list_reports: "Reports"
@@ -194,7 +210,7 @@ en:
       update_success: "Updated project information successfully."
       update_fail: "Update failed project information."
     edit:
-      edit_project: "EDIT PROJECT"
+      edit_project: "UPDATE PROJECT"
   users:
     update:
       flash_update_success: "Update successful"
@@ -316,7 +332,7 @@ en:
       status: "Status"
       submit: "Submit"
     edit:
-      title: "Update release plan"
+      title: "UPDATE RELEASE PLAN"
     form:
       choose_project: "Choose project"
       choose_day: "Choose day"
@@ -382,7 +398,7 @@ en:
     index:
       select_month_year: "Select month year"
       search: "Search"
-      list_value: "List value"
+      list_value: "VALUES LIST"
       man_month_total: "Total number of people/month saved: %{man_month} man/month"
       time_total: "Total hours saved per month: %{hour_total} hour"
       project_feature_index: "Project Feature List"
@@ -401,7 +417,7 @@ en:
       year: "Year"
       name_feature: "Name feature"
     edit:
-      edit_project_feature: "Edit project value"
+      edit_project_feature: "Update project value"
     form:
       save: "Save"
       cancel: "Cancel"

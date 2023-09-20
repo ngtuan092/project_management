@@ -32,7 +32,7 @@
     </div>
     <div class="mb-3">
       <%= f.label :note, t(".note"), class: "form-label" %>
-      <%= f.text_area :note, class: "form-control-modal #{invalid(f.object, :note)} col-12" %>
+      <%= f.text_area :note, class: "form-control-modal #{invalid(f.object, :note)} col-12", rows: "3" %>
       <p class="error"><%= show_errors(f.object, :note) %></p>
     </div>
 

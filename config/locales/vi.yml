@@ -1,5 +1,17 @@
 vi:
   hello_world: "Xin chào cả thế giới!"
+  breadcrumbs:
+    new: "Tạo mới"
+    edit: "Chỉnh sửa"
+    homepage: "Trang chủ"
+    projects: "Dự án"
+    reports: "Báo cáo"
+    release_plans: "Kế hoạch phát hành"
+    project_features: "Tính năng dự án"
+    resources: "Tài nguyên"
+    statistical: "Thống kê"
+    project_month: "Danh sách giá trị"
+    checklist: "Danh mục sức khỏe"
   application:
     project_management: "Quản lý dự án"
   errors:
@@ -27,6 +39,10 @@ vi:
     header:
       sign_out: "Đăng xuất"
       profile_account: "Hồ sơ & tài khoản"
+      select_language: "Chọn ngôn ngữ"
+      english: "Tiếng Anh"
+      vietnamese: "Tiếng việt"
+      japanese: "Tiếng Nhật"
     sidebar:
       list_projects: "Dự án"
       list_reports: "Báo cáo"
@@ -316,7 +332,7 @@ vi:
       status: "Trạng thái"
       submit: "Lưu"
     edit:
-      title: "Cập nhật kế hoạch phát hành"
+      title: "CẬP NHẬT KẾ HOẠCH PHÁT HÀNH"
     form:
       choose_project: "Chọn dự án"
       choose_day: "Chọn Ngày"
@@ -382,7 +398,7 @@ vi:
     index:
       select_month_year: "Chọn tháng năm"
       search: "Tìm kiếm"
-      list_value: "Danh sách giá trị"
+      list_value: "DANH SÁCH GIÁ TRỊ"
       man_month_total: "Tổng số người/tháng tiết kiệm: %{man_month} người/tháng"
       time_total: "Tổng số giờ tiết kiệm trên tháng: %{hour_total} giờ"
       project_feature_index: "Danh sách tính năng"

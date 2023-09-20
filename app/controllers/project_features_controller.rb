@@ -5,6 +5,8 @@ class ProjectFeaturesController < ApplicationController
                 only: %i(update destroy)
   before_action :find_project, only: :create
 
+  add_breadcrumb I18n.t("breadcrumbs.project_features"), :project_features_path
+
   def index
     year, month = params[:month_year]&.split("-")
     month ||= Time.zone.now.month
@@ -44,6 +46,7 @@ class ProjectFeaturesController < ApplicationController
   def new
     @project = Project.new
     @project.project_features.build
+    add_breadcrumb t("breadcrumbs.new"), new_project_feature_path
   end
 
   def create

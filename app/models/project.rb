@@ -9,7 +9,7 @@ class Project < ApplicationRecord
     :creator_id,
     {
       project_environments_attributes: [
-        :environment, :domain, :port,
+        :id, :environment, :domain, :port,
         :ip_address, :web_server,
         :note, :_destroy
       ]
