@@ -10,7 +10,6 @@ services:
       - ./tmp/db:/var/lib/mysql
     restart: always
     environment:
-      - MYSQL_USER=${PROJECT_MANAGEMENT_DATABASE_USER}
       - MYSQL_ROOT_PASSWORD=${PROJECT_MANAGEMENT_DATABASE_PASSWORD}
       - MYSQL_DATABASE=${PROJECT_MANAGEMENT_DATABASE_NAME}
   web:
@@ -25,3 +24,13 @@ services:
       - db
     stdin_open: true
     tty: true
+  datastore:
+    image: busybox
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - bundle_install:/usr/src/app/vendor/bundle
+      - bundle:/usr/src/app/.bundle
+volumes:
+  mysql_data:
+  bundle_install:
+  bundle:
