@@ -7,6 +7,8 @@ class ReportsController < ApplicationController
   before_action :find_report, only: %i(show destroy edit update)
   before_action :check_role, only: :destroy
 
+  add_breadcrumb I18n.t("breadcrumbs.reports"), :reports_path
+
   def index
     @reports = Report.filter_date(params[:date])
                      .filter_name_status(params[:name], params[:status])
@@ -16,6 +18,7 @@ class ReportsController < ApplicationController
   def new
     @report = Report.new
     @projects = current_user.valid_projects_by_role
+    add_breadcrumb t("breadcrumbs.new"), new_report_path
   end
 
   def create

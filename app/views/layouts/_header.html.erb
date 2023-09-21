@@ -1,5 +1,12 @@
 <header class="container-fluid d-flex py-6 mb-4">
   <!-- Top buttons -->
+  <% if logged_in? %>
+    <div class="d-flex breadcrumbs-container">
+      <ol class="breadcrumb">
+        <%= render_breadcrumbs :tag => :li, :separator => "/" %>
+      </ol>
+    </div>
+  <% end %>
   <div class="d-flex align-items-center ms-auto me-n1 me-lg-n2">
     <!-- Dropdown -->
     <div class="dropdown">
@@ -19,14 +26,14 @@
       </a>
       <ul class="dropdown-menu dropdown-menu-end">
         <li>
-          <h6 class="dropdown-header text-uppercase">Select language</h6>
+          <h6 class="dropdown-header text-uppercase"><%= t ".select_language" %></h6>
         </li>
         <li>
           <span class="dropdown-item">
             <span class="avatar avatar-circle avatar-xxs">
               <%= image_tag("icons/en.png", alt: "lang", class: "avatar-img") %>
             </span>
-            <%= link_to "English", {locale: "en"}, {class: "text-truncate ms-2"} %>
+            <%= link_to t(".english"), {locale: "en"}, {class: "text-truncate ms-2"} %>
           </span>
         </li>
         <li>
@@ -34,7 +41,7 @@
             <span class="avatar avatar-circle avatar-xxs">
               <%= image_tag("icons/vi.png", alt: "lang", class: "avatar-img") %>
             </span>
-            <%= link_to "Tiếng Việt", {locale: "vi"}, {class: "text-truncate ms-2"} %>
+            <%= link_to t(".vietnamese"), {locale: "vi"}, {class: "text-truncate ms-2"} %>
           </span>
         </li>
         <li>
@@ -42,7 +49,7 @@
             <span class="avatar avatar-circle avatar-xxs">
               <%= image_tag("icons/jp.png", alt: "lang", class: "avatar-img") %>
             </span>
-            <%= link_to "日本語", {locale: "jp"}, {class: "text-truncate ms-2"} %>
+            <%= link_to t(".japanese"), {locale: "jp"}, {class: "text-truncate ms-2"} %>
           </span>
         </li>
       </ul>
@@ -65,6 +72,7 @@
           20+ <span class="visually-hidden">unread messages</span>
         </span>
       </a>
+
       <!-- Notifications offcanvas -->
       <div
         class="offcanvas offcanvas-end d-none"
@@ -864,6 +872,7 @@
             ></path>
           </svg>
         </a>
+
         <div
           class="dropdown-menu dropdown-menu-end w-300px h-250px overflow-auto scrollbar"
         >

@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   include MonthProjectFeaturesHelper
   before_action :set_locale
 
+  add_breadcrumb I18n.t("breadcrumbs.homepage"), :root_path
+
   private
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale

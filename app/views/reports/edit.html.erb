@@ -1,9 +1,10 @@
 <div class="container w-50 d-flex justify-content-center">
   <%= turbo_frame_tag "modal" do %>
     <div class="modal-member z-3">
+      <h1 class="fw-bold text-center mb-4"><%= t(".title") %></h1>
       <%= render "form", url:  report_path(@report), remote: true %>
-      <div class="d-flex justify-content-center align-items-center">
-        <%= link_to t(".close"), "#", class: "btn btn-danger btn-lg ", data: {
+      <div class="d-flex justify-content-center align-items-center mt-3">
+        <%= link_to t(".close"), "#", class: "btn btn-danger btn-md w-50", data: {
           controller: "modals",
           action: "modals#close"
         } %>

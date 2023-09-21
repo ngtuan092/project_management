@@ -2,6 +2,9 @@ class ProjectsController < ApplicationController
   before_action :logged_in_user
   before_action :find_project, only: %i(show destroy edit update)
   before_action :check_role, only: %i(destroy edit update)
+
+  add_breadcrumb I18n.t("breadcrumbs.projects"), :projects_path
+
   def index
     @projects = Project.filter_name(params[:name])
                        .filter_group(params[:group])
@@ -25,12 +28,14 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    add_breadcrumb t("breadcrumbs.new"), :new_project_path
   end
 
   def show
     @project_customers = @project.customers
     @pagy, @project_members = pagy @project.project_users.by_earliest_joined,
                                    items: Settings.pagy.number_items_10
+    add_breadcrumb @project.name, project_path(@project)
   end
 
   def destroy
@@ -48,7 +53,10 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    add_breadcrumb @project.name, project_path(@project)
+    add_breadcrumb t("breadcrumbs.edit"), :edit_project_path
+  end
 
   def update
     if @project.update project_params.merge(

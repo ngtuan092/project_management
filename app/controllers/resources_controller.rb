@@ -1,5 +1,6 @@
 class ResourcesController < ApplicationController
   before_action :logged_in_user
+  add_breadcrumb I18n.t("breadcrumbs.resources"), :resources_path
 
   def index
     year, month = params[:month_year]&.split("-")
@@ -19,6 +20,7 @@ class ResourcesController < ApplicationController
     else
       @project = Project.new
     end
+    add_breadcrumb t("breadcrumbs.new"), new_resource_path
   end
 
   def create

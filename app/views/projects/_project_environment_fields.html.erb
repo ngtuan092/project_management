@@ -28,7 +28,7 @@
   </div>
   <div class="mb-3">
     <%= f.label :note, t("project.form.note"), class: "form-label" %>
-    <%= f.text_area :note, class: "form-control #{invalid(f.object, :note)}" %>
+    <%= f.text_area :note, class: "form-control #{invalid(f.object, :note)}", rows: "3" %>
     <p class="error"><%= show_errors(f.object, :note) %></p>
   </div>
   <div class="row justify-content-end pe-4">

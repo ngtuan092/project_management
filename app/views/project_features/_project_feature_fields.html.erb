@@ -7,12 +7,12 @@
   <div class="row">
     <div class="mb-3 col">
       <%= f.label :description, t(".description"), class: "form-label required" %>
-      <%= f.text_field :description, class: "form-control #{invalid(f.object, :description)}", required: true %>
+      <%= f.text_area :description, class: "form-control #{invalid(f.object, :description)}", required: true, rows: "3" %>
       <p class="error"><%= show_errors(f.object, :description) %></p>
     </div>
     <div class="mb-3 col">
       <%= f.label :waste_description, t(".waste_description"), class: "form-label required" %>
-      <%= f.text_field :waste_description, class: "form-control #{invalid(f.object, :waste_description)}", required: true %>
+      <%= f.text_area :waste_description, class: "form-control #{invalid(f.object, :waste_description)}", required: true, rows: "3" %>
       <p class="error"><%= show_errors(f.object, :waste_description) %></p>
     </div>
   </div>

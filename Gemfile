@@ -6,6 +6,7 @@ ruby "3.2.2"
 gem "bcrypt", "3.1.18"
 gem "bootsnap", require: false
 gem "bootstrap-sass", "3.4.1"
+gem "breadcrumbs_on_rails"
 gem "caxlsx"
 gem "caxlsx_rails"
 gem "chartkick"

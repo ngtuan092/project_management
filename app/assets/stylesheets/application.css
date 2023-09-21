@@ -38786,3 +38786,14 @@ code.hljs {
   content: ' *';
   color: red;
 }
+
+.breadcrumb {
+  font-size: 18px!important;
+  font-weight: bold!important;
+  z-index: 100000;
+}
+
+.breadcrumbs-container {
+  justify-content: flex-start;
+  align-items: center;
+}

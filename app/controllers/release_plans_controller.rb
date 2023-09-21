@@ -6,6 +6,8 @@ class ReleasePlansController < ApplicationController
                         params.dig(:release_plan, :project_id)
   end
 
+  add_breadcrumb I18n.t("breadcrumbs.release_plans"), :release_plans_path
+
   def index
     @release_plans = ReleasePlan.filter_name(params[:name])
                                 .filter_status(params[:status])
@@ -18,6 +20,7 @@ class ReleasePlansController < ApplicationController
 
   def new
     @release_plan = ReleasePlan.new
+    add_breadcrumb t("breadcrumbs.new"), :new_release_plan_path
   end
 
   def create
@@ -36,6 +39,9 @@ class ReleasePlansController < ApplicationController
 
   def edit
     @projects = current_user.valid_projects_by_role
+    add_breadcrumb @release_plan.project_name,
+                   project_path(@release_plan.project)
+    add_breadcrumb t("breadcrumbs.edit"), :edit_release_plan_path
   end
 
   def update

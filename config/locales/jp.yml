@@ -1,5 +1,17 @@
 jp:
   hello_world: "こんにちは世界"
+  breadcrumbs:
+    new: "作成"
+    edit: "編集"
+    homepage: "ホームページ"
+    projects: "プロジェクト"
+    reports: "レポート"
+    release_plans: "リリース計画"
+    project_features: "プロジェクトの機能"
+    resources: "リソース"
+    statistical: "統計"
+    project_month: "値のリスト"
+    checklist: "チェックリスト"
   application:
     project_management: "プロジェクト管理"
   errors:
@@ -27,6 +39,10 @@ jp:
     header:
       sign_out: "サインアウト"
       profile_account: "プロフィールとアカウント"
+      select_language: "言語の選択"
+      english: "英語"
+      vietnamese: "ベトナム語"
+      japanese: "日本語"
     sidebar:
       list_projects: "プロジェクト"
       list_reports: "レポート"

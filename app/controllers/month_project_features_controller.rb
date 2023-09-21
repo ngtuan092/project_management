@@ -1,6 +1,9 @@
 class MonthProjectFeaturesController < ApplicationController
   before_action :logged_in_user, :find_project, only: :index
 
+  add_breadcrumb I18n.t("breadcrumbs.project_month"),
+                 :project_month_project_features_path
+
   def index
     year, month = params[:month_year]&.split("-")
     month ||= Date.current.month

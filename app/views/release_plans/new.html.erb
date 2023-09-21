@@ -13,7 +13,7 @@
     </div>
     <div class="form-outline mb-4">
       <%= f.label t(".description"), class: "form-label required" %>
-      <%= f.text_field :description, class: "form-control #{invalid(@release_plan, :description)}" %>
+      <%= f.text_area :description, class: "form-control #{invalid(@release_plan, :description)}", rows: "3" %>
       <p class="error"><%= show_errors(@release_plan, :description) %></p>
     </div>
     <div class="form-outline mb-4">
@@ -21,6 +21,8 @@
       <%= f.select :is_released, list_status, {}, class: "form-select #{invalid(@release_plan, :is_released)}" %>
       <p class="error"><%= show_errors(@release_plan, :is_released) %></p>
     </div>
-    <%= f.submit t(".submit"), class: "btn btn-primary btn-block mt-3 w-100" %>
+    <div class="col-6 mx-auto">
+      <%= f.submit t(".submit"), class: "btn btn-primary btn-block mt-3 w-100" %>
+    <div>
   </div>
 <% end %>

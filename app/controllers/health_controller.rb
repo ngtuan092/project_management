@@ -2,8 +2,11 @@ class HealthController < ApplicationController
   before_action :logged_in_user
   before_action :validate_form, :check_permission, only: %i(create)
 
+  add_breadcrumb I18n.t("breadcrumbs.checklist"), :health_items_path
+
   def new
     @health_items = HealthItem.enable_items
+    add_breadcrumb t("breadcrumbs.new"), :new_health_path
   end
 
   def create

@@ -1,6 +1,6 @@
 <% provide :title, t(".project_feature_index") %>
 <div class="container">
-  <h1 class="text-center mb-8"><%= t ".list_value" %></h1>
+  <h1 class="text-center mb-8 fw-bold"><%= t ".list_value" %></h1>
   <div class="form-group justify-content-center">
     <%= form_with url: project_month_project_features_path(@project), method: :get do |f| %>
       <label class="form-label">
