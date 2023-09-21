@@ -178,8 +178,8 @@ end
 
 5.times do |i|
   ProjectUserResource.create!(
-    project_user_id: Faker::Number.between(from: 1, to: 5),
-    percentage: Faker::Number.between(from: 1, to: 100),
+    project_user_id: Faker::Number.between(from: 1, to: ProjectUserId.size),
+    percentage: Faker::Number.between(from: 1, to: 30),
     month: Faker::Number.between(from: 1, to: 12),
     year: Faker::Number.between(from: 2023, to: 2024),
     man_month: Faker::Number.between(from: 0, to: 5),

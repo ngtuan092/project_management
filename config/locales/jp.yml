@@ -16,6 +16,8 @@ jp:
     checklist: "チェックリスト"
   application:
     project_management: "プロジェクト管理"
+    invalid_start_date: "開始日は終了日より前でなければなりません"
+    invalid_date_type: "無効な日付タイプです"
   errors:
     permission_update_delete_project: "このプロジェクトを操作する権限がありません。"
     permission_modify_project_feature: "このプロジェクト機能を操作する権限がありません。"
@@ -164,12 +166,15 @@ jp:
       new_project: "新しいプロジェクト"
       stt: "番号順"
       project_index: "プロジェクト一覧"
+      created_at: "で作成されました"
     search_form:
       name: "プロジェクト名"
       group: "グループ"
       status: "状態"
       search: "検索"
       new_project: "新しいプロジェクト"
+      start_date: "作成日から"
+      end_date: "作成日まで"
     project:
       in_progress: "進行中"
       completed: "完了"
@@ -319,6 +324,8 @@ jp:
       status: "状態"
       search: "検索"
       new_report: "新しいレポート"
+      start_date_report: "開始日"
+      end_date_report: "終了日"
     destroy:
       delete_success: "レポートは正常に破棄されました。"
       fail_delete: "このレポートは削除されていません。"
