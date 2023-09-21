@@ -140,7 +140,10 @@ class Project < ApplicationRecord
     man_month.round Settings.digits.length_2
   end
 
-  def sum_man_month
-    project_user_resources.sum(:man_month)
+  def calculate_project_resource_man_per_month month_year
+    year, month = month_year&.split("-")
+    year ||= Time.zone.now.year
+    month ||= Time.zone.now.month
+    project_user_resources.total_man_month_year(month, year)
   end
 end

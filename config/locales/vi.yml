@@ -199,6 +199,8 @@ vi:
     project_health:
       health_item_name: "Tên mục sức khỏe"
       status: "Trạng thái"
+      update_health: "Cập nhật sức khỏe dự án"
+      not_have_health: "Chưa có thông tin"
     destroy:
       delete_success: "Dự án này đã được xóa thành công."
       delete_fail: "Không thể xóa dự án này vì có chứa báo cáo."
@@ -479,6 +481,7 @@ vi:
       checklist: "Danh sách checklist"
       health_index: "Điền sức khoẻ dự án"
     validate_filled: "Hãy điền đầy đủ thông tin"
+    not_permission: "Bạn không có quyền chỉnh sửa sức khỏe dự án này"
   value_resources:
     index:
       value: "Giá trị"
