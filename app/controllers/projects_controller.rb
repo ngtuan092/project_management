@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   before_action :logged_in_user
   before_action :find_project, only: %i(show destroy edit update)
   before_action :check_role, only: %i(destroy edit update)
+  before_action :can_delete_project?, only: :destroy
 
   add_breadcrumb I18n.t("breadcrumbs.projects"), :projects_path
 
@@ -40,17 +41,12 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    if @project.reports.empty?
-      if @project.destroy
-        flash[:success] = t ".delete_success"
-        redirect_to projects_path
-      else
-        flash[:danger] = t ".fail_delete"
-        redirect_to root_path, status: :unprocessable_entity
-      end
+    if @project.destroy
+      flash[:success] = t ".delete_success"
+      redirect_to projects_path
     else
-      flash[:danger] = t ".delete_fail"
-      redirect_to @project, status: :unprocessable_entity
+      flash[:danger] = t ".fail_delete"
+      redirect_to projects_path, status: :unprocessable_entity
     end
   end
 
@@ -89,5 +85,15 @@ class ProjectsController < ApplicationController
 
     flash[:warning] = t ".#{message_key}"
     redirect_to projects_path
+  end
+
+  def can_delete_project?
+    return if @project.reports.empty? &&
+              @project.project_user_resources.empty? &&
+              @project.project_features.empty? &&
+              @project.release_plans.empty?
+
+    flash[:danger] = t ".delete_fail"
+    redirect_to @project, status: :unprocessable_entity
   end
 end

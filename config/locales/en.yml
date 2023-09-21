@@ -214,7 +214,7 @@ en:
       not_have_health: "No information"
     destroy:
       delete_success: "Project was successfully destroyed."
-      delete_fail: "Cannot delete project with reports."
+      delete_fail: "This project cannot be deleted because it contains reports or resources or project features or release plans."
       fail_delete: "This project has not been deleted."
     cannot_delete: "You cannot delete this project. Only managers and administrators have the authority to delete projects."
     cannot_edit: "You cannot edit this project. Only managers and administrators have the authority to edit projects."
@@ -308,8 +308,9 @@ en:
       stt: "No."
       project_name: "Project name"
       day_report: "Day report"
-      issue: "Issue"
       description: "Description"
+      resource_description: "Resource description"
+      issue: "Issue"
       action: "Action"
       report_index: "Reports List"
     search_form:

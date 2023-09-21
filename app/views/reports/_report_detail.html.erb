@@ -7,32 +7,32 @@
             <table class="table table-striped table-product">
               <tbody>
                 <tr>
-                  <td width="250"><%= t ".project_name" %></td>
+                  <td width="250" class="fw-bold"><%= t ".project_name" %></td>
                   <td><%= @report.project_name %></td>
                 </tr>
                 <tr>
-                  <td><%= t ".creator" %></td>
+                  <td class="fw-bold"><%= t ".creator" %></td>
                   <td><%= @report.user_name %></td>
                 </tr>
                 <tr>
-                  <td><%= t ".email" %></td>
+                  <td class="fw-bold"><%= t ".email" %></td>
                   <td><%= @report.user_email %></td>
                 </tr>
                 <tr>
-                  <td><%= t ".date" %></td>
+                  <td class="fw-bold"><%= t ".date" %></td>
                   <td><%= format_date @report.date %></td>
                 </tr>
                 <tr>
-                  <td><%= t ".description" %></td>
+                  <td class="fw-bold"><%= t ".description" %></td>
                   <td><%= @report.description %></td>
                 </tr>
                 <tr>
-                  <td><%= t ".issue" %></td>
-                  <td><%= @report.issue %></td>
+                  <td class="fw-bold"><%= t ".resource_description" %></td>
+                  <td><%= @report.resource_description %></td>
                 </tr>
                 <tr>
-                  <td><%= t ".resource_description" %></td>
-                  <td><%= @report.resource_description %></td>
+                  <td class="fw-bold"><%= t ".issue" %></td>
+                  <td class="error fw-bold"><%= @report.issue %></td>
                 </tr>
               </tbody>
             </table>

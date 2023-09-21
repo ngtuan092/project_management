@@ -3,7 +3,7 @@
   <div class ="col-6 mx-auto">
     <div class="form-outline mt-4 mb-4">
     <%= f.label t(".project_name"), class: "form-label required" %>
-    <%= f.select :project_id, project_select, {}, class: "form-control #{invalid(@release_plan, :project_id)}" %>
+    <%= f.select :project_id, project_select, {}, class: "form-select #{invalid(@release_plan, :project_id)}" %>
     <p class="error"><%= show_errors(@release_plan, :project_id) %></p>
     </div>
     <div class="form-outline mb-4">
