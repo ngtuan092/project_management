@@ -44,6 +44,18 @@ class Project < ApplicationRecord
     }
   ].freeze
 
+  PROJECT_HEALTH_ITEMS_PARAMS = [
+    :id,
+    {
+      project_health_items_attributes:
+        [
+          :id,
+          :status,
+          :_destroy
+        ]
+    }
+  ].freeze
+
   belongs_to :group
   belongs_to :creator, class_name: User.name
 
@@ -70,6 +82,8 @@ class Project < ApplicationRecord
                                                    reject_if: :all_blank
   accepts_nested_attributes_for :project_user_resources, allow_destroy: true,
                                                    reject_if: :all_blank
+  accepts_nested_attributes_for :project_health_items, allow_destroy: true,
+                                                    reject_if: :all_blank
 
   validates :name, presence: true, uniqueness: true,
                    length: {maximum: Settings.project.max_length_200}
@@ -128,6 +142,12 @@ class Project < ApplicationRecord
       .where(id: project_id)
       .select("users.name", "project_users.id")
   }
+  scope :without_health_items,
+        ->{where.not(id: ProjectHealthItem.distinct.pluck(:project_id))}
+
+  def project_in_health_item
+    ProjectHealthItem.distinct.pluck(:project_id)
+  end
 
   scope :filter_start_date, lambda {|start_date|
     where("created_at >= ?", start_date) if start_date.present? &&

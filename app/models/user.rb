@@ -112,10 +112,6 @@ class User < ApplicationRecord
     admin? || manager? || creator_project?(project) || role_psm?(project)
   end
 
-  def can_add_member? project
-    admin? || manager? || role_psm?(project)
-  end
-
   def user_role_project
     project_id_have_role_plm =
       project_users.id_have_user_roles Settings.project_roles.PSM

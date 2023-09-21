@@ -17,8 +17,7 @@ class ProjectUsersController < ApplicationController
       flash[:success] = t "project_user.create_success"
       respond
     else
-      flash.now[:danger] = t "project_user.create_fail"
-      render :new, status: :unprocessable_entity
+      flash_error
     end
   end
 
@@ -52,12 +51,23 @@ class ProjectUsersController < ApplicationController
     end
   end
 
+  def flash_error
+    error_message = @project_user.errors.messages[:user_id]
+    message = if error_message.present?
+                error_message.first
+              else
+                t("project_user.create_fail")
+              end
+    flash.now[:danger] = message
+    render :new, status: :unprocessable_entity
+  end
+
   def project_user_params
     params.require(:project_user).permit ProjectUser::UPDATE_ATTRS
   end
 
   def check_permission
-    return if current_user.can_add_member? @project
+    return if current_user.can_edit_delete_project? @project
 
     flash[:warning] = t ".not_permission"
     redirect_to project_path @project

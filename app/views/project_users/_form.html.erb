@@ -1,48 +1,48 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-9 mx-auto">
-<%# <div class="container d-flex justify-content-center"> %>
-  <%= form_with model: @project_user, url: url do |f| %>
-    <%= f.hidden_field :project_id, value: @project.id %>
-    <div class="mb-3">
-      <%= f.label :user_id, t(".member"), class: "form-label" %>
-      <div data-controller="select2">
-        <%= f.select :user_id, list_users, { include_blank: true,
-                                             selected: params[:user_id] || @project_user&.user_id}, disabled: local_assigns[:field_disabled],
-                     class: "form-select select2 form-control-modal #{invalid(f.object, :user)} col-12" %>
-      </div>
-      <p class="error"><%= show_errors(f.object, :user) %></p>
-    </div>
-    <div class="mb-3">
-      <%= f.label :project_role_id, t(".role"), class: "form-label" %>
-      <%= f.select :project_role_id, list_roles, { include_blank: true,
-                                                   selected: params[:project_role_id] || @project_user&.project_role_id },
-                   class: "select2 form-select form-control-modal #{invalid(f.object, :project_role)} col-12" %>
-      <p class="error"><%= show_errors(f.object, :project_role) %></p>
-    </div>
-    <div class="mb-3">
-      <%= f.label :joined_at, t(".joined_at"), class: "form-label" %>
-      <%= f.date_field :joined_at, class: "form-control-modal #{invalid(f.object, :joined_at)} col-12" %>
-      <p class="error"><%= show_errors(f.object, :joined_at) %></p>
-    </div>
-    <div class="mb-3">
-      <%= f.label :left_at, t(".left_at"), class: "form-label" %>
-      <%= f.date_field :left_at, class: "form-control-modal #{invalid(f.object, :left_at)} col-12" %>
-      <p class="error"><%= show_errors(f.object, :left_at) %></p>
-    </div>
-    <div class="mb-3">
-      <%= f.label :note, t(".note"), class: "form-label" %>
-      <%= f.text_area :note, class: "form-control-modal #{invalid(f.object, :note)} col-12", rows: "3" %>
-      <p class="error"><%= show_errors(f.object, :note) %></p>
-    </div>
+      <%= form_with model: @project_user, url: url do |f| %>
+        <%= f.hidden_field :project_id, value: @project.id %>
+        <div class="mb-3">
+          <%= f.label :user_id, t(".member"), class: "form-label required" %>
+          <div data-controller="select2">
+            <%= f.select :user_id, list_users, { include_blank: true,
+                                                 selected: params[:user_id] || @project_user&.user_id }, disabled: local_assigns[:field_disabled],
+                         class: "form-select select2 form-control-modal #{invalid(f.object, :user)} col-12" %>
+          </div>
+          <p class="error"><%= show_errors(f.object, :user) %></p>
+        </div>
+        <div class="mb-3">
+          <%= f.label :project_role_id, t(".role"), class: "form-label required" %>
+          <%= f.select :project_role_id, list_roles, { include_blank: true,
+                                                       selected: params[:project_role_id] || @project_user&.project_role_id },
+                       class: "select2 form-select form-control-modal #{invalid(f.object, :project_role)} col-12" %>
+          <p class="error"><%= show_errors(f.object, :project_role) %></p>
+        </div>
+        <div class="mb-3">
+          <%= f.label :joined_at, t(".joined_at"), class: "form-label" %>
+          <%= f.date_field :joined_at, class: "form-control-modal #{invalid(f.object, :joined_at)} col-12" %>
+          <p class="error"><%= show_errors(f.object, :joined_at) %></p>
+        </div>
+        <div class="mb-3">
+          <%= f.label :left_at, t(".left_at"), class: "form-label" %>
+          <%= f.date_field :left_at, class: "form-control-modal #{invalid(f.object, :left_at)} col-12" %>
+          <p class="error"><%= show_errors(f.object, :left_at) %></p>
+        </div>
+        <div class="mb-3">
+          <%= f.label :note, t(".note"), class: "form-label" %>
+          <%= f.text_area :note, class: "form-control-modal #{invalid(f.object, :note)} col-12", rows: "3" %>
+          <p class="error"><%= show_errors(f.object, :note) %></p>
+        </div>
 
-    <div class="mb-3 d-flex justify-content">
-      <%= f.submit yield(:submit), class: "btn btn-primary form-control me-2" %>
-      <%= link_to t(".close"), "#", class: "btn btn-danger form-control", data: {
-        controller: "modals",
-        action: "modals#close"
-      } %>
+        <div class="mb-3 d-flex justify-content">
+          <%= f.submit yield(:submit), class: "btn btn-primary form-control me-2" %>
+          <%= link_to t(".close"), "#", class: "btn btn-danger form-control", data: {
+            controller: "modals",
+            action: "modals#close"
+          } %>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>
-</div></div>

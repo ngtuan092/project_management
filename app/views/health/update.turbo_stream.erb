@@ -1,0 +1,12 @@
+<%= turbo_stream.update "modal", "" %>
+<%= turbo_stream.update "flash_message" do %>
+  <%= render "shared/flash_message" %>
+<% end %>
+
+<%= turbo_stream.update "project-health-body" do %>
+  <table class="table table-striped table-product">
+    <tbody id="project-health-body">
+    <%= render @project.project_health_items %>
+    </tbody>
+  </table>
+<% end %>

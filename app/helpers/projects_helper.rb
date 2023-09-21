@@ -62,14 +62,6 @@ module ProjectsHelper
     safe_join list_customer
   end
 
-  def can_edit_delete_project project
-    current_user.can_edit_delete_project? project
-  end
-
-  def can_edit_project_member? project
-    current_user.can_add_member? project
-  end
-
   def project_select
     if current_user.admin? || current_user.manager?
       return Project.pluck(:name, :id)

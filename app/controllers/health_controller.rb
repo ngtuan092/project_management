@@ -1,5 +1,6 @@
 class HealthController < ApplicationController
   before_action :logged_in_user, :check_permission
+  before_action :find_project, only: %i(edit update)
   before_action :validate_form, only: %i(create)
 
   add_breadcrumb I18n.t("breadcrumbs.checklist"), :health_items_path
@@ -18,7 +19,26 @@ class HealthController < ApplicationController
     redirect_to project_path(params[:project_id])
   end
 
+  def edit; end
+
+  def update
+    if @project.update health_item_params
+      flash[:success] = t(".update_success")
+      respond_to do |format|
+        format.html{redirect_to @project}
+        format.turbo_stream
+      end
+    else
+      flash.now[:danger] = t(".update_fail")
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
+  def health_item_params
+    params.require(:project).permit Project::PROJECT_HEALTH_ITEMS_PARAMS
+  end
+
   def create_project_health_items
     ActiveRecord::Base.transaction do
       params[:health_items].each do |element|
