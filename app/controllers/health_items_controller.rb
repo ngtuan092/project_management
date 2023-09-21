@@ -6,7 +6,8 @@ class HealthItemsController < ApplicationController
 
   def index
     @pagy, @health_items = pagy HealthItem.enable_items
-                                          .filter_name(params[:name]),
+                                          .filter_name(params[:name])
+                                          .by_recently_created,
                                 items: Settings.pagy.number_items_10
   end
 

@@ -9,6 +9,7 @@ class ProjectsController < ApplicationController
     @projects = Project.filter_name(params[:name])
                        .filter_group(params[:group])
                        .filter_status(params[:status])
+                       .by_recently_created
                        .includes(:group)
     @pagy, @projects = pagy @projects, items: Settings.pagy.number_items_10
   end
@@ -33,7 +34,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project_customers = @project.customers
-    @pagy, @project_members = pagy @project.project_users.by_earliest_joined,
+    @pagy, @project_members = pagy @project.project_users.by_recently_joined,
                                    items: Settings.pagy.number_items_10
     add_breadcrumb @project.name, project_path(@project)
   end

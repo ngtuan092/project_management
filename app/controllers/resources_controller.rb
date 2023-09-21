@@ -8,6 +8,7 @@ class ResourcesController < ApplicationController
     year ||= Time.zone.now.year
     @projects = Project.filter_name(params[:name])
                        .filter_resources(month, year)
+                       .by_recently_created
     @pagy, @projects = pagy @projects, items: Settings.pagy.number_items_10
   end
 

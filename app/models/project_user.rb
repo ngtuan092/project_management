@@ -12,7 +12,7 @@ class ProjectUser < ApplicationRecord
   accepts_nested_attributes_for :project_user_resources, allow_destroy: true,
                                                    reject_if: :all_blank
 
-  scope :by_earliest_joined, ->{order :joined_at}
+  scope :by_recently_joined, ->{order(joined_at: :desc)}
   scope :id_have_user_roles, lambda {|role_name|
     role = Role.find_by name: role_name
     role_id = role&.id

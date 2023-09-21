@@ -13,6 +13,7 @@ class ReleasePlansController < ApplicationController
                                 .filter_status(params[:status])
                                 .in_date_range(params[:date_from],
                                                params[:date_to])
+                                .by_recently_created
                                 .includes(:project)
     @pagy, @release_plans = pagy @release_plans,
                                  items: Settings.pagy.number_items_10

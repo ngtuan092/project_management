@@ -11,7 +11,7 @@ class ProjectFeaturesController < ApplicationController
     year, month = params[:month_year]&.split("-")
     month ||= Time.zone.now.month
     year ||= Time.zone.now.year
-    @projects = Project.filter_features(month, year)
+    @projects = Project.filter_features(month, year).by_recently_created
     @pagy, @projects = pagy @projects, items: Settings.pagy.number_items_10
   end
 
@@ -19,7 +19,7 @@ class ProjectFeaturesController < ApplicationController
     year, month = params[:date]&.split("-")
     @project = Project.find(params[:id])
     @project_features = @project.project_features.filter_month(month)
-                                .filter_year(year)
+                                .filter_year(year).by_recently_created
   end
 
   def edit; end
@@ -90,6 +90,7 @@ class ProjectFeaturesController < ApplicationController
     @project_features = @project_feature.project.project_features
                                         .filter_month(month)
                                         .filter_year(year)
+                                        .by_recently_created
   end
 
   def project_feature_params_create
