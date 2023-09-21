@@ -1,15 +1,15 @@
 <div class="nested-fields">
   <%= f.hidden_field :month, value: @month %>
   <%= f.hidden_field :year, value: @year %>
-  <div class="mb-3 row justify-content-center">
-    <div class="col-4 me-10">
+  <div class="mb-3 row align-items-center">
+    <div class="col-6">
       <%= f.select :project_user_id, list_project_user(@project.id) , { prompt: t(".select_member") }, class: "form-select", required: true  %>
     </div>
-    <div class="col-4">
+    <div class="col-5">
       <%= f.number_field :percentage , class: "form-control", placeholder: t(".effort"),max: Settings.number.value_100, min: Settings.number.value_0, required: true %>
     </div>
-    <div class="col-1 d-flex align-items-center">
-      <%= link_to_remove_association t(".remove"), f %>
+    <div class="col-1">
+      <%= link_to_remove_association t(".remove"), f, class: "btn btn-danger"%>
     </div>
   </div>
 </div>

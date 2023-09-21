@@ -1,4 +1,6 @@
 en:
+  duplicate_users: "duplicate"
+  error_percentage_limit: "Total percentage exceeds 100% for 1 user during the month"
   hello_world: "Hello world"
   breadcrumbs:
     new: "New"
@@ -123,6 +125,7 @@ en:
       select_project: "Select project"
       date: "Select date"
       save: "Save"
+      add_member: "Add member"
     create:
       required_date: "Please select a date"
       required_project: "Please select a project"
@@ -141,6 +144,14 @@ en:
       select_month_year: "Select month"
       select: "Select"
       new_resource: "CREATE RESOURCE"
+    show:
+      title: "List resources"
+      month: "Month"
+      year: "Year"
+      name: "Name"
+      percentage: "Percentage"
+      man_month: "Man month"
+      stt: "STT"
   projects:
     index:
       name: "Project"

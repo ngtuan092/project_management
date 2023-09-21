@@ -2,6 +2,6 @@
   <td><%= project.id %></td>
   <td><span><%= project.name %></span></td>
   <td><%= project.calculate_project_resource_man_per_month params[:month_year] %></td>
-  <td><%= link_to t("resources.table.detail"), resource_path(project) %></td>
+  <td><%= link_to t("resources.table.detail"), resource_path(project), data: { turbo_frame: "modal" } %></td>
   <td><%= format_date project.start_date %></td>
 </tr>

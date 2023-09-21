@@ -1,0 +1,48 @@
+<%= turbo_frame_tag "modal" do %>
+  <div class="modal-member" style="min-height: 70%">
+    <%= link_to "x", "#", class: "close_x", data: {
+      controller: "modals",
+      action: "modals#close"
+    } %>
+    <div class="d-flex align-items-center text-uppercase">
+      <h1 class="modal-header mb-3 w-100 justify-content-center"><%= t(".title") %></h1>
+    </div>
+    <%= form_with url: resource_path(@project), method: :get do |f| %>
+      <div class="row mb-3">
+        <div class="col-auto">
+          <%= f.label :date,  t("resources.show.month"), class: "form-label" %>
+          <%= f.month_field :date, value: params[:date], class: "form-control"%>
+        </div>
+        <div class="col-auto">
+          <label class="form-label invisible">invisible label</label>
+          <%= f.submit t("resources.index.search"), name: nil, class: "btn btn-primary form-control" %>
+        </div>
+      </div>
+    <% end %>
+    <div class="table-responsive">
+      <table class="table table-striped align-middle table-hover table-bordered padding-margin-0">
+        <thead>
+          <tr>
+            <th width="10%"><%= t(".stt")%></th>
+            <th width="col"><%= t(".month")%></th>
+            <th scope="col"><%= t(".year")%></th>
+            <th scope="col"><%= t(".name")%></th>
+            <th scope="col"><%= t(".percentage")%></th>
+            <th scope="col"><%= t(".man_month")%></th>
+          </tr>
+        </thead>
+        <tbody class="list">
+          <%= render partial: "project_user_resource", collection: @project_user_resources%>
+        </tbody>
+      </table>
+      <div class="card-footer">
+        <div class="d-flex justify-content-between align-items-center">
+          <!-- Pagination -->
+          <% if @pagy&.pages > 1 %>
+            <%== pagy_info @pagy %>
+            <%== pagy_bootstrap_nav @pagy %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+<% end %>

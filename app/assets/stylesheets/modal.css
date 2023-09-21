@@ -43,3 +43,12 @@
   border-radius: 0.25rem;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
+.close_x {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  text-decoration: none;
+  color: black;
+  font-size: 1.5em;
+}

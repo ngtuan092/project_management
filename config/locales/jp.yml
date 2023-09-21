@@ -1,4 +1,6 @@
 jp:
+  duplicate_users: "重複"
+  error_percentage_limit: "月中の 1 ユーザーの合計パーセンテージが 100% を超える"
   hello_world: "こんにちは世界"
   breadcrumbs:
     new: "作成"
@@ -123,6 +125,7 @@ jp:
       select_project: "プロジェクトを選択"
       date: "日付を選択してください"
       save: "保存"
+      add_member: "メンバーを追加"
     create:
       required_date: "日付を選択してください"
       required_project: "プロジェクトを選択してください"
@@ -141,6 +144,14 @@ jp:
       select_month_year: "月を選択"
       select: "選択する"
       new_resource: "リソースの作成"
+    show:
+      title: "リソースのリスト"
+      month: "月"
+      year: "年"
+      name: "名前"
+      percentage: "パーセンテージ"
+      man_month: "人月"
+      stt: "STT"
   projects:
     index:
       name: "プロジェクト"
