@@ -31,6 +31,17 @@ class ProjectFeature < ApplicationRecord
 
   scope :filter_month, ->(month){where(month:) if month}
   scope :filter_year, ->(year){where(year:) if year}
+  scope :filter_project_id, ->(project_id){where(project_id:) if project_id}
+  scope :filter_name, lambda {|name|
+    includes(:project)
+    if name.present?
+      joins(:project)
+        .where("projects.name LIKE ?", "%#{name}%")
+    end
+  }
+  scope :group_project_month_year,
+        ->{select(:project_id, :month, :year).group(:project_id, :month, :year)}
+
   scope :total_man_month_year, lambda {|month, year|
     filter_month(month).filter_year(year).sum(:man_month)
                        .round(Settings.digits.length_2)
@@ -40,6 +51,7 @@ class ProjectFeature < ApplicationRecord
     where(project_id: project_ids).total_man_month_year(month, year)
                                   .round(Settings.digits.length_2)
   }
+  scope :order_by_month_year, ->{order(:month, :year)}
 
   def effort_hour_month_save
     return unless effort_saved && repeat_time

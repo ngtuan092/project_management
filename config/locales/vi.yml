@@ -455,6 +455,7 @@ vi:
       name: "Tên dự án"
       action: "Chi tiết"
       new_project_features: "Tính năng mới"
+      month_year: "Tháng - Năm"
     create_success: "Create success"
     create_fail: "Create fail"
     can_not_find_project: "Can not find project"
