@@ -71,7 +71,7 @@ class Project < ApplicationRecord
   accepts_nested_attributes_for :project_user_resources, allow_destroy: true,
                                                    reject_if: :all_blank
 
-  validates :name, presence: true,
+  validates :name, presence: true, uniqueness: true,
                    length: {maximum: Settings.project.max_length_200}
   validates :description, length: {maximum: Settings.project.max_length_1000}
   validates :status, presence: true, inclusion: {in: statuses.keys}
@@ -127,6 +127,16 @@ class Project < ApplicationRecord
     joins(project_users: :user)
       .where(id: project_id)
       .select("users.name", "project_users.id")
+  }
+
+  scope :filter_start_date, lambda {|start_date|
+    where("created_at >= ?", start_date) if start_date.present? &&
+                                            valid_date(start_date)
+  }
+
+  scope :filter_end_date, lambda {|end_date|
+    where("created_at <= ?", end_date) if end_date.present? &&
+                                          valid_date(end_date)
   }
 
   def calculate_project_man_per_month date

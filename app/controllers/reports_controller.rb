@@ -10,7 +10,8 @@ class ReportsController < ApplicationController
   add_breadcrumb I18n.t("breadcrumbs.reports"), :reports_path
 
   def index
-    @reports = Report.filter_date(params[:date])
+    @reports = Report.filter_start_date(params[:start_date])
+                     .filter_end_date(params[:end_date])
                      .filter_name_status(params[:name], params[:status])
                      .by_recently_created
     @pagy, @reports = pagy @reports, items: Settings.pagy.number_items_10

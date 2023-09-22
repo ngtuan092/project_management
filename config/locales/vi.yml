@@ -16,6 +16,8 @@ vi:
     checklist: "Danh mục sức khỏe"
   application:
     project_management: "Quản lý dự án"
+    invalid_start_date: "Ngày bắt đầu phải trước ngày kết thúc"
+    invalid_date_type: "Định dạng ngày không hợp lệ"
   errors:
     permission_update_delete_project: "Bạn không có quyền thao tác với dự án này!"
     permission_modify_project_feature: "Bạn không có quyền thao tác với tính năng dự án này!"
@@ -164,12 +166,15 @@ vi:
       new_project: "Dự án mới"
       stt: "STT"
       project_index: "Danh sách dự án"
+      created_at: "Ngày tạo"
     search_form:
       name: "Tên dự án"
       group: "Nhóm"
       status: "Trạng thái"
       search: "Tìm kiếm"
       new_project: "Thêm dự án"
+      start_date: "Từ ngày tạo"
+      end_date: "Đến ngày tạo"
     project:
       in_progress: "Đang thực hiện"
       completed: "Đã hoàn thành"
@@ -319,6 +324,8 @@ vi:
       status: "Trạng thái"
       search: "Tìm kiếm"
       new_report: "Thêm báo cáo"
+      start_date_report: "Từ ngày"
+      end_date_report: "Đến ngày"
     destroy:
       delete_success: "Báo cáo này đã được xóa thành công."
       fail_delete: "Báo cáo này chưa được xóa."

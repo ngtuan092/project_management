@@ -8,6 +8,7 @@
       <%= t ".#{project.status}" %>
     </span>
   </td>
+  <td><%= format_date project.created_at %></td>
   <td><%= format_date project.start_date %></td>
   <td><%= format_date project.end_date %></td>
   <td class="text-center">

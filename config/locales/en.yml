@@ -16,6 +16,8 @@ en:
     checklist: "Checklist"
   application:
     project_management: "Project Management"
+    invalid_start_date: "Start date must be before end date"
+    invalid_date_type: "Invalid date type"
   errors:
     permission_update_delete_project: "You do not have permission to manipulate this project!"
     permission_modify_project_feature: "You do not have permission to manipulate this project feature!"
@@ -164,12 +166,15 @@ en:
       new_project: "New project"
       stt: "No."
       project_index: "Projects List"
+      created_at: "Created at"
     search_form:
       name: "Project name"
       group: "Group"
       status: "Status"
       search: "Search"
       new_project: "New project"
+      start_date: "From created date"
+      end_date: "To created date"
     project:
       in_progress: "In progress"
       completed: "Completed"
@@ -319,6 +324,8 @@ en:
       status: "Status"
       search: "Search"
       new_report: "New report"
+      start_date_report: "Start date"
+      end_date_report: "End date"
     destroy:
       delete_success: "Report was successfully destroyed."
       fail_delete: "This report has not been deleted."

@@ -7,11 +7,7 @@ class ProjectsController < ApplicationController
   add_breadcrumb I18n.t("breadcrumbs.projects"), :projects_path
 
   def index
-    @projects = Project.filter_name(params[:name])
-                       .filter_group(params[:group])
-                       .filter_status(params[:status])
-                       .by_recently_created
-                       .includes(:group)
+    @projects = filtered_projects
     @pagy, @projects = pagy @projects, items: Settings.pagy.number_items_10
   end
 
@@ -71,6 +67,16 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit Project::PROJECT_PARAMS
+  end
+
+  def filtered_projects
+    projects = Project.includes(:group)
+    projects = projects.filter_start_date(params[:start_date])
+    projects = projects.filter_end_date(params[:end_date])
+    projects = projects.filter_name(params[:name])
+    projects = projects.filter_group(params[:group])
+    projects = projects.filter_status(params[:status])
+    projects.by_recently_created
   end
 
   def check_role

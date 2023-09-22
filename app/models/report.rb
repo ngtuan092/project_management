@@ -19,17 +19,19 @@ class Report < ApplicationRecord
   validates :issue, presence: true,
             length: {maximum: Settings.project.max_length_200}
 
-  scope :filter_date, ->(date){filter_by_date(date) if date.present?}
+  scope :filter_start_date, lambda {|start_date|
+    where("date >= ?", start_date) if start_date.present? &&
+                                      valid_date(start_date)
+  }
+
+  scope :filter_end_date, lambda {|end_date|
+    where("date <= ?", end_date) if end_date.present? &&
+                                    valid_date(end_date)
+  }
 
   scope :filter_name_status, lambda {|name, status|
     ids = Project.filter_name(name)
                  .filter_status(status).pluck :id
     where(project_id: ids)
   }
-  class << self
-    def filter_by_date date_str
-      date = valid_date date_str
-      date ? where(date:) : all
-    end
-  end
 end
