@@ -163,10 +163,10 @@ end
 
 20.times do |i|
   ProjectFeature.create!(
-    project_id: Faker::Number.between(from: 1, to: 2),
+    project_id: Faker::Number.between(from: 1, to: projects.size),
     name: Faker::Name.name,
     description: Faker::Lorem.sentence,
-    month: Faker::Number.between(from: 1, to: 2),
+    month: Faker::Number.between(from: 1, to: 12),
     year: Faker::Number.between(from: 2023, to: 2024),
     waste_description: Faker::Lorem.sentence,
     effort_saved: Faker::Number.between(from: 1, to: 10),
@@ -178,7 +178,7 @@ end
 
 5.times do |i|
   ProjectUserResource.create!(
-    project_user_id: Faker::Number.between(from: 1, to: ProjectUserId.size),
+    project_user_id: Faker::Number.between(from: 1, to: 10),
     percentage: Faker::Number.between(from: 1, to: 30),
     month: Faker::Number.between(from: 1, to: 12),
     year: Faker::Number.between(from: 2023, to: 2024),
@@ -186,11 +186,3 @@ end
     )
 end
 
-20.times do |i|
-  ProjectHealthItem.create!(
-    project_id: Faker::Number.between(from: 1, to: 5),
-    health_item_id: Faker::Number.between(from: 1, to: 10),
-    note: Faker::Lorem.sentence,
-    status: Faker::Number.between(from: 0, to: 2),
-    )
-end

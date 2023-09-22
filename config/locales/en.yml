@@ -217,6 +217,7 @@ en:
       status: "Status"
       update_health: "Update project health"
       not_have_health: "No information"
+      new_health: "Create new project health"
     destroy:
       delete_success: "Project was successfully destroyed."
       delete_fail: "This project cannot be deleted because it contains reports or resources or project features or release plans."
@@ -501,6 +502,12 @@ en:
       health_index: "Fill in project health"
     validate_filled: "Please fill in completely"
     not_permission: "You do not have permission to edit health to this project"
+    form:
+      submit: "Submit"
+      close: "Cancel"
+    update:
+      update_success: "Update project health successfully"
+      update_fail: "Project health update failed"
   value_resources:
     index:
       value: "Value"

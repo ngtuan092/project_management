@@ -217,6 +217,7 @@ vi:
       status: "Trạng thái"
       update_health: "Cập nhật sức khỏe dự án"
       not_have_health: "Chưa có thông tin"
+      new_health: "Điền sức khoẻ dự án"
     destroy:
       delete_success: "Dự án này đã được xóa thành công."
       delete_fail: "Không thể xóa dự án có chứa báo cáo hoặc tài nguyên hoặc tính năng dự án hoặc kế hoạch phát hành."
@@ -501,6 +502,12 @@ vi:
       health_index: "Điền sức khoẻ dự án"
     validate_filled: "Hãy điền đầy đủ thông tin"
     not_permission: "Bạn không có quyền chỉnh sửa sức khỏe dự án này"
+    form:
+      submit: "Cập nhật"
+      close: "Huỷ"
+    update:
+      update_success: "Cập nhật sức khoẻ dự án thành công"
+      update_fail: "Cập nhật sức khoẻ dự án thất bại"
   value_resources:
     index:
       value: "Giá trị"

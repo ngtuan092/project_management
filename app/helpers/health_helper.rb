@@ -5,7 +5,7 @@ module HealthHelper
     end
   end
 
-  def project_options_for_select projects
-    projects.map{|project| [project.name, project.id]}
+  def list_project
+    Project.without_health_items.pluck :name, :id
   end
 end

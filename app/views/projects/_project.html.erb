@@ -15,7 +15,7 @@
     <%= link_to project_path(project), class: "btn btn-primary btn-sm" do %>
       <i class="bi-eye-fill"></i>
     <% end %>
-    <% if can_edit_delete_project project %>
+    <% if current_user.can_edit_delete_project? project %>
       <%= link_to edit_project_path(project), class: "btn btn-success btn-sm" do %>
         <i class="bi-pencil-square"></i>
       <% end %>

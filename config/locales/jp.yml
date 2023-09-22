@@ -217,6 +217,7 @@ jp:
       status: "状態"
       update_health: "プロジェクトの健全性を更新する"
       not_have_health: "情報なし"
+      new_health: "プロジェクトの健全性を更新する"
     destroy:
       delete_success: "プロジェクトは正常に破棄されました。"
       delete_fail: "このプロジェクトにはレポート、リソース、プロジェクト機能、またはリリース計画が含まれているため、削除できません。"
@@ -501,6 +502,12 @@ jp:
       health_index: "健全性を入力sする"
     validate_filled: "完全に入力してください"
     not_permission: "このプロジェクトのヘルスを編集する権限がありません"
+    form:
+      submit: "更新"
+      close: "キャンセル"
+    update:
+      update_success: "プロジェクトの健全性を正常に更新する"
+      update_fail: "プロジェクトの健全性の更新に失敗しましたプロジェクトの健全性の更新に失敗しました"
   value_resources:
     index:
       value: "価値"

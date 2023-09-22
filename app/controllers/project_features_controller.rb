@@ -8,18 +8,17 @@ class ProjectFeaturesController < ApplicationController
   add_breadcrumb I18n.t("breadcrumbs.project_features"), :project_features_path
 
   def index
-    year, month = params[:month_year]&.split("-")
-    month ||= Time.zone.now.month
-    year ||= Time.zone.now.year
+    month, year = month_year_params
     @projects = Project.filter_features(month, year).by_recently_created
     @pagy, @projects = pagy @projects, items: Settings.pagy.number_items_10
   end
 
   def show
-    year, month = params[:date]&.split("-")
+    month, year = month_year_params
     @project = Project.find(params[:id])
     @project_features = @project.project_features.filter_month(month)
                                 .filter_year(year).by_recently_created
+    add_breadcrumb "#{@project.name} (#{month}/#{year})"
   end
 
   def edit; end
@@ -62,6 +61,14 @@ class ProjectFeaturesController < ApplicationController
   end
 
   private
+
+  def month_year_params
+    year, month = params[:month_year]&.split("-")
+    month ||= Time.zone.now.month
+    year ||= Time.zone.now.year
+    [month, year]
+  end
+
   def project_feature_params
     params.require(:project_feature)
           .permit ProjectFeature::PROJECT_FEATURE_PARAMS
