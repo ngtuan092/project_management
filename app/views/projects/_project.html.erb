@@ -2,7 +2,7 @@
   <td><%= sequence_number project_counter, @pagy&.offset %></td>
   <td><%= project.group_name %></td>
   <td><%= project.name %></td>
-  <td><%= project.description %></td>
+  <td class="text-nowrap text-overflow"><%= project.description %></td>
   <td class="text-center">
     <span class="badge rounded-pill text-bg-<%= project.status %>">
       <%= t ".#{project.status}" %>

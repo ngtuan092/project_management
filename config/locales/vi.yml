@@ -214,7 +214,7 @@ vi:
       not_have_health: "Chưa có thông tin"
     destroy:
       delete_success: "Dự án này đã được xóa thành công."
-      delete_fail: "Không thể xóa dự án này vì có chứa báo cáo."
+      delete_fail: "Không thể xóa dự án có chứa báo cáo hoặc tài nguyên hoặc tính năng dự án hoặc kế hoạch phát hành."
       fail_delete: "Dự án này chưa được xóa."
     cannot_delete: "Bạn không thể xóa dự án này. Chỉ có người quản lý và quản trị viên mới có quyền xóa dự án."
     cannot_edit: "Bạn không thể sửa dự án này. Chỉ có người quản lý và quản trị viên mới có quyền sửa dự án."
@@ -308,8 +308,9 @@ vi:
       stt: "STT"
       project_name: "Tên dự án"
       day_report: "Ngày báo cáo"
-      issue: "Vấn đề"
       description: "Mô tả"
+      resource_description: "Mô tả tài nguyên"
+      issue: "Vấn đề"
       action: "Hành động"
       report_index: "Danh sách báo cáo"
     search_form:

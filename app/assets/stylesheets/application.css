@@ -38743,7 +38743,7 @@ code.hljs {
 
 /* form */
 .error{
-  color: red;
+  color: red!important;
 }
 
 /*
@@ -38796,4 +38796,8 @@ code.hljs {
 .breadcrumbs-container {
   justify-content: flex-start;
   align-items: center;
+}
+
+.td.error{
+  color: red!important;
 }
