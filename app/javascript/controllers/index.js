@@ -14,3 +14,6 @@ application.register("nested-rondo", NestedRondoController)
 
 import Select2Controller from "./select2_controller"
 application.register("select2", Select2Controller)
+
+import SelectStatusReleaseController from "./select_status_release_controller"
+application.register("is_released_select", SelectStatusReleaseController)

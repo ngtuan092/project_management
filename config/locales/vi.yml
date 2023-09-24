@@ -348,6 +348,7 @@ vi:
     can_not_find_project: "Không thể tìm thấy dự án"
     create_success: "Tạo thành công"
     fail_create: "Tạo thất bại"
+    validate_released_at: "Dự án đã phát hành, cần xác nhận ngày phát hành"
     new:
       created_release_plan: "TẠO KẾ HOẠCH PHÁT HÀNH"
       project_name: "Tên dự án"
@@ -355,6 +356,7 @@ vi:
       description: "Mô tả"
       status: "Trạng thái"
       submit: "Lưu"
+      released_at: "Ngày phát hành thực tế"
     edit:
       title: "CẬP NHẬT KẾ HOẠCH PHÁT HÀNH"
     form:

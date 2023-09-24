@@ -348,6 +348,7 @@ en:
     can_not_find_project: "Can not find project"
     create_success: "Create success"
     fail_create: "Create fail"
+    validate_released_at: "The project has been released, release date needs to be confirmed"
     new:
       created_release_plan: "CREATE RELEASE PLAN"
       project_name: "Project name"
@@ -355,6 +356,7 @@ en:
       description: "Description"
       status: "Status"
       submit: "Submit"
+      released_at: "Actual release date"
     edit:
       title: "UPDATE RELEASE PLAN"
     form:
