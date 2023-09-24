@@ -7,18 +7,6 @@
     <div class="d-flex align-items-center text-uppercase">
       <h1 class="modal-header mb-3 w-100 justify-content-center"><%= t(".title") %></h1>
     </div>
-    <%= form_with url: resource_path(@project), method: :get do |f| %>
-      <div class="row mb-3">
-        <div class="col-auto">
-          <%= f.label :date,  t("resources.show.month"), class: "form-label" %>
-          <%= f.month_field :date, value: params[:date], class: "form-control"%>
-        </div>
-        <div class="col-auto">
-          <label class="form-label invisible">invisible label</label>
-          <%= f.submit t("resources.index.search"), name: nil, class: "btn btn-primary form-control" %>
-        </div>
-      </div>
-    <% end %>
     <div class="table-responsive">
       <table class="table table-striped align-middle table-hover table-bordered padding-margin-0">
         <thead>

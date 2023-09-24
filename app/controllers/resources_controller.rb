@@ -4,21 +4,22 @@ class ResourcesController < ApplicationController
   before_action :find_project, only: :show
 
   def index
-    year, month = params[:month_year]&.split("-")
-    month ||= Time.zone.now.month
-    year ||= Time.zone.now.year
+    @year, @month = params[:month_year]&.split("-")
+    @month ||= Time.zone.now.month
+    @year ||= Time.zone.now.year
     @projects = Project.filter_name(params[:name])
-                       .filter_resources(month, year)
+                       .filter_resources(@month, @year)
                        .by_recently_created
     @pagy, @projects = pagy @projects, items: Settings.pagy.number_items_10
   end
 
   def show
-    year, month = params[:date]&.split("-")
+    @month = params[:month]
+    @year = params[:year]
     @pagy, @project_user_resources = pagy(
       @project.project_user_resources
-              .filter_month(month)
-              .filter_year(year)
+              .filter_month(@month)
+              .filter_year(@year)
               .sorted_by_month_and_year,
       items: Settings.pagy.number_items_10
     )
