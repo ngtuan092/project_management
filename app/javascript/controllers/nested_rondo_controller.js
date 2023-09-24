@@ -4,6 +4,10 @@ import { addFieldProjectFeature } from "./project_features_controller";
 export default class extends Controller {
   static targets = ["template", "fieldContain"]
 
+  connect() {
+    addFieldProjectFeature();
+  }
+
   addField(e) {
     e.preventDefault();
 
