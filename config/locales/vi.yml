@@ -46,7 +46,7 @@ vi:
       profile_account: "Hồ sơ & tài khoản"
       select_language: "Chọn ngôn ngữ"
       english: "Tiếng Anh"
-      vietnamese: "Tiếng việt"
+      vietnamese: "Tiếng Việt"
       japanese: "Tiếng Nhật"
     sidebar:
       list_projects: "Dự án"
@@ -376,6 +376,7 @@ vi:
       stt: "STT"
       project_name: "Tên dự án"
       day_release_plan: "Ngày kế hoạch phát hành"
+      actual_release_date: "Ngày phát hành thực tế"
       description: "Mô tả"
       status: "Trạng thái"
       action: "Hành động"
@@ -534,6 +535,7 @@ vi:
       description: "Mô tả"
       action: "Hành động"
       is_enabled: "Trạng thái"
+    cannot_modify: "Bạn không thể sửa đổi nó!"
     search_form:
       name: "Tên mục"
       search: "Tìm kiếm"
@@ -553,6 +555,10 @@ vi:
       create_fail: "Tạo mới checklist cho sức khoẻ dự án thất bại!"
     edit:
       title: "Cập nhật checklist sức khoẻ dự án"
+    destroy:
+      delete_success: "Mục sức khỏe này đã được xóa thành công."
+      delete_fail_used_in_projects: "Mục sức khỏe không thể xóa vì có dự án sử dụng nó."
+    you_sure?: "Bạn chắc chắn chứ?"
   dashboard:
     index:
       home: "Trang chủ"

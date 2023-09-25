@@ -376,6 +376,7 @@ jp:
       stt: "番号順"
       project_name: "プロジェクト名"
       day_release_plan: "発売予定日"
+      actual_release_date: "実際の発売日"
       description: "説明"
       status: "状態"
       action: "アクション"
@@ -534,6 +535,7 @@ jp:
       description: "説明"
       action: "アクション"
       is_enabled: "有様"
+    cannot_modify: "改造することはできません！"
     search_form:
       name: "Tên mục"
       search: "Search"
@@ -553,6 +555,10 @@ jp:
       create_fail: "失敗したプロジェクトの健全性を確認するための新しいチェックリストを作成します。"
     edit:
       title: "プロジェクトの健全性チェックリストを更新する"
+    destroy:
+      delete_success: "ヘルス項目は正常に破棄されました。"
+      delete_fail_used_in_projects: "ヘルス項目を使用するプロジェクトがあるため、ヘルス項目を削除できません。"
+    you_sure?: "あなたは確かに？"
   dashboard:
     index:
       home: "ホーム"

@@ -213,6 +213,8 @@ GEM
       racc (~> 1.4)
     pagy (4.7.1)
     parallel (1.23.0)
+    paranoia (2.6.2)
+      activerecord (>= 5.1, < 7.1)
     parser (3.2.2.3)
       ast (~> 2.4.1)
       racc
@@ -384,6 +386,7 @@ DEPENDENCIES
   jbuilder
   mysql2 (~> 0.5)
   pagy
+  paranoia (~> 2.4)
   puma (~> 5.0)
   rails (~> 7.0.5)
   rails-i18n

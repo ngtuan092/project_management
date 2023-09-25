@@ -1,4 +1,6 @@
 class HealthItem < ApplicationRecord
+  acts_as_paranoid
+
   HEALTH_ITEM_PARAMS = [
     :item, :description, :is_enabled
   ].freeze

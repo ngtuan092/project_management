@@ -12,7 +12,7 @@ class CreateProjects < ActiveRecord::Migration[7.0]
       t.text :redmine
       t.text :project_folder
       t.string :language, null: false
-      t.datetime :delete_at
+      t.datetime :deleted_at
 
       t.timestamps
     end

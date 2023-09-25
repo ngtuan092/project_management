@@ -5,6 +5,7 @@ class CreateProjectHealthItems < ActiveRecord::Migration[7.0]
       t.references :health_item, null: false, foreign_key: true
       t.text :note
       t.integer :status, null: false
+      t.datetime :deleted_at
     end
   end
 end

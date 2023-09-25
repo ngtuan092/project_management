@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :remember_digest
       t.string :slack_id
       t.string :git_account
-      t.datetime :delete_at
+      t.datetime :deleted_at
 
       t.timestamps
     end

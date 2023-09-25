@@ -20,6 +20,6 @@ Rails.application.routes.draw do
     resources :project_features
     resources :health, only: %i(new create edit update)
     resources :value_resources, only: :index
-    resources :health_items, except: :destroy
+    resources :health_items
   end
 end
