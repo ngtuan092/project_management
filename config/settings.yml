@@ -33,3 +33,6 @@ month_year:
 check_destroy:
   destroy_true: "1"
   destroy_false: "false"
+is_released:
+  released: "released"
+  preparing: "preparing"

@@ -348,6 +348,7 @@ jp:
     can_not_find_project: "プロジェクトが見つかりません"
     create_success: "成功を生み出す"
     fail_create: "作成失敗"
+    validate_released_at: "プロジェクトはリリースされました。リリース日を確認する必要があります"
     new:
       created_release_plan: "リリース計画の作成"
       project_name: "プロジェクト名"
@@ -355,6 +356,7 @@ jp:
       description: "説明"
       status: "状態"
       submit: "提出する"
+      released_at: "実際の発売日"
     edit:
       title: "リリース計画の更新"
     form:
