@@ -455,6 +455,7 @@ jp:
       name: "プロジェクト名"
       action: "詳細"
       new_project_features: "新機能"
+      month_year: "月ー年"
     create_success: "成功を生み出す"
     create_fail: "作成失敗"
     can_not_find_project: "プロジェクトが見つかりません"

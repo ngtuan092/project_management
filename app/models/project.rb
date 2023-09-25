@@ -96,7 +96,7 @@ class Project < ApplicationRecord
   validates :project_folder, length: {maximum: Settings.project.max_length_200}
 
   scope :filter_name, lambda {|name|
-    where("name LIKE ?", "%#{name}%") if name.present?
+    where("projects.name LIKE ?", "%#{name}%") if name.present?
   }
   scope :filter_month_and_year, lambda {|month, year|
     if month && year

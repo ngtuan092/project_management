@@ -6,7 +6,7 @@
   <td><%= format_date project_user.joined_at %></td>
   <td><%= format_date project_user.left_at %></td>
   <td class="text-center">
-    <% if can_edit_project_member? project_user %>
+    <% if current_user.can_edit_delete_project? project_user %>
       <%= link_to edit_project_user_path(project_user), class: "edit btn btn-success btn-sm", title: "Edit", "data-toggle" => "tooltip", data: { turbo_frame: "modal" } do %>
         <i class="bi bi-pencil-square text-white"></i>
       <% end %>

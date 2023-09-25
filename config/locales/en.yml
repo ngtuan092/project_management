@@ -455,6 +455,7 @@ en:
       name: "Project's name"
       action: "Detail"
       new_project_features: "New features"
+      month_year: "Month - Year"
     create_success: "Create success"
     create_fail: "Create fail"
     can_not_find_project: "Can not find project"

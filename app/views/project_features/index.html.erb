@@ -6,6 +6,10 @@
       <%= f.date_field :month_year, type: "month", value: month_field_value(params[:month_year]), class: "form-control" %>
     </div>
     <div class="col-auto">
+      <%= f.label :name, t(".name"), class: "form-label" %>
+      <%= f.text_field :name, value: params[:name], class: "form-control" %>
+    </div>
+    <div class="col-auto">
       <label class="form-label invisible">invisible label</label>
       <%= f.submit t(".search"), name: nil, class: "btn btn-primary btn-block form-control" %>
     </div>
@@ -25,17 +29,18 @@
 <div class="table-responsive">
   <table class="table table-striped align-middle table-hover table-bordered padding-margin-0">
     <thead>
-      <tr>
-        <th scope="col" width="5%"><%= t ".stt" %></th>
-        <th scope="col"><%= t ".name" %></th>
-        <th scope="col"><%= t ".man_month" %></th>
-        <th scope="col" width="10%"><%= t ".action" %></th>
-      </tr>
+    <tr>
+      <th scope="col" width="5%"><%= t ".stt" %></th>
+      <th scope="col"><%= t ".name" %></th>
+      <th scope="col"><%= t ".man_month" %></th>
+      <th scope="col"><%= t ".month_year" %></th>
+      <th scope="col" width="10%"><%= t ".action" %></th>
+    </tr>
     </thead>
     <tbody>
-      <%= render partial: "project_features/monthly_project_feature",
-                 collection: @projects,
-                 as: "item" %>
+    <%= render partial: "project_features/monthly_project_feature",
+               collection: @project_features,
+               as: "item" %>
     </tbody>
   </table>
   <div class="card-footer">
