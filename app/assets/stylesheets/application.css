@@ -36223,11 +36223,9 @@ main {
 
 @media(min-width: 992px) {
   .navbar-vertical.navbar-expand-lg {
-      border-right:1px solid var(--bs-navbar-vertical-border-color);
       bottom: 0;
       display: block;
       max-width: 16.25rem;
-      overflow-y: auto;
       position: fixed;
       top: 0;
       width: 100%;
@@ -38800,4 +38798,29 @@ code.hljs {
 
 .td.error{
   color: red!important;
+}
+
+li.active-menu {
+  background-color: lightblue;
+  color: #000!important;
+}
+
+li.pd {
+  padding-left: 20px;
+}
+
+.nav-item.active{
+  background-color: orange;
+}
+
+.nav-item.active *{
+  color: black !important;
+}
+
+.table_row {
+  transition: 1s;
+}
+
+.hide {
+  opacity: 0;
 }

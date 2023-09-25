@@ -1,4 +1,9 @@
 <% provide :title, t(".report_index") %>
+
+<% content_for :javascript_file do %>
+  <%= javascript_include_tag "animate" %>
+<% end %>
+
 <%= render "search_form" %>
 <div class="table-responsive">
   <table class="table table-striped align-middle table-hover table-bordered padding-margin-0">

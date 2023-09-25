@@ -185,4 +185,3 @@ end
     man_month: Faker::Number.between(from: 0, to: 5),
     )
 end
-
