@@ -61,4 +61,12 @@ class ApplicationController < ActionController::Base
     flash[:warning] = t "errors.release_plan_not_found"
     redirect_to :root, status: :see_other
   end
+
+  def find_health_item
+    @health_item = HealthItem.find_by id: params[:id]
+    return if @health_item
+
+    flash[:warning] = t "errors.health_item_not_found"
+    redirect_to health_items_path
+  end
 end

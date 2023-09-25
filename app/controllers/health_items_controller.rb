@@ -1,6 +1,7 @@
 class HealthItemsController < ApplicationController
   before_action :logged_in_user
-  before_action :check_role, only: %i(index)
+  before_action :check_role
+  before_action :find_health_item, only: %i(edit update)
 
   add_breadcrumb I18n.t("breadcrumbs.checklist"), :health_items_path
 
@@ -11,7 +12,42 @@ class HealthItemsController < ApplicationController
                                 items: Settings.pagy.number_items_10
   end
 
+  def new
+    @health_item = HealthItem.new
+  end
+
+  def create
+    @health_item = HealthItem.new health_item_params
+    if @health_item.save
+      @pagy, @health_items = pagy HealthItem.enable_items.by_recently_created,
+                                  items: Settings.pagy.number_items_10
+      flash[:success] = t ".create_success"
+      respond_to(&:turbo_stream)
+    else
+      flash.now[:danger] = t ".create_fail"
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @health_item.update health_item_params
+      @pagy, @health_items = pagy HealthItem.enable_items.by_recently_created,
+                                  items: Settings.pagy.number_items_10
+      flash[:success] = t(".update_success")
+      respond_to(&:turbo_stream)
+    else
+      flash[:danger] = t(".update_fail")
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
+  def health_item_params
+    params.require(:health_item).permit HealthItem::HEALTH_ITEM_PARAMS
+  end
+
   def check_role
     return if current_user.can_modify_health_item?
 

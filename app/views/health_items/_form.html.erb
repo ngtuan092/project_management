@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-9 mx-auto">
+      <%= form_with model: @health_item do |f| %>
+        <div class="mb-3">
+          <%= f.label :item, t("health_items.index.item"), class: "form-label required" %>
+          <%= f.text_field :item, class: "form-control-modal #{invalid(f.object, :item)} col-12", rows: "3", required: true %>
+          <p class="error"><%= show_errors(f.object, :item) %></p>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :description, t("health_items.index.description"), class: "form-label required" %>
+          <%= f.text_area :description, class: "form-control-modal #{invalid(f.object, :description)} col-12", rows: "3", required: true %>
+          <p class="error"><%= show_errors(f.object, :description) %></p>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :is_enabled, t("health_items.index.is_enabled"), class: "form-label required" %>
+          <br>
+          <%= f.check_box :is_enabled, class: "form-check-input", checked: true, rows: "3" %>
+          <label class="form-check-label">
+            <%= t(".is_enabled") %>
+          </label>
+          <p class="error"><%= show_errors(f.object, :is_enabled) %></p>
+        </div>
+
+        <div class="mb-3 d-flex justify-content">
+          <%= f.submit t(".submit"), class: "btn btn-primary form-control me-2" %>
+          <%= link_to t(".close"), "#", class: "btn btn-danger form-control", data: {
+            controller: "modals",
+            action: "modals#close"
+          } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

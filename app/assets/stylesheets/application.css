@@ -35204,7 +35204,12 @@ a,button {
 
 .form-check-label {
   font-size: 1rem;
-  font-weight: 600
+  font-weight: 600;
+  text-decoration: line-through;
+}
+
+input[type="checkbox"]:checked + .form-check-label {
+  text-decoration: none;
 }
 
 .form-switch {

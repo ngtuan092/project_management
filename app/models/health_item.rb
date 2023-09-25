@@ -1,4 +1,8 @@
 class HealthItem < ApplicationRecord
+  HEALTH_ITEM_PARAMS = [
+    :item, :description, :is_enabled
+  ].freeze
+
   has_many :project_health_items, dependent: :destroy
   has_many :projects, through: :project_health_items
 
