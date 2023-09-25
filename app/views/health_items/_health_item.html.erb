@@ -3,7 +3,7 @@
   <td><%= health_item.item %></td>
   <td><%= health_item.description %></td>
   <td class="text-center">
-    <%= link_to "#", class: "btn btn-success btn-sm" do %>
+    <%= link_to edit_health_item_path(health_item), data: {turbo_frame: "modal"}, class: "btn btn-success btn-sm" do %>
       <i class="bi-pencil-square"></i>
     <% end %>
     <%= link_to "#", data: { turbo_method: :delete, turbo_confirm: t("projects.you_sure?") }  do %>

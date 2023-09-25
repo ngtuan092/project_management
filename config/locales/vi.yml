@@ -25,6 +25,7 @@ vi:
     report_not_found: "Không thể tìm thấy báo cáo."
     release_plan_not_found: "Không tìm thấy kế hoạch phát hành."
     project_feature_not_found: "Không thể tìm thấy tính năng dự án."
+    health_item_not_found: "Không tìm thấy checklist sức khoẻ dự án!"
   flash_logged_in_user_danger: "Hãy đăng nhập trước đó."
   flash_verify_admin_danger: "Bạn không có quyền truy cập trang này."
   flash_verify_manager_danger: "Bạn không có quyền truy cập trang này."
@@ -530,12 +531,28 @@ vi:
       health_items_index: "Danh sách checklist"
       stt: "STT"
       item: "Mục"
-      description: "Description"
-      action: "Action"
+      description: "Mô tả"
+      action: "Hành động"
+      is_enabled: "Trạng thái"
     search_form:
       name: "Tên mục"
       search: "Tìm kiếm"
       new_project: "Thêm mục mới"
+    cannot_modify: "Người dùng không có quyền chỉnh sửa checklist sức khoẻ dự án!"
+    new:
+      title: "Tạo checklist kiểm tra sức khỏe dự án"
+    form:
+      submit: "Lưu"
+      close: "Đóng"
+      is_enabled: "Sử dụng"
+    update:
+      update_success: "Cập nhật checklist sức khoẻ dự án thành công!"
+      update_fail: "Cập nhật checklist sức khoẻ dự án thất bại!"
+    create:
+      create_success: "Tạo mới checklist cho sức khoẻ dự án thành công!"
+      create_fail: "Tạo mới checklist cho sức khoẻ dự án thất bại!"
+    edit:
+      title: "Cập nhật checklist sức khoẻ dự án"
   dashboard:
     index:
       home: "Trang chủ"

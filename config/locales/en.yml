@@ -25,6 +25,7 @@ en:
     report_not_found: "Report not found."
     release_plan_not_found: "Release plan not found."
     project_feature_not_found: "Project value not found."
+    health_item_not_found: "Checklist health item not found!"
   flash_logged_in_user_danger: "Please log in."
   flash_verify_admin_danger: "You are not authorized to access this page."
   flash_verify_manager_danger: "You are not authorized to access this page."
@@ -532,10 +533,26 @@ en:
       item: "Item"
       description: "Description"
       action: "Action"
+      is_enabled: "State"
     search_form:
       name: "Search by item"
       search: "Search"
       new_project: "New item"
+    cannot_modify: "You don't have permission to modify health items"
+    new:
+      title: "Create project health items"
+    form:
+      submit: "Save"
+      close: "Close"
+      is_enabled: "Enable"
+    update:
+      update_success: "Update project health checklist successfully!"
+      update_fail: "Update project health items checklist failed!"
+    create:
+      create_success: "Create a new checklist for successful project health!"
+      create_fail: "Create new checklist for failed project health!"
+    edit:
+      title: "Update project health checklist"
   dashboard:
     index:
       home: "Home"

@@ -25,6 +25,7 @@ jp:
     report_not_found: "レポートが見つかりません。"
     release_plan_not_found: "リリース計画が見つかりません。"
     project_feature_not_found: "プロジェクト値が見つかりません。"
+    health_item_not_found: "プロジェクトの健全性チェックリストが見つかりません!"
   flash_logged_in_user_danger: "ログインしてください。"
   flash_verify_admin_danger: "このページにアクセスする権限がありません。"
   flash_verify_manager_danger: "このページにアクセスする権限がありません。"
@@ -530,12 +531,28 @@ jp:
       health_items_index: "チェックリスト"
       stt: "STT"
       item: "項目"
-      description: "Description"
-      action: "Action"
+      description: "説明"
+      action: "アクション"
+      is_enabled: "有様"
     search_form:
       name: "Tên mục"
       search: "Search"
       new_project: "Thêm mục mới"
+    cannot_modify: "健康項目を変更する権限がありません"
+    new:
+      title: "プロジェクトの健全性チェックのチェックリストを作成する"
+    form:
+      submit: "セーブ"
+      close: "近い"
+      is_enabled: "使う"
+    update:
+      update_success: "プロジェクトの健全性チェックリストが正常に更新されました。"
+      update_fail: "失敗したプロジェクトの健全性チェックリストを更新します。"
+    create:
+      create_success: "プロジェクトの健全性を維持するための新しいチェックリストを作成します。"
+      create_fail: "失敗したプロジェクトの健全性を確認するための新しいチェックリストを作成します。"
+    edit:
+      title: "プロジェクトの健全性チェックリストを更新する"
   dashboard:
     index:
       home: "ホーム"
