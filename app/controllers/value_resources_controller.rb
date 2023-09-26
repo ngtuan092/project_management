@@ -8,7 +8,8 @@ class ValueResourcesController < ApplicationController
                        .by_recently_created
     @pagy, @project_pagys = pagy @projects,
                                  items: Settings.pagy.number_items_10
-    @year = params[:year] || Date.current.year
+    @start_month_year = params[:start_month_year]
+    @end_month_year = params[:end_month_year]
     respond
   end
 

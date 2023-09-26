@@ -57,37 +57,44 @@ module ValueResourcesHelper
     date.strftime Settings.date.format_month_field
   end
 
-  def value_resources_project_xlsx project, year
-    hash_month = ProjectMonthAnalyzer.call(project, year).result
+  def value_resources_project_xlsx project, start_month_year, end_month_year
+    hash_month = ProjectMonthAnalyzer.call(project,
+                                           start_month_year, end_month_year)
+                                     .result
     hash_month.values.map(&:values).flatten
   end
 
-  def value_resources_total_xlsx projects, year
-    hash_month = ProjectsMonthSummaryAnalyzer.call(projects, year).result
+  def value_resources_total_xlsx project, start_month_year, end_month_year
+    hash_month = ProjectsMonthSummaryAnalyzer.call(project,
+                                                   start_month_year,
+                                                   end_month_year)
+                                             .result
     values_array = hash_month.values.map(&:values).flatten
     values_array.unshift I18n.t("value_resources.index.total")
   end
 
-  def header_row_xlsx year
+  def header_row_xlsx start_month_year, end_month_year
     header = []
     header << I18n.t("projects.index.name")
-    month_number_displayed(year).times do
+    num_months = month_number_displayed(start_month_year, end_month_year).size
+    num_months.times do
       header << I18n.t("value_resources.index.value")
       header << I18n.t("value_resources.index.resource")
       header << I18n.t("value_resources.index.diff")
     end
     header << I18n.t("value_resources.index.total_value_year",
-                     month: month_number_displayed(year))
+                     month: num_months)
     header << I18n.t("value_resources.index.total_resource_year",
-                     month: month_number_displayed(year))
+                     month: num_months)
     header << I18n.t("value_resources.index.total_diff_year",
-                     month: month_number_displayed(year))
+                     month: num_months)
   end
 
-  def header_month_xlsx year
+  def header_month_xlsx start_month_year, end_month_year
     header = [""]
-    month_number_displayed(year).times do |i|
-      header << "#{I18n.t('project_features.project_feature.month')} #{i + 1}"
+    month_number_displayed(start_month_year, end_month_year).each do |i|
+      month = "#{i[1]} - #{i[0]}"
+      header << "#{I18n.t('project_features.project_feature.month')} #{month}"
       header << nil
       header << nil
     end

@@ -2,6 +2,7 @@ wb = xlsx_package.workbook
 
 s = wb.styles
 centered_bold = s.add_style alignment: { horizontal: :center }, b: true
+bold = s.add_style b: true
 
 def column_letter index
   dividend = index
@@ -16,9 +17,9 @@ end
 
 wb.add_worksheet(name: "Projects management") do |sheet|
   # thang 1 | | | thang 2 | | | tong | | |
-  sheet.add_row header_month_xlsx(@year), style: centered_bold
+  sheet.add_row header_month_xlsx(start_month_field_value(@start_month_year), month_field_value(@end_month_year)), style: centered_bold
   index = 2 # begin with column B
-  (month_number_displayed(@year) + 1).times do |i|
+  (month_number_displayed(start_month_field_value(@start_month_year), month_field_value(@end_month_year)).size + 1).times do |i|
     start_column = column_letter(index)
     end_column = column_letter(index + 2)
     sheet.merge_cells("#{start_column}1:#{end_column}1")
@@ -26,14 +27,14 @@ wb.add_worksheet(name: "Projects management") do |sheet|
   end
 
   # du an | gia tri |
-  sheet.add_row header_row_xlsx(@year), style: centered_bold
+  sheet.add_row header_row_xlsx(start_month_field_value(@start_month_year), month_field_value(@end_month_year)), style: centered_bold
   # Create entries for each item
 
   # value
   @projects.each do |project|
-    row_value = value_resources_project_xlsx(project, @year)
+    row_value = value_resources_project_xlsx(project, start_month_field_value(@start_month_year), month_field_value(@end_month_year))
     row_value.unshift(project.name)
     sheet.add_row row_value
   end
-  sheet.add_row value_resources_total_xlsx(@projects, @year)
+  sheet.add_row value_resources_total_xlsx(@projects, start_month_field_value(@start_month_year), month_field_value(@end_month_year)), style: bold
 end
