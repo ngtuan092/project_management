@@ -117,6 +117,12 @@ en:
       name: "Project name"
       resource_index: "Resources List"
       update_resource: "Update resource"
+      header_excel:
+        order: "No."
+        month: "Month"
+        year: "Year"
+        project_name: "Project name"
+        man_month: "man/month"
     table:
       order: "No."
       project_name: "Project name"
@@ -337,6 +343,13 @@ en:
       issue: "Issue"
       action: "Action"
       report_index: "Reports List"
+      header_excel:
+        stt: "No."
+        project_name: "Project name"
+        day_report: "Day report"
+        description: "Description"
+        resource_description: "Resource description"
+        issue: "Issue"
     search_form:
       date_report: "Day report"
       name: "Project name"
@@ -345,6 +358,7 @@ en:
       new_report: "New report"
       start_date_report: "Start date"
       end_date_report: "End date"
+      export: "Export reports"
     destroy:
       delete_success: "Report was successfully destroyed."
       fail_delete: "This report has not been deleted."

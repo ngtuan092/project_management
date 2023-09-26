@@ -10,11 +10,13 @@ class ReportsController < ApplicationController
   add_breadcrumb I18n.t("breadcrumbs.reports"), :reports_path
 
   def index
-    @reports = Report.filter_start_date(params[:start_date])
-                     .filter_end_date(params[:end_date])
-                     .filter_name_status(params[:name], params[:status])
-                     .by_recently_created
-    @pagy, @reports = pagy @reports, items: Settings.pagy.number_items_10
+    @all_reports = Report.filter_start_date(params[:start_date])
+                         .filter_end_date(params[:end_date])
+                         .filter_name_status(params[:name], params[:status])
+                         .by_recently_created
+    @pagy, @reports = pagy @all_reports, items: Settings.pagy.number_items_10
+
+    respond
   end
 
   def new
@@ -74,5 +76,16 @@ class ReportsController < ApplicationController
 
     flash[:warning] = t ".cannot_delete"
     redirect_to reports_url
+  end
+
+  def respond
+    respond_to do |format|
+      format.html{render :index}
+      format.xlsx do
+        date = Time.zone.now.strftime Settings.date.format
+        header = "attachment; filename=#{date}_reports.xlsx"
+        response.headers["Content-Disposition"] = header
+      end
+    end
   end
 end
