@@ -145,12 +145,16 @@ end
 
 release_status = ["released", "preparing"]
 12.times do |i|
+  status = release_status[Faker::Number.between(from: 0, to: 1)]
+  released_at = nil
+  released_at = Faker::Date.between(from: 6.months.ago, to: 2.months.ago) if status == Settings.is_released.released
   ReleasePlan.create!(
     project_id: Faker::Number.between(from: 1, to: 5),
     creator_id: Faker::Number.between(from: 1, to:3),
     description: Faker::Lorem.sentence,
-    is_released: release_status[Faker::Number.between(from: 0, to: 1)],
-    release_date: Faker::Date.between(from: 6.months.ago, to: 2.months.ago)
+    is_released: status,
+    release_date: Faker::Date.between(from: 6.months.ago, to: 2.months.ago),
+    released_at: released_at
   )
 end
 
