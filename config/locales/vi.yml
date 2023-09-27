@@ -565,3 +565,6 @@ vi:
       statistical_chart: "Biểu đồ thống kê"
       total_number_projects: "Tổng số dự án:"
       project_quantity: "số lượng dự án"
+    search:
+      start_month: "Tháng bắt đầu"
+      end_month: "Tháng kết thúc"

@@ -565,3 +565,6 @@ en:
       statistical_chart: "Statistical chart"
       total_number_projects: "Total number of projects:"
       project_quantity: "project quantity"
+    search:
+      start_month: "Start month"
+      end_month: "End month"

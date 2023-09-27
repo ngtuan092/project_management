@@ -565,3 +565,6 @@ jp:
       statistical_chart: "統計グラフ"
       total_number_projects: "プロジェクトの総数:"
       project_quantity: "プロジェクト数量"
+    search:
+      start_month: "開始月"
+      end_month: "終了月"

@@ -9,7 +9,7 @@
               <i class="fa fa-plus"></i> <%= t ".update_health" %>
             <% end %>
           <% else %>
-            <%= link_to new_health_path, data: { turbo: false }, class: "btn btn-primary btn-sm" do %>
+            <%= link_to new_health_path(project_id: @project.id), data: { turbo: false }, class: "btn btn-primary btn-sm" do %>
               <i class="fa fa-plus"></i> <%= t ".new_health" %>
             <% end %>
           <% end %>
