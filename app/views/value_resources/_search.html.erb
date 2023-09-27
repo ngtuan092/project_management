@@ -37,7 +37,11 @@
 
   <div class="col-auto ms-auto">
     <label class="form-label invisible">invisible label</label>
-    <%= link_to t("value_resources.index.export"), value_resources_path(format: :xlsx, name: params[:name], group_id: params[:group_id],
-                                                   status: params[:status]), class: "btn btn-secondary form-control" %>
+    <%= link_to t("value_resources.index.export"),
+                value_resources_path(format: :xlsx, name: params[:name], group_id: params[:group_id],
+                                     status: params[:status],
+                                     start_month_year: params[:start_month_year],
+                                     end_month_year: params[:end_month_year]),
+                class: "btn btn-secondary form-control" %>
   </div>
 <% end %>
