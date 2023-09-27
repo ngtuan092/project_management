@@ -72,6 +72,8 @@ class Project < ApplicationRecord
   has_many :project_user_resources, through: :project_users
 
   delegate :name, to: :group, prefix: true
+  delegate :name, to: :creator, prefix: true
+
   enum status: {new: 0, in_progress: 1, maintaining: 2, pending: 3, close: 4},
        _prefix: true
   accepts_nested_attributes_for :project_environments, allow_destroy: true,

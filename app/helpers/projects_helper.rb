@@ -71,4 +71,8 @@ module ProjectsHelper
     Project.user_names_by_project_id(project_id)
            .map{|user| [user.name, user.id]}
   end
+
+  def projects_header_row
+    t("projects.index.header_excel").values
+  end
 end
