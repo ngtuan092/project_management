@@ -58,6 +58,7 @@ vi:
       list_new_health: "Điền checklist"
       list_health_items: "Checklist"
       list_health: "Sức khoẻ dự án"
+      list_statistic_release: "Thống kê release"
   user_mailer:
     password_reset:
       subject: "Đặt lại mật khẩu"
@@ -267,7 +268,7 @@ vi:
     create_success: "Tạo dự án thành công"
     create_fail: "Tạo dự án thất bại"
     form:
-      name: "Tên"
+      name: "Tên dự án"
       description: "Mô tả"
       status:
         status: "Trạng thái"
@@ -585,3 +586,15 @@ vi:
     search:
       start_month: "Tháng bắt đầu"
       end_month: "Tháng kết thúc"
+  statistics_release_plans:
+    index:
+      title: "Thống kê lịch trình release"
+      nums: "Giá trị"
+      statistical_chart: "Kế hoạch release"
+      release: "Kế hoạch release"
+      released: "Đã release"
+      man_month_chart: "Số man/month đã thêm trong tháng"
+      release_total: "Tổng số kế hoạch release"
+    search:
+      year: "Năm"
+    man_month: "Giá trị tính năng đem lại (man/month)"

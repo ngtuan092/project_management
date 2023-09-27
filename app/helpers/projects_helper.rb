@@ -1,4 +1,8 @@
 module ProjectsHelper
+  def list_project
+    Project.pluck :name, :id
+  end
+
   def list_group
     Group.pluck :name, :id
   end

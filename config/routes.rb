@@ -16,7 +16,11 @@ Rails.application.routes.draw do
     resources :resources
     resources :users, only: %i(edit update)
     resources :reports
-    resources :release_plans
+    resources :release_plans do
+      collection do
+        resources :statistics_release_plans, only: :index
+      end
+    end
     resources :project_features
     resources :health, only: %i(new create edit update)
     resources :value_resources, only: :index

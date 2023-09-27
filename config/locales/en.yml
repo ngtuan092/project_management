@@ -58,6 +58,7 @@ en:
       list_new_health: "Fill out checklist"
       list_health_items: "Checklist"
       list_health: "Project health"
+      list_statistic_release: "Statistics release plans"
   user_mailer:
     password_reset:
       subject: "Password reset"
@@ -585,3 +586,15 @@ en:
     search:
       start_month: "Start month"
       end_month: "End month"
+  statistics_release_plans:
+    index:
+      title: "Release schedule statistics"
+      nums: "quantity"
+      statistical_chart: "Release plan"
+      release: "Release plan"
+      released: "Released"
+      man_month_chart: "Number of man/month added during the month"
+      release_total: "Total release plans"
+    search:
+      year: "Year"
+    man_month: "man / month"

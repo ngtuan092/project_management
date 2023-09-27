@@ -1,0 +1,9 @@
+.text-bg-released {
+  color: white;
+  background-color: #DC3C30!important;
+}
+
+.text-bg-preparing {
+  background-color: blue!important;
+  color: white;
+}
