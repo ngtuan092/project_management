@@ -13,13 +13,13 @@
   </div>
 
   <div class="col-auto">
-    <%= f.label :start_month_year, "start month", class: "form-label" %>
+    <%= f.label :start_month_year, t(".start_month"), class: "form-label" %>
     <%= f.date_field :start_month_year, type: "month",
                      value: start_month_field_value(params[:start_month_year]), class: "form-control" %>
   </div>
 
   <div class="col-auto">
-    <%= f.label :end_month_year, "end month", class: "form-label" %>
+    <%= f.label :end_month_year, t(".end_month"), class: "form-label" %>
     <%= f.date_field :end_month_year, type: "month",
                      value: month_field_value(params[:end_month_year]), class: "form-control" %>
   </div>
