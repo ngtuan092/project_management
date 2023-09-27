@@ -21,4 +21,8 @@ module ApplicationHelper
   def active_class_for_url url
     "active" if request.path == url
   end
+
+  def boolean_params params_name
+    params[params_name.to_sym].present? && params[params_name.to_sym] == "1"
+  end
 end
