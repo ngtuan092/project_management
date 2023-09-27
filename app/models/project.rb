@@ -120,10 +120,15 @@ class Project < ApplicationRecord
     where group_id: valid_group_ids
   }
   scope :filter_features, lambda {|month, year|
-    includes(:project_features)
-      .joins(:project_features)
-      .merge(ProjectFeature.filter_month(month))
-      .merge(ProjectFeature.filter_year(year))
+    joins(:project_features)
+      .where(month.nil? ? nil : {project_features: {month:}})
+      .where(year.nil? ? nil : {project_features: {year:}})
+      .select(
+        "projects.*, project_features.month as month,
+         project_features.year as year"
+      )
+      .distinct
+      .order(:year, :month)
   }
   scope :filter_resources, lambda {|month, year|
     includes(:project_user_resources)

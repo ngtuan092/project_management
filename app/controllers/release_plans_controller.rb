@@ -68,6 +68,13 @@ class ReleasePlansController < ApplicationController
 
   private
   def release_plan_params
-    params.require(:release_plan).permit ReleasePlan::UPDATE_ATTRS
+    release_plan_params = params.require(:release_plan)
+                                .permit(
+                                  ReleasePlan::UPDATE_ATTRS
+                                )
+    if release_plan_params["is_released"] == Settings.is_released.preparing
+      release_plan_params["released_at"] = nil
+    end
+    release_plan_params
   end
 end

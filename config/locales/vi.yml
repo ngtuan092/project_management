@@ -386,6 +386,7 @@ vi:
       scope_release_description: "Mô tả phạm vi phát hành"
       status: "Trạng thái"
       save: "Lưu lại"
+      released_at: "Ngày phát hành thực tế"
     is_released:
       preparing: "Chuẩn bị phát hành"
       released: "Đã phát hành"
