@@ -8,7 +8,7 @@ class CreateProjectEnvironments < ActiveRecord::Migration[7.0]
       t.string :domain
       t.string :web_server
       t.text :note
-      t.datetime :delete_at
+      t.datetime :deleted_at
 
       t.timestamps
     end

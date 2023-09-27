@@ -7,7 +7,7 @@ class CreateReports < ActiveRecord::Migration[7.0]
       t.text :description, null: false
       t.text :resource_description, null: false
       t.text :issue, null: false
-      t.datetime :delete_at
+      t.datetime :deleted_at
 
       t.timestamps
     end

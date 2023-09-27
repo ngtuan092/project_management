@@ -2,6 +2,7 @@
   <td><%= sequence_number release_plan_counter, @pagy.offset %></td>
   <td><%= release_plan.project_name %></td>
   <td><%= format_date release_plan.release_date %></td>
+  <td><%= format_date release_plan.released_at %></td>
   <td class="text-nowrap text-overflow"><%= release_plan.description %></td>
   <td class="text-center">
     <span class="badge rounded-pill text-bg-<%= release_plan.is_released %>">

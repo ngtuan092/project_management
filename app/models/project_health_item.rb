@@ -1,4 +1,6 @@
 class ProjectHealthItem < ApplicationRecord
+  acts_as_paranoid
+
   belongs_to :project
   belongs_to :health_item
 

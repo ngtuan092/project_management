@@ -1,7 +1,8 @@
 class HealthItemsController < ApplicationController
   before_action :logged_in_user
   before_action :check_role
-  before_action :find_health_item, only: %i(edit update)
+  before_action :find_health_item, only: %i(edit update destroy)
+  before_action :can_destroy_health_item?, only: :destroy
 
   add_breadcrumb I18n.t("breadcrumbs.checklist"), :health_items_path
 
@@ -35,11 +36,21 @@ class HealthItemsController < ApplicationController
     if @health_item.update health_item_params
       @pagy, @health_items = pagy HealthItem.enable_items.by_recently_created,
                                   items: Settings.pagy.number_items_10
-      flash[:success] = t(".update_success")
+      flash[:success] = t ".update_success"
       respond_to(&:turbo_stream)
     else
-      flash[:danger] = t(".update_fail")
+      flash[:danger] = t ".update_fail"
       render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    if @health_item.destroy
+      flash[:success] = t ".delete_success"
+      redirect_to health_items_path
+    else
+      flash[:danger] = t ".delete_fail_used_in_projects"
+      redirect_to health_items_path, status: :unprocessable_entity
     end
   end
 
@@ -53,5 +64,13 @@ class HealthItemsController < ApplicationController
 
     flash[:warning] = t ".cannot_modify"
     redirect_to projects_path
+  end
+
+  def can_destroy_health_item?
+    return if @health_item.project_health_items.all?(&:status_not_apply?) ||
+              @health_item.projects.empty?
+
+    flash[:danger] = t "health_items.destroy.delete_fail_used_in_projects"
+    redirect_to health_items_path, status: :unprocessable_entity
   end
 end

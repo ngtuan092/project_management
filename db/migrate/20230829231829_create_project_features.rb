@@ -11,7 +11,7 @@ class CreateProjectFeatures < ActiveRecord::Migration[7.0]
       t.float :repeat_time, null: false
       t.integer :repeat_unit, null: false
       t.float :man_month, null: false
-      t.datetime :delete_at
+      t.datetime :deleted_at
 
       t.timestamps
     end

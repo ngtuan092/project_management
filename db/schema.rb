@@ -20,7 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_153350) do
     t.string "name", null: false
     t.text "description"
     t.integer "parent_id"
-    t.datetime "delete_at"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_153350) do
     t.string "item", null: false
     t.text "description"
     t.boolean "is_enabled", default: false, null: false
-    t.datetime "delete_at"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,7 +64,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_153350) do
     t.string "domain"
     t.string "web_server"
     t.text "note"
-    t.datetime "delete_at"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_project_environments_on_project_id"
@@ -81,7 +81,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_153350) do
     t.float "repeat_time", null: false
     t.integer "repeat_unit", null: false
     t.float "man_month", null: false
-    t.datetime "delete_at"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_project_features_on_project_id"
@@ -92,6 +92,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_153350) do
     t.bigint "health_item_id", null: false
     t.text "note"
     t.integer "status", null: false
+    t.datetime "deleted_at"
     t.index ["health_item_id"], name: "index_project_health_items_on_health_item_id"
     t.index ["project_id"], name: "index_project_health_items_on_project_id"
   end
@@ -131,7 +132,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_153350) do
     t.text "redmine"
     t.text "project_folder"
     t.string "language", null: false
-    t.datetime "delete_at"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["creator_id"], name: "index_projects_on_creator_id"
@@ -145,7 +146,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_153350) do
     t.text "description"
     t.boolean "is_released", null: false
     t.datetime "release_date"
-    t.datetime "delete_at"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "released_at"
@@ -160,7 +161,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_153350) do
     t.text "description", null: false
     t.text "resource_description", null: false
     t.text "issue", null: false
-    t.datetime "delete_at"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_reports_on_project_id"
@@ -197,7 +198,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_153350) do
     t.string "remember_digest"
     t.string "slack_id"
     t.string "git_account"
-    t.datetime "delete_at"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "reset_digest"

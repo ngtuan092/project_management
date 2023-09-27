@@ -376,6 +376,7 @@ en:
       stt: "No."
       project_name: "Project name"
       day_release_plan: "Release plan date"
+      actual_release_date: "Actual release date"
       description: "Description"
       status: "Status"
       action: "Action"
@@ -534,6 +535,7 @@ en:
       description: "Description"
       action: "Action"
       is_enabled: "State"
+    cannot_modify: "You can not modify it!"
     search_form:
       name: "Search by item"
       search: "Search"
@@ -553,6 +555,10 @@ en:
       create_fail: "Create new checklist for failed project health!"
     edit:
       title: "Update project health checklist"
+    destroy:
+      delete_success: "Health item was successfully destroyed."
+      delete_fail_used_in_projects: "Health item cannot be deleted because there is a project that uses it."
+    you_sure?: "You sure?"
   dashboard:
     index:
       home: "Home"
