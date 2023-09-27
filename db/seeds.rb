@@ -189,3 +189,24 @@ end
     man_month: Faker::Number.between(from: 0, to: 5),
     )
 end
+
+lesson_learn_category_names = ["Requirement", "Design", "Coding & unit test", "Deploy",
+                               "Testing", "Project Management", "User acceptance test",
+                               "Other"]
+lesson_learn_category_names.each do |item|
+  LessonLearnCategory.create!(
+    name: item,
+  )
+end
+
+12.times do |i|
+  LessonLearn.create!(
+    lesson_learn_category_id: Faker::Number.between(from: 1,
+                                                      to: lesson_learn_category_names.length),
+    context_description: Faker::Lorem.sentence(word_count: 100),
+    learning_point: Faker::Lorem.sentence(word_count: 100),
+    reference_process: Faker::Lorem.sentence(word_count: 100),
+    creator_id: Faker::Number.between(from: 1, to: 3),
+    project_id: Faker::Number.between(from: 1, to: 5),
+  )
+end
