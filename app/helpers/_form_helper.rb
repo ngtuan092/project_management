@@ -12,6 +12,7 @@ module FormHelper
   end
 
   def date_field_value date
+    date = date.to_date if date.instance_of?(String)
     date ||= Time.zone.now
     date.strftime Settings.date.format_date_field
   end

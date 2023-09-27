@@ -59,6 +59,7 @@ vi:
       list_health_items: "Checklist"
       list_health: "Sức khoẻ dự án"
       list_statistic_release: "Thống kê release"
+      lesson_learn: "Bài học dự án"
   user_mailer:
     password_reset:
       subject: "Đặt lại mật khẩu"
@@ -598,3 +599,12 @@ vi:
     search:
       year: "Năm"
     man_month: "Giá trị tính năng đem lại (man/month)"
+  lesson_learns:
+    search:
+      lesson_category: "Thể loại bài học"
+    index:
+      category_name: "Danh mục"
+      context_description: "Mô tả bối cảnh"
+      learning_point: "Bài học rút ra"
+      creator: "Người tạo"
+      reference_process: "Quá trình tham khảo"

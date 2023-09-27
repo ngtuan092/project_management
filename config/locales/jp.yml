@@ -59,6 +59,7 @@ jp:
       list_health_items: "チェックリスト"
       list_health: "プロジェクトの健全性"
       list_statistic_release: "統計"
+      lesson_learn: "プロジェクトレッスン"
   user_mailer:
     password_reset:
       subject: "パスワードのリセット"
@@ -598,3 +599,12 @@ jp:
     search:
       year: "年"
     man_month: "人/月"
+  lesson_learns:
+    search:
+      lesson_category: "レッスンカテゴリー"
+    index:
+      category_name: "カテゴリー名"
+      context_description: "コンテキストの説明"
+      learning_point: "学んだ教訓"
+      creator: "クリエイター"
+      reference_process: "参考プロセス"

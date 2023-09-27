@@ -1,0 +1,31 @@
+<% provide :title, t("layouts.sidebar.lesson_learn") %>
+<h1 class="text-center mb-8"><%= t "layouts.sidebar.lesson_learn" %></h1>
+<%= render "search" %>
+<div class="table-responsive">
+  <table class="table table-striped align-middle table-hover table-bordered padding-margin-0">
+    <thead>
+      <tr>
+        <th scope="col" class="w-5"><%= t "health_items.index.stt" %></th>
+        <th scope="col" class="w-12"><%= t ".category_name" %></th>
+        <th scope="col" class="w-21"><%= t ".context_description" %></th>
+        <th scope="col" class="w-21"><%= t ".learning_point" %></th>
+        <th scope="col"><%= t ".creator" %></th>
+        <th scope="col"><%= t "release_plans.new.project_name" %></th>
+        <th scope="col" class="w-9"><%= t "projects.index.created_at" %></th>
+        <th scope="col" class="w-12"><%= t "health_items.index.action" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @lesson_learns %>
+    </tbody>
+  </table>
+  <div class="card-footer">
+    <div class="d-flex justify-content-between align-items-center">
+      <!-- Pagination -->
+      <% if @pagy&.pages > 1 %>
+        <%== pagy_info @pagy %>
+        <%== pagy_bootstrap_nav @pagy %>
+      <% end %>
+    </div>
+  </div>
+</div>

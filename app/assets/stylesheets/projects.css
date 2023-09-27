@@ -295,3 +295,27 @@ table.table .form-control.error {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.text-2-line-text-overflow{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.w-21{
+    width: 21%!important;
+}
+
+.w-5{
+    width: 5%!important;
+}
+
+.w-12{
+    width: 12%!important;
+}
+
+.w-9{
+    width: 9%!important;
+}
