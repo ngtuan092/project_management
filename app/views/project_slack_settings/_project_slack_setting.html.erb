@@ -1,0 +1,36 @@
+<li class="list-group-item px-3 border-2 rounded-3 mb-3">
+  <div class="card border-0 bg-white rounded shadow">
+    <h5 class="card-header">
+      <i class="bi bi-slack"></i>
+      Room Slack:
+      <%= project_slack_setting.slack_room %>
+    </h5>
+
+    <div class="card-body">
+      <p class="card-text"><i class="bi bi-send"></i> <%= "#{t(".mention")}: #{project_slack_setting.slack_mention}" %>
+      </p>
+      <% if project_slack_setting.send_release %>
+        <span class="badge text-bg-primary text-lg"><%= "release" %></span>
+      <% end %>
+      <% if project_slack_setting.send_resource %>
+        <span class="badge text-bg-success"><%= "resource" %></span>
+      <% end %>
+      <% if project_slack_setting.send_value %>
+        <span class="badge text-bg-warning"><%= "value" %></span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="position-absolute top-15px end-20px">
+    <% if current_user.can_edit_delete_project? project_slack_setting.project %>
+      <%= link_to "#", class: "text-warning icon" do %>
+        <i class="bi bi-pencil-square"></i>
+      <% end %>
+      <%= link_to "#",
+                  data: { turbo_method: :delete, turbo_confirm: t("projects.you_sure?") },
+                  class: "text-danger icon" do %>
+        <i class="bi bi-trash"></i>
+      <% end %>
+    <% end %>
+  </div>
+</li>

@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-9 mx-auto">
+      <%= form_with model: @project_slack_setting do |f| %>
+        <%= f.hidden_field :project_id, value: @project.id %>
+        <div class="mb-3">
+          <%= f.label :slack_room, "Room slack", class: "form-label required" %>
+          <%= f.text_field :slack_room, class: "form-control-modal col-12", rows: "3", required: true %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :slack_mention, t(".receiver"), class: "form-label required" %>
+          <%= f.text_area :slack_mention, class: "form-control-modal #{invalid(@project_slack_setting, :slack_mention)} col-12", rows: "3", placeholder: t(".mention_notice"), required: true %>
+          <p class="error"><%= show_errors(@project_slack_setting, :slack_mention) %></p>
+        </div>
+
+        <div class="mb-3">
+          <%= f.check_box :send_release, class: "form-check-input", checked: true, rows: "3" %>
+          <label class="form-check-label">
+            <%= t(".send_release") %>
+          </label>
+        </div>
+
+        <div class="mb-3">
+          <%= f.check_box :send_value, class: "form-check-input", checked: true, rows: "3" %>
+          <label class="form-check-label">
+            <%= t(".send_value") %>
+          </label>
+        </div>
+
+        <div class="mb-3">
+          <%= f.check_box :send_resource, class: "form-check-input", checked: true, rows: "3" %>
+          <label class="form-check-label">
+            <%= t(".send_resource") %>
+          </label>
+        </div>
+
+        <div class="mb-3 d-flex justify-content">
+          <%= f.submit t("project.form.submit"), class: "btn btn-primary form-control me-2" %>
+          <%= link_to t("projects.project.close"), "#", class: "btn btn-danger form-control", data: {
+            controller: "modals",
+            action: "modals#close"
+          } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

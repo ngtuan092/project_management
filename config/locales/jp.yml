@@ -253,6 +253,8 @@ jp:
       update_fail: "失敗したプロジェクトの情報を更新します。"
     edit:
       edit_project: "プロジェクトの編集"
+    project_slack_setting:
+      add_slack: "スラック追加"
   users:
     update:
       flash_update_success: "更新に成功"
@@ -630,3 +632,18 @@ jp:
       created_at: "作成日"
     cannot_delete: "レッスンリーンを削除できません。"
     you_sure?: "あなたは確かに？"
+  project_slack_settings:
+    project_slack_setting:
+      mention: "受信機"
+    form:
+      receiver: "受信機"
+      send_release: "リリース時にメッセージを送信する"
+      send_value: "新しい値を追加するときにメッセージを送信する"
+      send_resource: "新しいリソースを追加するときにメッセージを送信する"
+      mention_notice: "複数の人物について言及する場合はカンマで区切ります。例: U03ANFSJ17Z、K03ANFSJ17J"
+    new:
+      title: "Slack をインストールする"
+    create:
+      create_success: "新しい Slack 構成が正常に作成されました。"
+      create_fail: "新しい Slack 設定の作成に失敗しました。"
+    slack_mention_format: "各人のメンションは「,」で区切ってあります！"

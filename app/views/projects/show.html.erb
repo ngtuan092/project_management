@@ -15,6 +15,9 @@
   <!-- Tab Project health -->
   <input type="radio" name="tabset" id="tab3" aria-controls="project-health">
   <label for="tab3"><%= t ".Project_Health" %></label>
+  <!-- Tab Project slack -->
+  <input type="radio" name="tabset" id="tab4" aria-controls="project-slack">
+  <label for="tab4"><%= "Slack" %></label>
 
   <div class="tab-panels">
     <section id="project-detail" class="tab-panel">
@@ -26,6 +29,10 @@
     <section id="project-health" class="tab-panel">
       <%= render "project_health" %>
     </section>
+    <section id="project-slack" class="tab-panel">
+      <%= render "project_slack_setting" %>
+    </section>
+
   </div>
 </div>
 <%= turbo_page_requires_reload %>

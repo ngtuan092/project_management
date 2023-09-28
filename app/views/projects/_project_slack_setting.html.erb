@@ -1,0 +1,12 @@
+<div class="row pb-3">
+  <div class="col-sm-8"></div>
+  <div class="col-sm-4">
+    <%= link_to new_project_slack_setting_path, data: { turbo_frame: "modal" }, class: "btn btn-primary btn-sm" do %>
+      <i class="bi bi-slack"></i> <%= t(".add_slack") %>
+    <% end %>
+  </div>
+</div>
+
+<%= turbo_frame_tag "project-slack-body" do %>
+  <%= render @project.project_slack_settings %>
+<% end %>
