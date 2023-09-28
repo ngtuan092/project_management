@@ -208,6 +208,7 @@ en:
       Project_Health: "Project Health"
     project_detail:
       project_name: "Project name"
+      rubato_id: "Rubato ID"
       project_description: "Project description"
       project_status: "Project status"
       project_group: "Project group"
@@ -270,6 +271,7 @@ en:
     create_fail: "Create project fail!"
     form:
       name: "Name"
+      rubato_id: "Rubato ID"
       description: "Description"
       status:
         status: "Status"
@@ -576,7 +578,8 @@ en:
       title: "Update project health checklist"
     destroy:
       delete_success: "Health item was successfully destroyed."
-      delete_fail_used_in_projects: "Health item cannot be deleted because there is a project that uses it."
+      delete_fail: "Health item has not been deleted."
+    delete_fail_used_in_projects: "Health item cannot be deleted because there is a project that uses it."
     you_sure?: "You sure?"
   dashboard:
     index:

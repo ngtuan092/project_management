@@ -8,10 +8,12 @@
     <%= link_to edit_health_item_path(health_item), data: {turbo_frame: "modal"}, class: "btn btn-success btn-sm" do %>
       <i class="bi-pencil-square"></i>
     <% end %>
-    <%= link_to health_item, data: { turbo_method: :delete, turbo_confirm: t("health_items.you_sure?") }  do %>
-      <button type="button" class="btn btn-danger btn-sm">
-        <i class="bi-trash-fill text-light"></i>
-      </button>
+     <% if health_item.can_destroy_health_item? %>
+      <%= link_to health_item, data: { turbo_method: :delete, turbo_confirm: t("health_items.you_sure?") }  do %>
+        <button type="button" class="btn btn-danger btn-sm">
+          <i class="bi-trash-fill text-light"></i>
+        </button>
+      <% end %>
     <% end %>
   </td>
 </tr>

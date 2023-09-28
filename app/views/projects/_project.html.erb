@@ -19,10 +19,12 @@
       <%= link_to edit_project_path(project), class: "btn btn-success btn-sm" do %>
         <i class="bi-pencil-square"></i>
       <% end %>
-      <%= link_to project, data: { turbo_method: :delete, turbo_confirm: t("projects.you_sure?") }  do %>
-        <button type="button" class="btn btn-danger btn-sm">
-          <i class="bi-trash-fill text-light"></i>
-        </button>
+      <% if project.can_delete_project? %>
+        <%= link_to project, data: { turbo_method: :delete, turbo_confirm: t("projects.you_sure?") }  do %>
+          <button type="button" class="btn btn-danger btn-sm">
+            <i class="bi-trash-fill text-light"></i>
+          </button>
+        <% end %>
       <% end %>
     <% end %>
   </td>

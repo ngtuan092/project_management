@@ -2,7 +2,7 @@ class HealthItemsController < ApplicationController
   before_action :logged_in_user
   before_action :check_role
   before_action :find_health_item, only: %i(edit update destroy)
-  before_action :can_destroy_health_item?, only: :destroy
+  before_action :can_delete_health_item?, only: :destroy
 
   add_breadcrumb I18n.t("breadcrumbs.checklist"), :health_items_path
 
@@ -49,7 +49,7 @@ class HealthItemsController < ApplicationController
       flash[:success] = t ".delete_success"
       redirect_to health_items_path
     else
-      flash[:danger] = t ".delete_fail_used_in_projects"
+      flash[:danger] = t ".delete_fail"
       redirect_to health_items_path, status: :unprocessable_entity
     end
   end
@@ -66,11 +66,10 @@ class HealthItemsController < ApplicationController
     redirect_to projects_path
   end
 
-  def can_destroy_health_item?
-    return if @health_item.project_health_items.all?(&:status_not_apply?) ||
-              @health_item.projects.empty?
+  def can_delete_health_item?
+    return if @health_item.can_destroy_health_item?
 
-    flash[:danger] = t "health_items.destroy.delete_fail_used_in_projects"
+    flash[:danger] = t ".delete_fail_used_in_projects"
     redirect_to health_items_path, status: :unprocessable_entity
   end
 end

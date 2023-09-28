@@ -12,4 +12,8 @@ class HealthItem < ApplicationRecord
   scope :filter_name, lambda {|name|
     where("item LIKE ?", "%#{name}%") if name.present?
   }
+
+  def can_destroy_health_item?
+    project_health_items.all?(&:status_not_apply?) || projects.empty?
+  end
 end
