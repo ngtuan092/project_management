@@ -26,5 +26,6 @@ Rails.application.routes.draw do
     resources :value_resources, only: :index
     resources :health_items
     resources :lesson_learns, only: :index
+    resources :statistics_resources, only: :index
   end
 end

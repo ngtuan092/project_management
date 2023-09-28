@@ -1,0 +1,8 @@
+<tr class="table_row hide">
+  <td>
+    <span><%= project.name %></span>
+  </td>
+  <%= resources_project_html project,
+                             start_month_field_value(params[:start_month_year]),
+                             month_field_value(params[:end_month_year]) %>
+</tr>

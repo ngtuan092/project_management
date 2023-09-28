@@ -296,7 +296,7 @@ table.table .form-control.error {
     text-overflow: ellipsis;
 }
 
-.text-2-line-text-overflow{
+.text-3-line-text-overflow{
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
