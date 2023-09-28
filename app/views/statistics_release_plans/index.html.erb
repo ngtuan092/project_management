@@ -8,7 +8,7 @@
       <h6 class="m-0 font-weight-bold text-primary"><%= t ".statistical_chart" %></h6>
     </div>
     <div class="card-body">
-      <%= line_chart release_plans_chart(@release_plans, params[:year]),
+      <%= line_chart release_plans_chart(@release_plans, @project_features, params[:year]),
                        xtitle: t("project_features.new.month"),
                        ytitle: t(".nums") %>
     </div>

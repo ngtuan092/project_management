@@ -1,16 +1,30 @@
 <div class="container">
   <div class="row justify-content-center">
     <%= form_with model: @project, url: health_path(@project) do |f| %>
-      <%= f.hidden_field :id, value: @project.id %>
+      <%= f.hidden_field :project_id, value: @project.id %>
+
+      <!-- edit checked item -->
       <%= f.fields_for :project_health_items do |detail| %>
         <div class="row">
           <div class="col form-label required"><%= detail.object.health_item.item %></div>
           <div class="col">
-            <%= detail.select :status, status_options, {}, class: "form-select #{invalid(detail.object, :status)}", required: true %>
-            <p class="error"><%= show_errors(f.object, :user) %></p>
+            <%= detail.select :status, status_options, {include_blank: false}, class: "form-select #{invalid(detail.object, :status)}" %>
+            <p class="error"><%= show_errors(detail.object, :status) %></p>
           </div>
         </div>
       <% end %>
+
+      <!-- create not checked item -->
+      <% @not_check_items.each do |item| %>
+        <div class="row">
+          <div class="col form-label required"><%= item.item %></div>
+          <div class="col">
+            <%= f.select "health_items[#{item.id}]", status_options, {include_blank: false}, {class: "form-select #{invalid(f.object, :status)}"} %>
+            <p class="error"><%= show_errors(f.object, :status) %></p>
+          </div>
+        </div>
+      <% end %>
+
       <div class="mb-3 d-flex justify-content mx-4">
         <%= f.submit t(".submit"), class: "btn btn-sm btn-primary form-control me-2" %>
         <%= link_to t(".close"), @project, class: "btn btn-sm btn-danger form-control" %>

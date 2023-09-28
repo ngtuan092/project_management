@@ -31,13 +31,23 @@ class ProjectFeature < ApplicationRecord
 
   scope :filter_month, ->(month){where(month:) if month}
   scope :filter_year, ->(year){where(year:) if year}
-  scope :filter_project_id, ->(project_id){where(project_id:) if project_id}
+  scope :filter_project_id, lambda {|project_id|
+    where(project_id:) if project_id.present?
+  }
   scope :filter_name, lambda {|name|
     includes(:project)
     if name.present?
       joins(:project)
         .where("projects.name LIKE ?", "%#{name}%")
     end
+  }
+  scope :filter_group, lambda {|group_id|
+    group = Group.find_by id: group_id
+    return if group.nil?
+
+    valid_group_ids = group.nested_sub_group_ids << group_id
+    includes(:project)
+    joins(:project).where(projects: {group_id: valid_group_ids})
   }
   scope :group_project_month_year,
         ->{select(:project_id, :month, :year).group(:project_id, :month, :year)}

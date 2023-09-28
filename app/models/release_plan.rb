@@ -42,7 +42,11 @@ class ReleasePlan < ApplicationRecord
     ids = Project.filter_group(group_id).pluck :id
     where(project_id: ids)
   }
-
+  scope :filter_year, lambda {|year|
+    if year.present?
+      where("YEAR(release_date) = ? OR YEAR(released_at) = ?", year, year)
+    end
+  }
   private
   def check_is_released
     return unless is_released_released?
