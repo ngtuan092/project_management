@@ -1,0 +1,17 @@
+wb = xlsx_package.workbook
+
+s = wb.styles
+centered_bold = s.add_style alignment: { horizontal: :center }, b: true
+
+wb.add_worksheet(name: "Projects") do |sheet|
+  sheet.add_row projects_header_row, style: centered_bold
+
+  @projects.each_with_index do |project, index|
+    sheet.add_row [index + 1, project.name, project.group_name,
+      project.creator_name, project.description, I18n.t("projects.project.#{project.status}"),
+      project.repository, project.redmine, project.project_folder, project.language,
+      project.created_at.strftime(Settings.date.format),
+      project.start_date.strftime(Settings.date.format),
+      project.end_date.strftime(Settings.date.format)]
+  end
+end

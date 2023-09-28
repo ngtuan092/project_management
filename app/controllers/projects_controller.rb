@@ -9,6 +9,15 @@ class ProjectsController < ApplicationController
   def index
     @projects = filtered_projects
     @pagy, @projects = pagy @projects, items: Settings.pagy.number_items_10
+
+    respond_to do |format|
+      format.html
+      format.xlsx do
+        date = Time.zone.now.strftime Settings.date.format
+        header = "attachment; filename=#{date}_projects.xlsx"
+        response.headers["Content-Disposition"] = header
+      end
+    end
   end
 
   def create
@@ -74,7 +83,7 @@ class ProjectsController < ApplicationController
     projects = projects.filter_start_date(params[:start_date])
     projects = projects.filter_end_date(params[:end_date])
     projects = projects.filter_name(params[:name])
-    projects = projects.filter_group(params[:group])
+    projects = projects.filter_group(params[:group_id])
     projects = projects.filter_status(params[:status])
     projects.by_recently_created
   end
