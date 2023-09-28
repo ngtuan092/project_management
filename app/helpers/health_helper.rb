@@ -4,8 +4,4 @@ module HealthHelper
       [t("health.status.#{status}"), status]
     end
   end
-
-  def list_project
-    Project.without_health_items.pluck :name, :id
-  end
 end

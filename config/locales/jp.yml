@@ -58,6 +58,7 @@ jp:
       list_new_health: "チェックリストに記入する"
       list_health_items: "チェックリスト"
       list_health: "プロジェクトの健全性"
+      list_statistic_release: "統計"
   user_mailer:
     password_reset:
       subject: "パスワードのリセット"
@@ -585,3 +586,15 @@ jp:
     search:
       start_month: "開始月"
       end_month: "終了月"
+  statistics_release_plans:
+    index:
+      title: "リリーススケジュールの統計"
+      nums: "量"
+      statistical_chart: "リリース計画"
+      release: "リリース計画"
+      released: "リリースされました"
+      man_month_chart: "月中に追加された人/月の数"
+      release_total: "総リリース計画"
+    search:
+      year: "年"
+    man_month: "人/月"

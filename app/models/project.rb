@@ -98,6 +98,9 @@ class Project < ApplicationRecord
   validates :redmine, length: {maximum: Settings.project.max_length_200}
   validates :project_folder, length: {maximum: Settings.project.max_length_200}
 
+  scope :filter_project, lambda {|project_id|
+    where id: project_id if project_id.present?
+  }
   scope :filter_name, lambda {|name|
     where("projects.name LIKE ?", "%#{name}%") if name.present?
   }

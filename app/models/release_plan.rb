@@ -37,6 +37,11 @@ class ReleasePlan < ApplicationRecord
     ids = Project.filter_name(name).pluck :id
     where(project_id: ids)
   }
+  scope :filter_project, ->(id){where project_id: id if id.present?}
+  scope :filter_group, lambda {|group_id|
+    ids = Project.filter_group(group_id).pluck :id
+    where(project_id: ids)
+  }
 
   private
   def check_is_released

@@ -1,0 +1,48 @@
+<% provide :title, t(".title") %>
+<div class="container">
+  <h1 class="text-center mb-8"><%= t ".title" %></h1>
+  <%= render "search" %>
+
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary"><%= t ".statistical_chart" %></h6>
+    </div>
+    <div class="card-body">
+      <%= line_chart release_plans_chart(@release_plans, params[:year]),
+                       xtitle: t("project_features.new.month"),
+                       ytitle: t(".nums") %>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-8">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary"><%= "#{t ".release_total"}: #{@release_plans.size}" %></h6>
+        </div>
+        <div class="card-body">
+          <% release_plans_by_status(@release_plans).each do |ele| %>
+            <h4 class="small font-weight-bold" style="color: #858796;">
+              <%= t "release_plans.is_released.#{ele[:key]}" %>
+              <span>
+                (<%= ele[:count] %>)
+              </span>
+              <span class="float-right">
+                <%= ele[:percentage] %>%
+              </span>
+            </h4>
+            <div class="progress mb-4">
+              <div class="progress-bar text-bg-<%= ele[:key] %>" role="progressbar" style="width: <%= ele[:percentage] %>%"
+                   aria-valuenow="<%= ele[:percentage] %>" aria-valuemin="0" aria-valuemax="100">
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+    </div>
+    </div>
+  </div>
+</div>
