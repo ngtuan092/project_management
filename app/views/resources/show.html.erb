@@ -1,11 +1,11 @@
 <%= turbo_frame_tag "modal" do %>
   <div class="modal-member" style="min-height: 70%">
-    <%= link_to "x", "#", class: "close_x", data: {
+    <%= link_to "x", "#", class: "close_x square", data: {
       controller: "modals",
       action: "modals#close"
     } %>
     <div class="d-flex align-items-center text-uppercase">
-      <h1 class="modal-header mb-3 w-100 justify-content-center"><%= t(".title") %></h1>
+      <h1 class="modal-header mb-3 w-100 justify-content-center fw-bold"><%= t(".title") %></h1>
     </div>
     <div class="table-responsive">
       <table class="table table-striped align-middle table-hover table-bordered padding-margin-0">

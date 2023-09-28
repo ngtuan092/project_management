@@ -25,7 +25,8 @@ jp:
     report_not_found: "レポートが見つかりません。"
     release_plan_not_found: "リリース計画が見つかりません。"
     project_feature_not_found: "プロジェクト値が見つかりません。"
-    health_item_not_found: "プロジェクトの健全性チェックリストが見つかりません!"
+    health_item_not_found: "プロジェクトの健全性チェックリストが見つかりません。"
+    lesson_learn_not_found: "カテゴリー名が見つかりません。"
   flash_logged_in_user_danger: "ログインしてください。"
   flash_verify_admin_danger: "このページにアクセスする権限がありません。"
   flash_verify_manager_danger: "このページにアクセスする権限がありません。"
@@ -408,6 +409,7 @@ jp:
       name: "プロジェクト名"
       status: "状態"
       new_release_plan: "新作リリース予定"
+      export: "リリース予定のエクスポート"
     release_plan_detail:
       project_name: "プロジェクト名:"
       creator: "クリエイター:"
@@ -612,3 +614,18 @@ jp:
       learning_point: "学んだ教訓"
       creator: "クリエイター"
       reference_process: "参考プロセス"
+    destroy:
+      delete_success: "レッスンリーンは正常に破棄されました。"
+      fail_delete: "このレッスンリーンは削除されていません。"
+    show:
+      close: "閉じる"
+    lesson_learn_detail:
+      project_name: "プロジェクト"
+      creator_name: "クリエイター"
+      context_description: "コンテキストの説明"
+      learning_point: "学んだ教訓"
+      reference_process: "参考プロセス"
+      reference_link: "参考リンク"
+      created_at: "作成日"
+    cannot_delete: "レッスンリーンを削除できません。"
+    you_sure?: "あなたは確かに？"
