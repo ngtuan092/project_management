@@ -59,6 +59,7 @@ en:
       list_health_items: "Checklist"
       list_health: "Project health"
       list_statistic_release: "Statistics release plans"
+      lesson_learn: "Project lessons"
   user_mailer:
     password_reset:
       subject: "Password reset"
@@ -598,3 +599,12 @@ en:
     search:
       year: "Year"
     man_month: "man / month"
+  lesson_learns:
+    search:
+      lesson_category: "Lesson category"
+    index:
+      category_name: "Category name"
+      context_description: "Context description"
+      learning_point: "Learning point"
+      creator: "Creator"
+      reference_process: "Reference process"

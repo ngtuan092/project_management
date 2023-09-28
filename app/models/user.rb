@@ -106,7 +106,7 @@ class User < ApplicationRecord
   def role_psm? project
     role = Role.find_by(name: Settings.project_roles.PSM)
     ProjectUser.find_by(project_role_id: role.id,
-                        project_id: project.id,
+                        project_id: project&.id,
                         user_id: id)
   end
 
@@ -147,5 +147,14 @@ class User < ApplicationRecord
 
   def can_modify_health_item?
     admin? || manager?
+  end
+
+  def creator_lesson_learn? lesson_learn
+    created_lesson_learns.exists?(id: lesson_learn.id)
+  end
+
+  def can_edit_delete_lesson_learn? lesson_learn
+    admin? || manager? || creator_lesson_learn?(lesson_learn) ||
+      role_psm?(lesson_learn.project)
   end
 end

@@ -155,16 +155,6 @@ class Project < ApplicationRecord
     ProjectHealthItem.distinct.pluck(:project_id)
   end
 
-  scope :filter_start_date, lambda {|start_date|
-    where("created_at >= ?", start_date) if start_date.present? &&
-                                            valid_date(start_date)
-  }
-
-  scope :filter_end_date, lambda {|end_date|
-    where("created_at <= ?", end_date) if end_date.present? &&
-                                          valid_date(end_date)
-  }
-
   def calculate_project_man_per_month date
     year, month = date&.split("-")
     year ||= Time.zone.now.year
