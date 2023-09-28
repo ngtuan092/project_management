@@ -527,6 +527,8 @@ en:
       total: "Total"
       value_resources_index: "Statistics values/resources"
       export: "Export statistics"
+    search:
+      each_month_separately: "Separate value for each month"
   health_items:
     index:
       health_items_index: "Checklist"

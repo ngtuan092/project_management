@@ -527,6 +527,8 @@ jp:
       total: "合計"
       value_resources_index: "統計値/リソース"
       export: "統計のエクスポート"
+    search:
+      each_month_separately: "月ごとに個別の値"
   health_items:
     index:
       health_items_index: "チェックリスト"

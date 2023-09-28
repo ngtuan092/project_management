@@ -527,6 +527,8 @@ vi:
       total: "Tổng"
       value_resources_index: "Thống kê giá trị/tài nguyên"
       export: "Xuất thống kê"
+    search:
+      each_month_separately: "Giá trị riêng từng tháng"
   health_items:
     index:
       health_items_index: "Danh sách checklist"

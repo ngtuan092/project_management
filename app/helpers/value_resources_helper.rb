@@ -18,18 +18,34 @@ module ValueResourcesHelper
     safe_join out
   end
 
+  def project_month_service
+    if boolean_params(:each_month_separately)
+      ProjectMonthSeparatelyAnalyzer
+    else
+      ProjectMonthAnalyzer
+    end
+  end
+
+  def project_month_summary_service
+    if boolean_params(:each_month_separately)
+      ProjectsMonthSeparatelySummaryAnalyzer
+    else
+      ProjectsMonthSummaryAnalyzer
+    end
+  end
+
   def value_resources_project_html project, start_month_year, end_month_year
-    hash_month = ProjectMonthAnalyzer.call(project,
-                                           start_month_year, end_month_year)
-                                     .result
+    hash_month = project_month_service.call(project,
+                                            start_month_year, end_month_year)
+                                      .result
     value_resource_hash_to_html hash_month, :td
   end
 
   def value_resources_total_html projects, start_month_year, end_month_year
-    hash_month = ProjectsMonthSummaryAnalyzer.call(projects,
-                                                   start_month_year,
-                                                   end_month_year)
-                                             .result
+    hash_month = project_month_summary_service.call(projects,
+                                                    start_month_year,
+                                                    end_month_year)
+                                              .result
     value_resource_hash_to_html hash_month, :td
   end
 
@@ -58,17 +74,17 @@ module ValueResourcesHelper
   end
 
   def value_resources_project_xlsx project, start_month_year, end_month_year
-    hash_month = ProjectMonthAnalyzer.call(project,
-                                           start_month_year, end_month_year)
-                                     .result
+    hash_month = project_month_service.call(project,
+                                            start_month_year, end_month_year)
+                                      .result
     hash_month.values.map(&:values).flatten
   end
 
   def value_resources_total_xlsx project, start_month_year, end_month_year
-    hash_month = ProjectsMonthSummaryAnalyzer.call(project,
-                                                   start_month_year,
-                                                   end_month_year)
-                                             .result
+    hash_month = project_month_summary_service.call(project,
+                                                    start_month_year,
+                                                    end_month_year)
+                                              .result
     values_array = hash_month.values.map(&:values).flatten
     values_array.unshift I18n.t("value_resources.index.total")
   end
