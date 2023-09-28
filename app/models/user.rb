@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :created_reports, class_name: Report.name, dependent: nil
   has_many :created_release_plans, class_name: ReleasePlan.name,
            foreign_key: :creator_id, dependent: nil
+  has_many :created_lesson_learns, class_name: LessonLearn.name,
+           foreign_key: :creator_id, dependent: nil
 
   attr_accessor :remember_token, :reset_token
 

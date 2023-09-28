@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_24_153350) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_27_110556) do
   create_table "customers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -32,6 +32,27 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_153350) do
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "lesson_learn_categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lesson_learns", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "lesson_learn_category_id", null: false
+    t.text "context_description", null: false
+    t.text "learning_point", null: false
+    t.text "reference_link"
+    t.text "reference_process"
+    t.bigint "creator_id", null: false
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["creator_id"], name: "index_lesson_learns_on_creator_id"
+    t.index ["lesson_learn_category_id"], name: "index_lesson_learns_on_lesson_learn_category_id"
+    t.index ["project_id"], name: "index_lesson_learns_on_project_id"
   end
 
   create_table "permission_roles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -206,6 +227,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_24_153350) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "lesson_learns", "lesson_learn_categories"
+  add_foreign_key "lesson_learns", "projects"
+  add_foreign_key "lesson_learns", "users", column: "creator_id"
   add_foreign_key "permission_roles", "permissions"
   add_foreign_key "permission_roles", "roles"
   add_foreign_key "project_customers", "customers"
