@@ -60,6 +60,7 @@ jp:
       list_health: "プロジェクトの健全性"
       list_statistic_release: "統計"
       lesson_learn: "プロジェクトレッスン"
+      statistics_resources: "統計プロジェクトのリソース"
   user_mailer:
     password_reset:
       subject: "パスワードのリセット"

@@ -60,6 +60,7 @@ vi:
       list_health: "Sức khoẻ dự án"
       list_statistic_release: "Thống kê release"
       lesson_learn: "Bài học dự án"
+      statistics_resources: "Thống kê tài nguyên dự án"
   user_mailer:
     password_reset:
       subject: "Đặt lại mật khẩu"

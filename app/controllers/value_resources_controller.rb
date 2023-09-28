@@ -1,4 +1,6 @@
 class ValueResourcesController < ApplicationController
+  before_action :logged_in_user
+
   add_breadcrumb I18n.t("breadcrumbs.statistical"), :value_resources_path
 
   def index

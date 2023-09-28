@@ -60,6 +60,7 @@ en:
       list_health: "Project health"
       list_statistic_release: "Statistics release plans"
       lesson_learn: "Project lessons"
+      statistics_resources: "Statistics project resources"
   user_mailer:
     password_reset:
       subject: "Password reset"

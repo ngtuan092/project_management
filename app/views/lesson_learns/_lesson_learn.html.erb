@@ -1,11 +1,11 @@
-<tr class="table_row">
+<tr class="table_row hide">
   <td><%= sequence_number lesson_learn_counter, @pagy&.offset %></td>
   <td><%= lesson_learn.lesson_learn_category_name %></td>
   <td>
-    <div class="text-2-line-text-overflow"><%= lesson_learn.context_description %></div>
+    <div class="text-3-line-text-overflow"><%= lesson_learn.context_description %></div>
   </td>
   <td>
-    <div class="text-2-line-text-overflow"><%= lesson_learn.learning_point %></div>
+    <div class="text-3-line-text-overflow"><%= lesson_learn.learning_point %></div>
   </td>
   <td><%= lesson_learn.creator_name %></td>
   <td><%= lesson_learn.project_name %></td>
