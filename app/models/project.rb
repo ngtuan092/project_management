@@ -2,9 +2,9 @@ class Project < ApplicationRecord
   attr_accessor :month_year, :project_id
 
   PROJECT_PARAMS = [
-    :name, :description, :status, :start_date,
-    :end_date, :group_id, :language,
-    :repository, :redmine,
+    :name, :rubato_id, :description, :status,
+    :start_date, :end_date, :group_id,
+    :language, :repository, :redmine,
     :project_folder, :customers,
     :creator_id,
     {
@@ -97,6 +97,7 @@ class Project < ApplicationRecord
   validates :repository, length: {maximum: Settings.project.max_length_200}
   validates :redmine, length: {maximum: Settings.project.max_length_200}
   validates :project_folder, length: {maximum: Settings.project.max_length_200}
+  validates :rubato_id, length: {maximum: Settings.project.max_length_100}
 
   scope :filter_project, lambda {|project_id|
     where id: project_id if project_id.present?
@@ -171,5 +172,12 @@ class Project < ApplicationRecord
     year ||= Time.zone.now.year
     month ||= Time.zone.now.month
     project_user_resources.total_man_month_year(month, year)
+  end
+
+  def can_delete_project?
+    reports.empty? &&
+      project_user_resources.empty? &&
+      project_features.empty? &&
+      release_plans.empty?
   end
 end

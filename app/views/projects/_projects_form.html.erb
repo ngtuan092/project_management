@@ -7,6 +7,11 @@
       <p class="error"><%= show_errors(@project, :name) %></p>
     </div>
     <div class="mb-3">
+      <%= f.label :rubato_id, t("project.form.rubato_id"), class: "form-label" %>
+      <%= f.text_field :rubato_id, class: "form-control #{invalid(@project, :rubato_id)}" %>
+      <p class="error"><%= show_errors(@project, :rubato_id) %></p>
+    </div>
+    <div class="mb-3">
       <%= f.label :description, t("project.form.description"), class: "form-label" %>
       <%= f.text_area :description, class: "form-control #{invalid(@project, :description)}", rows: "3" %>
       <p class="error"><%= show_errors(@project, :description) %></p>

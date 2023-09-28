@@ -208,6 +208,7 @@ jp:
       Project_Health: "プロジェクトの健全性"
     project_detail:
       project_name: "プロジェクト名"
+      rubato_id: "Rubatoコード"
       project_description: "プロジェクトの説明"
       project_status: "プロジェクトのステータス"
       project_group: "プロジェクトグループ"
@@ -270,6 +271,7 @@ jp:
     create_fail: "プロジェクトの作成に失敗しました！"
     form:
       name: "名前"
+      rubato_id: "Rubatoコード"
       description: "説明"
       status:
         status: "状態"
@@ -576,7 +578,8 @@ jp:
       title: "プロジェクトの健全性チェックリストを更新する"
     destroy:
       delete_success: "ヘルス項目は正常に破棄されました。"
-      delete_fail_used_in_projects: "ヘルス項目を使用するプロジェクトがあるため、ヘルス項目を削除できません。"
+      delete_fail: "ヘルス項目は削除されていません。"
+    delete_fail_used_in_projects: "ヘルス項目を使用するプロジェクトがあるため、ヘルス項目を削除できません。"
     you_sure?: "あなたは確かに？"
   dashboard:
     index:

@@ -208,6 +208,7 @@ vi:
       Project_Health: "Sức khỏe dự án"
     project_detail:
       project_name: "Tên dự án"
+      rubato_id: "Mã rubato"
       project_description: "Mô tả dự án"
       project_status: "Tình trạng của dự án"
       project_group: "Nhóm dự án"
@@ -270,6 +271,7 @@ vi:
     create_fail: "Tạo dự án thất bại"
     form:
       name: "Tên dự án"
+      rubato_id: "Mã rubato"
       description: "Mô tả"
       status:
         status: "Trạng thái"
@@ -576,7 +578,8 @@ vi:
       title: "Cập nhật checklist sức khoẻ dự án"
     destroy:
       delete_success: "Mục sức khỏe này đã được xóa thành công."
-      delete_fail_used_in_projects: "Mục sức khỏe không thể xóa vì có dự án sử dụng nó."
+      delete_fail: "Mục sức khỏe này chưa được xóa."
+    delete_fail_used_in_projects: "Mục sức khỏe không thể xóa vì có dự án sử dụng nó."
     you_sure?: "Bạn chắc chắn chứ?"
   dashboard:
     index:
