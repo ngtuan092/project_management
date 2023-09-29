@@ -20,17 +20,4 @@
       <% end %>
     </div>
   </div>
-
-  <div class="position-absolute top-15px end-20px">
-    <% if current_user.can_edit_delete_project? project_slack_setting.project %>
-      <%= link_to "#", class: "text-warning icon" do %>
-        <i class="bi bi-pencil-square"></i>
-      <% end %>
-      <%= link_to "#",
-                  data: { turbo_method: :delete, turbo_confirm: t("projects.you_sure?") },
-                  class: "text-danger icon" do %>
-        <i class="bi bi-trash"></i>
-      <% end %>
-    <% end %>
-  </div>
 </li>

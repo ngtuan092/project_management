@@ -26,30 +26,45 @@
       <label class="form-label invisible">invisible label</label>
       <%= link_to t(".new_project_features"), new_project_feature_path, class: "btn btn-primary form-control" %>
     </div>
-    <div class="col-auto ms-auto">
-      <label class="form-label invisible">invisible label</label>
-      <%= link_to t("value_resources.index.export"), project_features_path(format: :xlsx, month_year: params[:month_year], name: params[:name]),
-                                                                           class: "btn btn-secondary form-control" %>
-    </div>
   </div>
 <% end %>
 <div class="table-responsive">
-  <table class="table table-striped align-middle table-hover table-bordered padding-margin-0">
-    <thead>
-      <tr>
-        <th scope="col" width="5%"><%= t ".stt" %></th>
-        <th scope="col"><%= t ".name" %></th>
-        <th scope="col"><%= t ".man_month" %></th>
-        <th scope="col"><%= t ".month_year" %></th>
-        <th scope="col" width="10%"><%= t ".action" %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render partial: "project_features/monthly_project_feature",
-               collection: @project,
-               as: "item" %>
-    </tbody>
-  </table>
+  <div class="card border-0 flex-fill w-100">
+    <table class="table table-striped align-middle table-hover table-bordered padding-margin-0">
+      <thead>
+        <tr>
+          <th scope="col" width="5%"><%= t ".stt" %></th>
+          <th scope="col"><%= t ".name" %></th>
+          <th scope="col"><%= t ".man_month" %></th>
+          <th scope="col"><%= t ".month_year" %></th>
+          <th scope="col" width="10%"><%= t ".action" %></th>
+        </tr>
+      </thead>
+      <div class="card-header border-0 card-header-space-between">
+        <h2 class="card-header-title h4 text-uppercase fw-bold"><%= t ".title" %></h2>
+
+        <!-- Dropdown -->
+        <div class="dropdown ms-4">
+          <a href="javascript: void(0);" class="dropdown-toggle no-arrow text-secondary" role="button"
+            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="bi bi-three-dots-vertical"></i>
+          </a>
+          <div class="dropdown-menu">
+            <%= link_to t(".export"),
+              project_features_path(format: :xlsx,
+                                    month_year: params[:month_year],
+                                    name: params[:name]),
+                                    class: "dropdown-item" %>
+          </div>
+        </div>
+      </div>
+      <tbody>
+        <%= render partial: "project_features/monthly_project_feature",
+                collection: @project,
+                as: "item" %>
+      </tbody>
+    </table>
+  </div>
   <div class="card-footer">
     <div class="d-flex justify-content-between align-items-center">
       <!-- Pagination -->

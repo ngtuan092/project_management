@@ -1,7 +1,7 @@
 <%= form_with url: statistics_release_plans_path, method: :get, class: "row g-4 pb-4" do |f| %>
-  <div class="col-auto w-175px">
+  <div class="col-auto">
     <%= f.label :project_id,  t("release_plans.new.project_name"), class: "form-label" %>
-    <%= f.select :project_id, list_project, {include_blank: true, selected: params[:project_id]}, class: "form-control" %>
+    <%= f.select :project_id, list_project, {include_blank: true, selected: params[:project_id]}, class: "form-select" %>
   </div>
   <div class="col-auto">
     <%= f.label :group_id, t("project.form.group"), class: "form-label" %>

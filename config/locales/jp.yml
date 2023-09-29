@@ -54,14 +54,15 @@ jp:
       list_reports: "レポート"
       list_resources: "リソース"
       list_release_plans: "リリース計画"
-      list_values: "値"
+      list_values: "プロジェクト機能"
       list_value_resources: "プロジェクトの価値/リソースの統計"
       list_new_health: "チェックリストに記入する"
       list_health_items: "チェックリスト"
       list_health: "プロジェクトの健全性"
-      list_statistic_release: "統計"
+      list_statistic_release: "リリーススケジュールの統計グラフ"
       lesson_learn: "プロジェクトレッスン"
       statistics_resources: "統計プロジェクトのリソース"
+      dashboard_resources: "プロジェクトリソース統計グラフ"
   user_mailer:
     password_reset:
       subject: "パスワードのリセット"
@@ -113,7 +114,7 @@ jp:
       select_date: "日付を選択してください"
       search: "検索"
       search_by_name: "名前で検索"
-      export_report: "レポートのエクスポート"
+      export: "リソースのエクスポート"
       share: "共有"
       date_invalid: "日付形式が無効です"
       new_resource: "新しいリソース"
@@ -126,11 +127,11 @@ jp:
         month: "月"
         year: "年"
         project_name: "プロジェクト名"
-        man_month: "万/月"
+        man_month: "人/月"
     table:
       order: "番号順"
       project_name: "プロジェクト名"
-      man_month: "万/月"
+      man_month: "人/月"
       detail: "詳細"
       date_created: "作成日"
       action: "行動"
@@ -165,10 +166,11 @@ jp:
       year: "年"
       name: "名前"
       percentage: "パーセンテージ"
-      man_month: "人月"
+      man_month: "人/月"
       stt: "STT"
   projects:
     index:
+      title: "プロジェクト"
       name: "プロジェクト"
       status: "状態"
       group: "グループ"
@@ -343,6 +345,7 @@ jp:
     update_fail: "レポートの更新に失敗しました！"
     permission_error: "このプロジェクトでレポートを生成する権限がありません。"
     index:
+      title: "レポート"
       stt: "番号順"
       project_name: "プロジェクト名"
       day_report: "当日のレポート"
@@ -351,6 +354,7 @@ jp:
       issue: "問題"
       action: "アクション"
       report_index: "レポート一覧"
+      export: "レポートのエクスポート"
       header_excel:
         stt: "番号順"
         project_name: "プロジェクト名"
@@ -366,7 +370,6 @@ jp:
       new_report: "新しいレポート"
       start_date_report: "開始日"
       end_date_report: "終了日"
-      export: "レポートのエクスポート"
     destroy:
       delete_success: "レポートは正常に破棄されました。"
       fail_delete: "このレポートは削除されていません。"
@@ -411,6 +414,7 @@ jp:
       update_success: "アップデートリリース計画成功！"
       update_danger: "アップデートのリリース計画が失敗しました!"
     index:
+      title: "リリース計画"
       stt: "番号順"
       project_name: "プロジェクト名"
       day_release_plan: "発売予定日"
@@ -419,6 +423,7 @@ jp:
       status: "状態"
       action: "アクション"
       release_plan_index: "リリース予定一覧"
+      export: "リリース予定のエクスポート"
     search_form:
       search: "検索"
       release_date_from: "以来"
@@ -426,7 +431,6 @@ jp:
       name: "プロジェクト名"
       status: "状態"
       new_release_plan: "新作リリース予定"
-      export: "リリース予定のエクスポート"
     release_plan_detail:
       project_name: "プロジェクト名:"
       creator: "クリエイター:"
@@ -493,7 +497,8 @@ jp:
     delete_success: "プロジェクト機能の削除が成功しました!"
     fail_delete: "プロジェクト機能の削除に失敗しました!"
     index:
-      man_month: "Man / Month"
+      title: "プロジェクト機能"
+      man_month: "人/月"
       select_month_year: "月年の選択"
       search: "検索"
       stt: "番号順"
@@ -501,6 +506,7 @@ jp:
       action: "詳細"
       new_project_features: "新機能"
       month_year: "月ー年"
+      export: "プロジェクト機能のエクスポート"
     create_success: "成功を生み出す"
     create_fail: "作成失敗"
     can_not_find_project: "プロジェクトが見つかりません"
@@ -556,6 +562,7 @@ jp:
       update_fail: "プロジェクトの健全性の更新に失敗しましたプロジェクトの健全性の更新に失敗しました"
   value_resources:
     index:
+      title: "プロジェクトの価値/リソースの統計"
       value: "価値"
       resource: "リソース"
       diff: "差分"
@@ -632,6 +639,7 @@ jp:
       creator: "クリエイター"
       reference_process: "参考プロセス"
       create_new: "新しいレッスン"
+      export: "レッスンリーンのエクスポート"
     destroy:
       delete_success: "レッスンリーンは正常に破棄されました。"
       fail_delete: "このレッスンリーンは削除されていません。"
@@ -681,3 +689,10 @@ jp:
       create_success: "新しい Slack 構成が正常に作成されました。"
       create_fail: "新しい Slack 設定の作成に失敗しました。"
     slack_mention_format: "各人のメンションは「,」で区切ってあります！"
+  dashboard_resources:
+    index:
+      title: "プロジェクトリソース統計グラフ"
+      resources_chart: "プロジェクトリソース"
+  statistics_resources:
+    index:
+      export: "統計リソースのエクスポート"

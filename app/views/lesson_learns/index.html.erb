@@ -3,26 +3,30 @@
   <%= javascript_include_tag "animate" %>
 <% end %>
 
-<h1 class="text-center mb-8 fw-bold"><%= t "layouts.sidebar.lesson_learn" %></h1>
 <%= render "search" %>
 <div class="table-responsive">
-  <table class="table table-striped align-middle table-hover table-bordered padding-margin-0">
-    <thead>
-      <tr>
-        <th scope="col" class="w-5"><%= t "health_items.index.stt" %></th>
-        <th scope="col" class="w-12"><%= t ".category_name" %></th>
-        <th scope="col" class="w-21"><%= t ".context_description" %></th>
-        <th scope="col" class="w-21"><%= t ".learning_point" %></th>
-        <th scope="col"><%= t ".creator" %></th>
-        <th scope="col"><%= t "release_plans.new.project_name" %></th>
-        <th scope="col" class="w-9"><%= t "projects.index.created_at" %></th>
-        <th scope="col" class="w-12"><%= t "health_items.index.action" %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @lesson_learns %>
-    </tbody>
-  </table>
+  <div class="card border-0 flex-fill w-100">
+    <table class="table table-striped align-middle table-hover table-bordered padding-margin-0">
+      <thead>
+        <tr>
+          <th scope="col" class="w-5"><%= t "health_items.index.stt" %></th>
+          <th scope="col" class="w-12"><%= t ".category_name" %></th>
+          <th scope="col" class="w-21"><%= t ".context_description" %></th>
+          <th scope="col" class="w-21"><%= t ".learning_point" %></th>
+          <th scope="col"><%= t ".creator" %></th>
+          <th scope="col"><%= t "release_plans.new.project_name" %></th>
+          <th scope="col" class="w-9"><%= t "projects.index.created_at" %></th>
+          <th scope="col" class="w-12"><%= t "health_items.index.action" %></th>
+        </tr>
+      </thead>
+      <div class="card-header border-0 card-header-space-between">
+        <h2 class="card-header-title h4 text-uppercase fw-bold"><%= t "layouts.sidebar.lesson_learn" %></h2>
+      </div>
+      <tbody>
+        <%= render @lesson_learns %>
+      </tbody>
+    </table>
+  </div>
   <div class="card-footer">
     <div class="d-flex justify-content-between align-items-center">
       <!-- Pagination -->
