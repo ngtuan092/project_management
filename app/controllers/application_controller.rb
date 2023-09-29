@@ -70,4 +70,12 @@ class ApplicationController < ActionController::Base
     flash[:warning] = t "errors.health_item_not_found"
     redirect_to health_items_path
   end
+
+  def find_lesson_learn
+    @lesson_learn = LessonLearn.find_by id: params[:id]
+    return if @lesson_learn
+
+    flash[:warning] = t "errors.lesson_learn_not_found"
+    redirect_to lesson_learns_path
+  end
 end

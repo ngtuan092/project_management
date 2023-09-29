@@ -25,7 +25,8 @@ vi:
     report_not_found: "Không thể tìm thấy báo cáo."
     release_plan_not_found: "Không tìm thấy kế hoạch phát hành."
     project_feature_not_found: "Không thể tìm thấy tính năng dự án."
-    health_item_not_found: "Không tìm thấy checklist sức khoẻ dự án!"
+    health_item_not_found: "Không tìm thấy checklist sức khoẻ dự án."
+    lesson_learn_not_found: "Không tìm thấy bài học."
   flash_logged_in_user_danger: "Hãy đăng nhập trước đó."
   flash_verify_admin_danger: "Bạn không có quyền truy cập trang này."
   flash_verify_manager_danger: "Bạn không có quyền truy cập trang này."
@@ -408,6 +409,7 @@ vi:
       name: "Tên dự án"
       status: "Trạng thái"
       new_release_plan: "Thêm kế hoạch phát hành"
+      export: "Xuất kế hoạch phát hành"
     release_plan_detail:
       project_name: "Tên dự án:"
       creator: "Người tạo:"
@@ -612,3 +614,18 @@ vi:
       learning_point: "Bài học rút ra"
       creator: "Người tạo"
       reference_process: "Quá trình tham khảo"
+    destroy:
+      delete_success: "Bài học này đã được xóa thành công."
+      fail_delete: "Bài học này chưa được xóa."
+    show:
+      close: "Đóng"
+    lesson_learn_detail:
+      project_name: "Dự án"
+      creator_name: "Người tạo"
+      context_description: "Mô tả bối cảnh"
+      learning_point: "Bài học rút ra"
+      reference_process: "Quá trình tham khảo"
+      reference_link:  "Link tham khảo"
+      created_at: "Ngày tạo"
+    cannot_delete: "Không thể xóa bài học này."
+    you_sure?: "Bạn chắc chắn chứ?"

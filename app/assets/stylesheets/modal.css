@@ -6,8 +6,8 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-
-  overflow: auto;
+  max-height: calc(100% - 100px);
+  overflow-y: auto;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 0 10px 0 rgba(0,0,0,0.2), 0 5px 10px 0 rgba(0,0,0,0.19);
@@ -44,6 +44,14 @@
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+.square {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+
 .close_x {
   position: absolute;
   top: 5px;
@@ -51,4 +59,11 @@
   text-decoration: none;
   color: black;
   font-size: 1.5em;
+  font-weight: bolder;
+}
+
+.close_x:hover {
+  cursor: pointer;
+  color: white;
+  background-color: red;
 }

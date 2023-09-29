@@ -25,7 +25,8 @@ en:
     report_not_found: "Report not found."
     release_plan_not_found: "Release plan not found."
     project_feature_not_found: "Project value not found."
-    health_item_not_found: "Checklist health item not found!"
+    health_item_not_found: "Checklist health item not found."
+    lesson_learn_not_found: "Lesson learn not found."
   flash_logged_in_user_danger: "Please log in."
   flash_verify_admin_danger: "You are not authorized to access this page."
   flash_verify_manager_danger: "You are not authorized to access this page."
@@ -408,6 +409,7 @@ en:
       name: "Project Name"
       status: "Status"
       new_release_plan: "New release plan"
+      export: "Export release plan"
     release_plan_detail:
       project_name: "Project name:"
       creator: "Creator:"
@@ -612,3 +614,18 @@ en:
       learning_point: "Learning point"
       creator: "Creator"
       reference_process: "Reference process"
+    destroy:
+      delete_success: "Lesson learn was successfully destroyed."
+      fail_delete: "Lesson learn has not been destroyed."
+    show:
+      close: "Close"
+    lesson_learn_detail:
+      project_name: "Project"
+      creator_name: "Creator"
+      context_description: "Context description"
+      learning_point: "Learning point"
+      reference_process: "Reference process"
+      reference_link:  "Reference link"
+      created_at: "Created at"
+    cannot_delete: "Cannot delete lesson learn."
+    you_sure?: "You sure?"
