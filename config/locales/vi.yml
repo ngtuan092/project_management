@@ -121,6 +121,12 @@ vi:
       name: "Tên dự án"
       resource_index: "Danh sách tài nguyên"
       update_resource: "Cập nhật tài nguyên"
+      header_excel:
+        order: "STT"
+        month: "Tháng"
+        year: "Năm"
+        project_name: "Tên dự án"
+        man_month: "Số man/Month"
     table:
       order: "STT"
       project_name: "Tên dự án"
@@ -343,6 +349,13 @@ vi:
       issue: "Vấn đề"
       action: "Hành động"
       report_index: "Danh sách báo cáo"
+      header_excel:
+        stt: "STT"
+        project_name: "Tên dự án"
+        day_report: "Ngày báo cáo"
+        description: "Mô tả"
+        resource_description: "Mô tả tài nguyên"
+        issue: "Vấn đề"
     search_form:
       date_report: "Ngày báo cáo"
       name: "Tên dự án"
@@ -351,6 +364,7 @@ vi:
       new_report: "Thêm báo cáo"
       start_date_report: "Từ ngày"
       end_date_report: "Đến ngày"
+      export: "Xuất báo cáo"
     destroy:
       delete_success: "Báo cáo này đã được xóa thành công."
       fail_delete: "Báo cáo này chưa được xóa."

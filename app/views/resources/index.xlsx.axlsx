@@ -1,0 +1,18 @@
+wb = xlsx_package.workbook
+
+s = wb.styles
+centered_bold = s.add_style alignment: { horizontal: :center }, b: true
+
+def man_month project, month_year
+    project.calculate_project_resource_man_per_month params[:month_year]
+end
+
+wb.add_worksheet(name: "Projects management") do |sheet|
+  # Add header for list resources
+  sheet.add_row t("resources.index.header_excel").values, style: centered_bold
+
+  # Create entries for each item
+  @all_projects.each_with_index do |project, index|
+    sheet.add_row [index + 1, @month, @year, project.name,man_month(project, params[:month_year])]
+  end
+end

@@ -1,0 +1,14 @@
+wb = xlsx_package.workbook
+
+s = wb.styles
+centered_bold = s.add_style alignment: { horizontal: :center }, b: true
+
+wb.add_worksheet(name: "Projects management") do |sheet|
+  # Add header for list reports
+  sheet.add_row t("reports.index.header_excel").values, style: centered_bold
+
+  # Create entries for each item
+  @all_reports.each_with_index do |report, index|
+    sheet.add_row [index + 1, report.project_name, report.date.strftime(Settings.date.format), report.description, report.resource_description, report.issue]
+  end
+end

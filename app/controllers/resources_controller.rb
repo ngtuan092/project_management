@@ -5,12 +5,10 @@ class ResourcesController < ApplicationController
 
   def index
     @year, @month = params[:month_year]&.split("-")
-    @month ||= Time.zone.now.month
-    @year ||= Time.zone.now.year
-    @projects = Project.filter_name(params[:name])
-                       .filter_resources(@month, @year)
-                       .by_recently_created
-    @pagy, @projects = pagy @projects, items: Settings.pagy.number_items_10
+    @all_projects = filtered_projects
+    @pagy, @projects = pagy @all_projects, items: Settings.pagy.number_items_10
+
+    respond
   end
 
   def show
@@ -53,6 +51,13 @@ class ResourcesController < ApplicationController
   end
 
   private
+
+  def filtered_projects
+    Project.filter_name(params[:name])
+           .filter_resources(@month, @year)
+           .by_recently_created
+  end
+
   def project_user_resources_params
     params.require(:project)
           .permit(
@@ -120,5 +125,16 @@ class ResourcesController < ApplicationController
     project_id = params["project_id"]
     redirect_to new_resource_path(month_year:, project_id:),
                 status: :unprocessable_entity
+  end
+
+  def respond
+    respond_to do |format|
+      format.html{render :index}
+      format.xlsx do
+        date = Time.zone.now.strftime Settings.date.format
+        header = "attachment; filename=#{date}_resources.xlsx"
+        response.headers["Content-Disposition"] = header
+      end
+    end
   end
 end

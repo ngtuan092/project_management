@@ -79,13 +79,13 @@ class ProjectsController < ApplicationController
   end
 
   def filtered_projects
-    projects = Project.includes(:group)
-    projects = projects.filter_start_date(params[:start_date])
-    projects = projects.filter_end_date(params[:end_date])
-    projects = projects.filter_name(params[:name])
-    projects = projects.filter_group(params[:group_id])
-    projects = projects.filter_status(params[:status])
-    projects.by_recently_created
+    Project.includes(:group)
+           .filter_start_date(params[:start_date])
+           .filter_end_date(params[:end_date])
+           .filter_name(params[:name])
+           .filter_group(params[:group])
+           .filter_status(params[:status])
+           .by_recently_created
   end
 
   def check_role

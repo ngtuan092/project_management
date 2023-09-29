@@ -27,7 +27,7 @@
         <li class="nav-item mb-2 menu-item pd <%= active_class_for_url(resources_path) %>">
           <div class="d-flex align-items-center">
             <i class="bi bi-briefcase text-white me-1"></i>
-            <%= link_to t(".list_resources"), resources_path, class: "nav-link fw-bold" %>
+            <%= link_to t(".list_resources"), resources_path(month_year: month_field_value(params[:month_year])), class: "nav-link fw-bold" %>
           </div>
         </li>
 

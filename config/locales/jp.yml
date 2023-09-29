@@ -121,6 +121,12 @@ jp:
       name: "プロジェクト名"
       resource_index: "リソースリスト"
       update_resource: "リソースを更新する"
+      header_excel:
+        order: "番号順"
+        month: "月"
+        year: "年"
+        project_name: "プロジェクト名"
+        man_month: "万/月"
     table:
       order: "番号順"
       project_name: "プロジェクト名"
@@ -343,6 +349,13 @@ jp:
       issue: "問題"
       action: "アクション"
       report_index: "レポート一覧"
+      header_excel:
+        stt: "番号順"
+        project_name: "プロジェクト名"
+        day_report: "当日のレポート"
+        description: "説明"
+        resource_description: "リソースの説明"
+        issue: "問題"
     search_form:
       date_report: "当日のレポート"
       name: "プロジェクト名"
@@ -351,6 +364,7 @@ jp:
       new_report: "新しいレポート"
       start_date_report: "開始日"
       end_date_report: "終了日"
+      export: "レポートのエクスポート"
     destroy:
       delete_success: "レポートは正常に破棄されました。"
       fail_delete: "このレポートは削除されていません。"
