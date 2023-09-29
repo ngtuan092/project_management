@@ -1,0 +1,11 @@
+<%= turbo_stream.update "modal", "" %>
+<%= turbo_stream.update "flash_message" do %>
+  <%= render "shared/flash_message" %>
+<% end %>
+<% unless @lesson_learn.errors.any? %>
+  <%= turbo_stream.update "lesson_learn_#{@lesson_learn.id}_lesson_learn_category_name", @lesson_learn.lesson_learn_category_name %>
+  <%= turbo_stream.update "lesson_learn_#{@lesson_learn.id}_context_description", @lesson_learn.context_description %>
+  <%= turbo_stream.update "lesson_learn_#{@lesson_learn.id}_learning_point", @lesson_learn.learning_point %>
+  <%= turbo_stream.update "lesson_learn_#{@lesson_learn.id}_creator_name", @lesson_learn.creator_name %>
+  <%= turbo_stream.update "lesson_learn_#{@lesson_learn.id}_project_name", @lesson_learn.project_name %>
+<% end %>

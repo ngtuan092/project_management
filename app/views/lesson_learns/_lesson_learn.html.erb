@@ -1,21 +1,21 @@
 <tr class="table_row hide">
   <td><%= sequence_number lesson_learn_counter, @pagy&.offset %></td>
-  <td><%= lesson_learn.lesson_learn_category_name %></td>
-  <td>
+  <td id="lesson_learn_<%= lesson_learn.id %>_lesson_learn_category_name" ><%= lesson_learn.lesson_learn_category_name %></td>
+  <td id="lesson_learn_<%= lesson_learn.id %>_context_description">
     <div class="text-3-line-text-overflow"><%= lesson_learn.context_description %></div>
   </td>
-  <td>
+  <td id="lesson_learn_<%= lesson_learn.id %>_learning_point">
     <div class="text-3-line-text-overflow"><%= lesson_learn.learning_point %></div>
   </td>
-  <td><%= lesson_learn.creator_name %></td>
-  <td><%= lesson_learn.project_name %></td>
+  <td id="lesson_learn_<%= lesson_learn.id %>_creator_name"><%= lesson_learn.creator_name %></td>
+  <td id="lesson_learn_<%= lesson_learn.id %>_project_name"><%= lesson_learn.project_name %></td>
   <td><%= format_date lesson_learn.created_at %></td>
   <td class="text-center">
     <%= link_to lesson_learn, class: "btn btn-primary btn-sm", data: {turbo_frame: "modal"} do %>
       <i class="bi-eye-fill"></i>
     <% end %>
     <% if current_user.can_edit_delete_lesson_learn? lesson_learn %>
-      <%= link_to "", class: "btn btn-success btn-sm" do %>
+      <%= link_to edit_lesson_learn_path(lesson_learn), data: {turbo_frame: "modal"}, class: "btn btn-success btn-sm" do %>
         <i class="bi-pencil-square"></i>
       <% end %>
       <%= link_to lesson_learn, data: { turbo_method: :delete, turbo_confirm: t("lesson_learns.you_sure?") }  do %>

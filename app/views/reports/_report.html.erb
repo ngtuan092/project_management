@@ -3,7 +3,7 @@
   <td id="report-<%= report.id %>-project-name"><%= report.project_name %></td>
   <td id="report-<%= report.id %>-date"><%= format_date report.date %></td>
   <td id="report-<%= report.id %>-description" class="text-nowrap text-overflow"><%= report.description %></td>
-  <td id="report-<%= report.id %>-description" class="text-nowrap text-overflow"><%= report.resource_description %></td>
+  <td id="report-<%= report.id %>-resource-description" class="text-nowrap text-overflow"><%= report.resource_description %></td>
   <td id="report-<%= report.id %>-issue" class="text-nowrap text-overflow"><%= report.issue %></td>
   <td class="text-center">
     <%= link_to report, class: "btn btn-primary btn-sm", data: {turbo_frame: "modal"} do %>

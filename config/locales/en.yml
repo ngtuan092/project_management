@@ -629,6 +629,7 @@ en:
       learning_point: "Learning point"
       creator: "Creator"
       reference_process: "Reference process"
+      create_new: "Create new"
     destroy:
       delete_success: "Lesson learn was successfully destroyed."
       fail_delete: "Lesson learn has not been destroyed."
@@ -644,6 +645,25 @@ en:
       created_at: "Created at"
     cannot_delete: "Cannot delete lesson learn."
     you_sure?: "You sure?"
+    new:
+      title: "Create new lesson"
+    form:
+      lesson_category: "Lesson category"
+      choose_project: "Choose project"
+      context_description: "Context description"
+      learning_point: "Learning point"
+      reference_process: "Reference process"
+      reference_link: "Reference link"
+      save: "Save"
+    edit:
+      close: "Close"
+      title: "Update lesson learn"
+    create:
+      create_success: "Create lesson learn successfully!"
+      create_fail: "Create failure lesson learn!"
+    update:
+      update_success: "Update lesson learn successfully!"
+      update_fail: "Update lesson learn failed!"
   project_slack_settings:
     project_slack_setting:
       mention: "Receiver"

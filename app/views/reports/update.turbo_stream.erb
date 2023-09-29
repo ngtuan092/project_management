@@ -7,4 +7,5 @@
   <%= turbo_stream.update "report-#{@report.id}-date", format_date(@report.date) %>
   <%= turbo_stream.update "report-#{@report.id}-issue", @report.issue %>
   <%= turbo_stream.update "report-#{@report.id}-description", @report.description %>
+  <%= turbo_stream.update "report-#{@report.id}-resource-description", @report.resource_description %>
 <% end %>

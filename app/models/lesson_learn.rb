@@ -1,4 +1,9 @@
 class LessonLearn < ApplicationRecord
+  UPDATE_ATTRS = [
+    :lesson_learn_category_id, :project_id, :context_description,
+    :learning_point, :reference_process, :reference_link
+  ].freeze
+
   belongs_to :lesson_learn_category
   belongs_to :creator, class_name: User.name
   belongs_to :project, optional: true
