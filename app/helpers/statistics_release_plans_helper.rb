@@ -5,7 +5,7 @@ module StatisticsReleasePlansHelper
     (release_date_years + released_at_years).compact.uniq
   end
 
-  def release_plans_chart release_plans, year
+  def release_plans_chart release_plans, project_features, year
     stats = stats_release_plans release_plans, year
     release = {}
     released = {}
@@ -17,7 +17,7 @@ module StatisticsReleasePlansHelper
 
     [{name: t("release_plans.is_released.preparing"), data: release},
      {name: t("release_plans.is_released.released"), data: released},
-     man_month_chart(year)]
+     man_month_chart(project_features, year)]
   end
 
   def release_plans_by_status release_plans
@@ -32,11 +32,11 @@ module StatisticsReleasePlansHelper
     end
   end
 
-  def man_month_chart year
+  def man_month_chart project_features, year
     man_month = {}
     (1..12).each do |month|
-      man_month["#{month} - #{year}"] = ProjectFeature
-                                        .total_man_month_year(month, year)
+      value = project_features.total_man_month_year(month, year)
+      man_month["#{month} - #{year}"] = value
     end
     {name: t("statistics_release_plans.man_month"), data: man_month}
   end

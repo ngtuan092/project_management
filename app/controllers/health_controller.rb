@@ -11,7 +11,7 @@ class HealthController < ApplicationController
   end
 
   def create
-    create_project_health_items
+    create_project_health_items params
     flash[:success] = t(".create_success")
   rescue ActiveRecord::RecordInvalid
     flash[:error] = t(".create_fail")
@@ -19,11 +19,14 @@ class HealthController < ApplicationController
     redirect_to project_path(params[:project_id])
   end
 
-  def edit; end
+  def edit
+    @not_check_items = HealthItem.unchecked_health_items @project.id
+  end
 
   def update
     if @project.update health_item_params
-      flash[:success] = t(".update_success")
+      create_unchecked_health_items
+      flash[:success] = t ".update_success"
       respond_to do |format|
         format.html{redirect_to @project}
         format.turbo_stream
@@ -35,16 +38,25 @@ class HealthController < ApplicationController
   end
 
   private
+
+  def create_unchecked_health_items
+    return if params.dig(:project, :health_items).blank?
+
+    create_project_health_items params[:project]
+  end
+
   def health_item_params
     params.require(:project).permit Project::PROJECT_HEALTH_ITEMS_PARAMS
   end
 
-  def create_project_health_items
+  def create_project_health_items param_values
     ActiveRecord::Base.transaction do
-      params[:health_items].each do |element|
+      param_values[:health_items].each do |element|
         note = element[1]
-        attrs = {project_id: params[:project_id], health_item_id: element[0],
-                 note:, status: ProjectHealthItem.statuses[note]}
+        attrs = {project_id: param_values[:project_id],
+                 health_item_id: element[0],
+                 note:,
+                 status: ProjectHealthItem.statuses[note]}
         item = ProjectHealthItem.new attrs
         item.save!
       end

@@ -13,6 +13,10 @@
         </div>
       </div>
 
+      <% if params[:project_id].present? %>
+        <%= f.hidden_field :project_id, value: params[:project_id] %>
+      <% end %>
+
       <h3 class="mt-4 mb-6 font-weight-bold"><%= t(".checklist")%></h3>
 
       <% @health_items.each do |item| %>
