@@ -387,6 +387,7 @@ en:
       scope_release_description: "Scope release description"
       status: "Status"
       save: "Save"
+      released_at: "Actual release date"
     is_released:
       preparing: "Prepare for release"
       released: "Released"

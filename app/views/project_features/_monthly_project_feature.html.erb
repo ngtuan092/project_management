@@ -1,10 +1,10 @@
   <tr class="table_row hide">
     <td><%= sequence_number item_counter, @pagy&.offset  %></td>
-    <td><%= item.project_name %></td>
-    <td><%= man_month_per_project_month_year item.project_id, item.month, item.year %></td>
+    <td><%= item.name %></td>
+    <td><%= man_month_per_project_month_year item.id, item.month, item.year %></td>
     <td><%= "#{item.year}-#{format('%02d', item.month)}" %></td>
     <td class="text-center">
-      <%= link_to project_month_project_features_path(project_id: item.project_id, month_year: "#{item.year}-#{format('%02d', item.month)}"),
+      <%= link_to project_month_project_features_path(project_id: item.id, month_year: "#{item.year}-#{format('%02d', item.month)}"),
                   class: "btn btn-primary btn-sm" do %>
         <i class="bi-eye-fill"></i>
       <% end %>

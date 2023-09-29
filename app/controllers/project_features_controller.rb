@@ -8,13 +8,10 @@ class ProjectFeaturesController < ApplicationController
   add_breadcrumb I18n.t("breadcrumbs.project_features"), :project_features_path
 
   def index
-    year, month = params[:month_year]&.split("-")
-    @project_features = ProjectFeature.filter_name(params[:name])
-                                      .group_project_month_year
-                                      .filter_month(month).filter_year(year)
-                                      .order_by_month_year
-    @pagy, @project_features = pagy @project_features,
-                                    items: Settings.pagy.number_items_10
+    @year, @month = params[:month_year]&.split("-")
+    @projects = Project.filter_features(@month, @year)
+                       .filter_name(params[:name])
+    @pagy, @project = pagy @projects, items: Settings.pagy.number_items_10
   end
 
   def show
@@ -139,6 +136,17 @@ class ProjectFeaturesController < ApplicationController
     else
       flash.now[:danger] = t ".can_not_find_project"
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def respond
+    respond_to do |format|
+      format.html{render :index}
+      format.xlsx do
+        date = Time.zone.now.strftime Settings.date.format
+        header = "attachment; filename=#{date}_feature.xlsx"
+        response.headers["Content-Disposition"] = header
+      end
     end
   end
 end

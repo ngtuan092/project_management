@@ -1,9 +1,7 @@
 <% provide :title, t("month_project_features.index.project_feature_index") %>
-
 <% content_for :javascript_file do %>
   <%= javascript_include_tag "animate" %>
 <% end %>
-
 <%= form_with url: project_features_path, method: :get do |f| %>
   <div class="row mb-4">
     <div class="col-auto">
@@ -28,23 +26,27 @@
       <label class="form-label invisible">invisible label</label>
       <%= link_to t(".new_project_features"), new_project_feature_path, class: "btn btn-primary form-control" %>
     </div>
+    <div class="col-auto ms-auto">
+      <label class="form-label invisible">invisible label</label>
+      <%= link_to t("value_resources.index.export"), project_features_path(format: :xlsx, month_year: params[:month_year], name: params[:name]),
+                                                                           class: "btn btn-secondary form-control" %>
+    </div>
   </div>
 <% end %>
-
 <div class="table-responsive">
   <table class="table table-striped align-middle table-hover table-bordered padding-margin-0">
     <thead>
-    <tr>
-      <th scope="col" width="5%"><%= t ".stt" %></th>
-      <th scope="col"><%= t ".name" %></th>
-      <th scope="col"><%= t ".man_month" %></th>
-      <th scope="col"><%= t ".month_year" %></th>
-      <th scope="col" width="10%"><%= t ".action" %></th>
-    </tr>
+      <tr>
+        <th scope="col" width="5%"><%= t ".stt" %></th>
+        <th scope="col"><%= t ".name" %></th>
+        <th scope="col"><%= t ".man_month" %></th>
+        <th scope="col"><%= t ".month_year" %></th>
+        <th scope="col" width="10%"><%= t ".action" %></th>
+      </tr>
     </thead>
     <tbody>
-    <%= render partial: "project_features/monthly_project_feature",
-               collection: @project_features,
+      <%= render partial: "project_features/monthly_project_feature",
+               collection: @project,
                as: "item" %>
     </tbody>
   </table>

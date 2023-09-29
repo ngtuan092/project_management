@@ -1,0 +1,39 @@
+wb = xlsx_package.workbook
+
+s = wb.styles
+centered_bold_15 = s.add_style alignment: { horizontal: :center }, b: true, sz: 15
+centered_bold = s.add_style alignment: { horizontal: :center }, b: true,
+                            border: { style: :medium, color: '000000' }
+vertical_top_bold  = s.add_style alignment: {vertical: :top}, b: true
+centered = s.add_style alignment: { horizontal: :center, wrap_text: true }, border_right: { style: :medium, color: '000000' }, border_left: { style: :medium, color: '000000' }
+border_cell_blr_bold = s.add_style border_right: { style: :medium, color: '000000' }, border_bottom: { style: :medium, color: '000000' }, border_left: { style: :medium, color: '000000' }, b: true,
+                                   alignment: { horizontal: :center }
+
+wb.add_worksheet(name: "Features Worksheet") do |sheet|
+  month_year_row = params[:month_year] if params[:month_year] != ""
+  month_year_row ||= "All"
+  sheet.add_row [month_year_row], style: centered_bold_15
+  sheet.add_row [""]
+  sheet.merge_cells("A1:G1")
+  project_index = 3
+  @projects.each do |project|
+    sheet.add_row [
+      "Project name: #{project.name}\nProject id: #{project.id}\nYear-Month: #{project.year}-#{project.month}"
+    ], style: vertical_top_bold
+    sheet.add_row [""]
+    sheet.add_row [""]
+    sheet.merge_cells("A#{project_index}:G#{project_index+2}")
+    sheet.add_row ["Name", "Description", "Waste description", "Effort saved", "Repeat time", "Repeat unit", "Man month"], style: centered_bold
+    total_man_month = 0
+    project.project_features.filter_name(params[:name]).filter_month(project.month).filter_year(project.year).each do |feature|
+      repeat_unit = feature.repeat_unit.gsub("_"," ")
+      total_man_month += feature.man_month
+      sheet.add_row [feature.name, feature.description, feature.waste_description, feature.effort_saved, feature.repeat_time, repeat_unit, feature.man_month], style: centered, height: 20, widths: [30, 40, 40]
+      project_index += 1
+    end
+    # column |A|B|C|D|E|F|G
+    sheet.add_row ["", "", "", "", "", "", "Total = #{total_man_month.round(2)}"], style: border_cell_blr_bold
+    sheet.add_row [""]
+    project_index += 6
+  end
+end

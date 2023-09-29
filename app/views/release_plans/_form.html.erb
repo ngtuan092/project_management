@@ -15,11 +15,23 @@
     </div>
 
     <div class="form-group col-md-3">
-    <label class="required form-label" for="release_plan_is_released"><%= t ".status" %></label>
-    <%= f.select :is_released, list_status, {},
-                            {class: "form-control #{invalid @release_plan, :is_released}"} %>
-    <p class="error"><%= show_errors @release_plan, :is_released %></p>
+      <label class="required form-label" for="release_plan_is_released"><%= t ".status" %></label>
+      <%= f.select :is_released, list_status, {},
+                              class: "form-select #{invalid @release_plan, :is_released}",
+                              data: {
+                                controller: "is_released_select",
+                                action: "is_released_select#change"
+                              }
+      %>
+      <p class="error"><%= show_errors @release_plan, :is_released %></p>
+    </div>
+
   </div>
+
+  <div class="form-group mb-4" id="released_at-select_date-field" <%="hidden" unless @release_plan.is_released_released? %> >
+    <%= f.label t(".released_at"), class: "form-label" %>
+    <%= f.date_field :released_at, class: "form-control #{invalid(@release_plan, :released_at)}" %>
+    <p class="error"><%= show_errors(@release_plan, :released_at) %></p>
   </div>
 
   <div class="form-group">

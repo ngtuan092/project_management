@@ -387,6 +387,7 @@ jp:
       scope_release_description: "範囲リリースの説明"
       status: "状態"
       save: "保存"
+      released_at: "実際の発売日"
     is_released:
       preparing: "リリースの準備"
       released: "リリース済み"
