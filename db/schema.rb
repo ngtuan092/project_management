@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_28_055827) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_28_152611) do
   create_table "customers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -116,6 +116,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_28_055827) do
     t.datetime "deleted_at"
     t.index ["health_item_id"], name: "index_project_health_items_on_health_item_id"
     t.index ["project_id"], name: "index_project_health_items_on_project_id"
+  end
+
+  create_table "project_slack_settings", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.string "slack_room"
+    t.string "slack_mention"
+    t.boolean "send_release", default: false
+    t.boolean "send_value", default: false
+    t.boolean "send_resource", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_project_slack_settings_on_project_id"
   end
 
   create_table "project_user_resources", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -239,6 +251,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_28_055827) do
   add_foreign_key "project_features", "projects"
   add_foreign_key "project_health_items", "health_items"
   add_foreign_key "project_health_items", "projects"
+  add_foreign_key "project_slack_settings", "projects"
   add_foreign_key "project_user_resources", "project_users"
   add_foreign_key "project_users", "projects"
   add_foreign_key "project_users", "roles", column: "project_role_id"

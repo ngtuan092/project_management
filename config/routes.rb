@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :month_project_features, only: :index
       member do
         resources :project_users, only: %i(new create)
+        resources :project_slack_settings, only: %i(new create)
       end
     end
     resources :project_users, only: %i(destroy edit update)

@@ -259,6 +259,8 @@ vi:
       update_fail: "Cập nhật thông tin dự án thất bại."
     edit:
       edit_project: "CHỈNH SỬA DỰ ÁN"
+    project_slack_setting:
+      add_slack: "Thêm cấu hình slack"
   users:
     update:
       flash_update_success: "Cập nhật thành công"
@@ -644,3 +646,18 @@ vi:
       created_at: "Ngày tạo"
     cannot_delete: "Không thể xóa bài học này."
     you_sure?: "Bạn chắc chắn chứ?"
+  project_slack_settings:
+    project_slack_setting:
+      mention: "Người nhận"
+    form:
+      receiver: "Mention người nhận"
+      send_release: "Gửi tin nhắn khi đã release"
+      send_value: "Gửi tin nhắn khi thêm mới value"
+      send_resource: "Gửi tin nhắn khi thêm mới resource"
+      mention_notice: "Cách nhau bởi dấu, nếu mention nhiều người. Ví dụ: U03ANFSJ17Z, K03ANFSJ17J"
+    new:
+      title: "Cài đặt Slack"
+    create:
+      create_success: "Tạo mới cấu hình Slack thành công!"
+      create_fail: "Tạo mới cấu hình Slack thất bại!"
+    slack_mention_format: Mention mỗi người cách nhau bởi dấu ","!

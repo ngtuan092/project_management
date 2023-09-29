@@ -38,3 +38,5 @@ check_destroy:
 is_released:
   released: "released"
   preparing: "preparing"
+slack_mention:
+  validate: !ruby/regexp '/\s/'

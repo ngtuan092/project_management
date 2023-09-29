@@ -71,6 +71,7 @@ class Project < ApplicationRecord
   has_many :health_items, through: :project_health_items
   has_many :project_user_resources, through: :project_users
   has_many :lesson_learns, dependent: :destroy
+  has_many :project_slack_settings, dependent: :destroy
 
   delegate :name, to: :group, prefix: true
   delegate :name, to: :creator, prefix: true
