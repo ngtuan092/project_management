@@ -1,8 +1,7 @@
 module StatisticsReleasePlansHelper
   def list_year
-    release_date_years = ReleasePlan.distinct.pluck("YEAR(release_date)")
-    released_at_years = ReleasePlan.distinct.pluck("YEAR(released_at)")
-    (release_date_years + released_at_years).compact.uniq
+    current_year = Date.current.year
+    (current_year - 4..current_year + 1).to_a
   end
 
   def release_plans_chart release_plans, project_features, year
@@ -26,6 +25,7 @@ module StatisticsReleasePlansHelper
       status_count = release_plans.where(is_released: key).count
       ratio = status_count / total.to_f
       percentage = (ratio *  100).round(Settings.digits.length_2)
+      percentage = 0 if percentage.nan? || percentage.infinite?
       {key:, value:,
        percentage:,
        count: status_count}

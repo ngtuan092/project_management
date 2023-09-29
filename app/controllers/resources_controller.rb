@@ -105,7 +105,12 @@ class ResourcesController < ApplicationController
 
   def create_success
     flash[:success] = t ".update_success"
-    redirect_to resources_path
+
+    # get month and year from record just created new to return index
+    month = @project.project_user_resources.first.month
+    year = @project.project_user_resources.first.year
+    month_year = "#{year}-#{format('%02d', month)}"
+    redirect_to resources_path(month_year:)
   end
 
   def create_errors errors
