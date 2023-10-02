@@ -1,0 +1,53 @@
+<%= form_for @lesson_learn, remote: local_assigns[:remote] do |f| %>
+  <div class="d-flex justify-content-between">
+    <div class="form-group col-md-5">
+      <label for="lesson_learn_category_id" class="form-label required"><%= t ".lesson_category" %></label>
+      <%= f.select :lesson_learn_category_id, list_lesson_learn_categories, {selected: @lesson_learn.lesson_learn_category_id},
+                   {class: "form-select #{invalid @lesson_learn, :lesson_learn_category_id}"} %>
+      <p class="error"><%= show_errors @lesson_learn, :lesson_learn_category_id %></p>
+    </div>
+
+    <div class="form-group col-md-5">
+      <label for="lesson_project_id" class="form-label"><%= t ".choose_project" %></label>
+      <%= f.collection_select :project_id, @projects, :id, :name, {},
+                              {class: "form-select #{invalid @lesson_learn, :project_id}"} %>
+      <p class="error"><%= show_errors @lesson_learn, :project_id %></p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="lesson_context_description" class="form-label required"><%= t ".context_description" %></label>
+    <%= f.text_area :context_description,
+                    class: "form-control #{invalid @lesson_learn, :context_description}",
+                    rows: "3" %>
+    <p class="error"><%= show_errors @lesson_learn, :context_description %></p>
+  </div>
+
+  <div class="form-group">
+    <label for="lesson_learning_point" class="form-label required"><%= t ".learning_point" %></label>
+    <%= f.text_area :learning_point,
+                    class: "form-control #{invalid @lesson_learn, :learning_point}",
+                    rows: "5" %>
+    <p class="error"><%= show_errors @lesson_learn, :learning_point %></p>
+  </div>
+
+  <div class="form-group">
+    <label for="lesson_reference_process" class="form-label"><%= t ".reference_process" %></label>
+    <%= f.text_area :reference_process,
+                    class: "form-control #{invalid @lesson_learn, :reference_process}",
+                    rows: "3" %>
+    <p class="error"><%= show_errors @lesson_learn, :reference_process %></p>
+  </div>
+
+  <div class="form-group">
+    <label for="lesson_reference_link" class="form-label"><%= t ".reference_link" %></label>
+    <%= f.text_area :reference_link,
+                    class: "form-control #{invalid @lesson_learn, :reference_link}",
+                    rows: "2" %>
+    <p class="error"><%= show_errors @lesson_learn, :reference_link %></p>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <%= f.submit t(".save"), class: "btn btn-primary btn-block btn-md w-50 mt-3 form-control" %>
+  </div>
+<% end %>

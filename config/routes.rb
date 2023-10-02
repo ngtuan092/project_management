@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     resources :health, only: %i(new create edit update)
     resources :value_resources, only: :index
     resources :health_items
-    resources :lesson_learns, only: %i(index show destroy)
+    resources :lesson_learns
     resources :statistics_resources, only: :index
   end
 end

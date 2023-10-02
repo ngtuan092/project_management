@@ -29,4 +29,8 @@
       <i class="bi bi-arrow-counterclockwise"></i>
     <% end %>
   </div>
+  <div class="col-auto ms-auto">
+    <label class="form-label invisible">invisible label</label>
+    <%= link_to t("lesson_learns.index.create_new"), new_lesson_learn_path, class: "btn btn-primary form-control" %>
+  </div>
 <% end %>

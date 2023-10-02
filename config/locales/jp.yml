@@ -631,6 +631,7 @@ jp:
       learning_point: "学んだ教訓"
       creator: "クリエイター"
       reference_process: "参考プロセス"
+      create_new: "新しいレッスン"
     destroy:
       delete_success: "レッスンリーンは正常に破棄されました。"
       fail_delete: "このレッスンリーンは削除されていません。"
@@ -646,6 +647,25 @@ jp:
       created_at: "作成日"
     cannot_delete: "レッスンリーンを削除できません。"
     you_sure?: "あなたは確かに？"
+    new:
+      title: "新しいレッスンを作成する"
+    form:
+      lesson_category: "レッスンカテゴリ"
+      choose_project: "プロジェクトを選択してください"
+      context_description: "コンテキストの説明"
+      learning_point: "学習ポイント"
+      reference_process: "参照プロセス"
+      reference_link: "参照リンク"
+      save: "保存"
+    edit:
+      close: "閉じる"
+      title: "レッスンの学習を更新する"
+    create:
+      create_success: "レッスンの作成に成功しました！"
+    create_fail: "レッスンの作成に失敗しました！"
+    update:
+      update_success: "レッスン学習が正常に更新されました!"
+      update_fail: "レッスン学習の更新に失敗しました!"
   project_slack_settings:
     project_slack_setting:
       mention: "受信機"

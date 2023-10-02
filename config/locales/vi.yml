@@ -631,6 +631,7 @@ vi:
       learning_point: "Bài học rút ra"
       creator: "Người tạo"
       reference_process: "Quá trình tham khảo"
+      create_new: "Bài học mới"
     destroy:
       delete_success: "Bài học này đã được xóa thành công."
       fail_delete: "Bài học này chưa được xóa."
@@ -646,6 +647,25 @@ vi:
       created_at: "Ngày tạo"
     cannot_delete: "Không thể xóa bài học này."
     you_sure?: "Bạn chắc chắn chứ?"
+    new:
+      title: "Tạo bài học mới"
+    form:
+      lesson_category: "Thể loại bài học"
+      choose_project: "Chọn dự án"
+      context_description: "Mô tả bối cảnh"
+      learning_point: "Bài học rút ra"
+      reference_process: "Quá trình tham khảo"
+      reference_link:  "Link tham khảo"
+      save: "Lưu"
+    edit:
+      close: "Đóng"
+      title: "Cập nhật bài học dự án"
+    create:
+      create_success: "Tạo bài học dự án thành công!"
+      create_fail: "Tạo bài học dự án thất bại!"
+    update:
+      update_success: "Cập nhật bài học dự án thành công!"
+      update_fail: "Cập nhật bài học dự án thất bại!"
   project_slack_settings:
     project_slack_setting:
       mention: "Người nhận"
