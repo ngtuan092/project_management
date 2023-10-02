@@ -34,16 +34,4 @@
     <label class="form-label invisible">invisible label</label>
     <%= link_to t(".new_project"), new_project_path, class: "btn btn-primary form-control" %>
   </div>
-
-  <div class="col-auto ms-auto">
-    <label class="form-label invisible">invisible label</label>
-    <%= link_to t("projects.index.export"),
-                projects_path(format: :xlsx,
-                                start_date: params[:start_date],
-                                end_date: params[:end_date],
-                                name: params[:name],
-                                group_id: params[:group_id],
-                                status: params[:status]),
-                class: "btn btn-secondary form-control" %>
-  </div>
 <% end %>

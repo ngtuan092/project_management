@@ -54,14 +54,15 @@ vi:
       list_reports: "Báo cáo"
       list_resources: "Tài nguyên"
       list_release_plans: "Kế hoạch phát hành"
-      list_values: "Tính năng"
+      list_values: "Tính năng dự án"
       list_value_resources: "Thống kê giá trị/tài nguyên dự án"
       list_new_health: "Điền checklist"
       list_health_items: "Checklist"
       list_health: "Sức khoẻ dự án"
-      list_statistic_release: "Thống kê release"
+      list_statistic_release: "Biểu đồ thống kê lịch trình phát hành"
       lesson_learn: "Bài học dự án"
       statistics_resources: "Thống kê tài nguyên dự án"
+      dashboard_resources: "Biểu đồ thống kê tài nguyên dự án"
   user_mailer:
     password_reset:
       subject: "Đặt lại mật khẩu"
@@ -113,7 +114,7 @@ vi:
       select_date: "Chọn ngày"
       search: "Tìm kiếm"
       search_by_name: "Tìm kiếm theo tên"
-      export_report: "Xuất báo cáo"
+      export: "Xuất tài nguyên"
       share: "Chia sẻ"
       date_invalid: "Định dạng ngày không hợp lệ"
       new_resource: "Thêm tài nguyên"
@@ -126,11 +127,11 @@ vi:
         month: "Tháng"
         year: "Năm"
         project_name: "Tên dự án"
-        man_month: "Số man/Month"
+        man_month: "Số người/tháng"
     table:
       order: "STT"
       project_name: "Tên dự án"
-      man_month: "Số man/Month"
+      man_month: "Số người/tháng"
       detail: "Chi tiết"
       date_created: "Ngày tạo"
       action: "Hành động"
@@ -165,10 +166,11 @@ vi:
       year: "Năm"
       name: "Tên"
       percentage: "Tỷ lệ phần trăm"
-      man_month: "Man month"
+      man_month: "Người/tháng"
       stt: "STT"
   projects:
     index:
+      title: "Dự án"
       name: "Dự án"
       status: "Trạng thái"
       group: "Nhóm tham gia"
@@ -343,6 +345,7 @@ vi:
     update_fail: "Cập nhật báo cáo thất bại!"
     permission_error: "Bạn không có quyền tạo báo cáo với dự án này!"
     index:
+      title: "Báo cáo"
       stt: "STT"
       project_name: "Tên dự án"
       day_report: "Ngày báo cáo"
@@ -351,6 +354,7 @@ vi:
       issue: "Vấn đề"
       action: "Hành động"
       report_index: "Danh sách báo cáo"
+      export: "Xuất báo cáo"
       header_excel:
         stt: "STT"
         project_name: "Tên dự án"
@@ -366,7 +370,6 @@ vi:
       new_report: "Thêm báo cáo"
       start_date_report: "Từ ngày"
       end_date_report: "Đến ngày"
-      export: "Xuất báo cáo"
     destroy:
       delete_success: "Báo cáo này đã được xóa thành công."
       fail_delete: "Báo cáo này chưa được xóa."
@@ -411,6 +414,7 @@ vi:
       update_success: "Cập nhật kế hoạch phát hành thành công!"
       update_danger: "Cập nhật kế hoạch phát hành thất bại!"
     index:
+      title: "Kế hoạch phát hành"
       stt: "STT"
       project_name: "Tên dự án"
       day_release_plan: "Ngày kế hoạch phát hành"
@@ -419,6 +423,7 @@ vi:
       status: "Trạng thái"
       action: "Hành động"
       release_plan_index: "Danh sách kế hoạch phát hành"
+      export: "Xuất kế hoạch phát hành"
     search_form:
       search: "Tìm kiếm"
       release_date_from: "Từ ngày"
@@ -426,7 +431,6 @@ vi:
       name: "Tên dự án"
       status: "Trạng thái"
       new_release_plan: "Thêm kế hoạch phát hành"
-      export: "Xuất kế hoạch phát hành"
     release_plan_detail:
       project_name: "Tên dự án:"
       creator: "Người tạo:"
@@ -493,7 +497,8 @@ vi:
     delete_success: "Xóa tính năng dự án thành công!"
     fail_delete: "Xóa tính năng dự án không thành công!"
     index:
-      man_month: "Số man / month"
+      title: "Tính năng"
+      man_month: "Số người/tháng"
       select_month_year: "Chọn tháng năm"
       search: "Tìm kiếm"
       stt: "STT"
@@ -501,6 +506,7 @@ vi:
       action: "Chi tiết"
       new_project_features: "Tính năng mới"
       month_year: "Tháng - Năm"
+      export: "Xuất tính năng"
     create_success: "Create success"
     create_fail: "Create fail"
     can_not_find_project: "Can not find project"
@@ -556,6 +562,7 @@ vi:
       update_fail: "Cập nhật sức khoẻ dự án thất bại"
   value_resources:
     index:
+      title: "Thống kê giá trị/tài nguyên dự án"
       value: "Giá trị"
       resource: "Nguồn lực"
       diff: "Khác biệt"
@@ -612,16 +619,16 @@ vi:
       end_month: "Tháng kết thúc"
   statistics_release_plans:
     index:
-      title: "Thống kê lịch trình release"
+      title: "Biểu đồ thống kê lịch trình phát hành"
       nums: "Giá trị"
-      statistical_chart: "Kế hoạch release"
-      release: "Kế hoạch release"
-      released: "Đã release"
+      statistical_chart: "Kế hoạch phát hành"
+      release: "Kế hoạch phát hành"
+      released: "Đã phát hành"
       man_month_chart: "Số man/month đã thêm trong tháng"
-      release_total: "Tổng số kế hoạch release"
+      release_total: "Tổng số kế hoạch phát hành"
     search:
       year: "Năm"
-    man_month: "Giá trị tính năng đem lại (man/month)"
+    man_month: "Giá trị tính năng đem lại (người/tháng)"
   lesson_learns:
     search:
       lesson_category: "Thể loại bài học"
@@ -632,6 +639,7 @@ vi:
       creator: "Người tạo"
       reference_process: "Quá trình tham khảo"
       create_new: "Bài học mới"
+      export: "Xuất bài học"
     destroy:
       delete_success: "Bài học này đã được xóa thành công."
       fail_delete: "Bài học này chưa được xóa."
@@ -681,3 +689,10 @@ vi:
       create_success: "Tạo mới cấu hình Slack thành công!"
       create_fail: "Tạo mới cấu hình Slack thất bại!"
     slack_mention_format: Mention mỗi người cách nhau bởi dấu ","!
+  dashboard_resources:
+    index:
+      title: "Biểu đồ thống kê tài nguyên dự án"
+      resources_chart: "Tài nguyên dự án"
+  statistics_resources:
+    index:
+      export: "Xuất thống kê tài nguyên"

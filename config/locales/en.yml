@@ -54,14 +54,15 @@ en:
       list_reports: "Reports"
       list_resources: "Resources"
       list_release_plans: "Release Plans"
-      list_values: "Values"
+      list_values: "Project features"
       list_value_resources: "Statistics on project value/resources"
       list_new_health: "Fill out checklist"
       list_health_items: "Checklist"
       list_health: "Project health"
-      list_statistic_release: "Statistics release plans"
+      list_statistic_release: "Release schedule statistics"
       lesson_learn: "Project lessons"
       statistics_resources: "Statistics project resources"
+      dashboard_resources: "Project resource statistics chart"
   user_mailer:
     password_reset:
       subject: "Password reset"
@@ -113,7 +114,7 @@ en:
       select_date: "Select date"
       search: "Search"
       search_by_name: "Search by name"
-      export_report: "Export report"
+      export: "Export resources"
       share: "Share"
       date_invalid: "Date format invalid"
       new_resource: "New resource"
@@ -169,6 +170,7 @@ en:
       stt: "STT"
   projects:
     index:
+      title: "Projects"
       name: "Project"
       status: "Status"
       group: "Group"
@@ -259,6 +261,8 @@ en:
       update_fail: "Update failed project information."
     edit:
       edit_project: "UPDATE PROJECT"
+    project_slack_setting:
+      add_slack: "Add slack setting"
   users:
     update:
       flash_update_success: "Update successful"
@@ -341,6 +345,7 @@ en:
     update_fail: "Update report failure!"
     permission_error: "You do not have permission to create reports with this project!"
     index:
+      title: "Reports"
       stt: "No."
       project_name: "Project name"
       day_report: "Day report"
@@ -349,6 +354,7 @@ en:
       issue: "Issue"
       action: "Action"
       report_index: "Reports List"
+      export: "Export reports"
       header_excel:
         stt: "No."
         project_name: "Project name"
@@ -364,7 +370,6 @@ en:
       new_report: "New report"
       start_date_report: "Start date"
       end_date_report: "End date"
-      export: "Export reports"
     destroy:
       delete_success: "Report was successfully destroyed."
       fail_delete: "This report has not been deleted."
@@ -409,6 +414,7 @@ en:
       update_success: "Update release plan success!"
       update_danger: "Update release plan failure!"
     index:
+      title: "Release plans"
       stt: "No."
       project_name: "Project name"
       day_release_plan: "Release plan date"
@@ -417,6 +423,7 @@ en:
       status: "Status"
       action: "Action"
       release_plan_index: "Release Plans List"
+      export: "Export release plans"
     search_form:
       search: "Search"
       release_date_from: "From date"
@@ -424,7 +431,6 @@ en:
       name: "Project Name"
       status: "Status"
       new_release_plan: "New release plan"
-      export: "Export release plan"
     release_plan_detail:
       project_name: "Project name:"
       creator: "Creator:"
@@ -491,6 +497,7 @@ en:
     delete_success: "Delete project feature success!"
     fail_delete: "Delete project feature fail!"
     index:
+      title: "Project features"
       man_month: "Man / Month"
       select_month_year: "Select month year"
       search: "Search"
@@ -499,6 +506,7 @@ en:
       action: "Detail"
       new_project_features: "New features"
       month_year: "Month - Year"
+      export: "Export project features"
     create_success: "Create success"
     create_fail: "Create fail"
     can_not_find_project: "Can not find project"
@@ -554,6 +562,7 @@ en:
       update_fail: "Project health update failed"
   value_resources:
     index:
+      title: "Statistics value resources"
       value: "Value"
       resource: "Resource"
       diff: "Diff"
@@ -563,7 +572,7 @@ en:
       total_diff_year: "Total diff of %{month} months"
       total: "Total"
       value_resources_index: "Statistics values/resources"
-      export: "Export statistics"
+      export: "Export statistic"
     search:
       each_month_separately: "Separate value for each month"
   health_items:
@@ -630,6 +639,7 @@ en:
       creator: "Creator"
       reference_process: "Reference process"
       create_new: "Create new"
+      export: "Export lesson learn"
     destroy:
       delete_success: "Lesson learn was successfully destroyed."
       fail_delete: "Lesson learn has not been destroyed."
@@ -678,4 +688,11 @@ en:
     create:
       create_success: "Create successfully!"
       create_fail: "Creating new Slack setting failed!"
-    slack_mention_format: Mentions for each person are separated by ","!"
+    slack_mention_format: Mentions for each person are separated by ","!
+  dashboard_resources:
+    index:
+      title: "Project resource statistics chart"
+      resources_chart: "Project resource"
+  statistics_resources:
+    index:
+      export: "Export statistics resources"

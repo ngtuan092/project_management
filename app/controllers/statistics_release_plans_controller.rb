@@ -1,6 +1,7 @@
 class StatisticsReleasePlansController < ApplicationController
   before_action :logged_in_user
-
+  add_breadcrumb I18n.t("layouts.sidebar.list_statistic_release"),
+                 :statistics_release_plans_path
   def index
     @release_plans = fetch_release_plans
     @project_features = fetch_project_features

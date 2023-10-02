@@ -29,8 +29,4 @@
     <label class="form-label invisible">invisible label</label>
     <%= link_to t(".new_release_plan"), new_release_plan_path, class: "btn btn-primary form-control" %>
   </div>
-  <div class="col-auto ms-auto">
-    <label class="form-label invisible">invisible label</label>
-    <%= link_to t(".export"), statistics_release_plans_path(year: Date.current.year), class: "btn btn-secondary form-control" %>
-  </div>
 <% end %>

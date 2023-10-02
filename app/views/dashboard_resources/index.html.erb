@@ -1,0 +1,18 @@
+<% provide :title, t(".title") %>
+<div class="container">
+  <h1 class="text-center mb-8 fw-bold"><%= t ".title" %></h1>
+  <%= render "search" %>
+
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary"><%= t ".resources_chart" %></h6>
+    </div>
+    <div class="card-body">
+      <%= area_chart resources_chart(@projects,
+                                      start_month_field_value(params[:start_month_year]),
+                                      month_field_value(params[:end_month_year])), legend: "right",
+                                      xtitle: t("project_features.new.month"),
+                                      ytitle: t("resources.table.man_month") %>
+    </div>
+  </div>
+</div>

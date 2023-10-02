@@ -1,4 +1,4 @@
-<%= form_with url: statistics_resources_path, method: :get, class: "row g-4 pb-4 position-relative" do |f| %>
+<%= form_with url: dashboard_resources_path, method: :get, class: "row g-4 pb-4 position-relative" do |f| %>
   <div class="col-auto">
     <%= f.label :project_id,  t("project.form.name"), class: "form-label" %>
     <%= f.select :project_id, list_project, {include_blank: true, selected: params[:project_id]}, {class: "form-select"} %>
@@ -31,7 +31,7 @@
 
   <div class="col-auto w-100px">
     <label class="form-label invisible">invisible</label>
-    <%= link_to statistics_resources_path, class: "btn btn-secondary form-control" do %>
+    <%= link_to dashboard_resources_path, class: "btn btn-secondary form-control" do %>
       <i class="bi bi-arrow-counterclockwise"></i>
     <% end %>
   </div>

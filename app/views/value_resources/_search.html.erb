@@ -37,25 +37,4 @@
       <% end %>
     </div>
   </div>
-  <div class="row g-4 d-flex justify-content-between align-items-center m-0">
-    <div class="col-auto">
-      <div class="form-check form-switch">
-        <%= f.label :each_month_separately, t(".each_month_separately"), class: "form-check-label text-decoration-none" %>
-        <%= f.check_box :each_month_separately, {checked: boolean_params(:each_month_separately),
-                                                 class: "form-check-input w-50px mr-2",
-                                                 onclick: "this.form.submit()"} %>
-      </div>
-    </div>
-
-    <div class="col-auto">
-      <label class="form-label invisible">invisible label</label>
-      <%= link_to t("value_resources.index.export"),
-                  value_resources_path(format: :xlsx, name: params[:name], group_id: params[:group_id],
-                                       status: params[:status],
-                                       start_month_year: params[:start_month_year],
-                                       end_month_year: params[:end_month_year],
-                                       each_month_separately: params[:each_month_separately]),
-                  class: "btn btn-secondary form-control" %>
-    </div>
-  </div>
 <% end %>
