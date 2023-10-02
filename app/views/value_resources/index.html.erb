@@ -63,14 +63,6 @@
           </div>
         </div>
       </div>
-      <%= form_with url: value_resources_path, method: :get, class: "mb-2" do |f| %>
-        <div class="form-check form-switch mx-3 m-3">
-          <%= f.label :each_month_separately, t("value_resources.search.each_month_separately"), class: "form-check-label text-decoration-none" %>
-          <%= f.check_box :each_month_separately, {checked: boolean_params(:each_month_separately),
-                                                  class: "form-check-input w-50px mr-2",
-                                                  onclick: "this.form.submit()"} %>
-        </div>
-      <% end %>
       <tbody>
         <tr class="font-weight-bold">
           <td><%= t ".total" %></td>

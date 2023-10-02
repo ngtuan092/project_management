@@ -84,6 +84,14 @@ class ProjectFeature < ApplicationRecord
       .round(Settings.digits.length_2)
   end
 
+  class << self
+    def total_all_project_month
+      select(:project_id, :month, :year)
+        .group(:project_id, :month, :year)
+        .sum(:man_month)
+    end
+  end
+
   private
   def add_man_month_before_save
     self.man_month = calculator_man_month

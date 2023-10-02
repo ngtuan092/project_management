@@ -65,6 +65,7 @@ en:
       statistics_resources: "Statistics project resources"
       dashboard_resources: "Project resource statistics chart"
       statistics_values: "Project values statistics"
+      statistics_group: "Statistics by group"
   user_mailer:
     password_reset:
       subject: "Password reset"
@@ -702,3 +703,6 @@ en:
   statistics_resources:
     index:
       export: "Export statistics resources"
+  statistics_groups:
+    search:
+      average_month: "Average the months"

@@ -220,6 +220,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_28_152611) do
   create_table "user_groups", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "group_id", null: false
     t.bigint "user_id", null: false
+    t.datetime "joined_at"
+    t.datetime "left_at"
     t.index ["group_id"], name: "index_user_groups_on_group_id"
     t.index ["user_id"], name: "index_user_groups_on_user_id"
   end

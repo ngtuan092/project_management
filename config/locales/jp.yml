@@ -65,6 +65,7 @@ jp:
       statistics_resources: "統計プロジェクトのリソース"
       dashboard_resources: "プロジェクトリソース統計グラフ"
       statistics_values: "プロジェクト価値の統計"
+      statistics_group: "グループ別の統計"
   user_mailer:
     password_reset:
       subject: "パスワードのリセット"
@@ -702,3 +703,6 @@ jp:
   statistics_resources:
     index:
       export: "統計リソースのエクスポート"
+  statistics_groups:
+    search:
+      average_month: "月の平均"
