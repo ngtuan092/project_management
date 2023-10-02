@@ -443,6 +443,10 @@ jp:
       fail_delete: "このリリース計画は削除されていません。"
     cannot_delete: "このリリース計画は削除できません。 マネージャーと管理者のみがリリース計画を削除する権限を持っています。"
     you_sure?: "あなたは確かに？"
+    message:
+      project_name: "Dự án"
+      actual_release_date: "Ngày release"
+      description: "Mô tả scope release"
   project_user:
     update_success: "プロジェクトメンバーの更新は成功しました!"
     update_fail: "プロジェクトメンバーの更新に失敗しました!"
@@ -678,7 +682,7 @@ jp:
     project_slack_setting:
       mention: "受信機"
     form:
-      receiver: "受信機"
+      receiver: "受信機 ID"
       send_release: "リリース時にメッセージを送信する"
       send_value: "新しい値を追加するときにメッセージを送信する"
       send_resource: "新しいリソースを追加するときにメッセージを送信する"

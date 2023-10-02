@@ -443,6 +443,10 @@ vi:
       fail_delete: "Kế hoạch phát hành này chưa được xóa."
     cannot_delete: "Bạn không thể kế hoạch phát hành này. Chỉ có người quản lý và quản trị viên mới có quyền xóa kế hoạch phát hành."
     you_sure?: "Bạn chắc chắn chứ?"
+    message:
+      project_name: "Dự án"
+      actual_release_date: "Ngày release"
+      description: "Mô tả scope release"
   project_users:
     form:
       member: "Nhân viên"
@@ -678,7 +682,7 @@ vi:
     project_slack_setting:
       mention: "Người nhận"
     form:
-      receiver: "Mention người nhận"
+      receiver: "Mention ID người nhận"
       send_release: "Gửi tin nhắn khi đã release"
       send_value: "Gửi tin nhắn khi thêm mới value"
       send_resource: "Gửi tin nhắn khi thêm mới resource"
