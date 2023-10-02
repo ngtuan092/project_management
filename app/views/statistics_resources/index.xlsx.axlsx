@@ -1,0 +1,18 @@
+wb = xlsx_package.workbook
+
+s = wb.styles
+centered_bold = s.add_style alignment: { horizontal: :center }, b: true
+bold = s.add_style b: true
+
+wb.add_worksheet(name: "Resources Projects") do |sheet|
+  # du an || thang 1 | | | thang 2 | | | tong | | |
+  sheet.add_row header_months_xlsx(start_month_field_value(@start_month_year), month_field_value(@end_month_year)), style: centered_bold
+
+  # value
+  @projects.each do |project|
+    row_value = resources_project_xlsx(project, start_month_field_value(@start_month_year), month_field_value(@end_month_year))
+    row_value.unshift(project.name)
+    sheet.add_row row_value
+  end
+  sheet.add_row resources_projects_xlsx(@projects, start_month_field_value(@start_month_year), month_field_value(@end_month_year)), style: bold
+end

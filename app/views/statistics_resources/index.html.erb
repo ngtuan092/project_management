@@ -33,7 +33,11 @@
           </a>
           <div class="dropdown-menu">
             <%= link_to t(".export"),
-                statistics_resources_path,
+               statistics_resources_path(format: :xlsx, project_id: params[:project_id],
+                                      group_id: params[:group_id],
+                                      status: params[:status],
+                                      start_month_year: params[:start_month_year],
+                                      end_month_year: params[:end_month_year]),
                 class: "dropdown-item" %>
           </div>
         </div>
