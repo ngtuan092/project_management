@@ -48,10 +48,6 @@ module StatisticsResourcesHelper
     (start_date..end_date).map{|d| [d.year, d.month]}.uniq
   end
 
-  def convert_month_year_to_date month_year
-    [month_year, "1"].join("-").to_date
-  end
-
   def resources_project_xlsx project, start_month_year, end_month_year
     hash_month = ProjectMonthAnalyzer.call(project,
                                            start_month_year, end_month_year)

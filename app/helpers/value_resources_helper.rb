@@ -18,20 +18,10 @@ module ValueResourcesHelper
     safe_join out
   end
 
-  def project_month_service
-    if boolean_params(:each_month_separately)
-      ProjectMonthSeparatelyAnalyzer
-    else
-      ProjectMonthAnalyzer
-    end
-  end
+  def convert_month_year_to_date month_year
+    return Date.current.change(month: Date.current.month) if month_year.blank?
 
-  def project_month_summary_service
-    if boolean_params(:each_month_separately)
-      ProjectsMonthSeparatelySummaryAnalyzer
-    else
-      ProjectsMonthSummaryAnalyzer
-    end
+    [month_year, "1"].join("-").to_date
   end
 
   def value_resources_project_html project, start_month_year, end_month_year
@@ -60,10 +50,6 @@ module ValueResourcesHelper
 
     end_date = Date.current if end_date > Date.current
     (start_date..end_date).map{|d| [d.year, d.month]}.uniq
-  end
-
-  def convert_month_year_to_date month_year
-    [month_year, "1"].join("-").to_date
   end
 
   def start_month_field_value month_year_params

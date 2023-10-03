@@ -29,5 +29,6 @@ Rails.application.routes.draw do
     resources :lesson_learns
     resources :statistics_resources, only: :index
     resources :dashboard_resources, only: :index
+    resources :statistics_values, only: :index
   end
 end

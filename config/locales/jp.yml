@@ -14,6 +14,7 @@ jp:
     statistical: "統計"
     project_month: "値のリスト"
     checklist: "チェックリスト"
+    values: "プロジェクト価値の統計"
   application:
     project_management: "プロジェクト管理"
     invalid_start_date: "開始日は終了日より前でなければなりません"
@@ -63,6 +64,7 @@ jp:
       lesson_learn: "プロジェクトレッスン"
       statistics_resources: "統計プロジェクトのリソース"
       dashboard_resources: "プロジェクトリソース統計グラフ"
+      statistics_values: "プロジェクト価値の統計"
   user_mailer:
     password_reset:
       subject: "パスワードのリセット"

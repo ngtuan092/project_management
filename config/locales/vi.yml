@@ -14,6 +14,7 @@ vi:
     statistical: "Thống kê"
     project_month: "Danh sách giá trị"
     checklist: "Danh mục sức khỏe"
+    values: "Thống kê value dự án"
   application:
     project_management: "Quản lý dự án"
     invalid_start_date: "Ngày bắt đầu phải trước ngày kết thúc"
@@ -63,6 +64,7 @@ vi:
       lesson_learn: "Bài học dự án"
       statistics_resources: "Thống kê tài nguyên dự án"
       dashboard_resources: "Biểu đồ thống kê tài nguyên dự án"
+      statistics_values: "Thống kê values dự án"
   user_mailer:
     password_reset:
       subject: "Đặt lại mật khẩu"
