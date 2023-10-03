@@ -1,5 +1,6 @@
 <%= form_with model: @project, url: resources_path, method: :post do |f| %>
   <%= f.hidden_field :id, value: @project.id %>
+  <%= f.hidden_field :month_year, value: params[:month_year] %>
   <div class="mb-3" style="width: 66%; margin: auto;">
     <div class="my-2" data-controller="nested-rondo" data-associated-with="project_user_resources">
       <div data-nested-rondo-target="fieldContain">
