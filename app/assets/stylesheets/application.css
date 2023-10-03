@@ -14,6 +14,10 @@
  *= require_self
  */
 
+#mainNavbar {
+  overflow-x: auto;
+}
+
 .gu-mirror {
   margin: 0!important;
   opacity: .8;

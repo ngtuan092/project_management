@@ -25,4 +25,20 @@ module ApplicationHelper
   def boolean_params params_name
     params[params_name.to_sym].present? && params[params_name.to_sym] == "1"
   end
+
+  def project_month_service
+    if boolean_params(:each_month_separately)
+      ProjectMonthSeparatelyAnalyzer
+    else
+      ProjectMonthAnalyzer
+    end
+  end
+
+  def project_month_summary_service
+    if boolean_params(:each_month_separately)
+      ProjectsMonthSeparatelySummaryAnalyzer
+    else
+      ProjectsMonthSummaryAnalyzer
+    end
+  end
 end
