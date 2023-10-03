@@ -9,7 +9,7 @@
   </div>
   <div class="col-auto">
     <%= f.label :status, t("projects.search_form.status"), class: "form-label" %>
-    <%= f.select :status, list_statuses, {include_blank: true, selected: list_statuses_selected}, {class: "form-select"} %>
+    <%= f.select :status, list_statuses, {include_blank: true, selected: params[:status]}, {class: "form-select"} %>
   </div>
 
   <div class="col-auto">

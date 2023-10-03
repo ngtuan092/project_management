@@ -63,9 +63,10 @@ en:
       list_statistic_release: "Release schedule statistics"
       lesson_learn: "Project lessons"
       statistics_resources: "Statistics project resources"
-      dashboard_resources: "Project resource statistics chart"
+      dashboard_resources: "Project resources statistics chart"
       statistics_values: "Project values statistics"
       statistics_group: "Statistics by group"
+      dashboard_values: "Project values statistics chart"
   user_mailer:
     password_reset:
       subject: "Password reset"
@@ -699,10 +700,14 @@ en:
   dashboard_resources:
     index:
       title: "Project resource statistics chart"
-      resources_chart: "Project resource"
+      resources_chart: "Project resources"
   statistics_resources:
     index:
       export: "Export statistics resources"
   statistics_groups:
     search:
       average_month: "Average the months"
+  dashboard_values:
+    index:
+      title: "Project value statistics chart"
+      values_chart: "Project values"

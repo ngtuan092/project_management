@@ -5,10 +5,10 @@
 
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary text-uppercase"><%= t ".resources_chart" %></h6>
+      <h6 class="m-0 font-weight-bold text-primary text-uppercase"><%= t ".values_chart" %></h6>
     </div>
     <div class="card-body">
-      <%= area_chart resources_chart(@projects,
+      <%= area_chart values_chart(@projects,
                                       start_month_field_value(params[:start_month_year]),
                                       month_field_value(params[:end_month_year])), legend: "right",
                                       xtitle: t("project_features.new.month"),
