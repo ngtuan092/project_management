@@ -210,3 +210,10 @@ end
     project_id: Faker::Number.between(from: 1, to: 5),
   )
 end
+
+ProjectSlackSetting.create!(
+  project_id: 1,
+  slack_room: "project_status",
+  slack_mention: "U05ULHFS08M",
+  send_release: true,
+)

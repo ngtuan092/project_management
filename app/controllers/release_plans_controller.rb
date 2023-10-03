@@ -28,6 +28,7 @@ class ReleasePlansController < ApplicationController
     @release_plan = ReleasePlan.new release_plan_params
                                .merge(creator_id: current_user.id)
     if @release_plan.save
+      send_message_slack
       flash[:success] = t ".create_success"
       redirect_to release_plans_path
     else
@@ -47,6 +48,7 @@ class ReleasePlansController < ApplicationController
 
   def update
     if @release_plan.update release_plan_params
+      send_message_slack
       flash[:success] = t(".update_success")
       redirect_to release_plans_path
     else
@@ -67,6 +69,13 @@ class ReleasePlansController < ApplicationController
   end
 
   private
+
+  def send_message_slack
+    return unless @release_plan.is_released_released?
+
+    SendNotifSlackWhenReleaseJob.perform_async @release_plan.id
+  end
+
   def release_plan_params
     release_plan_params = params.require(:release_plan)
                                 .permit(

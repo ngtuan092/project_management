@@ -443,6 +443,10 @@ en:
       fail_delete: "This release plan has not been deleted."
     cannot_delete: "You cannot delete this release plan. Only managers and administrators have the authority to delete release plan."
     you_sure?: "You sure?"
+    message:
+      project_name: "Dự án"
+      actual_release_date: "Ngày release"
+      description: "Mô tả scope release"
   project_users:
     form:
       member: "Staff"
@@ -678,7 +682,7 @@ en:
     project_slack_setting:
       mention: "Receiver"
     form:
-      receiver: "Receiver"
+      receiver: "Receiver ID"
       send_release: "Send message when released"
       send_value: "Send a message when adding a new value"
       send_resource: "Send a message when adding a new resource"
