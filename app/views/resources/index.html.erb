@@ -5,13 +5,15 @@
 <% end %>
 
 <%= render("resources/search") %>
-<div class="row py-3">
+<div class="row">
   <div class="col">
     <!-- Card -->
     <div class="card border-0 flex-fill w-100">
       <div class="card-header border-0 card-header-space-between">
         <h2 class="card-header-title h4 text-uppercase fw-bold"><%= t ".resources" %></h2>
-
+        <div class="col-auto ms-auto">
+          <%= link_to "+", new_resource_path, class: "btn btn-info text-white form-control br fw-bold fs-4" %>
+        </div>
         <!-- Dropdown -->
         <div class="dropdown ms-4">
           <a href="javascript: void(0);" class="dropdown-toggle no-arrow text-secondary" role="button"

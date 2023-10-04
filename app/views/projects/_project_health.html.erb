@@ -3,15 +3,11 @@
     <div class="card-body">
       <div class="card-title row">
         <div class="col-sm-8"><h3><%= t "projects.show.Project_Health" %></h3></div>
-        <div class="col-sm-4">
+        <div class="col-auto ms-auto">
           <% if @project.project_health_items.present? %>
-            <%= link_to edit_health_path(@project), data: { turbo_frame: "project-health-body" }, class: "btn btn-primary btn-sm" do %>
-              <i class="fa fa-plus"></i> <%= t ".update_health" %>
-            <% end %>
+            <%= link_to t(".update_health"), edit_health_path(@project), data: { turbo_frame: "project-health-body" }, class: "btn btn-success" %>
           <% else %>
-            <%= link_to new_health_path(project_id: @project.id), data: { turbo: false }, class: "btn btn-primary btn-sm" do %>
-              <i class="fa fa-plus"></i> <%= t ".new_health" %>
-            <% end %>
+            <%= link_to "+", new_health_path(project_id: @project.id), data: { turbo: false }, class: "btn btn-info text-white form-control br fw-bold fs-4" %>
           <% end %>
         </div>
       </div>

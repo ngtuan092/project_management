@@ -125,7 +125,6 @@ en:
       date_resource: "Month/Year"
       name: "Project name"
       resource_index: "Resources List"
-      update_resource: "Update resource"
       header_excel:
         order: "No."
         month: "Month"
@@ -182,7 +181,6 @@ en:
       start_date: "Start date"
       end_date: "End date"
       description: "Description"
-      new_project: "New project"
       stt: "No."
       project_index: "Projects List"
       created_at: "Created at"
@@ -206,7 +204,6 @@ en:
       group: "Group"
       status: "Status"
       search: "Search"
-      new_project: "New project"
       start_date: "From created date"
       end_date: "To created date"
     project:
@@ -237,7 +234,7 @@ en:
     project_member:
       stt: "No."
       Project_Member: "Project Member"
-      Add_New: "Add New"
+      Add_New: "Add new"
       Member_name: "Member name"
       Role: "Role"
       Github_Account: "Github Account"
@@ -371,7 +368,6 @@ en:
       name: "Project name"
       status: "Status"
       search: "Search"
-      new_report: "New report"
       start_date_report: "Start date"
       end_date_report: "End date"
     destroy:
@@ -434,7 +430,6 @@ en:
       release_date_to: "To date"
       name: "Project Name"
       status: "Status"
-      new_release_plan: "New release plan"
     release_plan_detail:
       project_name: "Project name:"
       creator: "Creator:"
@@ -512,7 +507,6 @@ en:
       stt: "No."
       name: "Project's name"
       action: "Detail"
-      new_project_features: "New features"
       month_year: "Month - Year"
       export: "Export project features"
     create_success: "Create success"
@@ -585,6 +579,7 @@ en:
       each_month_separately: "Separate value for each month"
   health_items:
     index:
+      title: "Checklist"
       health_items_index: "Checklist"
       stt: "No."
       item: "Item"
@@ -646,7 +641,6 @@ en:
       learning_point: "Learning point"
       creator: "Creator"
       reference_process: "Reference process"
-      create_new: "Create new"
       export: "Export lesson learn"
     destroy:
       delete_success: "Lesson learn was successfully destroyed."

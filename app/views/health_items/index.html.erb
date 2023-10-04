@@ -1,19 +1,27 @@
 <% provide :title, t(".health_items_index") %>
 <%= render "search_form" %>
 <div class="table-responsive">
-  <table class="table table-striped align-middle table-hover table-bordered padding-margin-0">
-    <thead>
-    <tr>
-      <th scope="col" width="5%"><%= t ".stt" %></th>
-      <th scope="col"><%= t ".item" %></th>
-      <th scope="col"><%= t ".description" %></th>
-      <th scope="col"><%= t ".action" %></th>
-    </tr>
-    </thead>
-    <tbody id="health-items">
-    <%= render @health_items %>
-    </tbody>
-  </table>
+  <div class="card border-0 flex-fill w-100">
+    <table class="table table-striped align-middle table-hover table-bordered padding-margin-0">
+      <thead>
+      <tr>
+        <th scope="col" width="5%"><%= t ".stt" %></th>
+        <th scope="col"><%= t ".item" %></th>
+        <th scope="col"><%= t ".description" %></th>
+        <th scope="col"><%= t ".action" %></th>
+      </tr>
+      </thead>
+      <div class="card-header border-0 card-header-space-between">
+        <h2 class="card-header-title h4 text-uppercase fw-bold"><%= t ".title" %></h2>
+        <div class="col-auto ms-auto">
+          <%= link_to "+", new_health_item_path, data: {turbo_frame: "modal"}, class: "btn btn-info text-white form-control br fw-bold fs-4" %>
+        </div>
+      </div>
+      <tbody id="health-items">
+      <%= render @health_items %>
+      </tbody>
+    </table>
+  </div>
   <div class="card-footer">
     <div class="d-flex justify-content-between align-items-center">
       <% if @pagy&.pages > 1 %>

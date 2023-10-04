@@ -125,7 +125,6 @@ jp:
       date_resource: "月/年"
       name: "プロジェクト名"
       resource_index: "リソースリスト"
-      update_resource: "リソースを更新する"
       header_excel:
         order: "番号順"
         month: "月"
@@ -182,7 +181,6 @@ jp:
       start_date: "開始日"
       end_date: "終了日"
       description: "説明"
-      new_project: "新しいプロジェクト"
       stt: "番号順"
       project_index: "プロジェクト一覧"
       created_at: "作成日"
@@ -206,7 +204,6 @@ jp:
       group: "グループ"
       status: "状態"
       search: "検索"
-      new_project: "新しいプロジェクト"
       start_date: "作成日から"
       end_date: "作成日まで"
     project:
@@ -281,7 +278,7 @@ jp:
       password_confirmation: "パスワードの確認"
   not_found_user: "ユーザーが見つかりません"
   project:
-    new_project: "新しいプロジェクト"
+    new_project: "プロジェクトの作成"
     created_project: "プロジェクトの作成"
     create_success: "プロジェクトの作成に成功しました！"
     create_fail: "プロジェクトの作成に失敗しました！"
@@ -371,7 +368,6 @@ jp:
       name: "プロジェクト名"
       status: "状態"
       search: "検索"
-      new_report: "新しいレポート"
       start_date_report: "開始日"
       end_date_report: "終了日"
     destroy:
@@ -434,7 +430,6 @@ jp:
       release_date_to: "現在まで"
       name: "プロジェクト名"
       status: "状態"
-      new_release_plan: "新作リリース予定"
     release_plan_detail:
       project_name: "プロジェクト名:"
       creator: "クリエイター:"
@@ -512,7 +507,6 @@ jp:
       stt: "番号順"
       name: "プロジェクト名"
       action: "詳細"
-      new_project_features: "新機能"
       month_year: "月ー年"
       export: "プロジェクト機能のエクスポート"
     create_success: "成功を生み出す"
@@ -585,6 +579,7 @@ jp:
       each_month_separately: "月ごとに個別の値"
   health_items:
     index:
+      title: "チェックリスト"
       health_items_index: "チェックリスト"
       stt: "STT"
       item: "項目"
@@ -593,9 +588,9 @@ jp:
       is_enabled: "有様"
     cannot_modify: "改造することはできません！"
     search_form:
-      name: "Tên mục"
-      search: "Search"
-      new_project: "Thêm mục mới"
+      name: "項目名"
+      search: "検索"
+      new_project: "項目の作成"
     cannot_modify: "健康項目を変更する権限がありません"
     new:
       title: "プロジェクトの健全性チェックのチェックリストを作成する"
@@ -646,7 +641,6 @@ jp:
       learning_point: "学んだ教訓"
       creator: "クリエイター"
       reference_process: "参考プロセス"
-      create_new: "新しいレッスン"
       export: "レッスンリーンのエクスポート"
     destroy:
       delete_success: "レッスンリーンは正常に破棄されました。"
