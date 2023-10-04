@@ -28,6 +28,9 @@ module ValueResourcesHelper
     hash_month = project_month_service.call(project,
                                             start_month_year, end_month_year)
                                       .result
+    if boolean_params(:average_month)
+      hash_month = ProjectMonthAverage.call(hash_month).result
+    end
     value_resource_hash_to_html hash_month, :td
   end
 
@@ -36,6 +39,9 @@ module ValueResourcesHelper
                                                     start_month_year,
                                                     end_month_year)
                                               .result
+    if boolean_params(:average_month)
+      hash_month = ProjectMonthAverage.call(hash_month).result
+    end
     value_resource_hash_to_html hash_month, :td
   end
 
@@ -63,6 +69,9 @@ module ValueResourcesHelper
     hash_month = project_month_service.call(project,
                                             start_month_year, end_month_year)
                                       .result
+    if boolean_params(:average_month)
+      hash_month = ProjectMonthAverage.call(hash_month).result
+    end
     hash_month.values.map(&:values).flatten
   end
 
@@ -71,6 +80,9 @@ module ValueResourcesHelper
                                                     start_month_year,
                                                     end_month_year)
                                               .result
+    if boolean_params(:average_month)
+      hash_month = ProjectMonthAverage.call(hash_month).result
+    end
     values_array = hash_month.values.map(&:values).flatten
     values_array.unshift I18n.t("value_resources.index.total")
   end

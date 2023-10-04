@@ -41,4 +41,8 @@ module ApplicationHelper
       ProjectsMonthSummaryAnalyzer
     end
   end
+
+  def month_year_string year_month_array
+    year_month_array.reverse.join "-"
+  end
 end

@@ -13,8 +13,8 @@
         <tr>
           <th class="w-200px"></th>
           <% month_number_displayed(start_month_field_value(params[:start_month_year]),
-                                    month_field_value(params[:end_month_year])).each do |month_year| %>
-            <th colspan="3" class="w-400px"> <%= t "project_features.project_feature.month" %> <%= month_year.join("-") %> </th>
+                                    month_field_value(params[:end_month_year])).each do |year_month| %>
+            <th colspan="3" class="w-400px"> <%= t "project_features.project_feature.month" %> <%= month_year_string year_month %> </th>
           <% end %>
           <th colspan="3" class="w-600px"><%= t ".total_year" %></th>
         </tr>
