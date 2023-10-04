@@ -3,20 +3,22 @@ class ProjectFeaturesController < ApplicationController
   before_action :find_project_feature, only: %i(edit update destroy)
   before_action :check_role, :filtered_project_features,
                 only: %i(update destroy)
-  before_action :find_project, only: :create
+  before_action :find_project, only: %i(show create)
 
   add_breadcrumb I18n.t("breadcrumbs.project_features"), :project_features_path
 
   def index
-    @year, @month = params[:month_year]&.split("-")
-    @projects = Project.filter_features(@month, @year)
+    from_year, from_month = params[:from_month_year]&.split("-")
+    to_year, to_month = params[:to_month_year]&.split("-")
+
+    @projects = Project.filter_features_from(from_month, from_year)
+                       .filter_features_to(to_month, to_year)
                        .filter_name(params[:name])
     @pagy, @project = pagy @projects, items: Settings.pagy.number_items_10
   end
 
   def show
     month, year = month_year_params
-    @project = Project.find(params[:id])
     @project_features = @project.project_features.filter_month(month)
                                 .filter_year(year).by_recently_created
     add_breadcrumb "#{@project.name} (#{month}/#{year})"

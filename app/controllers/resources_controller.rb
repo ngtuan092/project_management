@@ -4,8 +4,11 @@ class ResourcesController < ApplicationController
   before_action :find_project, only: :show
 
   def index
-    @year, @month = params[:month_year]&.split("-")
-    @all_projects = filtered_projects
+    from_year, from_month = params[:from_month_year]&.split("-")
+    to_year, to_month = params[:to_month_year]&.split("-")
+    @all_projects = Project.filter_resources_from(from_month, from_year)
+                           .filter_resources_to(to_month, to_year)
+                           .filter_name(params[:name])
     @pagy, @projects = pagy @all_projects, items: Settings.pagy.number_items_10
 
     respond
@@ -56,13 +59,6 @@ class ResourcesController < ApplicationController
   end
 
   private
-
-  def filtered_projects
-    Project.filter_name(params[:name])
-           .filter_resources(@month, @year)
-           .by_recently_created
-  end
-
   def send_slack_after_create
     date = Date.parse("#{project_user_resources_params['month_year']}-1")
     SendNotifSlackWhenUpdateResources.perform_async(

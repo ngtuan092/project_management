@@ -509,6 +509,8 @@ en:
       action: "Detail"
       month_year: "Month - Year"
       export: "Export project features"
+      from_month: "From month-year"
+      to_month: "To month-year"
     create_success: "Create success"
     create_fail: "Create fail"
     can_not_find_project: "Can not find project"
@@ -635,6 +637,8 @@ en:
   lesson_learns:
     search:
       lesson_category: "Lesson category"
+      start_date: "Creation start date"
+      end_date: "Creation date ends"
     index:
       category_name: "Category name"
       context_description: "Context description"

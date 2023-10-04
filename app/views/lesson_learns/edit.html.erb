@@ -7,12 +7,6 @@
       } %>
       <h1 class="mb-3 text-center fw-bold"><%= t(".title").upcase %></h1>
       <%= render "form", url:  lesson_learn_path(@lesson_learn), remote: true %>
-      <div class="d-flex justify-content-center align-items-center mt-3">
-        <%= link_to t(".close"), "#", class: "btn btn-danger btn-md w-50 ", data: {
-          controller: "modals",
-          action: "modals#close"
-        } %>
-      </div>
     </div>
   <% end %>
 </div>

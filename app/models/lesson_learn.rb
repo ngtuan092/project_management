@@ -19,7 +19,7 @@ class LessonLearn < ApplicationRecord
 
   delegate :name, to: :lesson_learn_category, prefix: true
   delegate :name, to: :creator, prefix: true
-  delegate :name, to: :project, prefix: true
+  delegate :name, to: :project, prefix: true, allow_nil: true
 
   scope :filter_lesson_category, lambda {|lesson_learn_category_id|
     where(lesson_learn_category_id:) if lesson_learn_category_id.present?

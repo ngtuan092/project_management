@@ -510,6 +510,8 @@ vi:
       action: "Chi tiết"
       month_year: "Tháng - Năm"
       export: "Xuất tính năng"
+      from_month: "Từ tháng-năm"
+      to_month: "Đến tháng-năm"
     create_success: "Tạo tính năng thành công"
     create_fail: "Create fail"
     can_not_find_project: "Can not find project"
@@ -636,6 +638,8 @@ vi:
   lesson_learns:
     search:
       lesson_category: "Thể loại bài học"
+      start_date: "Từ ngày tạo"
+      end_date: "Tới ngày tạo"
     index:
       category_name: "Danh mục"
       context_description: "Mô tả bối cảnh"

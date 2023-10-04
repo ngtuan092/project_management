@@ -120,22 +120,67 @@ class Project < ApplicationRecord
     valid_group_ids = group.nested_sub_group_ids << group_id
     where group_id: valid_group_ids
   }
-  scope :filter_features, lambda {|month, year|
-    joins(:project_features)
-      .where(month.nil? ? nil : {project_features: {month:}})
-      .where(year.nil? ? nil : {project_features: {year:}})
-      .select(
-        "projects.*, project_features.month as month,
+  scope :filter_features_from, lambda {|from_month, from_year|
+    query = joins(:project_features)
+    if from_month.present? && from_year.present?
+      # if from_year < year in record, then don't need to check month
+      query = query.where("project_features.year > ? OR
+                                  (project_features.year = ? AND
+                                   project_features.month >= ?)",
+                          from_year, from_year, from_month)
+    end
+    query.select(
+      "projects.*, project_features.month as month,
          project_features.year as year"
-      )
-      .distinct
-      .order(:year, :month)
+    )
+         .distinct
+         .order(:year, :month)
   }
-  scope :filter_resources, lambda {|month, year|
-    includes(:project_user_resources)
-      .joins(:project_user_resources)
-      .merge(ProjectUserResource.filter_month(month))
-      .merge(ProjectUserResource.filter_year(year))
+  scope :filter_features_to, lambda {|to_month, to_year|
+    query = joins(:project_features)
+    if to_month.present? && to_year.present?
+      # if to_year > year in record, then don't need to check month
+      query = query.where("project_features.year < ? OR
+                                  (project_features.year = ? AND
+                                   project_features.month <= ?)",
+                          to_year, to_year, to_month)
+    end
+    query.select(
+      "projects.*, project_features.month as month,
+         project_features.year as year"
+    )
+         .distinct
+         .order(:year, :month)
+  }
+  scope :filter_resources_to, lambda {|to_month, to_year|
+    query = joins(:project_user_resources)
+    if to_month.present? && to_year.present?
+      query = query.where("project_user_resources.year < ? OR
+                                  (project_user_resources.year = ? AND
+                                   project_user_resources.month <= ?)",
+                          to_year, to_year, to_month)
+    end
+    query.select(
+      "projects.*, project_user_resources.month as month,
+         project_user_resources.year as year"
+    )
+         .distinct
+         .order(:year, :month)
+  }
+  scope :filter_resources_from, lambda {|from_month, from_year|
+    query = joins(:project_user_resources)
+    if from_month.present? && from_year.present?
+      query = query.where("project_user_resources.year > ? OR
+                                  (project_user_resources.year = ? AND
+                                   project_user_resources.month >= ?)",
+                          from_year, from_year, from_month)
+    end
+    query.select(
+      "projects.*, project_user_resources.month as month,
+         project_user_resources.year as year"
+    )
+         .distinct
+         .order(:year, :month)
   }
   scope :created_by_user_or_psm, lambda {|current_user|
     where(creator_id: current_user.id)
@@ -173,10 +218,7 @@ class Project < ApplicationRecord
     man_month.round Settings.digits.length_2
   end
 
-  def calculate_project_resource_man_per_month month_year
-    year, month = month_year&.split("-")
-    year ||= Time.zone.now.year
-    month ||= Time.zone.now.month
+  def calculate_project_resource_man_per_month month, year
     project_user_resources.total_man_month_year(month, year)
   end
 
