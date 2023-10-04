@@ -38,12 +38,20 @@
     </div>
   </div>
   <div class="row mb-3">
-    <div class="col-auto">
+    <div class="col-auto mr-2">
       <div class="form-check form-switch">
         <%= f.label :each_month_separately, t("value_resources.search.each_month_separately"), class: "form-check-label text-decoration-none" %>
         <%= f.check_box :each_month_separately, {checked: boolean_params(:each_month_separately),
                                                    class: "form-check-input w-50px mr-2",
                                                    onclick: "this.form.submit()"} %>
+      </div>
+    </div>
+    <div class="col-auto">
+      <div class="form-check form-switch">
+        <%= f.label :average_month, t("statistics_groups.search.average_month"), class: "form-check-label text-decoration-none" %>
+        <%= f.check_box :average_month, {checked: boolean_params(:average_month),
+                                         class: "form-check-input w-50px mr-2 form-check-input-primary",
+                                         onclick: "this.form.submit()"} %>
       </div>
     </div>
   </div>
