@@ -1,6 +1,7 @@
 class ApplicationRecord < ActiveRecord::Base
   primary_abstract_class
 
+  scope :by_earliest_created, ->{order(created_at: :asc)}
   scope :by_recently_created, ->{order(created_at: :desc)}
   scope :filter_start_date, lambda {|start_date|
     where("created_at >= ?", start_date) if start_date.present? &&

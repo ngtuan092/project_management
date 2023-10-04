@@ -32,6 +32,15 @@ class ProjectUserResource < ApplicationRecord
     project_user.user.name
   end
 
+  class << self
+    def total_all_project_month
+      joins(:project_user)
+        .select(:project_id, :month, :year)
+        .group(:project_id, :month, :year)
+        .sum(:man_month)
+    end
+  end
+
   private
 
   def add_man_month_before_save

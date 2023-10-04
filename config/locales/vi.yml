@@ -65,6 +65,7 @@ vi:
       statistics_resources: "Thống kê tài nguyên dự án"
       dashboard_resources: "Biểu đồ thống kê tài nguyên dự án"
       statistics_values: "Thống kê values dự án"
+      statistics_group: "Thống kê theo nhóm"
   user_mailer:
     password_reset:
       subject: "Đặt lại mật khẩu"
@@ -702,3 +703,6 @@ vi:
   statistics_resources:
     index:
       export: "Xuất thống kê tài nguyên"
+  statistics_groups:
+    search:
+      average_month: "Tính trung bình các tháng"

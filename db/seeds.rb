@@ -78,7 +78,8 @@ users = User.all
 100.times do |i|
   UserGroup.create!(
     group_id: Faker::Number.between(from: 1, to: groups.size),
-    user_id: Faker::Number.between(from: 1, to: users.size)
+    user_id: Faker::Number.between(from: 1, to: users.size),
+    joined_at: Faker::Date.between(from: 6.months.ago, to: 2.months.ago)
   )
 end
 users.each do |user|
@@ -170,8 +171,8 @@ end
     project_id: Faker::Number.between(from: 1, to: projects.size),
     name: Faker::Name.name,
     description: Faker::Lorem.sentence,
-    month: Faker::Number.between(from: 1, to: 12),
-    year: Faker::Number.between(from: 2023, to: 2024),
+    month: Faker::Number.between(from: 5, to: 10),
+    year: Faker::Number.between(from: 2023, to: 2023),
     waste_description: Faker::Lorem.sentence,
     effort_saved: Faker::Number.between(from: 1, to: 10),
     repeat_time: Faker::Number.between(from: 1, to: 10),
@@ -180,12 +181,12 @@ end
   )
 end
 
-5.times do |i|
+20.times do |i|
   ProjectUserResource.create!(
-    project_user_id: Faker::Number.between(from: 1, to: 10),
+    project_user_id: Faker::Number.between(from: 1, to: 50),
     percentage: Faker::Number.between(from: 1, to: 30),
-    month: Faker::Number.between(from: 1, to: 12),
-    year: Faker::Number.between(from: 2023, to: 2024),
+    month: Faker::Number.between(from: 5, to: 10),
+    year: Faker::Number.between(from: 2023, to: 2023),
     man_month: Faker::Number.between(from: 0, to: 5),
     )
 end

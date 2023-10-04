@@ -83,3 +83,8 @@
 .border-2 {
   border: #0a0a0b 2px;
 }
+
+.form-switch .form-check-input-primary:checked {
+  background-color: #0d6efd!important;
+  border-color: #0d6efd!important;
+}
