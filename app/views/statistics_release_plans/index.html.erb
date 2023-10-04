@@ -1,11 +1,11 @@
 <% provide :title, t(".title") %>
 <div class="container">
-  <h1 class="text-center mb-8 fw-bold"><%= t ".title" %></h1>
+  <h1 class="text-center mb-8 fw-bold text-uppercase"><%= t ".title" %></h1>
   <%= render "search" %>
 
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary"><%= t ".statistical_chart" %></h6>
+      <h6 class="m-0 font-weight-bold text-primary text-uppercase"><%= t ".statistical_chart" %></h6>
     </div>
     <div class="card-body">
       <%= line_chart release_plans_chart(@release_plans, @project_features, params[:year]),
@@ -17,7 +17,7 @@
     <div class="col-8">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary"><%= "#{t ".release_total"}: #{@release_plans.size}" %></h6>
+          <h6 class="m-0 font-weight-bold text-primary text-uppercase"><%= "#{t ".release_total"}: #{@release_plans.size}" %></h6>
         </div>
         <div class="card-body">
           <% release_plans_by_status(@release_plans).each do |ele| %>

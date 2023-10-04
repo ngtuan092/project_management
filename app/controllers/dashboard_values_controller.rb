@@ -1,8 +1,8 @@
-class DashboardResourcesController < ApplicationController
+class DashboardValuesController < ApplicationController
   before_action :logged_in_user
 
-  add_breadcrumb I18n.t("layouts.sidebar.dashboard_resources"),
-                 :dashboard_resources_path
+  add_breadcrumb I18n.t("layouts.sidebar.dashboard_values"),
+                 :dashboard_values_path
 
   def index
     @projects = Project.filter_project(params[:project_id])

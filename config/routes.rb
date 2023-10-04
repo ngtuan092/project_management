@@ -31,5 +31,6 @@ Rails.application.routes.draw do
     resources :dashboard_resources, only: :index
     resources :statistics_values, only: :index
     resources :statistics_groups, only: :index
+    resources :dashboard_values, only: :index
   end
 end

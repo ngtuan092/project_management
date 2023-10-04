@@ -5,7 +5,7 @@
         controller: "modals",
         action: "modals#close"
       } %>
-      <h1 class="mb-3 text-center fw-bold"><%= @report.project_name %></h1>
+      <h1 class="mb-3 text-center fw-bold text-uppercase"><%= @report.project_name %></h1>
         <%= render "report_detail" %>
       <div class="d-flex justify-content-center align-items-center">
         <%= link_to t(".close"), "#", class: "btn btn-danger btn-md w-50 ", data: {

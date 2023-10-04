@@ -1,12 +1,14 @@
-<%= form_with url: statistics_resources_path, method: :get, class: "row g-4 pb-4 position-relative" do |f| %>
+<%= form_with url: dashboard_values_path, method: :get, class: "row g-4 pb-4 position-relative" do |f| %>
   <div class="col-auto">
     <%= f.label :project_id,  t("project.form.name"), class: "form-label" %>
     <%= f.select :project_id, list_project, {include_blank: true, selected: params[:project_id]}, {class: "form-select"} %>
   </div>
+
   <div class="col-auto">
     <%= f.label :group_id, t("project.form.group"), class: "form-label" %>
     <%= f.select :group_id, list_group, {include_blank: true, selected: params[:group_id]}, {class: "form-select"} %>
   </div>
+
   <div class="col-auto">
     <%= f.label :status, t("projects.search_form.status"), class: "form-label" %>
     <%= f.select :status, list_statuses, {include_blank: true, selected: params[:status]}, {class: "form-select"} %>
@@ -31,8 +33,19 @@
 
   <div class="col-auto w-100px">
     <label class="form-label invisible">invisible</label>
-    <%= link_to statistics_resources_path, class: "btn btn-secondary form-control" do %>
+    <%= link_to dashboard_values_path, class: "btn btn-secondary form-control" do %>
       <i class="bi bi-arrow-counterclockwise"></i>
     <% end %>
+  </div>
+
+  <div class="row mb-2 mt-4">
+    <div class="col-auto">
+      <div class="form-check form-switch">
+        <%= f.label :each_month_separately, t("value_resources.search.each_month_separately"), class: "form-check-label text-decoration-none" %>
+        <%= f.check_box :each_month_separately, {checked: boolean_params(:each_month_separately),
+                                                   class: "form-check-input w-50px mr-2",
+                                                   onclick: "this.form.submit()"} %>
+      </div>
+    </div>
   </div>
 <% end %>

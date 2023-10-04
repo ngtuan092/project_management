@@ -43,24 +43,17 @@
           </div>
         </div>
       </div>
-      <%= form_with url: statistics_values_path, method: :get, class: "mb-2" do |f| %>
-        <div class="form-check form-switch mx-3 m-3">
-          <%= f.label :each_month_separately, t("value_resources.search.each_month_separately"), class: "form-check-label text-decoration-none" %>
-          <%= f.check_box :each_month_separately, {checked: boolean_params(:each_month_separately),
-                                                   class: "form-check-input w-50px mr-2",
-                                                   onclick: "this.form.submit()"} %>
-        </div>
-      <% end %>
+
       <tbody>
-      <tr class="font-weight-bold">
-        <td><%= t "value_resources.index.total" %></td>
-        <%= values_projects_html @projects,
-                                    start_month_field_value(params[:start_month_year]),
-                                    month_field_value(params[:end_month_year]) %>
-      </tr>
-      <% @project_pagys.each do |project| %>
-        <%= render partial: "statistics_value", locals: {project: project} %>
-      <% end %>
+        <tr class="font-weight-bold">
+          <td><%= t "value_resources.index.total" %></td>
+          <%= values_projects_html @projects,
+                                      start_month_field_value(params[:start_month_year]),
+                                      month_field_value(params[:end_month_year]) %>
+        </tr>
+        <% @project_pagys.each do |project| %>
+          <%= render partial: "statistics_value", locals: {project: project} %>
+        <% end %>
       </tbody>
     </table>
   </div>

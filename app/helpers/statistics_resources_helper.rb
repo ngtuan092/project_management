@@ -1,8 +1,4 @@
 module StatisticsResourcesHelper
-  def list_statuses_selected
-    params[:status] || Project.statuses[:in_progress]
-  end
-
   # convert hash to list resources tag
   def resource_hash_to_html hash, html_tag
     # get all resources value in hash
