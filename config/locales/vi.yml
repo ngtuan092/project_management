@@ -515,7 +515,7 @@ vi:
       new_project_features: "Tính năng mới"
       month_year: "Tháng - Năm"
       export: "Xuất tính năng"
-    create_success: "Create success"
+    create_success: "Tạo tính năng thành công"
     create_fail: "Create fail"
     can_not_find_project: "Can not find project"
     new:
@@ -711,3 +711,8 @@ vi:
     index:
       title: "Biểu đồ thống kê values dự án"
       values_chart: "Values dự án"
+  add_value:
+    message:
+      project_name: "Dự án"
+      date: "Tháng"
+      sum_value: "Tổng số value đã thêm"

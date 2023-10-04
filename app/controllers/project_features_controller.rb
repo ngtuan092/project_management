@@ -27,6 +27,8 @@ class ProjectFeaturesController < ApplicationController
   def update
     if @project_feature.update project_feature_params
       flash.now[:success] = t ".update_success"
+      send_message_slack @project_feature.project_id, @project_feature.month,
+                         @project_feature.year
       respond_to(&:turbo_stream)
     else
       render :edit, status: :unprocessable_entity
@@ -34,8 +36,12 @@ class ProjectFeaturesController < ApplicationController
   end
 
   def destroy
+    project_id = @project_feature.project_id
+    month = @project_feature.month
+    year = @project_feature.year
     if @project_feature.destroy
       flash.now[:success] = t ".delete_success"
+      send_message_slack project_id, month, year
       respond_to(&:turbo_stream)
     else
       flash[:danger] = t ".fail_delete"
@@ -52,6 +58,8 @@ class ProjectFeaturesController < ApplicationController
   def create
     if @project.save
       flash[:success] = t ".create_success"
+      month_year = month_year_params
+      send_message_slack @project.id, month_year[0], month_year[1]
       redirect_to project_features_path
     else
       @project = Project.new project_feature_params_create
@@ -148,5 +156,9 @@ class ProjectFeaturesController < ApplicationController
         response.headers["Content-Disposition"] = header
       end
     end
+  end
+
+  def send_message_slack project_id, month, year
+    SendNotifSlackWhenAddValueJob.perform_async project_id, month, year
   end
 end

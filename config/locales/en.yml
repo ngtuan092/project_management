@@ -711,3 +711,8 @@ en:
     index:
       title: "Project value statistics chart"
       values_chart: "Project values"
+  add_value:
+    message:
+      project_name: "Project name"
+      date: "Date"
+      sum_value: "Sum value"

@@ -711,3 +711,8 @@ jp:
     index:
       title: "プロジェクト価値統計グラフ"
       values_chart: "プロジェクト価値"
+  add_value:
+    message:
+      project_name: "プロジェクト名"
+      date: "日付"
+      sum_value: "合計値"
