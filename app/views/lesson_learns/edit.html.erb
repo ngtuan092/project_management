@@ -1,10 +1,9 @@
 <div class="container w-75 d-flex justify-content-center">
   <%= turbo_frame_tag "modal" do %>
     <div class="modal-member z-3">
-      <%= link_to "x", "#", class: "close_x square", data: {
-        controller: "modals",
-        action: "modals#close"
-      } %>
+      <%= link_to "#", class: "close_x square", data: {controller: "modals", action: "modals#close"} do %>
+        <span>X</span>
+      <% end %>
       <h1 class="mb-3 text-center fw-bold"><%= t(".title").upcase %></h1>
       <%= render "form", url:  lesson_learn_path(@lesson_learn), remote: true %>
     </div>

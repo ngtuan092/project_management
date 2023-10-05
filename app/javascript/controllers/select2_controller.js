@@ -5,6 +5,8 @@ import Select2 from "select2"
 export default class extends Controller {
   connect() {
     Select2()
-    $('.select2').select2();
+    $('.select2').select2({
+      theme: 'bootstrap-5'
+    });
   }
 }

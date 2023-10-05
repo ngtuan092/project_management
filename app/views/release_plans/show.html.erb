@@ -1,10 +1,9 @@
 <div class="container w-50 d-flex justify-content-center">
   <%= turbo_frame_tag "modal" do %>
     <div class="modal-member">
-      <%= link_to "x", "#", class: "close_x square", data: {
-      controller: "modals",
-      action: "modals#close"
-      } %>
+      <%= link_to "#", class: "close_x square", data: {controller: "modals", action: "modals#close"} do %>
+        <span>X</span>
+      <% end %>
       <h1 class="mb-3 text-center fw-bold text-uppercase"><%= @release_plan.project_name %></h1>
         <%= render "release_plan_detail" %>
       <div class="d-flex justify-content-center align-items-center">

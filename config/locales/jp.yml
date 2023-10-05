@@ -704,7 +704,7 @@ jp:
       export: "統計リソースのエクスポート"
   statistics_groups:
     search:
-      average_month: "月の平均"
+      average_month: "月の平均値"
   dashboard_values:
     index:
       title: "プロジェクト価値統計グラフ"

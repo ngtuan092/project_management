@@ -1,5 +1,5 @@
 <%= form_with url: value_resources_path, method: :get, class: "row g-4 position-relative" do |f| %>
-  <div class="row mb-3">
+  <div class="row mb-4 justify-content-between w-75">
     <div class="col-auto">
       <%= f.label :name,  t("project.form.name"), class: "form-label" %>
       <%= f.text_field :name, value: params[:name], class: "form-control" %>
@@ -24,35 +24,32 @@
       <%= f.date_field :end_month_year, type: "month",
                        value: month_field_value(params[:end_month_year]), class: "form-control" %>
     </div>
-
-    <div class="col-auto w-140px">
-      <label class="form-label invisible">invisible</label>
-      <%= f.submit t("projects.search_form.search"), name: nil, class: "btn btn-primary form-control" %>
-    </div>
-
-    <div class="col-auto w-90px">
-      <label class="form-label invisible">invisible</label>
-      <%= link_to value_resources_path, class: "btn btn-secondary form-control" do %>
-        <i class="bi bi-arrow-counterclockwise"></i>
-      <% end %>
-    </div>
   </div>
 
-  <div class="row mb-25">
-    <div class="col-auto mr-2">
+  <div class="row mb-3 justify-content-between align-items-center w-75">
+    <div class="col-auto d-flex flex-row align-items-center">
       <div class="form-check form-switch">
         <%= f.label :each_month_separately, t("value_resources.search.each_month_separately"), class: "form-check-label text-decoration-none" %>
         <%= f.check_box :each_month_separately, {checked: boolean_params(:each_month_separately),
                                                    class: "form-check-input w-50px mr-2",
                                                    onclick: "this.form.submit()"} %>
       </div>
-    </div>
-    <div class="col-auto">
-      <div class="form-check form-switch">
+      <div class="form-check form-switch ml-35">
         <%= f.label :average_month, t("statistics_groups.search.average_month"), class: "form-check-label text-decoration-none" %>
         <%= f.check_box :average_month, {checked: boolean_params(:average_month),
                                          class: "form-check-input w-50px mr-2 form-check-input-primary",
                                          onclick: "this.form.submit()"} %>
+      </div>
+    </div>
+    <div class="col-auto d-flex flex-row align-items-center">
+      <div class="w-140px">
+        <%= f.submit t("projects.search_form.search"), name: nil, class: "btn btn-primary form-control" %>
+      </div>
+
+      <div class="w-90px ml-35">
+        <%= link_to statistics_values_path, class: "btn btn-secondary form-control" do %>
+          <i class="bi bi-arrow-counterclockwise"></i>
+        <% end %>
       </div>
     </div>
   </div>
