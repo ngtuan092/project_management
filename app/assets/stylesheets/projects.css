@@ -86,7 +86,7 @@ input:focus-visible + label {
 }
 
 .tabset {
-    max-width: 65em;
+    max-width: 80em;
 }
 
 .table-wrapper {

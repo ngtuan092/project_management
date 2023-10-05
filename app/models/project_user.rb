@@ -3,6 +3,7 @@ class ProjectUser < ApplicationRecord
                  .freeze
   belongs_to :user
   belongs_to :project
+  has_many :user_groups, through: :user
   belongs_to :project_role, class_name: Role.name
   has_many :project_user_resources, dependent: :destroy
 
@@ -23,6 +24,11 @@ class ProjectUser < ApplicationRecord
     message: I18n.t("project_user.unique_user_in_project")
   }
   validate :validate_dates
+
+  def group_name_text
+    groups_name = user_groups.map(&:group_name)
+    groups_name.join(",\n")
+  end
 
   private
 
