@@ -2,6 +2,7 @@ module DashboardResourcesHelper
   def resource_project project, start_month_year, end_month_year
     hash_month = ProjectMonthAnalyzer.call(project, start_month_year,
                                            end_month_year).result
+    hash_month.delete(:total)
     hash = {}
     hash_month.each do |key, value|
       hash[key] = value[:resource]

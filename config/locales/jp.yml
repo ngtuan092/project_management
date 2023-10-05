@@ -509,6 +509,8 @@ jp:
       action: "詳細"
       month_year: "月ー年"
       export: "プロジェクト機能のエクスポート"
+      from_month: "月ー年から"
+      to_month: "月ー年まで"
     create_success: "成功を生み出す"
     create_fail: "作成失敗"
     can_not_find_project: "プロジェクトが見つかりません"
@@ -635,6 +637,8 @@ jp:
   lesson_learns:
     search:
       lesson_category: "レッスンカテゴリー"
+      start_date: "作成開始日"
+      end_date: "作成日が終了します"
     index:
       category_name: "カテゴリー名"
       context_description: "コンテキストの説明"
