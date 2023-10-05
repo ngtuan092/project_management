@@ -25,9 +25,12 @@ class SendNotifSlackWhenReleaseJob
   def message project_name, mention, released_at, description
     released_at = released_at.strftime Settings.date.format
     "#{mention}\n
-     #{I18n.t('release_plans.message.project_name')}: #{project_name}\n
-     #{I18n.t('release_plans.message.actual_release_date')}: #{released_at}\n
-     #{I18n.t('release_plans.message.description')}: #{description}"
+     #{I18n.t('release_plans.message.project_name',
+              locale: :vi)}: #{project_name}\n
+     #{I18n.t('release_plans.message.actual_release_date',
+              locale: :vi)}: #{released_at}\n
+     #{I18n.t('release_plans.message.description',
+              locale: :vi)}: #{description}"
   end
 
   def convert_to_slack_mention users
