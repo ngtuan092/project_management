@@ -705,7 +705,7 @@ vi:
       export: "Xuất thống kê tài nguyên"
   statistics_groups:
     search:
-      average_month: "Tính trung bình các tháng"
+      average_month: "Tính giá trị trung bình các tháng"
   dashboard_values:
     index:
       title: "Biểu đồ thống kê values dự án"

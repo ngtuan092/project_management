@@ -5,18 +5,18 @@
   </div>
 
   <div class="col-auto">
-    <%= f.label :start_date, t(".start_date"), class: "form-label" %>
-    <%= f.date_field :start_date, value: params[:start_date], class: "form-control" %>
+    <%= f.label :creator_id, t("lesson_learns.index.creator"), class: "form-label" %>
+    <%= f.select :creator_id, list_users, {include_blank: true, selected: params[:creator_id]}, {class: "form-select"} %>
+  </div>
+
+  <div class="col-auto">
+    <%= f.label :start_date, t("project.form.start_date"), class: "form-label" %>
+    <%= f.date_field :start_date, value: date_field_value(params[:start_date]), class: "form-control" %>
   </div>
 
   <div class="col-auto">
     <%= f.label :end_date, t(".end_date"), class: "form-label" %>
     <%= f.date_field :end_date, value: params[:end_date], class: "form-control" %>
-  </div>
-
-  <div class="col-auto">
-    <%= f.label :creator_id, t("lesson_learns.index.creator"), class: "form-label" %>
-    <%= f.select :creator_id, list_users, {include_blank: true, selected: params[:creator_id]}, {class: "form-select"} %>
   </div>
 
   <div class="col-auto w-140px">

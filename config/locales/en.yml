@@ -704,7 +704,7 @@ en:
       export: "Export statistics resources"
   statistics_groups:
     search:
-      average_month: "Average the months"
+      average_month: "Average value of the months"
   dashboard_values:
     index:
       title: "Project value statistics chart"

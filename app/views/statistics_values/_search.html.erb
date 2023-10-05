@@ -1,8 +1,8 @@
 <%= form_with url: statistics_values_path, method: :get, class: "row g-4 pb-4 position-relative" do |f| %>
-  <div class="row mb-3">
-    <div class="col-auto">
+  <div class="row mb-5 justify-content-between w-75">
+    <div class="col-auto" data-controller="select2">
       <%= f.label :project_id,  t("project.form.name"), class: "form-label" %>
-      <%= f.select :project_id, list_project, {include_blank: true, selected: params[:project_id]}, {class: "form-select"} %>
+      <%= f.select :project_id, list_project, {include_blank: true, selected: params[:project_id]}, {class: "form-select select2"} %>
     </div>
     <div class="col-auto">
       <%= f.label :group_id, t("project.form.group"), class: "form-label" %>
@@ -24,26 +24,26 @@
       <%= f.date_field :end_month_year, type: "month",
                        value: month_field_value(params[:end_month_year]), class: "form-control" %>
     </div>
-
-    <div class="col-auto w-140px">
-      <label class="form-label invisible">invisible</label>
-      <%= f.submit t("projects.search_form.search"), name: nil, class: "btn btn-primary form-control" %>
-    </div>
-
-    <div class="col-auto w-90px">
-      <label class="form-label invisible">invisible</label>
-      <%= link_to statistics_values_path, class: "btn btn-secondary form-control" do %>
-        <i class="bi bi-arrow-counterclockwise"></i>
-      <% end %>
-    </div>
   </div>
-  <div class="row mb-3">
+
+  <div class="row mb-3 justify-content-between align-items-center w-75">
     <div class="col-auto">
       <div class="form-check form-switch">
         <%= f.label :each_month_separately, t("value_resources.search.each_month_separately"), class: "form-check-label text-decoration-none" %>
         <%= f.check_box :each_month_separately, {checked: boolean_params(:each_month_separately),
-                                                   class: "form-check-input w-50px mr-2",
-                                                   onclick: "this.form.submit()"} %>
+                                                 class: "form-check-input w-50px mr-2",
+                                                 onclick: "this.form.submit()"} %>
+      </div>
+    </div>
+    <div class="col-auto d-flex flex-row align-items-center">
+      <div class="w-140px">
+        <%= f.submit t("projects.search_form.search"), name: nil, class: "btn btn-primary form-control" %>
+      </div>
+
+      <div class="w-90px ml-35">
+        <%= link_to statistics_values_path, class: "btn btn-secondary form-control" do %>
+          <i class="bi bi-arrow-counterclockwise"></i>
+        <% end %>
       </div>
     </div>
   </div>
