@@ -21,6 +21,9 @@
       </thead>
       <div class="card-header border-0 card-header-space-between">
         <h2 class="card-header-title h4 text-uppercase fw-bold"><%= t "layouts.sidebar.lesson_learn" %></h2>
+        <div class="col-auto ms-auto">
+          <%= link_to "+", new_lesson_learn_path, class: "btn btn-info text-white form-control br fw-bold fs-4" %>
+        </div>
       </div>
       <tbody>
         <%= render @lesson_learns %>

@@ -19,18 +19,14 @@
     <%= f.select :creator_id, list_users, {include_blank: true, selected: params[:creator_id]}, {class: "form-select"} %>
   </div>
 
-  <div class="col-auto w-150px">
+  <div class="col-auto w-140px">
     <label class="form-label invisible">invisible label</label>
     <%= f.submit t("projects.search_form.search"), name: nil, class: "btn btn-primary form-control"%>
   </div>
-  <div class="col-auto w-100px m-0">
+  <div class="col-auto w-90px m-0">
     <label class="form-label invisible overflow-hidden m-0">invisible label</label>
     <%= link_to lesson_learns_path, class: "btn btn-secondary form-control" do %>
       <i class="bi bi-arrow-counterclockwise"></i>
     <% end %>
-  </div>
-  <div class="col-auto ms-auto">
-    <label class="form-label invisible">invisible label</label>
-    <%= link_to t("lesson_learns.index.create_new"), new_lesson_learn_path, class: "btn btn-primary form-control" %>
   </div>
 <% end %>

@@ -15,18 +15,14 @@
     <%= f.label :status, t(".status"), class: "form-label" %>
     <%= f.select :status, list_status, {include_blank: true, selected: params[:status]}, class: "form-select" %>
   </div>
-  <div class="col-auto">
+  <div class="col-auto w-175px">
     <label class="form-label invisible">invisible label</label>
     <%= f.submit t(".search"), name: nil, class: "btn btn-primary form-control" %>
   </div>
-  <div class="col-auto w-100px m-0">
+  <div class="col-auto w-90px m-0">
     <label class="form-label invisible">invisible label</label>
     <%= link_to release_plans_path, class: "btn btn-secondary form-control" do %>
       <i class="bi bi-arrow-counterclockwise"></i>
     <% end %>
-  </div>
-  <div class="col-auto ms-auto">
-    <label class="form-label invisible">invisible label</label>
-    <%= link_to t(".new_release_plan"), new_release_plan_path, class: "btn btn-primary form-control" %>
   </div>
 <% end %>

@@ -125,7 +125,6 @@ vi:
       date_resource: "Tháng/Năm"
       name: "Tên dự án"
       resource_index: "Danh sách tài nguyên"
-      update_resource: "Cập nhật tài nguyên"
       header_excel:
         order: "STT"
         month: "Tháng"
@@ -182,7 +181,6 @@ vi:
       start_date: "Ngày bắt đầu"
       end_date: "Ngày kết thúc"
       description: "Mô tả"
-      new_project: "Dự án mới"
       stt: "STT"
       project_index: "Danh sách dự án"
       created_at: "Ngày tạo"
@@ -371,7 +369,6 @@ vi:
       name: "Tên dự án"
       status: "Trạng thái"
       search: "Tìm kiếm"
-      new_report: "Thêm báo cáo"
       start_date_report: "Từ ngày"
       end_date_report: "Đến ngày"
     destroy:
@@ -434,7 +431,6 @@ vi:
       release_date_to: "Đến ngày"
       name: "Tên dự án"
       status: "Trạng thái"
-      new_release_plan: "Thêm kế hoạch phát hành"
     release_plan_detail:
       project_name: "Tên dự án:"
       creator: "Người tạo:"
@@ -512,7 +508,6 @@ vi:
       stt: "STT"
       name: "Tên dự án"
       action: "Chi tiết"
-      new_project_features: "Tính năng mới"
       month_year: "Tháng - Năm"
       export: "Xuất tính năng"
     create_success: "Create success"
@@ -585,6 +580,7 @@ vi:
       each_month_separately: "Giá trị riêng từng tháng"
   health_items:
     index:
+      title: "Sức khỏe dự án"
       health_items_index: "Danh sách checklist"
       stt: "STT"
       item: "Mục"
@@ -646,7 +642,6 @@ vi:
       learning_point: "Bài học rút ra"
       creator: "Người tạo"
       reference_process: "Quá trình tham khảo"
-      create_new: "Bài học mới"
       export: "Xuất bài học"
     destroy:
       delete_success: "Bài học này đã được xóa thành công."

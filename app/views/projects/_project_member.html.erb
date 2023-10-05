@@ -2,10 +2,8 @@
   <div class="table-title">
     <div class="row">
       <div class="col-sm-8"><h2><%= t ".Project_Member" %></h2></div>
-      <div class="col-sm-4">
-        <%= link_to new_project_user_path, data: {turbo_frame: "modal"}, class: "btn btn-primary btn-sm" do %>
-          <i class="fa fa-plus"></i> <%= t ".Add_New" %>
-        <% end %>
+      <div class="col-auto ms-auto">
+        <%= link_to "+", new_project_user_path, data: {turbo_frame: "modal"}, class: "btn btn-info text-white form-control br fw-bold fs-4" %>
       </div>
     </div>
   </div>

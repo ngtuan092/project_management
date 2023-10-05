@@ -2,34 +2,38 @@
 <div class="card">
   <div class="card-body p-6">
     <%= form_with url: health_index_path, method: :post do |f| %>
-
-      <div class="mb-3 row w-50 mb-4 font-weight-bold">
-        <div class="col-6">
-          <h3><%= t("resources.new.select_project")%></h3>
-        </div>
-        <div class="col-6">
-          <%= f.select :project_id, Project.without_health_items.pluck(:name, :id), { include_blank: true, selected: params[:project_id]}, class: "form-select",
-                       disabled: params[:project_id].present?, required: true %>
+      <div class="d-flex justify-content-center">
+        <div class="mb-3 row w-50 mb-4">
+          <div class="col-3">
+            <h4 class="fw-bold"><%= t("resources.new.select_project")%></h4>
+          </div>
+          <div class="col-6">
+            <%= f.select :project_id, Project.without_health_items.pluck(:name, :id), { include_blank: true, selected: params[:project_id]}, class: "form-select",
+                        disabled: params[:project_id].present?, required: true %>
+          </div>
         </div>
       </div>
-
       <% if params[:project_id].present? %>
         <%= f.hidden_field :project_id, value: params[:project_id] %>
       <% end %>
-
-      <h3 class="mt-4 mb-6 font-weight-bold"><%= t(".checklist")%></h3>
-
+      <div class="d-flex justify-content-center">
+        <h3 class="mt-4 mb-6 fw-bold text-uppercase"><%= t(".checklist")%></h3>
+      </div>
       <% @health_items.each do |item| %>
-        <div class="mb-3 row w-50">
-          <div class="col-6 required">
-            <%= item.item %>
-          </div>
-          <div class="col-6">
-            <%= f.select "health_items[#{item.id}]", status_options, {:prompt => t("project.form.select_status"), selected: "defau_value"}, class: "form-select", required: true %>
+        <div class="d-flex justify-content-center">
+          <div class="mb-3 row w-50">
+            <div class="col-6 required">
+              <%= item.item %>
+            </div>
+            <div class="col-6">
+              <%= f.select "health_items[#{item.id}]", status_options, {:prompt => t("project.form.select_status"), selected: "defau_value"}, class: "form-select", required: true %>
+            </div>
           </div>
         </div>
       <% end %>
-      <%= f.submit t("reports.form.save"), class: "btn btn-primary" %>
+      <div class="d-flex justify-content-center">
+        <%= f.submit t("reports.form.save"), class: "btn btn-primary form-control mt-3 w-50" %>
+      </div>
     <% end %>
   </div>
 </div>
