@@ -30,7 +30,7 @@ class Project < ApplicationRecord
   ].freeze
 
   PROJECT_USER_RESOURCES_PARAMS = [
-    :id,
+    :id, :month_year,
     {
       project_user_resources_attributes:
         [

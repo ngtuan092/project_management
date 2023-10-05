@@ -38,12 +38,17 @@ class ResourcesController < ApplicationController
   def create
     @project = Project.find_by id: project_user_resources_params["id"]
     if @project
-      @project.assign_attributes(project_user_resources_params.except("id"))
+      @project.assign_attributes(
+        project_user_resources_params.except("id", "month_year")
+      )
       unless check_changed?
         resolve_not_change
         return
       end
-      create_success if update_project_user_resources_success?
+      if update_project_user_resources_success?
+        send_slack_after_create
+        create_success
+      end
     else
       flash.now[:danger] = t ".can_not_find_project"
       render :new, status: :unprocessable_entity
@@ -56,6 +61,13 @@ class ResourcesController < ApplicationController
     Project.filter_name(params[:name])
            .filter_resources(@month, @year)
            .by_recently_created
+  end
+
+  def send_slack_after_create
+    date = Date.parse("#{project_user_resources_params['month_year']}-1")
+    SendNotifSlackWhenUpdateResources.perform_async(
+      @project.id, date.month, date.year
+    )
   end
 
   def project_user_resources_params
