@@ -237,6 +237,7 @@ en:
       Add_New: "Add new"
       Member_name: "Member name"
       Role: "Role"
+      group: "Group"
       Github_Account: "Github Account"
       joined_at: "Joined at"
       left_at: "Left at"

@@ -2,6 +2,7 @@
   <td><%= sequence_number project_user_counter, @pagy&.offset %></td>
   <td><%= project_user.user_name %></td>
   <td><%= project_user.project_role_name %></td>
+  <td><%= project_user.group_name_text %></td>
   <td><%= project_user.user_git_account %></td>
   <td><%= format_date project_user.joined_at %></td>
   <td><%= format_date project_user.left_at %></td>

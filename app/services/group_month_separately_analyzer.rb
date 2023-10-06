@@ -26,7 +26,7 @@ class GroupMonthSeparatelyAnalyzer < Patterns::Service
     # [[year, month], [year, month], [year, month], [year, month]]
     month_number_displayed(start_month_year, end_month_year).each do |ele|
       members, added_value = released_group_analyzer ele[1], ele[0]
-      hash_out[ele.reverse.join "-"] = {members:, added_value:,
+      hash_out[ele.reverse.join "-"] = {members:, added_value: added_value.to_f,
                                         diff: (added_value - members)
                                        .round(Settings.digits.length_2)}
     end

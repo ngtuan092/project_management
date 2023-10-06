@@ -45,7 +45,7 @@ class GroupMonthAverageAnalyzer < Patterns::Service
                                                     year).map do |pr_id, grs|
       average_prs[pr_id] * grs
     end.sum.round(Settings.digits.length_2)
-    {members:, added_value:,
+    {members:, added_value: added_value.to_f,
      diff: (added_value - members).round(Settings.digits.length_2)}
   end
 

@@ -237,6 +237,7 @@ jp:
       Add_New: "新規追加"
       Member_name: "メンバー名"
       Role: "役割"
+      group: "グループ"
       Github_Account: "Githubアカウント"
       joined_at: "参加時間"
       left_at: "終了時間"
